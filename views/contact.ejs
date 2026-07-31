@@ -1,0 +1,59 @@
+<%- include('./includes/header.ejs', {
+	title: 'Kontakt - MeshCore Polska',
+	description: 'Napisz do nas - pytania, sugestie i tak dalej. Odpowiadamy najszybciej, jak to możliwe.',
+	canonical: '/kontakt',
+	css: 'contact'
+}) %>
+
+<main>
+	<section class="section section--kontakt" aria-labelledby="kontakt-heading">
+		<div class="section__inner" id="contact-inner">
+			<p class="eyebrow">Napisz do nas</p>
+			<h1 id="kontakt-heading">Formularz kontaktowy</h1>
+			<p id="contact-lead">
+				Masz pytanie, sugestię albo problem techniczny? Napisz bezpośrednio do nas.
+				Możesz też skorzystać z <a href="/discord" target="_blank" rel="noopener">Discorda</a> albo napisać na <a href="mailto:contact@sefinek.net">contact@sefinek.net</a>.
+			</p>
+
+			<div id="contact-card">
+				<% if (locals.sent) { %>
+					<div class="contact-alert contact-alert--success">
+						<p>Dziękujemy! Twoja wiadomość została wysłana. Odpowiemy najszybciej jak to możliwe.</p>
+					</div>
+				<% } else { %>
+					<% if (errors.length) { %>
+						<div class="contact-alert contact-alert--error">
+							<ul><% errors.forEach(err => { %><li><%= err %></li><% }) %></ul>
+						</div>
+					<% } %>
+
+					<form id="contact-form" method="post" action="/api/v1/kontakt" novalidate>
+						<div class="contact-form__field">
+							<label for="username">Nazwa użytkownika</label>
+							<input type="text" id="username" name="username" value="<%= values.username %>" minlength="2" maxlength="64" required>
+						</div>
+
+						<div class="contact-form__field">
+							<label for="email">Adres e-mail</label>
+							<input type="email" id="email" name="email" value="<%= values.email %>" maxlength="254" required>
+						</div>
+
+						<div id="contact-form__hp" aria-hidden="true">
+							<label for="website">Strona internetowa</label>
+							<input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+						</div>
+
+						<div class="contact-form__field">
+							<label for="message">Wiadomość</label>
+							<textarea id="message" name="message" rows="7" minlength="10" maxlength="4000" required><%= values.message %></textarea>
+						</div>
+
+						<button type="submit" class="btn btn--primary">Wyślij wiadomość</button>
+					</form>
+				<% } %>
+			</div>
+		</div>
+	</section>
+</main>
+
+<%- include('./includes/footer.ejs', { scripts: ['/js/contact.js'] }) %>

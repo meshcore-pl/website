@@ -1,0 +1,92 @@
+<!DOCTYPE html> <% const _basePath = locals.canonical || '/'; %>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><%= title %></title>
+
+	<!-- Primary meta -->
+	<% if (locals.description) { %><meta name="description" content="<%= description %>"><% }
+	if (locals.keywords) { %><meta name="keywords" content="<%= keywords %>"><% }
+	if (locals.noindex) { %><meta name="robots" content="noindex, nofollow"><% }
+	if (locals.canonical) { %><link rel="canonical" href="<%= domain %><%= _basePath %>"><% } %>
+	<meta name="theme-color" content="#95010b">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="MeshCore Polska">
+	<meta property="og:locale" content="pl_PL">
+	<meta property="og:title" content="<%= title %>">
+	<% if (locals.description) { %><meta property="og:description" content="<%= description %>"><% } %>
+	<meta property="og:url" content="<%= domain %><%= _basePath %>">
+	<meta property="og:image" content="<%= domain %>/images/brand/banner-og.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="675">
+	<meta property="og:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
+
+	<!-- Twitter / X Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="<%= title %>">
+	<% if (locals.description) { %><meta name="twitter:description" content="<%= description %>"><% } %>
+	<meta name="twitter:image" content="<%= domain %>/images/brand/banner-og.jpg">
+	<meta name="twitter:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
+
+	<!-- JavaScript -->
+	<script src="https://cdn.sefinek.net/js/progressbar.js" defer></script>
+
+	<!-- Icons & manifest -->
+	<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128 256x256">
+	<link rel="icon" href="/images/brand/logo-3-192.png" type="image/png" sizes="192x192" >
+	<link rel="apple-touch-icon" href="/images/brand/logo-3-180.png" sizes="180x180">
+	<link rel="manifest" href="/manifest.json">
+
+	<!-- Stylesheets -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://cdn.sefinek.net">
+	<link rel="preconnect" href="https://cdn.sefinek.net" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,800;1,900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="/css/global.css">
+	<% if (locals.css) { (Array.isArray(css) ? css : [css]).forEach(c => { %><link rel="stylesheet" href="/css/<%= c %>.css"><% }) } %>
+
+	<!-- schema.org -->
+	<script type="application/ld+json" data-seo>
+	<%- JSON.stringify(buildSchema({
+		domain,
+		breadcrumbs: locals.breadcrumbs,
+		article: locals.datePublished ? {
+			title,
+			description: locals.description || '',
+			datePublished,
+			dateModified: locals.dateModified || datePublished,
+			url: _basePath,
+		} : null,
+		faq: locals.faq,
+	})) %>
+	</script>
+</head>
+<body data-page="<%= locals.page || '' %>">
+<header id="nav">
+	<div id="nav__inner">
+		<a href="/" id="nav__brand">
+			<img src="/images/brand/logo-1-80.jpg" alt="MeshCore Polska" width="40" height="40" id="nav__logo">
+			<span>MeshCore <strong>Polska</strong></span>
+		</a>
+
+		<div id="nav__right">
+			<nav id="nav-menu" aria-label="Menu główne">
+				<a href="/dokumentacja" class="nav__link<%= locals.page === 'docs' ? ' nav__link--active' : '' %>">Dokumentacja</a>
+				<a href="https://mapa.meshcorepolska.org" class="nav__link" target="_blank" rel="noopener">Mapa węzłów</a>
+				<a href="https://meshcore.io" class="nav__link" target="_blank" rel="noopener">MeshCore.io</a>
+				<a href="https://flasher.meshcore.io" class="nav__link" target="_blank" rel="noopener">Flasher</a>
+				<a href="https://www.dxinfocentre.com/tropo_eur.html" class="nav__link" target="_blank" rel="noopener nofollow">Propagacja</a>
+				<a href="/discord" class="btn btn--primary" id="nav__links-cta" target="_blank" rel="noopener">Serwer Discord</a>
+			</nav>
+			<a href="/discord" class="btn btn--primary btn--sm" id="nav__cta" target="_blank" rel="noopener">Serwer Discord</a>
+			<button id="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+			</button>
+		</div>
+	</div>
+</header>

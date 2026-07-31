@@ -1,0 +1,348 @@
+<%- include('./includes/header.ejs', {
+	title: 'MeshCore Polska - sieć LoRa bez internetu i GSM',
+	description: 'MeshCore Polska to społeczność rozwijająca ogólnopolską sieć komunikacji LoRa działającą bez internetu i GSM. Sprawdź mapę, sprzęt, konfigurację i poradniki.',
+	keywords: 'MeshCore Polska, sieć MeshCore, LoRa Polska, komunikacja bez internetu, komunikacja bez GSM, repeater MeshCore, mapa MeshCore, MeshCore 868 MHz',
+	canonical: '/',
+	css: 'index',
+	page: 'home'
+}) %>
+
+<main>
+	<section id="hero">
+		<div id="hero__inner">
+			<div id="hero__copy">
+				<p class="eyebrow">Preset EU/UK (Narrow)</p>
+				<p class="eyebrow">869,618 MHz &middot; 62,5 kHz &middot; SF8 &middot; CR8</p>
+				<h1>MeshCore Polska <span>Sieć LoRa bez internetu i GSM</span></h1>
+				<p id="hero__lead">
+					MeshCore Polska to ogólnopolska społeczność użytkowników sieci MeshCore.
+					Budujemy niezależną sieć komunikacji LoRa, która działa bez internetu, zasięgu GSM i centralnej infrastruktury.
+					Sprawdź dokumentację, uruchom własny węzeł i buduj sieć razem z nami! 73!
+				</p>
+				<div class="hero__actions">
+					<a href="/dokumentacja" class="btn btn--primary">Jak zacząć z MeshCore</a>
+					<a href="/discord" class="btn btn--secondary" target="_blank" rel="noopener">Serwer Discord</a>
+				</div>
+				<div id="hero__stats">
+					<span class="stat"><strong id="stat-repeaters">----</strong> węzłów</span>
+					<span class="stat stat--online"><strong id="stat-active">---</strong> aktywnych</span>
+					<span class="stat">Witryna: <strong>v<%= v %></strong></span>
+				</div>
+			</div>
+			<div id="hero__map" aria-hidden="true">
+				<canvas id="mesh-map"></canvas>
+				<p id="hero__map-caption">Węzły i pakiety w sieci &middot; wizualizacja</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" aria-labelledby="czym-to-heading">
+		<div class="section__inner">
+			<div class="about">
+				<div class="about__copy">
+					<p class="eyebrow">Protokół komunikacji LoRa</p>
+					<h2 id="czym-to-heading">Czym jest MeshCore?</h2>
+					<p>
+						MeshCore to zdecentralizowany system łączności wykorzystujący technologię <a href="https://pl.wikipedia.org/wiki/LoRa" target="_blank" rel="noopener">LoRa</a> do przesyłania wiadomości tekstowych między urządzeniami drogą radiową.
+						Wszystko to działa bez internetu, operatorów sieci komórkowych i zasięgu GSM.
+						Sieć sprawdzi się w terenie, podczas blackoutów, w górach, na eventach i w sytuacjach awaryjnych, w których tradycyjna łączność zawodzi.
+						Repeatery zwiększają zasięg, przekazując pakiety jeszcze dalej.
+						Większość z nich działa niezależnie od dostawców prądu: wystarczą ogniwa i panele słoneczne.
+					</p>
+				</div>
+				<figure class="about__photo">
+					<a href="/images/photos/repeatery.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ zdjęcie anten węzła">
+						<img src="/images/photos/repeatery.jpg" alt="Anteny węzła MeshCore na maszcie na tle wieczornego nieba" width="1600" height="1200" loading="lazy">
+					</a>
+					<figcaption class="about__caption">
+						ATK-20 (kierunkowa) + antena 360 (dookólna)<br>
+						A po lewej <a href="https://www.youtube.com/watch?v=koqV1fGU7A8" target="_blank" rel="noopener">Diamond X300N</a>, taka tam choineczka
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--alt section--network" aria-labelledby="siec-heading">
+		<div class="section__inner">
+			<div class="section__head">
+				<p class="eyebrow">Dane z mapy węzłów</p>
+				<h2 id="siec-heading">Sieć w liczbach</h2>
+			</div>
+
+			<p class="section__lead">Statystyki obejmują wyłącznie repeatery, których operatorzy zdecydowali się upublicznić w sieci Internet. Realna liczba urządzeń w terenie może być większa.</p>
+
+			<div id="network-stats">
+				<div id="network-stats__grid">
+					<div class="network-stat">
+						<strong id="ns-nodes">----</strong>
+						<span>urządzeń łącznie</span>
+					</div>
+					<div class="network-stat">
+						<strong id="ns-repeaters">----</strong>
+						<span>repeaterów</span>
+					</div>
+					<div class="network-stat">
+						<strong id="ns-roomservers">---</strong>
+						<span>room serwerów</span>
+					</div>
+					<div class="network-stat">
+						<strong id="ns-clients">----</strong>
+						<span>companionów</span>
+					</div>
+				</div>
+
+				<div id="network-health">
+					<p id="network-health__label">Aktywność repeaterów wg czasu ostatniej aktualizacji</p>
+					<div id="network-health__bar">
+						<span class="network-health__seg is-recent" id="seg-recent"></span>
+						<span class="network-health__seg is-stale" id="seg-stale"></span>
+						<span class="network-health__seg is-old" id="seg-old"></span>
+						<span class="network-health__seg is-extinct" id="seg-extinct"></span>
+						<span class="network-health__seg is-none" id="seg-none"></span>
+					</div>
+					<ul id="network-health__legend">
+						<li class="is-recent"><strong id="ns-recent">-</strong> aktywne <span>&lt;5 dni</span></li>
+						<li class="is-stale"><strong id="ns-stale">-</strong> nieaktualne <span>5-10 dni</span></li>
+						<li class="is-old"><strong id="ns-old">-</strong> stare <span>10-20 dni</span></li>
+						<li class="is-extinct"><strong id="ns-extinct">-</strong> wygasające <span>&gt;20 dni</span></li>
+						<li class="is-none"><strong id="ns-none">-</strong> dodane ręcznie</li>
+					</ul>
+				</div>
+
+				<p id="network-stats-updated" hidden>Dane zaktualizowane: <time id="ns-updated"></time></p>
+
+				<p id="network-stats__note">Dane z mapy węzłów MeshCore Polska. <a href="https://mapa.meshcorepolska.org" target="_blank" rel="noopener">Zobacz mapę <svg id="network-stats__note-icon" aria-hidden="true"><use href="/icons.svg#arrow-right"></use></svg></a></p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" aria-labelledby="sprzet-heading">
+		<div class="section__inner">
+			<div class="section__head">
+				<p class="eyebrow">Rekomendowany sprzęt</p>
+				<h2 id="sprzet-heading">Tyle wystarczy, aby zacząć</h2>
+			</div>
+
+			<p class="section__lead">
+				Do pierwszego kontaktu z siecią wystarczy companion, czyli niewielkie urządzenie LoRa za około 180-220 zł, które łączy się z telefonem przez Bluetooth.
+				Na telefonie potrzebujesz jedynie <a href="https://play.google.com/store/apps/details?id=com.liamcottle.meshcore.android&amp;hl=pl" target="_blank" rel="noopener">aplikacji MeshCore</a>. Bez obaw - przetłumaczyliśmy ją na język polski.
+				Oprogramowanie układowe (czyli firmware) wgrasz <a href="https://flasher.meshcore.io" target="_blank" rel="noopener">bezpośrednio przez przeglądarkę</a>. Podczas konfiguracji pamiętaj, aby wybrać <a href="/dokumentacja/meshcore/aktualne-presety">odpowiedni preset</a>.
+			</p>
+
+			<div class="cards">
+				<div class="card">
+					<a class="card__img-link" href="/images/boards/sensecap_t1000e.svg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ grafikę SenseCAP T1000-E">
+						<img class="card__img" src="/images/boards/sensecap_t1000e.svg" alt="Urządzenie SenseCAP Card Tracker T1000-E zgodne z MeshCore" width="848" height="1264" loading="lazy">
+					</a>
+					<h3>SenseCAP T1000-E</h3>
+					<p class="card__price">około 219 zł</p>
+					<p>Gotowe urządzenie wielkości karty płatniczej, z obudową, akumulatorem i odbiornikiem GPS w zestawie. Dobry wybór, jeśli nie chcesz samodzielnie składać urządzenia ani dobierać ogniw.</p>
+				</div>
+				<div class="card">
+					<a class="card__img-link" href="/images/boards/heltec_v4.svg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ grafikę Heltec V4.3">
+						<img class="card__img" src="/images/boards/heltec_v4.svg" alt="Płytka Heltec V4.3 do sieci MeshCore" width="1440" height="736" loading="lazy">
+					</a>
+					<h3>Heltec V4.3</h3>
+					<p class="card__price">około 183 zł</p>
+					<p>Tania i łatwo dostępna płytka z ekranem OLED, oparta na układzie ESP32. W sam raz na pierwszego companiona MeshCore. Baterię możesz podłączyć do gniazda Bat z tyłu urządzenia.</p>
+				</div>
+				<div class="card">
+					<a class="card__img-link" href="/images/boards/rak_4631.svg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ grafikę WisBlock RAK4631">
+						<img class="card__img" src="/images/boards/rak_4631.svg" alt="Płytka WisBlock RAK4631 do repeatera MeshCore" width="1280" height="832" loading="lazy">
+					</a>
+					<h3>WisBlock RAK4631</h3>
+					<p class="card__price">około 123 zł</p>
+					<p>Klasyka wśród repeaterów. Dzięki układowi nRF52 pobiera bardzo mało energii i dobrze sprawdza się przy zasilaniu off-grid. Wariant (szósty) z RAK4631 i płytką bazową RAK19003 będzie wystarczający.</p>
+				</div>
+				<div class="card">
+					<h3>Nie wiesz, co wybrać?</h3>
+					<p>Napisz na naszym <a href="/discord" target="_blank" rel="noopener">Discordzie</a>. Pomożemy dobrać sprzęt do Twojego budżetu, sposobu zasilania i planowanego zastosowania.</p>
+				</div>
+			</div>
+
+			<div id="cards__note">
+				<b>Warto wiedzieć</b>
+				<ul>
+					<li>Kupując sprzęt do polskiej sieci MeshCore, wybieraj wersję obsługującą pasmo 868 MHz. Warianty przeznaczone wyłącznie dla 915 MHz lub 433 MHz nie będą zgodne z <a href="/dokumentacja/meshcore/aktualne-presety">używanym przez nas presetem EU/UK (Narrow)</a>.</li>
+					<li>Płytki z układem nRF52 pobierają zauważalnie mniej energii niż konstrukcje oparte na ESP32. Lepiej sprawdzają się więc w urządzeniach zasilanych z akumulatorów i paneli fotowoltaicznych. RAK4631 jest przy tym pewniejszym wyborem na repeater niż Xiao.</li>
+					<li>Do repeatera wybierz ogniwa Li-Ion, na przykład 18650. Dobrze znoszą dużą liczbę cykli ładowania i są łatwo dostępne. Ogniwa Li-Po zostaw raczej do przenośnych companionów, w których liczą się niewielkie wymiary i masa.</li>
+				</ul>
+			</div>
+
+			<div id="print-offer">
+				<div id="print-offer__copy">
+					<h3>Mam płytkę, ale nie mam obudowy (a chcę)</h3>
+					<p>Żaden problem! Możemy wydrukować dla Ciebie obudowę na drukarce 3D, dopasowaną do wybranej płytki i sposobu jej wykorzystania.</p>
+				</div>
+				<div id="print-offer__actions">
+					<a href="/kontakt" class="btn btn--secondary">Skontaktuj się</a>
+					<a href="mailto:contact@sefinek.net" class="btn btn--secondary">Email</a>
+				</div>
+			</div>
+
+			<p id="cards__soon">Zajrzyj też do <a href="/dokumentacja/meshcore">naszej dokumentacji</a>, gdzie znajdziesz poradniki, listę anten, instrukcje konfiguracji i wiele więcej!</p>
+		</div>
+	</section>
+
+	<section class="section section--photo" aria-labelledby="dlaczego-heading">
+		<div class="section__inner">
+			<div class="section__head">
+				<p class="eyebrow">Ogólnopolska społeczność</p>
+				<h2 id="dlaczego-heading">Dlaczego warto dołączyć do MeshCore Polska?</h2>
+			</div>
+			<div class="cards">
+				<div class="card">
+					<h3>Sieć w całej Polsce</h3>
+					<p>Zrzeszamy użytkowników i operatorów węzłów MeshCore z całego kraju. U nas sprawdzisz, kto nadaje w Twojej okolicy.</p>
+				</div>
+				<div class="card">
+					<h3>Rozwój zasięgu</h3>
+					<p>Uzgadniamy lokalizacje nowych repeaterów, aby zwiększać pokrycie sieci tam, gdzie faktycznie go brakuje.</p>
+				</div>
+				<div class="card">
+					<h3>Testy w terenie</h3>
+					<p>Sprawdzamy anteny, urządzenia i różne konfiguracje w praktyce. Mierzymy rzeczywisty zasięg, porównujemy wyniki i dzielimy się doświadczeniem.</p>
+				</div>
+				<div class="card">
+					<h3>Wsparcie techniczne</h3>
+					<p>Pomagamy przy wyborze sprzętu, wgrywaniu firmware, konfiguracji aplikacji oraz uruchamianiu pierwszego companiona lub repeatera.</p>
+				</div>
+				<div class="card">
+					<h3>Pasjonaci elektroniki</h3>
+					<p>Budujemy własne płytki, dobieramy anteny, projektujemy zasilanie i drukujemy obudowy. Zawsze znajdzie się ktoś, kto już przerabiał podobny problem.</p>
+				</div>
+				<div class="card">
+					<h3>Miłośnicy informatyki</h3>
+					<p>Sieci, serwery, automatyzacja i oprogramowanie. Wielu z nas pracuje w IT, więc pogadasz u nas nie tylko o radiu i LoRa.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--alt" aria-labelledby="jak-heading">
+		<div class="section__inner">
+			<div class="section__head">
+				<p class="eyebrow">Serwer Discord</p>
+				<h2 id="jak-heading">Co nas wyróżnia?</h2>
+			</div>
+			<ul id="steps">
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#check"></use></svg><span>Największa i najaktywniejsza społeczność MeshCore w Polsce.</span></li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#check"></use></svg><span>Liberalne podejście: zdrowy rozsądek zamiast sztywnego regulaminu.</span></li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#check"></use></svg><span>Kładziemy nacisk na <a href="https://github.com/meshcore-pl" target="_blank" rel="noopener">open source</a> i wspólny rozwój projektów.</span></li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#check"></use></svg><span>Powiadomienia o aktualizacjach firmware i aplikacji.</span></li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#check"></use></svg><span>Konfigurator profili: każdy użytkownik ma <a href="https://beta.sefinek.net/pl/meshcore-pl/kontakty/6a43efd454feb8be5679e0a6" target="_blank" title="Przykładowy profil użytkownika Sefinek." rel="noopener">swój profil</a> z informacjami o sprzęcie i aktywności w sieci.</span></li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#check"></use></svg><span>Lepsza jakość audio, streamowanie w 1440p i 60 FPS oraz przesyłanie plików do 100 MB.</span></li>
+				<li><svg class="steps__icon" aria-hidden="true"><use href="/icons.svg#check"></use></svg><span>Estetyczny, dopracowany wygląd serwera i przejrzysty układ kanałów.</span></li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="section" aria-labelledby="tag-heading">
+		<div class="section__inner">
+			<div class="about">
+				<div class="about__copy">
+					<p class="eyebrow">Tag serwera</p>
+					<h2 id="tag-heading">Reprezentuj sieć<br>razem z nami</h2>
+					<p>
+						Ustaw tag <strong>MCPL</strong> przy swoim nicku na Discordzie. Znacznik naszej społeczności będzie widoczny wszędzie tam, gdzie piszesz, także na innych serwerach.
+						To prosty sposób, aby pokazać, że należysz do społeczności MeshCore Polska i pomagasz rozwijać ogólnopolską sieć LoRa. Jak ustawić tag? Zobacz animację obok. Dziękujemy!
+					</p>
+				</div>
+				<figure class="about__photo">
+					<a href="/images/screens/mcpl-dsc-tag.gif" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ animację ustawiania tagu MCPL na Discordzie">
+						<img src="/images/screens/mcpl-dsc-tag.gif" alt="Animacja pokazująca, jak ustawić tag MCPL społeczności MeshCore Polska na Discordzie" width="1200" height="738" loading="lazy">
+					</a>
+					<figcaption class="about__caption">Edycja profilu na Discordzie &middot; tak ustawisz tag MCPL</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--alt" aria-labelledby="profile-heading">
+		<div class="section__inner">
+			<div id="profile">
+				<div id="profile__shots">
+					<a id="profile__main" href="/images/screens/profil-publiczny.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Zobacz pełny zrzut publicznego profilu operatora">
+						<img src="/images/screens/profil-publiczny.jpg" alt="Publiczny profil operatora sieci MeshCore Polska" width="2560" height="1237" loading="lazy">
+					</a>
+					<div id="profile__thumbs">
+						<a href="/images/screens/konfigurator-dane.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ zrzut konfiguratora podstawowych danych profilu">
+							<img src="/images/screens/konfigurator-dane.jpg" alt="Konfigurator profilu MeshCore: podstawowe dane operatora" width="2560" height="1237" loading="lazy">
+						</a>
+						<a href="/images/screens/konfigurator-sprzet.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ zrzut konfiguratora sprzętu MeshCore">
+							<img src="/images/screens/konfigurator-sprzet.jpg" alt="Konfigurator profilu MeshCore: companiony i repeatery" width="2560" height="1237" loading="lazy">
+						</a>
+						<a href="/images/screens/konfigurator-role.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ zrzut konfiguratora ról i zainteresowań">
+							<img src="/images/screens/konfigurator-role.jpg" alt="Konfigurator profilu MeshCore: role i zainteresowania operatora" width="2560" height="1237" loading="lazy">
+						</a>
+					</div>
+					<p class="profile__caption">Publiczny profil i konfigurator &middot; kliknij, aby powiększyć</p>
+					<p class="profile__caption">Wkrótce przeniesiemy profile do <a href="https://meshcoreprofiles.com" target="_blank" rel="noopener">meshcoreprofiles.com</a>. <a href="https://github.com/meshcore-pl/map#plany" target="_blank" rel="noopener">Więcej informacji</a>.</p>
+				</div>
+				<div id="profile__copy">
+					<p class="eyebrow">Profile operatorów</p>
+					<h2 id="profile-heading">Twój profil operatora</h2>
+					<p>Każdy członek społeczności może mieć publiczny profil ze swoim bio, lokalizacją oraz sprzętem: companionami i repeaterami, razem z kluczami publicznymi i kodami QR do szybkiego dodania kontaktu.</p>
+					<p>Profil skonfigurujesz krok po kroku za pomocą polecenia <code>/konfiguracja</code> na naszym Discordzie.</p>
+					<ul id="profile__list">
+						<li>Bio, lokalizacja i dane kontaktowe</li>
+						<li>Companiony i repeatery wraz z kodami QR</li>
+						<li>Role i zainteresowania: od informatyki po anteny</li>
+						<li>Weryfikacja operatora repeatera i room serwera</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section" aria-labelledby="wplyw-heading">
+		<div class="section__inner">
+			<div id="callout">
+				<p class="eyebrow">Polskie tłumaczenie</p>
+				<h2 id="wplyw-heading">Realny wpływ</h2>
+				<p>Zajmujemy się tłumaczeniem aplikacji MeshCore na język polski. Masz uwagi, znalazłeś błąd albo chcesz zaproponować lepsze tłumaczenie? Napisz śmiało na <a href="/discord" target="_blank" rel="noopener">naszym Discordzie</a>.</p>
+				<p id="callout__note">Dostęp do edycji polskiego tłumaczenia aplikacji ma wyłącznie Sefinek.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section section--alt" aria-labelledby="prywatnosc-heading">
+		<div class="section__inner">
+			<div class="section__head">
+				<p class="eyebrow">Prywatność</p>
+				<h2 id="prywatnosc-heading">Discord zamiast grupy na Facebooku</h2>
+			</div>
+
+			<p class="section__lead">
+				Meta słynie z inwigilacji użytkowników, dlatego nasza społeczność działa na Discordzie. Nie potrzebujesz konta z prawdziwym imieniem i nazwiskiem, żeby z nami porozmawiać.
+				To czemu nie forum internetowe? Większość z nich straciła w ostatnich latach na aktywności i popularności.
+				Konkretną wiedzę trzymamy w <a href="/dokumentacja">dokumentacji</a>, a rozmowy, pomoc techniczna i bieżące ustalenia odbywają się na <a href="/discord" target="_blank" rel="noopener">Discordzie</a>. Kolejne nieaktywne forum nie miałoby większego sensu.
+			</p>
+		</div>
+	</section>
+</main>
+
+<div id="outro">
+	<section id="cta">
+		<div id="cta__inner">
+			<div id="cta__copy">
+				<p class="eyebrow">Ostatni hop</p>
+				<h2>Dołącz do <span>MeshCore Polska</span></h2>
+				<p>Im więcej węzłów, tym dalej sięga sieć. Twój repeater może być następny (;</p>
+
+				<a href="/dokumentacja" class="btn btn--primary">Przeczytaj dokumentację</a>
+				<a href="/kontakt" class="btn btn--secondary">Kontakt</a>
+			</div>
+
+			<figure id="cta__photo">
+				<a href="/images/photos/ostatni-hop_new.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ zdjęcie">
+					<img src="/images/photos/ostatni-hop_new.jpg" alt="Skaczący rudy kot na tle nieba i anten" width="1920" height="1080" loading="lazy">
+				</a>
+			</figure>
+		</div>
+	</section>
+
+	<script>window.MAP_DOMAIN = '<%= mapDomain %>';</script>
+
+	<%- include('./includes/footer.ejs', { outro: true, scripts: ['/js/index.js', '/js/lightbox.js', '/js/mesh-map.js'] }) %>

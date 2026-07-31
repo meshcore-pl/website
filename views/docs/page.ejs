@@ -1,0 +1,19 @@
+<%- include('../includes/header.ejs', {
+	title,
+	description,
+	canonical,
+	css: 'docs',
+	page: 'docs',
+	breadcrumbs,
+	datePublished: page.publishedAt.toISOString().slice(0, 10),
+	dateModified: page.date.toISOString().slice(0, 10),
+	faq: page.faq
+}) %>
+
+<main id="docs-view" tabindex="-1">
+	<%- include('./_page-content.ejs', { page, group, groups }) %>
+</main>
+
+<script type="module" src="/js/docs-router.js"></script>
+
+<%- include('../includes/footer.ejs', { footer: false, scripts: ['/js/lightbox.js'] }) %>

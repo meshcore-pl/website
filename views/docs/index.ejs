@@ -1,0 +1,45 @@
+<%- include('../includes/header.ejs', {
+	title: 'Dokumentacja - MeshCore Polska',
+	description: 'Dokumentacja MeshCore Polska: regulamin i informacje o serwerze Discord oraz poradniki związane z siecią MeshCore.',
+	keywords: 'dokumentacja MeshCore Polska, poradniki MeshCore, LoRa, konfiguracja MeshCore',
+	canonical: '/dokumentacja',
+	css: 'docs',
+	page: 'docs',
+	breadcrumbs: [
+		{ name: 'Strona główna', url: '/' },
+		{ name: 'Dokumentacja', url: '/dokumentacja' },
+	]
+}) %>
+
+<main>
+	<section class="docs-hero">
+		<div class="section__inner">
+			<p class="eyebrow">Kompendium wiedzy</p>
+			<h1>Dokumentacja i lektura</h1>
+			<p class="docs-hero__lead">Znajdziesz tu informacje o naszym serwerze Discord oraz materiały o MeshCore, choć te wciąż nie są kompletne i cały czas nad nimi pracujemy. Strona jest jeszcze w budowie. Jeśli masz jakieś propozycje, podziel się nimi na naszym Discordzie.</p>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section__inner">
+			<div id="docs-groups">
+				<% groups.forEach(group => { %>
+				<a href="/dokumentacja/<%= group.slug %>" class="docs-group-card">
+					<div class="docs-group-card__icon">
+						<% if (group.icon.startsWith('/')) { %><img src="<%= group.icon %>" alt="<%= group.title %>" width="40" height="40" loading="lazy"><% } else { %><%= group.icon %><% } %>
+					</div>
+					<div class="docs-group-card__body">
+						<div class="docs-group-card__head">
+							<h2><%= group.title %></h2>
+							<span class="docs-group-card__badge"><%= group.pages.length %> <%= pluralizePolish(group.pages.length, { one: 'strona', few: 'strony', many: 'stron' }) %></span>
+						</div>
+						<p><%= group.description %></p>
+					</div>
+				</a>
+				<% }) %>
+			</div>
+		</div>
+	</section>
+</main>
+
+<%- include('../includes/footer.ejs', { footer: false }) %>

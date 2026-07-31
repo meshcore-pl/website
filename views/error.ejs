@@ -1,0 +1,23 @@
+<%- include('./includes/header.ejs', {
+	title: `Błąd ${status}: MeshCore Polska`,
+	description: 'Wystąpił błąd podczas ładowania strony MeshCore Polska.',
+	noindex: true,
+	css: 'error',
+	page: 'error'
+}) %>
+
+<main>
+	<section class="section section--notfound">
+		<div class="section__inner">
+			<p class="eyebrow">Błąd transmisji</p>
+			<h1 id="errorpage__code"><%= status %></h1>
+			<p id="errorpage__msg"><%= message %></p>
+			<div class="hero__actions">
+				<a href="/" class="btn btn--secondary">Strona główna</a>
+				<a href="/discord" class="btn btn--primary" target="_blank" rel="noopener">Dołącz na Discorda</a>
+			</div>
+		</div>
+	</section>
+</main>
+
+<%- include('./includes/footer.ejs') %>

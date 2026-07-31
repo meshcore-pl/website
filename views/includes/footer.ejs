@@ -1,0 +1,32 @@
+<% if (locals.footer !== false) { %>
+	<footer id="footer">
+		<div id="footer__inner">
+			<div id="footer__top">
+				<div id="footer__brand">
+					<img src="/images/brand/logo-3-80.png" alt="MeshCore Polska" width="52" height="52">
+					<span>MeshCore <strong>Polska</strong></span>
+				</div>
+				<nav id="footer__links" aria-label="Stopka">
+					<a href="/dokumentacja">Dokumentacja</a>
+					<a href="/discord" target="_blank" rel="noopener">Discord</a>
+					<a href="https://mapa.meshcorepolska.org" target="_blank" rel="noopener">Mapa węzłów</a>
+					<a href="https://meshcore.io" target="_blank" rel="noopener">MeshCore.io</a>
+					<a href="https://flasher.meshcore.io" target="_blank" rel="noopener">Flasher</a>
+					<a href="https://github.com/meshcore-pl/website" target="_blank" rel="noopener">Kod źródłowy</a>
+					<a href="/kontakt">Kontakt</a>
+				</nav>
+			</div>
+			<div id="footer__bottom">
+				<p id="footer__copy">Copyright 2026 &copy; by <a href="https://sefinek.net" target="_blank" rel="noopener">Sefinek</a>. Licencja <a href="https://polyformproject.org/licenses/noncommercial/1.0.0" target="_blank" rel="noopener">PolyForm Noncommercial 1.0.0</a>.</p>
+				<p id="footer__meta">Preset EU/UK (Narrow) &middot; 869,618 MHz &middot; 62,5 kHz &middot; SF8 &middot; CR8</p>
+			</div>
+		</div>
+	</footer>
+<% } %>
+<% if (locals.outro) { %></div><% } %>
+
+<script src="/js/nav.js" defer></script>
+<% (locals.scripts || []).forEach(src => { %><script src="<%= src %>" defer></script>
+<% }) %>
+</body>
+</html>

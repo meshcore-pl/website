@@ -1,0 +1,61 @@
+<%- include('../includes/header.ejs', {
+	title: `${group.title} - Dokumentacja MeshCore Polska`,
+	description: group.description,
+	keywords: `${group.title}, dokumentacja MeshCore Polska, MeshCore, LoRa`,
+	canonical: `/dokumentacja/${group.slug}`,
+	css: 'docs',
+	page: 'docs',
+	breadcrumbs: [
+		{ name: 'Strona główna', url: '/' },
+		{ name: 'Dokumentacja', url: '/dokumentacja' },
+		{ name: group.title, url: `/dokumentacja/${group.slug}` },
+	]
+}) %>
+
+<main>
+	<section class="docs-hero">
+		<div class="section__inner">
+			<nav class="docs-breadcrumb" aria-label="Okruszki">
+				<a href="/dokumentacja">Dokumentacja</a>
+				<span aria-hidden="true">/</span>
+				<span aria-current="page"><%= group.title %></span>
+			</nav>
+			<div id="docs-hero__head">
+				<div id="docs-hero__icon">
+					<% if (group.icon.startsWith('/')) { %><img src="<%= group.icon %>" alt="<%= group.title %>" width="64" height="64"><% } else { %><%= group.icon %><% } %>
+				</div>
+				<div>
+					<p class="eyebrow">Kategoria</p>
+					<h1><%= group.title %></h1>
+				</div>
+			</div>
+			<p class="docs-hero__lead"><%= group.description %></p>
+			<div id="docs-hero__actions">
+				<a href="/dokumentacja/<%= group.slug %>/<%= group.pages[0].slug %>" class="btn btn--primary">Zacznij od: <%= group.pages[0].title %></a>
+				<span id="docs-hero__count"><%= group.pages.length %> <%= pluralizePolish(group.pages.length, { one: 'strona', few: 'strony', many: 'stron' }) %></span>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section__inner">
+			<div id="docs-page-grid">
+				<% group.pages.forEach((p, i) => { %>
+				<a href="/dokumentacja/<%= group.slug %>/<%= p.slug %>" class="docs-page-card">
+					<span class="docs-page-card__num"><%= String(i + 1).padStart(2, '0') %></span>
+					<span class="docs-page-card__title"><%= p.title %></span>
+					<% if (p.description) { %><p class="docs-page-card__desc"><%= p.description %></p><% } %>
+					<span class="docs-page-card__footer">
+						<% if (p.updatedAt) { %><span class="docs-page-card__date">Aktualizacja: <%= p.updatedAt %></span>
+						<% } else if (p.createdAt) { %><span class="docs-page-card__date">Utworzono: <%= p.createdAt %></span>
+						<% } %>
+						<svg class="docs-page-card__arrow" aria-hidden="true"><use href="/icons.svg#arrow-right"></use></svg>
+					</span>
+				</a>
+				<% }) %>
+			</div>
+		</div>
+	</section>
+</main>
+
+<%- include('../includes/footer.ejs', { footer: false }) %>

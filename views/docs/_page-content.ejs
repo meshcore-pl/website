@@ -1,0 +1,102 @@
+<div id="docs-layout" class="<%= page.toc.length ? '' : 'docs-layout--no-toc' %>">
+	<aside id="docs-sidebar">
+		<div id="docs-sidebar__inner">
+			<nav id="docs-nav" aria-label="Dokumentacja">
+				<% groups.forEach(g => { %>
+				<div class="docs-nav-group">
+					<p class="docs-nav-group__title">
+						<% if (g.icon.startsWith('/')) { %><img class="docs-nav-group__icon" src="<%= g.icon %>" alt="<%= g.title %>" width="16" height="16" loading="lazy"><% } else { %><span class="docs-nav-group__icon"><%= g.icon %></span><% } %>
+						<%= g.title %>
+					</p>
+					<ul>
+						<% g.pages.forEach(p => { %>
+						<li>
+							<a href="/dokumentacja/<%= g.slug %>/<%= p.slug %>"
+							   class="<%= g.slug === group.slug && p.slug === page.slug ? 'active' : '' %>"
+							   <%= g.slug === group.slug && p.slug === page.slug ? 'aria-current="page"' : '' %>>
+								<%= p.title %>
+							</a>
+						</li>
+						<% }) %>
+					</ul>
+				</div>
+				<% }) %>
+			</nav>
+
+			<% if (page.toc.length) { %>
+			<div id="docs-sidebar__toc">
+				<p class="docs-toc__title">Na tej stronie</p>
+				<ul class="docs-toc__list">
+					<% page.toc.forEach(item => { %>
+					<li><a href="#<%= item.id %>" class="<%= item.level === 1 ? 'docs-toc__link--h1' : item.level === 3 ? 'docs-toc__link--h3' : '' %>"><%= item.text %></a></li>
+					<% }) %>
+				</ul>
+			</div>
+			<% } %>
+
+			<a href="/dokumentacja" id="docs-sidebar__home"><svg id="docs-sidebar__home-icon" aria-hidden="true"><use href="/icons.svg#arrow-left"></use></svg> Spis treści</a>
+		</div>
+	</aside>
+
+	<article id="docs-content">
+		<nav class="docs-breadcrumb" aria-label="Okruszki">
+			<a href="/dokumentacja">Dokumentacja</a>
+			<span aria-hidden="true">/</span>
+			<a href="/dokumentacja/<%= group.slug %>"><%= group.title %></a>
+			<span aria-hidden="true">/</span>
+			<span aria-current="page"><%= page.title %></span>
+		</nav>
+
+		<%- page.html %>
+
+		<div id="docs-footer">
+			<nav id="docs-pagination" aria-label="Nawigacja stron">
+				<%
+				const idx = group.pages.findIndex(p => p.slug === page.slug);
+				const prev = idx > 0 ? group.pages[idx - 1] : null;
+				const next = idx < group.pages.length - 1 ? group.pages[idx + 1] : null;
+				%>
+				<% if (prev) { %>
+				<a href="/dokumentacja/<%= group.slug %>/<%= prev.slug %>" class="docs-pagination__link docs-pagination__link--prev">
+					<span><svg class="docs-pagination__icon" aria-hidden="true"><use href="/icons.svg#arrow-left"></use></svg> Poprzednia strona</span>
+					<strong><%= prev.title %></strong>
+				</a>
+				<% } else { %><span></span><% } %>
+
+				<% if (next) { %>
+				<a href="/dokumentacja/<%= group.slug %>/<%= next.slug %>" class="docs-pagination__link docs-pagination__link--next">
+					<span>Następny dokument <svg class="docs-pagination__icon" aria-hidden="true"><use href="/icons.svg#arrow-right"></use></svg></span>
+					<strong><%= next.title %></strong>
+				</a>
+				<% } else { %><span></span><% } %>
+			</nav>
+
+			<% if (page.createdAt || page.updatedAt) { %>
+			<div id="docs-meta">
+				<span><% if (page.createdAt) { %>Utworzono: <%= page.createdAt %><% } %></span>
+				<span><% if (page.updatedAt) { %>Ostatnia aktualizacja: <%= page.updatedAt %><% } %></span>
+			</div>
+			<% } %>
+		</div>
+	</article>
+
+	<% if (page.toc.length) { %>
+	<nav id="docs-toc" aria-label="Na tej stronie">
+		<div id="docs-toc__inner">
+			<p class="docs-toc__title">Na tej stronie</p>
+			<ul class="docs-toc__list">
+				<% page.toc.forEach(item => { %>
+				<li><a href="#<%= item.id %>" class="<%= item.level === 1 ? 'docs-toc__link--h1' : item.level === 3 ? 'docs-toc__link--h3' : '' %>"><%= item.text %></a></li>
+				<% }) %>
+			</ul>
+		</div>
+	</nav>
+	<% } %>
+</div>
+
+<button type="button" id="docs-mobile-toc-btn" aria-expanded="false" aria-controls="docs-sidebar" aria-label="Pokaż spis treści">
+	<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"></path></svg>
+</button>
+<div id="docs-mobile-toc-backdrop" hidden></div>
+
+<script type="module" src="/js/docs.js"></script>
