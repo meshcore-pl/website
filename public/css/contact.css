@@ -13,10 +13,12 @@
 
 #contact-card {
 	text-align: left;
-	background: var(--card);
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
-	padding: 32px;
+	padding: 25px;
 }
 
 .contact-alert {

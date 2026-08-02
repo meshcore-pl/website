@@ -2,7 +2,7 @@
 title: Interfejs Ripple v9.7
 description: Najnowszy firmware Ripple wprowadza jasny i ciemny motyw interfejsu oraz możliwość personalizacji koloru akcentu.
 createdAt: 30.04.2026
-tags: [Firmware]
+tags: [Oprogramowanie]
 ---
 
 # Interfejs Ripple v9.7

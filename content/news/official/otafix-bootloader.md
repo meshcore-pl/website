@@ -2,7 +2,7 @@
 title: Instalacja bootloadera OTAFix
 description: Poradnik krok po kroku, jak zainstalować bootloader OTAFix na urządzeniach nRF - szybsze i pewniejsze aktualizacje firmware przez OTA/BLE.
 createdAt: 06.04.2026
-tags: [Poradnik, Firmware]
+tags: [Poradnik, Oprogramowanie]
 ---
 
 # Instalacja bootloadera OTAFix

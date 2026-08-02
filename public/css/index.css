@@ -51,6 +51,8 @@
 	border: 1px solid var(--border);
 	border-radius: 8px;
 	background: rgba(148, 166, 204, 0.05);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 }
 
 .stat strong {
@@ -131,7 +133,9 @@
 
 .network-stat {
 	text-align: center;
-	background: var(--card);
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	padding: 24px 16px;
@@ -383,7 +387,9 @@
 
 .card {
 	position: relative;
-	background: var(--card);
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	padding: 28px;
@@ -446,7 +452,9 @@
 	max-width: 760px;
 	margin: 32px auto 0;
 	padding: 18px 24px;
-	background: var(--card);
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 	border: 1px solid var(--border);
 	border-left: 3px solid var(--red);
 	border-radius: var(--radius);
@@ -533,7 +541,9 @@
 	display: flex;
 	align-items: center;
 	gap: 16px;
-	background: var(--card);
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	padding: 17px 21px;
@@ -656,7 +666,9 @@
 #callout {
 	max-width: 760px;
 	margin: 0 auto;
-	background: var(--card);
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 	border: 1px solid var(--border);
 	border-left: 3px solid var(--red);
 	border-radius: var(--radius);

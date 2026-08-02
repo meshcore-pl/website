@@ -2,7 +2,7 @@
 title: MeshCore App v1.46.0
 description: 1 lipca 2026 ukazała się wersja 1.46.0 oficjalnej aplikacji MeshCore - nowy ekran ustawień kanału, automatyczne usuwanie wiadomości, tłumaczenia na kataloński i szwedzki oraz poprawki Bluetooth na iOS.
 createdAt: 01.07.2026
-tags: [Changelog, Aplikacja, Tłumaczenia]
+tags: [Lista zmian, Aplikacja, Tłumaczenia]
 ---
 
 # MeshCore App v1.46.0

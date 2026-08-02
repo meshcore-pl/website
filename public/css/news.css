@@ -94,13 +94,13 @@ a.news-tag--active {
 	border: 1px solid var(--border);
 }
 
-.news-source--oficjalne {
+.news-source--official {
 	color: var(--signal);
 	background: rgba(61, 220, 132, 0.1);
 	border-color: rgba(61, 220, 132, 0.3);
 }
 
-.news-source--spolecznosc {
+.news-source--community {
 	color: #58a6ff;
 	background: rgba(88, 166, 255, 0.1);
 	border-color: rgba(88, 166, 255, 0.3);
@@ -124,7 +124,9 @@ a.news-tag--active {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	background: var(--card);
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	padding: 22px 26px;

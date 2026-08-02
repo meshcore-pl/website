@@ -6,8 +6,8 @@ const { marked, renderer, assignHeadingIds, slugify, parseDMYDate } = require('.
 const NEWS_DIR = path.join(__dirname, '../content/news');
 
 const SOURCES = {
-	oficjalne: { slug: 'oficjalne', label: 'blog.meshcore.io', description: 'Oficjalny blog projektu MeshCore.' },
-	spolecznosc: { slug: 'spolecznosc', label: 'MeshCore Polska', description: 'Treść przygotowana przez społeczność MeshCore Polska.' },
+	official: { slug: 'official', label: 'blog.meshcore.io', description: 'Oficjalny blog projektu MeshCore.' },
+	community: { slug: 'community', label: 'MeshCore Polska', description: 'Treść przygotowana przez społeczność MeshCore Polska.' },
 };
 
 const posts = [];

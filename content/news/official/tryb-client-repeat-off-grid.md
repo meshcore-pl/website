@@ -2,7 +2,7 @@
 title: Tryb off-grid (client repeat)
 description: Kolejna wersja firmware Ripple wreszcie wprowadza tryb off-grid, znany też jako tryb client repeat - urządzenia klienckie mogą pełnić funkcję przemiennika poza publiczną siecią mesh.
 createdAt: 13.02.2026
-tags: [Firmware]
+tags: [Oprogramowanie]
 ---
 
 # Tryb off-grid (client repeat)

@@ -2,7 +2,7 @@
 title: Aktualizacje OTA za pomocą drona
 description: Recrof pokazuje, jak zaktualizować firmware trudno dostępnych przemienników opartych o nRF52 za pomocą drona i niewielkiego modułu Xiao nRF52840.
 createdAt: 22.06.2026
-tags: [Poradnik, Firmware]
+tags: [Poradnik, Oprogramowanie]
 ---
 
 # Aktualizacje OTA za pomocą drona

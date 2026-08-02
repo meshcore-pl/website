@@ -2,7 +2,7 @@
 title: Aktualizacje OTA na urządzeniach nRF
 description: Poradnik krok po kroku, jak zaktualizować firmware przemiennika lub room serwera na urządzeniach opartych o nRF przez OTA za pomocą aplikacji nRF Device Firmware Update.
 createdAt: 02.04.2026
-tags: [Poradnik, Firmware]
+tags: [Poradnik, Oprogramowanie]
 ---
 
 # Aktualizacje OTA na urządzeniach nRF

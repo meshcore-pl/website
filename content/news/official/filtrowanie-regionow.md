@@ -2,7 +2,7 @@
 title: Filtrowanie regionów
 description: Filtrowanie regionów (region filtering) trafia do MeshCore - firmware przemiennika, firmware Ripple oraz aplikacja Liama pozwalają teraz ograniczać zasięg wysyłanych wiadomości kanałowych do wybranego regionu geograficznego.
 createdAt: 20.01.2026
-tags: [Firmware, Aplikacja]
+tags: [Oprogramowanie, Aplikacja]
 ---
 
 # Filtrowanie regionów
