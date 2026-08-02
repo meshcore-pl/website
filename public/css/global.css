@@ -19,10 +19,14 @@
 	--container: 1300px;
 	--container-subpages: 1550px;
 	--nav-h: 68px;
-	--glow-size: 85% 65%;
-	--glow-pos: 18% -8%;
+	--glow-size: 130% 55%;
+	--glow-pos: 50% -12%;
 	--glow-color: rgba(224, 18, 48, 0.11);
 	--glow-color-hero: rgba(224, 18, 48, 0.26);
+	--glow-size-2: 100% 90%;
+	--glow-pos-2: 2% -6%;
+	--glow-color-2: rgba(224, 18, 48, 0.08);
+	--glow-color-hero-2: rgba(224, 18, 48, 0.16);
 	--font-body: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 	--font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
 }
@@ -66,6 +70,7 @@ body {
 	margin: 0;
 	background:
 		radial-gradient(ellipse var(--glow-size) at var(--glow-pos), var(--glow-color), transparent 65%),
+		radial-gradient(ellipse var(--glow-size-2) at var(--glow-pos-2), var(--glow-color-2), transparent 65%),
 		radial-gradient(circle at 1px 1px, rgba(154, 171, 209, 0.07) 1px, transparent 1px) 0 0 / 26px 26px,
 		var(--bg);
 	background-attachment: fixed;
