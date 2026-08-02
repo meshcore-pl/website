@@ -5,6 +5,9 @@
 	const ctx = canvas.getContext('2d');
 	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+	const RED = '255, 51, 82';
+	const GREEN = '61, 220, 132';
+
 	const BORDER = [
 		[18.491, 54.805], [18.304, 54.868], [18.198, 54.868], [17.856, 54.860], [17.621, 54.808], [17.319, 54.784], [17.061, 54.714], [16.925, 54.627],
 		[16.509, 54.567], [16.179, 54.324], [16.096, 54.292], [15.822, 54.265], [15.512, 54.187], [15.152, 54.137], [14.899, 54.065], [14.565, 54.003],
@@ -205,7 +208,6 @@
 	const rings = [];
 	let width = 0, height = 0, scale = 1, offsetX = 0, offsetY = 0, dpr = 1;
 	let staticLayer = null;
-	let vignetteLayer = null;
 
 	const toPx = n => [offsetX + n.x * scale, offsetY + n.y * scale];
 	const geoToPx = (lon, lat) => {
@@ -262,7 +264,7 @@
 
 		s.save();
 		traceBorder(s);
-		s.shadowColor = 'rgba(255, 51, 82, 0.55)';
+		s.shadowColor = `rgba(${RED}, 0.55)`;
 		s.shadowBlur = 18;
 		s.strokeStyle = 'rgba(176, 192, 226, 0.38)';
 		s.lineWidth = 1.25;
@@ -296,22 +298,6 @@
 		}
 	};
 
-	const buildVignette = () => {
-		vignetteLayer = document.createElement('canvas');
-		vignetteLayer.width = canvas.width;
-		vignetteLayer.height = canvas.height;
-		const v = vignetteLayer.getContext('2d');
-		v.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-		const cx = width / 2, cy = height / 2;
-		const r = Math.max(width, height) * 0.62;
-		const vignette = v.createRadialGradient(cx, cy, r * 0.42, cx, cy, r);
-		vignette.addColorStop(0, 'rgba(8, 11, 17, 0)');
-		vignette.addColorStop(1, 'rgba(8, 11, 17, 0.5)');
-		v.fillStyle = vignette;
-		v.fillRect(0, 0, width, height);
-	};
-
 	const resize = () => {
 		const rect = canvas.getBoundingClientRect();
 		if (!rect.width || !rect.height) return false;
@@ -325,7 +311,6 @@
 		offsetX = (width - scale) / 2;
 		offsetY = (height - scale) / 2;
 		buildStatic();
-		buildVignette();
 		return true;
 	};
 
@@ -356,9 +341,11 @@
 		ctx.clearRect(0, 0, width, height);
 		if (staticLayer) ctx.drawImage(staticLayer, 0, 0, width, height);
 
+		const px = nodes.map(toPx);
+
 		edges.forEach(([a, b], i) => {
-			const [ax, ay] = toPx(nodes[a]);
-			const [bx, by] = toPx(nodes[b]);
+			const [ax, ay] = px[a];
+			const [bx, by] = px[b];
 			const heat = edgeHeat[i];
 			ctx.beginPath();
 			ctx.moveTo(ax, ay);
@@ -366,9 +353,9 @@
 			ctx.lineWidth = 1;
 			if (heat > 0.02) {
 				ctx.save();
-				ctx.shadowColor = 'rgba(255, 51, 82, 0.7)';
+				ctx.shadowColor = `rgba(${RED}, 0.7)`;
 				ctx.shadowBlur = 6 * heat;
-				ctx.strokeStyle = `rgba(255, 51, 82, ${0.10 + heat * 0.45})`;
+				ctx.strokeStyle = `rgba(${RED}, ${0.10 + heat * 0.45})`;
 				ctx.stroke();
 				ctx.restore();
 			} else {
@@ -379,18 +366,18 @@
 
 		rings.forEach(ring => {
 			ctx.save();
-			ctx.shadowColor = 'rgba(61, 220, 132, 0.8)';
+			ctx.shadowColor = `rgba(${GREEN}, 0.8)`;
 			ctx.shadowBlur = 8 * (1 - ring.p);
 			ctx.beginPath();
 			ctx.arc(ring.x, ring.y, ring.r, 0, Math.PI * 2);
-			ctx.strokeStyle = `rgba(61, 220, 132, ${0.5 * (1 - ring.p)})`;
+			ctx.strokeStyle = `rgba(${GREEN}, ${0.5 * (1 - ring.p)})`;
 			ctx.lineWidth = 1.5;
 			ctx.stroke();
 			ctx.restore();
 		});
 
 		nodes.forEach((node, i) => {
-			const [x, y] = toPx(node);
+			const [x, y] = px[i];
 			const pulse = node.city ? 0.75 + 0.25 * Math.sin(time * 0.0012 + i * 1.7) : 1;
 			ctx.beginPath();
 			ctx.arc(x, y, node.city ? 2.8 : 1.7, 0, Math.PI * 2);
@@ -401,16 +388,14 @@
 		});
 
 		packets.forEach(packet => {
-			const from = nodes[packet.path[packet.seg]];
-			const to = nodes[packet.path[packet.seg + 1]];
-			const [ax, ay] = toPx(from);
-			const [bx, by] = toPx(to);
+			const [ax, ay] = px[packet.path[packet.seg]];
+			const [bx, by] = px[packet.path[packet.seg + 1]];
 			const x = ax + (bx - ax) * packet.t;
 			const y = ay + (by - ay) * packet.t;
 
 			const trail = ctx.createLinearGradient(ax, ay, x, y);
-			trail.addColorStop(0, 'rgba(255, 51, 82, 0)');
-			trail.addColorStop(1, 'rgba(255, 51, 82, 0.55)');
+			trail.addColorStop(0, `rgba(${RED}, 0)`);
+			trail.addColorStop(1, `rgba(${RED}, 0.55)`);
 			ctx.beginPath();
 			ctx.moveTo(ax, ay);
 			ctx.lineTo(x, y);
@@ -419,16 +404,14 @@
 			ctx.stroke();
 
 			ctx.save();
-			ctx.shadowColor = 'rgba(255, 51, 82, 0.9)';
+			ctx.shadowColor = `rgba(${RED}, 0.9)`;
 			ctx.shadowBlur = 10;
 			ctx.beginPath();
 			ctx.arc(x, y, 2.4, 0, Math.PI * 2);
-			ctx.fillStyle = '#ff3352';
+			ctx.fillStyle = `rgba(${RED}, 1)`;
 			ctx.fill();
 			ctx.restore();
 		});
-
-		if (vignetteLayer) ctx.drawImage(vignetteLayer, 0, 0, width, height);
 	};
 
 	if (reducedMotion) {
@@ -445,10 +428,12 @@
 		const dt = Math.min(time - lastTime || 16, 50);
 		lastTime = time;
 
-		spawnTimer -= dt;
-		if (spawnTimer <= 0 && packets.length < 7) {
-			spawnPacket();
-			spawnTimer = 500 + Math.random() * 700;
+		if (packets.length < 7) {
+			spawnTimer -= dt;
+			if (spawnTimer <= 0) {
+				spawnPacket();
+				spawnTimer = 500 + Math.random() * 700;
+			}
 		}
 
 		for (let i = packets.length - 1; i >= 0; i--) {
