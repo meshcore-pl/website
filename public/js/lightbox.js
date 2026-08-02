@@ -7,19 +7,25 @@ const initLightbox = () => {
 	overlay.appendChild(image);
 	document.body.appendChild(overlay);
 
-	const close = () => {
-		overlay.hidden = true;
+	const close = () => overlay.hidden = true;
+
+	const open = (src, alt) => {
+		image.src = src;
+		image.alt = alt;
+		overlay.hidden = false;
 	};
 
 	document.addEventListener('click', e => {
 		const link = e.target.closest('a[data-lightbox]');
-		if (!link) return;
+		if (link) {
+			e.preventDefault();
+			const thumb = link.querySelector('img');
+			open(link.href, thumb ? thumb.alt : '');
+			return;
+		}
 
-		e.preventDefault();
-		const thumb = link.querySelector('img');
-		image.src = link.href;
-		image.alt = thumb ? thumb.alt : '';
-		overlay.hidden = false;
+		const proseImg = e.target.closest('.prose img');
+		if (proseImg && !proseImg.closest('a')) open(proseImg.currentSrc || proseImg.src, proseImg.alt);
 	});
 
 	overlay.addEventListener('click', close);

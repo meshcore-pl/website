@@ -74,6 +74,7 @@
 	border: 1px solid var(--border);
 	margin: 6px 8px 6px 0;
 	vertical-align: top;
+	cursor: zoom-in;
 }
 
 .prose p:has(> img:only-child) {
