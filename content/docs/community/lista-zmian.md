@@ -1,6 +1,6 @@
 ---
 title: Lista zmian
-description: Lista zmian i aktualizacji na stronie meshcorepolska.org, spisana wersja po wersji.
+description: Lista aktualizacji na stronie meshcorepolska.org, wersja po wersji.
 canonical: /dokumentacja/community/lista-zmian
 createdAt: 02.08.2026
 ---
