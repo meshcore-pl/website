@@ -66,9 +66,7 @@ Jest jeszcze lepsza wersja, czyli `RG316`. Natomiast Chińczycy nie produkują j
 Jeśli napiszesz do sprzedawcy na AliExpress, powinien zrobić Ci taki kabel na zamówienie.
 `RF1.13` może się sprawdzić głównie w companionach - zwykle w ciasnych, dobrze zoptymalizowanych obudowach, gdzie łatwiej poprowadzić tak cienki przewód.
 
-<a href="/images/photos/rg178-i-rf1.13_new.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ zdjęcie porównania kabla RG178 i 1.13 Cable">
-	<img src="/images/photos/rg178-i-rf1.13_new.jpg" alt="Porównanie kabla RG178 i 1.13 Cable" width="600" class="docs-img--center">
-</a>
+![Porównanie kabla RG178 i 1.13 Cable](/images/photos/rg178-i-rf1.13_new.jpg)
 
 > [!CAUTION]
 > Pigtail RG316 nie będzie zbyt elastyczny. W niektórych przypadkach złącze `RF-1` może samo odpiąć się od płytki. W każdym razie i tak zalecamy `RG178` - w większości przypadków nie ma sensu kombinować. Mimo wszystko, jeśli wybierzesz ten lepszy, musisz być świadomy tego, co robisz.

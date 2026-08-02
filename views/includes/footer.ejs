@@ -26,7 +26,7 @@
 <% if (locals.outro) { %></div><% } %>
 
 <script src="/js/nav.js" defer></script>
-<% (locals.scripts || []).forEach(src => { %><script src="<%= src %>" defer></script>
-<% }) %>
+<% (locals.scripts || []).forEach(src => { %><script src="<%= src %>" defer></script><% }) %>
+<script src="https://cdn.sefinek.net/js/console.js" data-start-year="2026" data-license="PolyForm Noncommercial 1.0.0" defer></script>
 </body>
 </html>

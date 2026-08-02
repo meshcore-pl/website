@@ -1,4 +1,46 @@
+const fs = require('node:fs');
+const path = require('node:path');
 const { marked } = require('marked');
+
+const PUBLIC_DIR = path.join(__dirname, '..', 'public');
+
+const getPngSize = buf => ({ width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) });
+
+const getJpegSize = buf => {
+	let i = 2;
+	while (i < buf.length - 9) {
+		if (buf[i] !== 0xFF) {
+			i++;
+			continue;
+		}
+		const marker = buf[i + 1];
+		if (marker === 0xD8 || marker === 0x01 || (marker >= 0xD0 && marker <= 0xD9)) {
+			i += 2;
+			continue;
+		}
+		const len = buf.readUInt16BE(i + 2);
+		if ((marker >= 0xC0 && marker <= 0xC3) || (marker >= 0xC5 && marker <= 0xC7) || (marker >= 0xC9 && marker <= 0xCB) || (marker >= 0xCD && marker <= 0xCF)) {
+			return { height: buf.readUInt16BE(i + 5), width: buf.readUInt16BE(i + 7) };
+		}
+		i += 2 + len;
+	}
+	return null;
+};
+
+const getLocalImageSize = href => {
+	if (!href || href[0] !== '/' || href[1] === '/') return null;
+
+	const clean = href.split(/[?#]/)[0];
+	const ext = path.extname(clean).toLowerCase();
+	if (ext !== '.png' && ext !== '.jpg' && ext !== '.jpeg') return null;
+
+	try {
+		const buf = fs.readFileSync(path.join(PUBLIC_DIR, decodeURIComponent(clean)));
+		return ext === '.png' ? getPngSize(buf) : getJpegSize(buf);
+	} catch {
+		return null;
+	}
+};
 
 const DIACRITICS = { ą: 'a', ć: 'c', ę: 'e', ł: 'l', ń: 'n', ó: 'o', ś: 's', ź: 'z', ż: 'z' };
 const slugify = text => text.toLowerCase()
@@ -32,6 +74,13 @@ renderer.link = function(token) {
 
 const baseTable = renderer.table.bind(renderer);
 renderer.table = token => `<div class="docs-table">\n${baseTable(token)}</div>\n`;
+
+const baseImage = renderer.image.bind(renderer);
+renderer.image = function(token) {
+	const html = baseImage(token);
+	const size = getLocalImageSize(token.href);
+	return size ? html.replace('>', ` width="${size.width}" height="${size.height}">`) : html;
+};
 
 const ALERTS = [
 	{ type: 'note', label: 'Informacja' },
