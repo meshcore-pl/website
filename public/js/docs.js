@@ -1,5 +1,4 @@
 import { definePage } from './lib/page.js';
-import { highlightCodeBlocks } from 'https://cdn.sefinek.net/js/codeBlocks.js';
 
 let scrollEl = null;
 let onScroll = null;
@@ -39,7 +38,9 @@ const init = () => {
 	const content = document.getElementById('docs-content');
 	if (!content) return;
 
-	highlightCodeBlocks(content);
+	import('https://cdn.sefinek.net/js/codeBlocks.js')
+		.then(({ highlightCodeBlocks }) => highlightCodeBlocks(content))
+		.catch(err => console.error('[docs] nie udało się załadować podświetlania kodu', err));
 
 	const targetFor = href => href && href[0] === '#' && href.length > 1
 		? content.querySelector(`#${CSS.escape(decodeURIComponent(href.slice(1)))}`)

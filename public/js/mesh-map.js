@@ -414,10 +414,20 @@
 		});
 	};
 
+	let resizeScheduled = false;
+	const scheduleResize = fn => {
+		if (resizeScheduled) return;
+		resizeScheduled = true;
+		requestAnimationFrame(() => {
+			resizeScheduled = false;
+			fn();
+		});
+	};
+
 	if (reducedMotion) {
 		const render = () => resize() && draw(0);
 		if (!render()) requestAnimationFrame(render);
-		new ResizeObserver(render).observe(canvas);
+		new ResizeObserver(() => scheduleResize(render)).observe(canvas);
 		return;
 	}
 
@@ -476,6 +486,6 @@
 		requestAnimationFrame(tick);
 	};
 
-	new ResizeObserver(() => resize()).observe(canvas);
+	new ResizeObserver(() => scheduleResize(resize)).observe(canvas);
 	start();
 })();

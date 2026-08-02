@@ -67,7 +67,7 @@ const loadRepeaterStats = async () => {
 		activeEl.closest('.stat').hidden = true;
 	};
 
-	const res = await fetch(`${window.MAP_DOMAIN}/api/v1/repeater-stats`).catch(() => null);
+	const res = await fetch(`${window.MAP_DOMAIN}/api/v1/repeater-stats`, { signal: AbortSignal.timeout(6000) }).catch(() => null);
 	if (!res) return hideStats();
 
 	const body = await res.json().catch(() => null);
