@@ -205,6 +205,7 @@
 	const rings = [];
 	let width = 0, height = 0, scale = 1, offsetX = 0, offsetY = 0, dpr = 1;
 	let staticLayer = null;
+	let vignetteLayer = null;
 
 	const toPx = n => [offsetX + n.x * scale, offsetY + n.y * scale];
 	const geoToPx = (lon, lat) => {
@@ -261,8 +262,8 @@
 
 		s.save();
 		traceBorder(s);
-		s.shadowColor = 'rgba(148, 166, 204, 0.3)';
-		s.shadowBlur = 10;
+		s.shadowColor = 'rgba(255, 51, 82, 0.55)';
+		s.shadowBlur = 18;
 		s.strokeStyle = 'rgba(176, 192, 226, 0.38)';
 		s.lineWidth = 1.25;
 		s.lineJoin = 'round';
@@ -282,6 +283,8 @@
 		if (width >= 330) {
 			s.font = '600 10px "IBM Plex Mono", monospace';
 			s.fillStyle = 'rgba(153, 161, 181, 0.72)';
+			s.shadowColor = 'rgba(8, 11, 17, 0.9)';
+			s.shadowBlur = 3;
 			nodes.forEach(node => {
 				if (!node.city) return;
 				const [x, y] = toPx(node);
@@ -289,7 +292,24 @@
 				s.textAlign = alignRight ? 'right' : 'left';
 				s.fillText(node.code, x + (alignRight ? -9 : 9), y + (node.below ? 16 : -8));
 			});
+			s.shadowBlur = 0;
 		}
+	};
+
+	const buildVignette = () => {
+		vignetteLayer = document.createElement('canvas');
+		vignetteLayer.width = canvas.width;
+		vignetteLayer.height = canvas.height;
+		const v = vignetteLayer.getContext('2d');
+		v.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+		const cx = width / 2, cy = height / 2;
+		const r = Math.max(width, height) * 0.62;
+		const vignette = v.createRadialGradient(cx, cy, r * 0.42, cx, cy, r);
+		vignette.addColorStop(0, 'rgba(8, 11, 17, 0)');
+		vignette.addColorStop(1, 'rgba(8, 11, 17, 0.5)');
+		v.fillStyle = vignette;
+		v.fillRect(0, 0, width, height);
 	};
 
 	const resize = () => {
@@ -305,6 +325,7 @@
 		offsetX = (width - scale) / 2;
 		offsetY = (height - scale) / 2;
 		buildStatic();
+		buildVignette();
 		return true;
 	};
 
@@ -342,19 +363,30 @@
 			ctx.beginPath();
 			ctx.moveTo(ax, ay);
 			ctx.lineTo(bx, by);
-			ctx.strokeStyle = heat > 0.02
-				? `rgba(255, 51, 82, ${0.10 + heat * 0.45})`
-				: 'rgba(154, 171, 209, 0.12)';
 			ctx.lineWidth = 1;
-			ctx.stroke();
+			if (heat > 0.02) {
+				ctx.save();
+				ctx.shadowColor = 'rgba(255, 51, 82, 0.7)';
+				ctx.shadowBlur = 6 * heat;
+				ctx.strokeStyle = `rgba(255, 51, 82, ${0.10 + heat * 0.45})`;
+				ctx.stroke();
+				ctx.restore();
+			} else {
+				ctx.strokeStyle = 'rgba(154, 171, 209, 0.12)';
+				ctx.stroke();
+			}
 		});
 
 		rings.forEach(ring => {
+			ctx.save();
+			ctx.shadowColor = 'rgba(61, 220, 132, 0.8)';
+			ctx.shadowBlur = 8 * (1 - ring.p);
 			ctx.beginPath();
 			ctx.arc(ring.x, ring.y, ring.r, 0, Math.PI * 2);
 			ctx.strokeStyle = `rgba(61, 220, 132, ${0.5 * (1 - ring.p)})`;
 			ctx.lineWidth = 1.5;
 			ctx.stroke();
+			ctx.restore();
 		});
 
 		nodes.forEach((node, i) => {
@@ -395,6 +427,8 @@
 			ctx.fill();
 			ctx.restore();
 		});
+
+		if (vignetteLayer) ctx.drawImage(vignetteLayer, 0, 0, width, height);
 	};
 
 	if (reducedMotion) {
@@ -442,7 +476,7 @@
 		}
 
 		for (let i = 0; i < edgeHeat.length; i++) {
-			if (edgeHeat[i] > 0) edgeHeat[i] = Math.max(0, edgeHeat[i] - dt / 2600);
+			if (edgeHeat[i] > 0) edgeHeat[i] = Math.max(0, edgeHeat[i] - dt / 1200);
 		}
 
 		draw(time);
