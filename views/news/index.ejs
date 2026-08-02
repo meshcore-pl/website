@@ -1,0 +1,58 @@
+<%- include('../includes/header.ejs', {
+	title: 'Aktualności - MeshCore Polska',
+	description: 'Aktualności MeshCore Polska: newsy, changelogi aplikacji i firmware MeshCore, tłumaczenia wpisów z oficjalnego bloga MeshCore oraz aktualizacje tłumaczeń.',
+	keywords: 'aktualności MeshCore Polska, changelog MeshCore, newsy MeshCore, aktualizacje MeshCore',
+	canonical: '/aktualnosci',
+	css: ['docs', 'news'],
+	page: 'news',
+	breadcrumbs: [
+		{ name: 'Strona główna', url: '/' },
+		{ name: 'Aktualności', url: '/aktualnosci' },
+	]
+}) %>
+
+<main>
+	<section class="news-hero">
+		<div class="section__inner">
+			<p class="eyebrow">Blog</p>
+			<h1>Aktualności</h1>
+			<p class="news-hero__lead">Ogłoszenia, changelogi aplikacji i firmware oraz inne aktualności ze społeczności. Tłumaczymy tu też na polski posty z <a href="https://blog.meshcore.io" target="_blank" rel="noopener nofollow">oficjalnego bloga</a> MeshCore. <%= posts.length %> <%= pluralizePolish(posts.length, { one: 'wpis', few: 'wpisy', many: 'wpisów' }) %>.</p>
+
+			<% if (tags.length) { %>
+			<div id="news-tags">
+				<% tags.forEach(tag => { %>
+				<a href="/aktualnosci/<%= tag.slug %>" class="news-tag"><%= tag.label %> <span class="news-tag__count"><%= tag.posts.length %></span></a>
+				<% }) %>
+			</div>
+			<% } %>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section__inner">
+			<% if (posts.length) { %>
+			<div id="news-list">
+				<% posts.forEach(post => { %>
+				<a href="<%= post.canonical %>" class="news-post-card">
+					<div class="news-post-card__head">
+						<h2 class="news-post-card__title"><%= post.title %></h2>
+						<span class="news-post-card__date"><%= post.updatedAt ? `Zaktualizowano: ${post.updatedAt}` : `Opublikowano: ${post.createdAt}` %></span>
+					</div>
+					<% if (post.description) { %><p class="news-post-card__desc"><%= post.description %></p><% } %>
+					<div class="news-post-card__tags">
+						<div class="news-post-card__tags-list">
+							<% post.tags.forEach(tag => { %><span class="news-tag"><%= tag.label %></span><% }) %>
+						</div>
+						<span class="news-source news-source--<%= post.source.slug %>" title="<%= post.source.description %>"><%= post.source.label %></span>
+					</div>
+				</a>
+				<% }) %>
+			</div>
+			<% } else { %>
+			<p>Nie ma jeszcze żadnych wpisów. Zajrzyj tu wkrótce.</p>
+			<% } %>
+		</div>
+	</section>
+</main>
+
+<%- include('../includes/footer.ejs', { footer: false }) %>

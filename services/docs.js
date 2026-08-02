@@ -1,61 +1,10 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { marked } = require('marked');
 const parseFrontmatter = require('frontmatter-md');
 const groups = require('../content/docs.js');
+const { marked, renderer, assignHeadingIds, getHeadingId, parseDMYDate } = require('./markdown.js');
 
 const DOCS_DIR = path.join(__dirname, '../content/docs');
-
-const DIACRITICS = { ą: 'a', ć: 'c', ę: 'e', ł: 'l', ń: 'n', ó: 'o', ś: 's', ź: 'z', ż: 'z' }; // TODO: Nie lepiej w stringu?
-const slugify = text => text.toLowerCase()
-	.replace(/[ąćęłńóśźż]/g, c => DIACRITICS[c] || c)
-	.replace(/[^\w\s-]/g, '')
-	.replace(/[\s_]+/g, '-')
-	.replace(/(^-|-$)/g, '');
-
-const headingIds = new WeakMap();
-const assignHeadingIds = tokens => {
-	const seen = new Map();
-	for (const t of tokens) {
-		if (t.type !== 'heading') continue;
-
-		const base = slugify(t.text);
-		const count = seen.get(base) || 0;
-		seen.set(base, count + 1);
-		headingIds.set(t, count === 0 ? base : `${base}-${count + 1}`);
-	}
-};
-
-const renderer = new marked.Renderer();
-renderer.heading = token => `<h${token.depth} id="${headingIds.get(token) || slugify(token.text)}">${token.text}</h${token.depth}>\n`;
-
-const baseTable = renderer.table.bind(renderer);
-renderer.table = token => `<div class="docs-table">\n${baseTable(token)}</div>\n`;
-
-const ALERTS = [
-	{ type: 'note', keyword: 'informacja', label: 'Informacja' },
-	{ type: 'tip', keyword: 'wskazówka', label: 'Wskazówka' },
-	{ type: 'important', keyword: 'ważne', label: 'Ważne' },
-	{ type: 'warning', keyword: 'ostrzeżenie', label: 'Ostrzeżenie' },
-	{ type: 'caution', keyword: 'uwaga', label: 'Uwaga' },
-];
-const ALERT_BY_KEYWORD = new Map(ALERTS.map(alert => [alert.keyword, alert]));
-const ALERT_RE = new RegExp(`^\\[!\\s*(${ALERTS.map(alert => alert.keyword).join('|')})\\s*]\\s*\\n+`, 'i');
-
-const baseBlockquote = renderer.blockquote.bind(renderer);
-renderer.blockquote = token => {
-	const match = ALERT_RE.exec(token.text);
-	if (!match) return baseBlockquote(token);
-
-	const alert = ALERT_BY_KEYWORD.get(match[1].toLowerCase());
-	const body = marked.parser(marked.lexer(token.text.slice(match[0].length)), { renderer });
-	return `<div class="docs-alert docs-alert--${alert.type}">\n<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-${alert.type}"></use></svg>\n<div class="docs-alert__body">\n<p class="docs-alert__title">${alert.label}</p>\n${body}</div>\n</div>\n`;
-};
-
-const parseDMYDate = str => {
-	const [day, month, year] = str.split('.').map(Number);
-	return new Date(Date.UTC(year, month - 1, day));
-};
 
 const extractFaq = tokens => {
 	const faq = [];
@@ -84,7 +33,7 @@ for (const group of groups) {
 		assignHeadingIds(tokens);
 		const toc = tokens
 			.filter(t => t.type === 'heading' && t.depth >= 1 && t.depth <= 3)
-			.map(t => ({ id: headingIds.get(t), text: t.text, level: t.depth }));
+			.map(t => ({ id: getHeadingId(t), text: t.text, level: t.depth }));
 
 		const date = parseDMYDate(data.updatedAt || data.createdAt);
 		if (!group.lastModified || date > group.lastModified) group.lastModified = date;

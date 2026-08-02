@@ -1,0 +1,56 @@
+<%- include('../includes/header.ejs', {
+	title: `Tag: ${tag.label} - Aktualności MeshCore Polska`,
+	description: `Wpisy w aktualnościach MeshCore Polska oznaczone tagiem ${tag.label}.`,
+	keywords: `${tag.label}, aktualności MeshCore Polska, changelog MeshCore`,
+	canonical: `/aktualnosci/${tag.slug}`,
+	css: ['docs', 'news'],
+	page: 'news',
+	breadcrumbs: [
+		{ name: 'Strona główna', url: '/' },
+		{ name: 'Aktualności', url: '/aktualnosci' },
+		{ name: `Tag: ${tag.label}`, url: `/aktualnosci/${tag.slug}` },
+	]
+}) %>
+
+<main>
+	<section class="news-hero">
+		<div class="section__inner">
+			<p class="eyebrow">Tag</p>
+			<h1><%= tag.label %></h1>
+			<p class="news-hero__lead"><%= tag.posts.length %> <%= pluralizePolish(tag.posts.length, { one: 'wpis', few: 'wpisy', many: 'wpisów' }) %> oznaczonych tym tagiem.</p>
+
+			<% if (tags.length) { %>
+			<div id="news-tags">
+				<a href="/aktualnosci" class="news-tag">Wszystkie tagi</a>
+				<% tags.forEach(t => { %>
+				<a href="/aktualnosci/<%= t.slug %>" class="news-tag<%= t.slug === tag.slug ? ' news-tag--active' : '' %>"><%= t.label %> <span class="news-tag__count"><%= t.posts.length %></span></a>
+				<% }) %>
+			</div>
+			<% } %>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="section__inner">
+			<div id="news-list">
+				<% tag.posts.forEach(post => { %>
+				<a href="<%= post.canonical %>" class="news-post-card">
+					<div class="news-post-card__head">
+						<h2 class="news-post-card__title"><%= post.title %></h2>
+						<span class="news-post-card__date"><%= post.updatedAt ? `Zaktualizowano: ${post.updatedAt}` : `Opublikowano: ${post.createdAt}` %></span>
+					</div>
+					<% if (post.description) { %><p class="news-post-card__desc"><%= post.description %></p><% } %>
+					<div class="news-post-card__tags">
+						<div class="news-post-card__tags-list">
+							<% post.tags.forEach(t => { %><span class="news-tag"><%= t.label %></span><% }) %>
+						</div>
+						<span class="news-source news-source--<%= post.source.slug %>" title="<%= post.source.description %>"><%= post.source.label %></span>
+					</div>
+				</a>
+				<% }) %>
+			</div>
+		</div>
+	</section>
+</main>
+
+<%- include('../includes/footer.ejs', { footer: false }) %>

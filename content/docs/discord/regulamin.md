@@ -3,7 +3,7 @@ title: Regulamin serwera
 description: Regulamin obowiązujący na serwerze Discord MeshCore Polska - zasady kultury, treści zakazane oraz konsekwencje ich łamania.
 canonical: /dokumentacja/discord/regulamin
 createdAt: 12.07.2026
-updatedAt: 30.07.2026
+updatedAt: 1.08.2026
 ---
 
 # Regulamin serwera Discord MeshCore Polska
@@ -57,7 +57,7 @@ Pamiętaj, że w internecie nic nie ginie, więc nie pisz publicznie rzeczy, kt�
 Szanujmy swoją prywatność nawzajem. Lokalizacjami repeaterów możesz wymieniać się bezpośrednio z innymi, ale nie publikuj dokładnych adresów ani pozycji z dokładnością do konkretnego mieszkania, domu czy posesji.
 Po szczegóły, takie jak lokalizacja, nazwa użytkownika na MeshCore czy posiadane repeatery, sięgnij przez komendę `/kontakt <@użytkownik>` albo stronę www profilu. Udostępnianie dokładnych lokalizacji bez potrzeby będzie usuwane.
 
-> [!OSTRZEŻENIE]
+> [!WARNING]
 > Nigdy nie ustawiaj dokładnej lokalizacji swojego repeatera na mapie!
 
 ## 11. Cudze wiadomości i dane

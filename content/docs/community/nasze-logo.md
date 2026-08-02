@@ -1,7 +1,7 @@
 ---
 title: Nasze logo
 description: Loga i banery serwera Discord MeshCore Polska do pobrania i swobodnego użycia w Twoich materiałach i publikacjach.
-canonical: /dokumentacja/discord/nasze-logo
+canonical: /dokumentacja/community/nasze-logo
 createdAt: 12.07.2026
 updatedAt: 30.07.2026
 ---

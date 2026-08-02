@@ -98,6 +98,12 @@
 	overflow: hidden;
 }
 
+.cf-turnstile {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
 #contact-form .btn {
 	width: 100%;
 }

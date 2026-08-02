@@ -135,12 +135,14 @@
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	padding: 24px 16px;
-	transition: border-color 0.2s ease, transform 0.2s ease;
+	box-shadow: var(--shadow-card);
+	transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 
 .network-stat:hover {
 	border-color: var(--border-strong);
 	transform: translateY(-3px);
+	box-shadow: var(--shadow-card-hover);
 }
 
 .network-stat strong {
@@ -153,7 +155,7 @@
 }
 
 .network-stat span {
-	font-size: 13px;
+	font-size: 14px;
 	color: var(--text-muted);
 }
 
@@ -291,6 +293,7 @@
 	background: var(--bg-alt);
 	border-top: 1px solid var(--border);
 	border-bottom: 1px solid var(--border);
+	box-shadow: var(--shadow-panel);
 }
 
 .section__head {
@@ -349,7 +352,7 @@
 	object-fit: cover;
 	border-radius: var(--radius);
 	border: 1px solid var(--border);
-	box-shadow: 0 0 48px rgba(0, 0, 0, 0.45);
+	box-shadow: 0 28px 48px -22px rgba(0, 0, 0, 0.6), 0 10px 22px -14px rgba(0, 0, 0, 0.5);
 	display: block;
 }
 
@@ -384,7 +387,8 @@
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	padding: 28px;
-	transition: border-color 0.2s ease, transform 0.2s ease;
+	box-shadow: var(--shadow-card);
+	transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 
 .card__img {
@@ -414,6 +418,7 @@
 .card:hover {
 	border-color: var(--border-strong);
 	transform: translateY(-3px);
+	box-shadow: var(--shadow-card-hover);
 }
 
 .card:hover::after {
@@ -514,8 +519,14 @@
 	margin: 0 auto;
 	padding: 0;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr));
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 14px;
+}
+
+@media (max-width: 900px) {
+	#steps {
+		grid-template-columns: 1fr;
+	}
 }
 
 #steps li {
@@ -528,6 +539,7 @@
 	padding: 17px 21px;
 	font-size: 16px;
 	color: var(--text);
+	box-shadow: var(--shadow-card);
 }
 
 @media (min-width: 900px) {
@@ -602,12 +614,13 @@
 #profile__main {
 	display: block;
 	border-radius: var(--radius);
-	box-shadow: 0 0 48px rgba(0, 0, 0, 0.45);
-	transition: transform 0.2s ease;
+	box-shadow: 0 28px 48px -22px rgba(0, 0, 0, 0.6), 0 10px 22px -14px rgba(0, 0, 0, 0.5);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #profile__main:hover {
 	transform: translateY(-3px);
+	box-shadow: 0 34px 56px -20px rgba(0, 0, 0, 0.65), 0 14px 26px -12px rgba(0, 0, 0, 0.55);
 }
 
 #profile__thumbs {

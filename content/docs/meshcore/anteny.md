@@ -3,13 +3,13 @@ title: Wszystko o antenach
 description: Porównanie popularnych anten do modułów LoRa 868 MHz pod companiony, repeatery i Bluetooth - zysk, zasięg i przewody.
 canonical: /dokumentacja/meshcore/anteny
 createdAt: 13.07.2026
-updatedAt: 30.07.2026
+updatedAt: 1.08.2026
 ---
 
 # Wszystko o antenach
 Anteny, których używamy lub używaliśmy, a do tego dobór przewodu, kierunkowość i to, kiedy w ogóle sięgnąć po filtr. Polecamy anteny od GIZONT-a. Nie wierz w podany zysk.
 
-> [!OSTRZEŻENIE]
+> [!WARNING]
 > Nigdy nie nadawaj bez podłączonej anteny!
 > Puste gniazdo antenowe nie ma dokąd oddać energii z nadajnika, przez co wraca ona do układu i może uszkodzić wyjście radiowe, często nieodwracalnie.
 > Zawsze upewniaj się, że antena i jej przewód są prawidłowo zainstalowane, zanim włączysz lub zresetujesz urządzenie.
@@ -70,7 +70,7 @@ Jeśli napiszesz do sprzedawcy na AliExpress, powinien zrobić Ci taki kabel na 
 	<img src="/images/photos/rg178-i-rf1.13_new.jpg" alt="Porównanie kabla RG178 i 1.13 Cable" width="600" class="docs-img--center">
 </a>
 
-> [!UWAGA]
+> [!CAUTION]
 > Pigtail RG316 nie będzie zbyt elastyczny. W niektórych przypadkach złącze `RF-1` może samo odpiąć się od płytki. W każdym razie i tak zalecamy `RG178` - w większości przypadków nie ma sensu kombinować. Mimo wszystko, jeśli wybierzesz ten lepszy, musisz być świadomy tego, co robisz.
 
 ## Filtry BPF

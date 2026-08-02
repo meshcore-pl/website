@@ -48,8 +48,10 @@ if (form) {
 			}
 
 			form.before(buildAlert('error', data.errors?.length ? data.errors : ['Nie udało się wysłać wiadomości. Spróbuj ponownie później.']));
+			window.turnstile?.reset();
 		} catch {
 			form.before(buildAlert('error', ['Nie udało się wysłać wiadomości. Spróbuj ponownie później.']));
+			window.turnstile?.reset();
 		} finally {
 			submitBtn.disabled = false;
 			submitBtn.textContent = submitLabel;

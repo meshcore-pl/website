@@ -3,20 +3,23 @@ title: Wprowadzenie
 description: Słownik pojęć MeshCore (preset, SF, CR, advert), role urządzeń (Companion, Repeater, Room Serwer, Room-Peater) oraz zasady legalnego nadawania w paśmie 868-869 MHz - limity ERP i duty cycle 10%.
 canonical: /dokumentacja/meshcore/wprowadzenie
 createdAt: 13.07.2026
-updatedAt: 30.07.2026
+updatedAt: 1.08.2026
 ---
 
 # Wprowadzenie
 Dziękujemy za zainteresowanie tematem! Prosimy pamiętać, iż dokumentacja jest nadal w trakcie prac. Sama domena `meshcorepolska.org` nie ma jeszcze nawet dwóch miesięcy.
 Witryna wraz z dokumentacją jest open source - kod źródłowy znajdziesz na [GitHubie](https://github.com/meshcore-pl/website). Zapraszamy was wszystkich na [naszą grupę na Discordzie](https://meshcorepolska.org/discord).
 
-> [!OSTRZEŻENIE]
+> [!WARNING]
 > Nigdy nie ustawiaj dokładnej lokalizacji swojego repeatera na [mapie](https://mapa.meshcorepolska.org)!
 > Raczej nie chcesz, żeby cały świat znał dokładne położenie Twojego urządzenia.
 > Zwykle są one montowane na dachach, balkonach lub masztach w ogrodzie, dlatego precyzyjny punkt na publicznej mapie może naprowadzić intruza wprost na Twoją posiadłość.
 > Podawaj pozycję z odchyleniem rzędu kilkuset metrów od rzeczywistego miejsca - to w zupełności wystarczy do orientacyjnego przedstawienia pokrycia sieci.
 
-> [!INFORMACJA]
+> [!IMPORTANT]
+> Oficjalna strona internetowa projektu MeshCore to tylko i wyłącznie <a href="https://meshcore.io" target="_blank" rel="nofollow nooopener">meshcore.io</a>, nie <a href="https://meshcore.co.uk" target="_blank" rel="nofollow nooopener">meshcore.co.uk</a>!
+
+> [!NOTE]
 > W planach mamy serwis [meshcoreprofiles.com](https://meshcoreprofiles.com), który połączy publiczne profile operatorów z mapą węzłów MeshCore z całego świata.
 > Więcej informacji znajdziesz [w tym dokumencie](https://meshcorepolska.org/dokumentacja/meshcore/profile-meshcore).
 
@@ -41,7 +44,7 @@ Nie znajdziesz więc tutaj żadnej rozbieżności ani nie pomylisz się przy czy
 | Antena dookólna (360°)         | Omnidirectional Antenna | Antena nadająca i odbierająca sygnał we wszystkich kierunkach wokół siebie.                                                                                                  |
 | Antena kierunkowa              | Directional Antenna     | Antena skupiająca sygnał w wybranym kierunku. Wymaga odpowiedniego ustawienia. [Czytaj więcej](https://meshcorepolska.org/dokumentacja/meshcore/anteny#kierunkowosc-anteny). |
 
-> [!INFORMACJA]
+> [!NOTE]
 > Przejdź do dokumentu [Presety i konfiguracja](https://meshcorepolska.org/dokumentacja/meshcore/aktualne-presety), aby dowiedzieć się więcej na temat ustawień radiowych oraz poprawnej konfiguracji.
 
 ## Role urządzeń
@@ -91,7 +94,7 @@ Zaraz po sflashowaniu firmware, repeater i room serwer mają ustawione fabryczne
 
 Hasło gościa możesz zostawić bez zmian - jest to wyłącznie telemetria, np. temperatura, napięcie i tak dalej.
 
-> [!UWAGA]
+> [!CAUTION]
 > Hasła administracyjne należy natychmiast zmienić w trakcie pierwszej konfiguracji!
 
 ## Legalność i duty cycle

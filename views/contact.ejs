@@ -2,7 +2,8 @@
 	title: 'Kontakt - MeshCore Polska',
 	description: 'Napisz do nas - pytania, sugestie i tak dalej. Odpowiadamy najszybciej, jak to możliwe.',
 	canonical: '/kontakt',
-	css: 'contact'
+	css: 'contact',
+	page: 'contact'
 }) %>
 
 <main>
@@ -27,7 +28,7 @@
 						</div>
 					<% } %>
 
-					<form id="contact-form" method="post" action="/api/v1/kontakt" novalidate>
+					<form id="contact-form" method="post" action="/api/v1/kontakt">
 						<div class="contact-form__field">
 							<label for="username">Nazwa użytkownika</label>
 							<input type="text" id="username" name="username" value="<%= values.username %>" minlength="2" maxlength="64" required>
@@ -48,6 +49,8 @@
 							<textarea id="message" name="message" rows="7" minlength="10" maxlength="4000" required><%= values.message %></textarea>
 						</div>
 
+						<div class="cf-turnstile" data-sitekey="<%= process.env.TURNSTILE_SITE_KEY %>"></div>
+
 						<button type="submit" class="btn btn--primary">Wyślij wiadomość</button>
 					</form>
 				<% } %>
@@ -56,4 +59,4 @@
 	</section>
 </main>
 
-<%- include('./includes/footer.ejs', { scripts: ['/js/contact.js'] }) %>
+<%- include('./includes/footer.ejs', { scripts: ['https://challenges.cloudflare.com/turnstile/v0/api.js', '/js/contact.js'] }) %>

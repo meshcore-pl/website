@@ -15,12 +15,20 @@ module.exports = [
 	},
 	{
 		slug: 'discord',
-		icon: '/images/brand/logo-1.jpg',
+		icon: '/images/brand/logo-1-80.jpg',
 		title: 'Serwer Discord',
 		description: 'Dokumentacja serwera społecznościowego - miejsce, w którym dzielimy się wiedzą, pomagamy w konfiguracji sprzętu i wspólnie rozwijamy sieć.',
 		pages: [
 			{ slug: 'wprowadzenie', title: 'Wprowadzenie do społeczności' },
 			{ slug: 'regulamin', title: 'Regulamin serwera' },
+		],
+	},
+	{
+		slug: 'community',
+		icon: '/images/brand/logo-3-80.png',
+		title: 'Społeczność',
+		description: 'Materiały społeczności MeshCore Polska: loga, banery i inne zasoby graficzne do pobrania i swobodnego użycia.',
+		pages: [
 			{ slug: 'nasze-logo', title: 'Nasze logo' },
 		],
 	},

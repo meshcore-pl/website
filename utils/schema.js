@@ -48,7 +48,7 @@ module.exports = ({ domain, breadcrumbs, article, faq }) => {
 
 	if (article) {
 		graph.push({
-			'@type': 'TechArticle',
+			'@type': article.type || 'TechArticle',
 			headline: article.title,
 			description: article.description,
 			image: `${domain}/images/brand/banner-og.jpg`,

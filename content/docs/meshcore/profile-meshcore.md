@@ -3,7 +3,7 @@ title: Profile MeshCore
 description: Serwis łączący publiczne profile operatorów MeshCore z mapą sieci - wyszukiwanie po nazwie, kluczu publicznym lub koncie Discord, oraz komenda /kontakt na Discordzie.
 canonical: /dokumentacja/meshcore/profile-meshcore
 createdAt: 25.07.2026
-updatedAt: 30.07.2026
+updatedAt: 1.08.2026
 ---
 
 # Platforma MeshCore Profiles
@@ -12,7 +12,7 @@ updatedAt: 30.07.2026
 W profilu można umieścić używany sprzęt, stronę internetową i preferowany sposób kontaktu (np. Discord lub e-mail), a także zdjęcia urządzeń.
 O tym, które informacje są publiczne, decyduje wyłącznie właściciel profilu.
 
-> [!INFORMACJA]
+> [!NOTE]
 > Witryna w trakcie prac. Wersja poglądowa jest dostępna wyłącznie dla członków naszej społeczności na Discordzie.
 > Docelowo profile zostaną połączone z [mapą](https://mapa.meshcorepolska.org) węzłów MeshCore z całego świata.
 > Przykładowy profil znajdziesz [pod tym linkiem](https://beta.sefinek.net/pl/meshcore-pl/kontakty/6a43efd454feb8be5679e0a6).
@@ -55,6 +55,6 @@ Użyta bez wskazania osoby zwraca profil autora polecenia, a `/kontakt <@użytko
 2. Wpisujesz jego nazwę użytkownika bądź klucz publiczny w wyszukiwarce profili.
 3. System pokazuje przypisany profil. Możesz szybko sprawdzić, kim jest dana osoba, jaki ma sprzęt i jak można się z nią skontaktować.
 
-> [!OSTRZEŻENIE]
+> [!WARNING]
 > Profil dotyczy Ciebie jako operatora, nie zmienia zasad podawania lokalizacji repeatera.
 > Tak jak przy dodawaniu urządzenia do [mapy](https://mapa.meshcorepolska.org), nigdy nie udostępniaj dokładnego położenia - więcej we [wprowadzeniu](https://meshcorepolska.org/dokumentacja/meshcore/wprowadzenie).

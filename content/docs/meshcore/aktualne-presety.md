@@ -3,13 +3,13 @@ title: Presety i konfiguracja
 description: Zalecany preset EU/UK Narrow dla ogólnopolskiej sieci MeshCore - dokładne ustawienia radia, interwały adwertów, podwójne potwierdzenia i oznaczenia repeaterów off-grid.
 canonical: /dokumentacja/meshcore/aktualne-presety
 createdAt: 25.07.2026
-updatedAt: 30.07.2026
+updatedAt: 1.08.2026
 ---
 
 # Presety i konfiguracja
 Konfigurujesz swojego companiona albo stawiasz dopiero repeater? Trzymaj się presetu **EU/UK Narrow** - to on jest dziś przyjętym standardem ogólnopolskiej sieci.
 
-> [!WAŻNE]
+> [!IMPORTANT]
 > Niestety nie wszędzie tak jest. <a href="https://meshcoresouth.pl" target="_blank" rel="noopener nofollow">MeshCore Południe</a> - obejmujące Bielsko-Białą, Śląsk i Małopolskę - postawiło na własny preset (`SF6` zamiast `SF8`, reszta parametrów zgodna z EU/UK Narrow), stawiając na gęstość i szybszą wymianę pakietów w miastach kosztem zasięgu. To świadoma decyzja, nie chaos, ale niekompatybilność utrudnia spięcie się we wspólną, ogólnopolską infrastrukturę.
 > Jeśli planujesz uruchomić własny repeater, postaw właśnie na `EU/UK Narrow`. Im więcej urządzeń na wspólnym presecie, tym silniejsza sieć dla wszystkich.
 

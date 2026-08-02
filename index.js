@@ -8,6 +8,7 @@ const isProd = NODE_ENV === 'production';
 // Routes
 const PagesRouter = require('./routes/Pages.js');
 const DocsRouter = require('./routes/Docs.js');
+const NewsRouter = require('./routes/News.js');
 const ContactRouter = require('./routes/Contact.js');
 
 // Middleware imports
@@ -42,6 +43,7 @@ app.use(express.urlencoded({ extended: false, limit: '8kb' }));
 
 app.use(PagesRouter);
 app.use(DocsRouter);
+app.use(NewsRouter);
 app.use(limiter.contactForm, ContactRouter);
 
 // Error handling
