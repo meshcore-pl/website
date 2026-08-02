@@ -6,6 +6,8 @@
 	--alert-important: #a371f7;
 	--alert-warning: #d29922;
 	--alert-caution: var(--red-bright);
+	--glass-bg: rgba(16, 19, 27, 0.6);
+	--glass-bg-strong: rgba(14, 17, 24, 0.78);
 }
 
 .prose h1 {
@@ -174,7 +176,9 @@
 	margin: 0 0 1.5em;
 	overflow-x: auto;
 	overflow-y: hidden;
-	background: var(--card);
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 }
@@ -194,7 +198,7 @@
 }
 
 .docs-table th {
-	background: var(--bg-alt);
+	background: var(--glass-bg-strong);
 	font-family: var(--font-mono);
 	font-size: 12px;
 	letter-spacing: 0.08em;
@@ -260,7 +264,9 @@
 	border: 1px solid var(--border);
 	border-left: 3px solid var(--alert-accent, var(--red));
 	border-radius: 0 var(--radius) var(--radius) 0;
-	background: var(--card);
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 }
 
 .docs-alert__icon {
