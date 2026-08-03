@@ -10,20 +10,20 @@ updatedAt: 3.08.2026
 # Spis publicznych analizatorów (CoreScope) sieci MeshCore
 
 ## Globalne
--  <a href="https://analyzer.marwoj.net" target="_blank" rel="noopener nofollow">analyzer.marwoj.net</a>
+- [analyzer.marwoj.net](https://analyzer.marwoj.net)
 
 
 ## Regionalne
-- Piła: <a href="https://corescope.epila.pl" target="_blank" rel="noopener nofollow">corescope.epila.pl</a>
-- Kraków: <a href="https://meshcorekrk.cma.pl" target="_blank" rel="noopener nofollow">meshcorekrk.cma.pl</a>
-- Południe: Analizatory dla sieci <a href="https://meshcoresouth.pl" target="_blank" rel="noopener nofollow">MeshCore Południe</a> (Bielsko-Biała, Śląsk, Małopolska), działającej na innym presecie niż zalecany [EU/UK Narrow](https://meshcorepolska.org/dokumentacja/meshcore/aktualne-presety).
-  - Śląsk (trochę Wrocław i okolice): <a href="https://live.meshcorekk.xyz" target="_blank" rel="noopener nofollow">live.meshcorekk.xyz</a>, <a href="https://mc.inside.net.pl" target="_blank" rel="noopener nofollow">mc.inside.net.pl</a>
-  - Oficjalne (MeshCore Południe): <a href="https://live.meshcoresouth.pl" target="_blank" rel="noopener nofollow">live.meshcoresouth.pl</a>, <a href="https://stats.meshcoresouth.pl" target="_blank" rel="noopener nofollow">stats.meshcoresouth.pl</a>
+- Piła: [corescope.epila.pl](https://corescope.epila.pl)
+- Kraków: [meshcorekrk.cma.pl](https://meshcorekrk.cma.pl)
+- Południe: Analizatory dla sieci [MeshCore Południe](https://meshcoresouth.pl) (Bielsko-Biała, Śląsk, Małopolska), działającej na innym presecie niż zalecany [EU/UK Narrow](https://meshcorepolska.org/dokumentacja/meshcore/aktualne-presety).
+  - Śląsk (trochę Wrocław i okolice): [live.meshcorekk.xyz](https://live.meshcorekk.xyz), [mc.inside.net.pl](https://mc.inside.net.pl)
+  - Oficjalne (MeshCore Południe): [live.meshcoresouth.pl](https://live.meshcoresouth.pl), [stats.meshcoresouth.pl](https://stats.meshcoresouth.pl)
 
 
 ## Pozostałe
-- Finlandia (Finland): <a href="https://corescope.meshcore.fi" target="_blank" rel="noopener nofollow">corescope.meshcore.fi</a>
-- Estonia: <a href="https://corescope.es5nhc.ee" target="_blank" rel="noopener nofollow">corescope.es5nhc.ee</a>
+- Finlandia (Finland): [corescope.meshcore.fi](https://corescope.meshcore.fi)
+- Estonia: [corescope.es5nhc.ee](https://corescope.es5nhc.ee)
 
 <br><br>
 Sugestie proszę kierować na [Discordzie](https://meshcorepolska.org/discord) (kanał #propozycje) lub contact@sefinek.net.

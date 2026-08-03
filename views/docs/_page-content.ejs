@@ -11,11 +11,7 @@
 					<ul>
 						<% g.pages.forEach(p => { %>
 						<li>
-							<a href="/dokumentacja/<%= g.slug %>/<%= p.slug %>"
-							   class="<%= g.slug === group.slug && p.slug === page.slug ? 'active' : '' %>"
-							   <%= g.slug === group.slug && p.slug === page.slug ? 'aria-current="page"' : '' %>>
-								<%= p.title %>
-							</a>
+							<a href="/dokumentacja/<%= g.slug %>/<%= p.slug %>"<%- g.slug === group.slug && p.slug === page.slug ? ' class="active" aria-current="page"' : '' %>><%= p.title %></a>
 						</li>
 						<% }) %>
 					</ul>
@@ -28,7 +24,7 @@
 				<p class="docs-toc__title">Na tej stronie</p>
 				<ul class="docs-toc__list">
 					<% page.toc.forEach(item => { %>
-					<li><a href="#<%= item.id %>" class="<%= item.level === 1 ? 'docs-toc__link--h1' : item.level === 3 ? 'docs-toc__link--h3' : '' %>"><%= item.text %></a></li>
+					<li><a href="#<%= item.id %>"<%- item.level === 1 ? ' class="docs-toc__link--h1"' : item.level === 3 ? ' class="docs-toc__link--h3"' : '' %>><%= item.text %></a></li>
 					<% }) %>
 				</ul>
 			</div>
@@ -86,7 +82,7 @@
 			<p class="docs-toc__title">Na tej stronie</p>
 			<ul class="docs-toc__list">
 				<% page.toc.forEach(item => { %>
-				<li><a href="#<%= item.id %>" class="<%= item.level === 1 ? 'docs-toc__link--h1' : item.level === 3 ? 'docs-toc__link--h3' : '' %>"><%= item.text %></a></li>
+				<li><a href="#<%= item.id %>"<%- item.level === 1 ? ' class="docs-toc__link--h1"' : item.level === 3 ? ' class="docs-toc__link--h3"' : '' %>><%= item.text %></a></li>
 				<% }) %>
 			</ul>
 		</div>

@@ -18,7 +18,7 @@ Witryna wraz z dokumentacją jest open source - kod źródłowy znajdziesz na [G
 > Podawaj pozycję z odchyleniem rzędu kilkuset metrów od rzeczywistego miejsca - to w zupełności wystarczy do orientacyjnego przedstawienia pokrycia sieci.
 
 > [!IMPORTANT]
-> Oficjalna strona internetowa projektu MeshCore to tylko i wyłącznie [meshcore.io](https://meshcore.io), nie <a href="https://meshcore.co.uk" target="_blank" rel="nofollow nooopener">meshcore.co.uk</a>!
+> Oficjalna strona internetowa projektu MeshCore to tylko i wyłącznie [meshcore.io](https://meshcore.io), nie [meshcore.co.uk](https://meshcore.co.uk)!
 
 > [!NOTE]
 > W planach mamy serwis [meshcoreprofiles.com](https://meshcoreprofiles.com), który połączy publiczne profile operatorów z mapą węzłów MeshCore z całego świata.
@@ -83,7 +83,7 @@ W praktyce raczej rzadko ma to realne zastosowanie.
 ### Zmiana roli
 Zmiana roli to w zdecydowanej większości przypadków przeflashowanie urządzenia innym firmware.
 Wyjątkiem jest przełączanie między room serwerem a room-peaterem. Wystarczy komenda CLI, bez ponownego flashowania:
-```
+```mccli
 set repeat on   # włącza tryb room-peater
 set repeat off  # wraca do room serwera
 ```
@@ -105,7 +105,7 @@ Hasło gościa możesz zostawić bez zmian - jest to wyłącznie telemetria, np.
 - Limit duty cycle to **10%** (maksymalnie około 6 minut nadawania na godzinę)
 
 Domyślny duty cycle dla repeaterów po sflashowaniu firmware to `50%`. To pięć razy więcej niż dopuszcza prawo dla tego zakresu. Ustaw na `10%` komendą CLI:
-```
+```mccli
 set dutycycle 10
 ```
 
