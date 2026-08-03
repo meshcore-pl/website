@@ -34,7 +34,7 @@ Podobnie na ekranach **Szczegóły węzła** (z **Odkrywania**). Ekran szczegó�
 Również mapa na ekranie głównym będzie pokazywać wektory tras z większą dokładnością.
 
 > [!NOTE]
-> Te zmiany pojawią się w wydaniu **v9.2**, które ukaże się w ciągu najbliższej doby lub dwóch.
+> Te zmiany pojawią się w wydaniu **v9.2**, które ukaże się w ciągu najbliższej doby.
 
 ## Zmiany w aplikacji na Androida/iOS
 Liam [wydał wersję 1.41.0](https://meshcore.nz), która obsługuje już wielobajtowe skróty trasy.

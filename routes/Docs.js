@@ -25,7 +25,7 @@ router.get('/dokumentacja/:group/:slug', (req, res) => {
 	res.set('Cache-Control', 'no-cache');
 
 	const locals = {
-		title: `${page.title} - MeshCore Polska`,
+		title: `${page.title} | MeshCore Polska`,
 		description: page.description || `${page.title} - dokumentacja MeshCore Polska.`,
 		canonical: page.canonical,
 		groups: docs.groups,

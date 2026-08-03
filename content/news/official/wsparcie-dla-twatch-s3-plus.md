@@ -44,7 +44,7 @@ T-Watch świetnie sprawdza się jako lokalizator dla dzieci dzięki trybowi dla 
 ## Nowość: własne tarcze zegarka
 Wersja 9.3 firmware wprowadza kilka miłych możliwości personalizacji tarczy zegarka/ekranu blokady.
 
-Możesz teraz ustawić preferencję **Wyświetlacz** na **Cyfrowy** lub **Analogowy**. W obu przypadkach możesz wgrać własny obraz tła w formacie PNG! Dla opcji analogowej potrzebujesz obrazu _bez wskazówek_, ponieważ wskazówka godzinowa i minutowa są renderowane na wierzchu tego tła.
+Możesz teraz ustawić preferencję **Wyświetlacz** na **Cyfrowy** lub **Analogowy**. W obu przypadkach możesz wgrać własny obraz tła w formacie PNG! Dla opcji analogowej potrzebujesz obrazu _bez wskazówek_, ponieważ wskazówki godzinowa i minutowa są renderowane na wierzchu tego tła.
 
 ![Wybór własnej tarczy zegarka](https://blog.meshcore.io/assets/images/2026/03/28/custom-watchfaces.jpg)
 

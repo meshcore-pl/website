@@ -1,12 +1,13 @@
 ---
-title: Wszystko o antenach
+title: Anteny do MeshCore - przewodnik po złączach i doborze
+tocTitle: Wszystko o antenach
 description: Porównanie popularnych anten do modułów LoRa 868 MHz pod companiony, repeatery i Bluetooth - zysk, zasięg i przewody.
 canonical: /dokumentacja/meshcore/anteny
 createdAt: 13.07.2026
-updatedAt: 1.08.2026
+updatedAt: 3.08.2026
 ---
 
-# Wszystko o antenach
+# Wszystko o antenach, złączach i przewodach do MeshCore
 Anteny, których używamy lub używaliśmy, a do tego dobór przewodu, kierunkowość i to, kiedy w ogóle sięgnąć po filtr. Polecamy anteny od GIZONT-a. Nie wierz w podany zysk.
 
 > [!WARNING]

@@ -1,12 +1,13 @@
 ---
-title: Nasze logo
+title: Logo i banery MeshCore Polska do pobrania
+tocTitle: Nasze logo
 description: Loga i banery serwera Discord MeshCore Polska do pobrania i swobodnego użycia w Twoich materiałach i publikacjach.
 canonical: /dokumentacja/community/nasze-logo
 createdAt: 12.07.2026
-updatedAt: 30.07.2026
+updatedAt: 3.08.2026
 ---
 
-# Nasze logo
+# Nasze logo i banery - materiały graficzne MeshCore Polska
 Loga i banery serwera MeshCore Polska możesz pobierać i używać swobodnie.
 Nie używaj ich tak, żeby wyglądało, że reprezentujesz projekt MeshCore albo administrację serwera, jeśli nie masz na to zgody.
 

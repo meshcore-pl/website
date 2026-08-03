@@ -1,12 +1,13 @@
 ---
-title: Wprowadzenie
+title: Wprowadzenie do MeshCore - pojęcia i przepisy
+tocTitle: Wprowadzenie
 description: Słownik pojęć MeshCore (preset, SF, CR, advert), role urządzeń (Companion, Repeater, Room Serwer, Room-Peater) oraz zasady legalnego nadawania w paśmie 868-869 MHz - limity ERP i duty cycle 10%.
 canonical: /dokumentacja/meshcore/wprowadzenie
 createdAt: 13.07.2026
-updatedAt: 1.08.2026
+updatedAt: 3.08.2026
 ---
 
-# Wprowadzenie
+# Wprowadzenie do MeshCore: pojęcia, role urządzeń i legalne nadawanie
 Dziękujemy za zainteresowanie tematem! Prosimy pamiętać, iż dokumentacja jest nadal w trakcie prac. Sama domena `meshcorepolska.org` nie ma jeszcze nawet dwóch miesięcy.
 Witryna wraz z dokumentacją jest open source - kod źródłowy znajdziesz na [GitHubie](https://github.com/meshcore-pl/website). Zapraszamy was wszystkich na [naszą grupę na Discordzie](https://meshcorepolska.org/discord).
 
@@ -17,7 +18,7 @@ Witryna wraz z dokumentacją jest open source - kod źródłowy znajdziesz na [G
 > Podawaj pozycję z odchyleniem rzędu kilkuset metrów od rzeczywistego miejsca - to w zupełności wystarczy do orientacyjnego przedstawienia pokrycia sieci.
 
 > [!IMPORTANT]
-> Oficjalna strona internetowa projektu MeshCore to tylko i wyłącznie <a href="https://meshcore.io" target="_blank" rel="nofollow nooopener">meshcore.io</a>, nie <a href="https://meshcore.co.uk" target="_blank" rel="nofollow nooopener">meshcore.co.uk</a>!
+> Oficjalna strona internetowa projektu MeshCore to tylko i wyłącznie [meshcore.io](https://meshcore.io), nie <a href="https://meshcore.co.uk" target="_blank" rel="nofollow nooopener">meshcore.co.uk</a>!
 
 > [!NOTE]
 > W planach mamy serwis [meshcoreprofiles.com](https://meshcoreprofiles.com), który połączy publiczne profile operatorów z mapą węzłów MeshCore z całego świata.

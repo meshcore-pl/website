@@ -1,12 +1,13 @@
 ---
-title: Presety i konfiguracja
+title: Presety EU/UK Narrow - zalecana konfiguracja radia
+tocTitle: Presety i konfiguracja
 description: Zalecany preset EU/UK Narrow dla ogólnopolskiej sieci MeshCore - dokładne ustawienia radia, interwały adwertów, podwójne potwierdzenia i oznaczenia repeaterów off-grid.
 canonical: /dokumentacja/meshcore/aktualne-presety
 createdAt: 25.07.2026
-updatedAt: 1.08.2026
+updatedAt: 3.08.2026
 ---
 
-# Presety i konfiguracja
+# Presety i konfiguracja radia w sieci MeshCore (EU/UK Narrow)
 Konfigurujesz swojego companiona albo stawiasz dopiero repeater? Trzymaj się presetu **EU/UK Narrow** - to on jest dziś przyjętym standardem ogólnopolskiej sieci.
 
 > [!IMPORTANT]

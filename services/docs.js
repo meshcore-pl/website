@@ -36,13 +36,12 @@ const build = () => {
 			assignHeadingIds(tokens);
 			const toc = tokens
 				.filter(t => t.type === 'heading' && t.depth >= 1 && t.depth <= 3)
-				.map(t => ({ id: getHeadingId(t), text: t.text, level: t.depth }));
+				.map(t => ({ id: getHeadingId(t), text: t.depth === 1 && data.tocTitle ? data.tocTitle : t.text, level: t.depth }));
 
 			const date = parseDMYDate(data.updatedAt || data.createdAt);
 			if (!group.lastModified || date > group.lastModified) group.lastModified = date;
 			if (!lastModified || date > lastModified) lastModified = date;
 
-			p.title = data.title || p.title;
 			p.description = data.description || '';
 			p.createdAt = data.createdAt || null;
 			p.updatedAt = data.updatedAt || null;

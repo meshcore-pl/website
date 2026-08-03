@@ -1,12 +1,13 @@
 ---
-title: Spis analizatorów
+title: Analizatory sieci MeshCore w Polsce i Europie
+tocTitle: Spis analizatorów
 description: Lista publicznych analizatorów sieci MeshCore w Polsce i Europie. Znajdź globalne, regionalne i zagraniczne instancje CoreScope do monitorowania sieci.
 canonical: /dokumentacja/meshcore/lista-analizatorow
 createdAt: 17.07.2026
-updatedAt: 30.07.2026
+updatedAt: 3.08.2026
 ---
 
-# Spis analizatorów
+# Spis publicznych analizatorów (CoreScope) sieci MeshCore
 
 ## Globalne
 -  <a href="https://analyzer.marwoj.net" target="_blank" rel="noopener nofollow">analyzer.marwoj.net</a>

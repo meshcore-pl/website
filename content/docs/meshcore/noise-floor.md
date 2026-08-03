@@ -3,7 +3,7 @@ title: Noise Floor - czym jest?
 description: Czym jest Noise Floor w MeshCore, jak poprawnie go zmierzyć, znaleźć źródło zakłóceń i kiedy warto zastosować filtr BPF.
 canonical: /dokumentacja/meshcore/noise-floor
 createdAt: 13.07.2026
-updatedAt: 30.07.2026
+updatedAt: 3.08.2026
 ---
 
 # Noise Floor - czym jest?
@@ -13,9 +13,11 @@ Wysoki NF utrudnia odbiór słabszych repeaterów i zmniejsza realny zasięg.
 ## Jak prawidłowo sprawdzić NF?
 Nie sugeruj się jednym odczytem. Sprawdź NF kilka razy i porównaj wyniki o różnych porach. Porównuj pomiary wykonane na tym samym urządzeniu, z tą samą anteną i konfiguracją.
 
+![Jak sprawdzić Noise Floor](/images/screens/jak-sprawdzic-nf.jpg)
+
 ## Poziomy NF
 
-|                   | Ocena                                | Co zrobić?                                                                                                 |
+| Skala             | Ocena                                | Co zrobić?                                                                                                 |
 |-------------------|--------------------------------------|------------------------------------------------------------------------------------------------------------|
 | `≤ -120 dB`       | Super warunki                        | Nic, tylko się cieszyć! (:                                                                                 |
 | `-120 do -110 dB` | Dobrze                               | Tragedii nie ma, będzie okej!                                                                              |
@@ -29,6 +31,7 @@ Nie sugeruj się jednym odczytem. Sprawdź NF kilka razy i porównaj wyniki o r�
 Najczęściej są to zasilacze impulsowe, przetwornice, ładowarki, falowniki, optymalizatory instalacji fotowoltaicznych i inna elektronika.
 Sam przewód zwykle nie jest źródłem problemu, ale może przenosić i wypromieniowywać zakłócenia.
 
+> [!IMPORTANT]
 Częstotliwość, na której działamy (869,618 MHz), znajduje się pomiędzy pasmami LTE800 (B20) i LTE900 (B8).
 Spora liczba pobliskich BTS-ów także może mieć realny wpływ na NF.
 
