@@ -29,6 +29,7 @@ const build = () => {
 	lastModified = null;
 	for (const group of groups) {
 		group.lastModified = null;
+
 		for (const p of group.pages) {
 			const raw = fs.readFileSync(path.join(DOCS_DIR, group.slug, `${p.slug}.md`), 'utf8');
 			const { data, content } = parseFrontmatter(raw);
@@ -62,6 +63,8 @@ const build = () => {
 				group,
 			});
 		}
+
+		group.visiblePages = group.pages.filter(p => !p.hidden);
 	}
 };
 

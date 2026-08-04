@@ -9,7 +9,7 @@
 						<%= g.title %>
 					</p>
 					<ul>
-						<% g.pages.forEach(p => { %>
+						<% g.visiblePages.forEach(p => { %>
 						<li>
 							<a href="/dokumentacja/<%= g.slug %>/<%= p.slug %>"<%- g.slug === group.slug && p.slug === page.slug ? ' class="active" aria-current="page"' : '' %>><%= p.title %></a>
 						</li>
@@ -48,9 +48,9 @@
 		<div id="docs-footer">
 			<nav id="docs-pagination" aria-label="Nawigacja stron">
 				<%
-				const idx = group.pages.findIndex(p => p.slug === page.slug);
-				const prev = idx > 0 ? group.pages[idx - 1] : null;
-				const next = idx < group.pages.length - 1 ? group.pages[idx + 1] : null;
+				const idx = group.visiblePages.findIndex(p => p.slug === page.slug);
+				const prev = idx > 0 ? group.visiblePages[idx - 1] : null;
+				const next = idx !== -1 && idx < group.visiblePages.length - 1 ? group.visiblePages[idx + 1] : null;
 				%>
 				<% if (prev) { %>
 				<a href="/dokumentacja/<%= group.slug %>/<%= prev.slug %>" class="docs-pagination__link docs-pagination__link--prev">

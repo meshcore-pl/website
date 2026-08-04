@@ -365,7 +365,7 @@ p {
 	display: none;
 }
 
-@media (max-width: 940px) {
+@media (max-width: 1024px) {
 	#nav__toggle {
 		display: inline-flex;
 	}
@@ -406,6 +406,10 @@ p {
 }
 
 @media (max-width: 620px) {
+	:root {
+		--nav-h: 60px;
+	}
+
 	#nav__inner {
 		padding: 10px 16px;
 		gap: 10px;

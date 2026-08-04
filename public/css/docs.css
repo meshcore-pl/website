@@ -485,6 +485,9 @@ img.docs-nav-group__icon {
 	flex-direction: column;
 	gap: 5px;
 	padding: 16px 19px;
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	color: var(--text);
@@ -608,10 +611,6 @@ img.docs-nav-group__icon {
 		height: auto;
 		overflow: visible;
 		padding: 32px 20px 48px;
-	}
-
-	#docs-content .docs-breadcrumb {
-		display: flex;
 	}
 
 	#docs-pagination {

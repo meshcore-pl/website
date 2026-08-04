@@ -220,6 +220,14 @@ a.news-tag--active {
 }
 
 @media (max-width: 620px) {
+	.news-hero--post {
+		padding-top: var(--nav-h);
+	}
+
+	.news-hero--post .docs-breadcrumb {
+		display: none;
+	}
+
 	.news-post-card {
 		padding: 18px 20px;
 	}
