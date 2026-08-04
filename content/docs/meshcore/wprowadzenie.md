@@ -1,13 +1,12 @@
 ---
 title: Wprowadzenie do MeshCore - pojęcia i przepisy
-tocTitle: Wprowadzenie
 description: Słownik pojęć MeshCore (preset, SF, CR, advert), role urządzeń (Companion, Repeater, Room Serwer, Room-Peater) oraz zasady legalnego nadawania w paśmie 868-869 MHz - limity ERP i duty cycle 10%.
 canonical: /dokumentacja/meshcore/wprowadzenie
 createdAt: 13.07.2026
-updatedAt: 3.08.2026
+updatedAt: 4.08.2026
 ---
 
-# Wprowadzenie do MeshCore: pojęcia, role urządzeń i legalne nadawanie
+# Wprowadzenie do MeshCore: pojęcia, role urządzeń i legalne nadawanie {toc: Wprowadzenie}
 Dziękujemy za zainteresowanie tematem! Prosimy pamiętać, iż dokumentacja jest nadal w trakcie prac. Sama domena `meshcorepolska.org` nie ma jeszcze nawet dwóch miesięcy.
 Witryna wraz z dokumentacją jest open source - kod źródłowy znajdziesz na [GitHubie](https://github.com/meshcore-pl/website). Zapraszamy was wszystkich na [naszą grupę na Discordzie](https://meshcorepolska.org/discord).
 
@@ -28,25 +27,33 @@ Witryna wraz z dokumentacją jest open source - kod źródłowy znajdziesz na [G
 Niektóre polskie określenia zostały przyjęte przez naszą społeczność. Nazwy w kolumnie Pojęcie są zgodne z tłumaczeniem używanym w polskiej wersji aplikacji MeshCore.
 Nie znajdziesz więc tutaj żadnej rozbieżności ani nie pomylisz się przy czymkolwiek.
 
-| Pojęcie                        | Nazwa angielska         | Co oznacza?                                                                                                                                                                  |
-|--------------------------------|:------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Preset                         |                         | Gotowy zestaw ustawień radia, m.in. częstotliwość, szerokość pasma, SF i CR. Urządzenia muszą korzystać z tego samego presetu, aby się ze sobą komunikować.                  |
-| Współczynnik rozpraszania (SF) | Spreading Factor        | Wyższa wartość ułatwia odbiór słabszego sygnału, ale wydłuża czas nadawania.                                                                                                 |
-| Współczynnik kodowania (CR)    | Coding Rate             | Określa ilość danych dodawanych w celu korekcji błędów. Większa odporność oznacza dłuższy czas nadawania.                                                                    |
-| RX                             | Receive                 | Odbieranie pakietów radiowych przez urządzenie.                                                                                                                              |
-| TX                             | Transmit                | Wysyłanie (nadawanie) pakietów przez urządzenie.                                                                                                                             |
-| Duty cycle                     |                         | Maksymalny procent czasu w ciągu godziny, w jakim urządzenie może nadawać. Patrz [Legalność i duty cycle](#legalnosc-i-duty-cycle) niżej.                                    |
-| Companion                      |                         | Urządzenie LoRa, które łączy się z telefonem lub komputerem przez Bluetooth lub USB. Służy do wysyłania i odbierania wiadomości.                                             |
-| Repeater (RPT)                 |                         | Węzeł (tzw. przekaźnik), który przekazuje dalej odebrane pakiety w eter i zwiększa zasięg sieci.                                                                             |
-| Room Serwer (RS)               |                         | Osobny firmware, zwykle używany do grupowych rozmów lokalnych. Przechowuje historię wiadomości i udostępnia ją użytkownikom po połączeniu.                                   |
-| Advert                         |                         | Pakiet rozgłoszeniowy zawierający informacje o urządzeniu. Po jego odebraniu urządzenie pojawi się na liście kontaktów.                                                      |
-| Advert 0-hop                   | Advert Zero Hop         | Advert lokalny, który dociera tylko do urządzeń znajdujących się w bezpośrednim zasięgu radiowym. Repeatery nie przekazują go dalej.                                         |
-| Advert do wszystkich           | Flood Routed            | Advert rozsyłany przez sieć i przekazywany dalej przez repeatery. Dzięki temu może dotrzeć również do urządzeń poza bezpośrednim zasięgiem.                                  |
-| Antena dookólna (360°)         | Omnidirectional Antenna | Antena nadająca i odbierająca sygnał we wszystkich kierunkach wokół siebie.                                                                                                  |
-| Antena kierunkowa              | Directional Antenna     | Antena skupiająca sygnał w wybranym kierunku. Wymaga odpowiedniego ustawienia. [Czytaj więcej](https://meshcorepolska.org/dokumentacja/meshcore/anteny#kierunkowosc-anteny). |
+| Pojęcie                        | Angielska nazwa          | Co oznacza?                                                                                                                                                                  |
+|--------------------------------|:-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Preset                         |                          | Zestaw ustawień radia (częstotliwość, szerokość pasma, SF, CR). Urządzenia muszą mieć ten sam preset, żeby się ze sobą komunikować (z wyjątkiem CR).                         |
+| Współczynnik rozpraszania (SF) | Spreading Factor         | Wyższa wartość ułatwia odbiór słabszego sygnału, ale wydłuża czas nadawania.                                                                                                 |
+| Współczynnik kodowania (CR)    | Coding Rate              | Określa ilość danych dodawanych w celu korekcji błędów. Większa odporność oznacza dłuższy czas nadawania.                                                                    |
+| RX                             | Receive                  | Odbieranie pakietów radiowych przez urządzenie.                                                                                                                              |
+| TX                             | Transmit                 | Wysyłanie (nadawanie) pakietów przez urządzenie.                                                                                                                             |
+| Duty cycle                     |                          | Maksymalny procent czasu w ciągu godziny, w jakim urządzenie może nadawać. Patrz [Legalność i duty cycle](#legalnosc-i-duty-cycle) niżej.                                    |
+| ERP                            | Effective Radiated Power | Rzeczywista moc promieniowana przez antenę (moc nadajnika + zysk anteny). Patrz [Legalność i duty cycle](#legalnosc-i-duty-cycle) niżej.                                     |
+| Noise Floor (NF)               | Noise Floor              | Poziom szumu i zakłóceń odbieranych przez radio - im bardziej ujemny wynik, tym lepiej. [Czytaj więcej](https://meshcorepolska.org/dokumentacja/meshcore/noise-floor).       |
+| Companion                      |                          | Urządzenie LoRa, które łączy się z telefonem lub komputerem przez Bluetooth lub USB. Służy do wysyłania i odbierania wiadomości.                                             |
+| Repeater (RPT)                 |                          | Węzeł (tzw. przekaźnik), który przekazuje dalej odebrane pakiety w eter i zwiększa zasięg sieci.                                                                             |
+| Room Serwer (RS)               |                          | Osobny firmware, zwykle używany do grupowych rozmów lokalnych. Przechowuje historię wiadomości i udostępnia ją użytkownikom po połączeniu.                                   |
+| Room-Peater                    |                          | Repeater i room serwer połączone w jednym firmware. Patrz [Role urządzeń](#role-urzadzen) niżej.                                                                             |
+| Advert                         |                          | Pakiet rozgłoszeniowy zawierający informacje o urządzeniu. Po jego odebraniu urządzenie pojawi się na liście kontaktów.                                                      |
+| Hop                            |                          | Jeden przeskok pakietu między urządzeniami - każdy retransmitujący repeater po drodze to +1 hop.                                                                             |
+| Advert 0-hop                   | Advert Zero Hop          | Advert lokalny, który dociera tylko do urządzeń znajdujących się w bezpośrednim zasięgu radiowym. Repeatery nie przekazują go dalej.                                         |
+| Advert do wszystkich           | Flood Routed             | Advert rozsyłany przez sieć i przekazywany dalej przez repeatery. Dzięki temu może dotrzeć również do urządzeń poza bezpośrednim zasięgiem.                                  |
+| Region                         |                          | Etykieta filtrująca, które repeatery przekazują dalej wiadomości kanałowe. [Czytaj więcej](https://meshcorepolska.org/dokumentacja/meshcore/regionalizacja-wiadomosci).      |
+| Antena dookólna (360°)         | Omnidirectional Antenna  | Antena nadająca i odbierająca sygnał we wszystkich kierunkach wokół siebie.                                                                                                  |
+| Antena kierunkowa              | Directional Antenna      | Antena skupiająca sygnał w wybranym kierunku. Wymaga odpowiedniego ustawienia. [Czytaj więcej](https://meshcorepolska.org/dokumentacja/meshcore/anteny#kierunkowosc-anteny). |
 
 > [!NOTE]
 > Przejdź do dokumentu [Presety i konfiguracja](https://meshcorepolska.org/dokumentacja/meshcore/aktualne-presety), aby dowiedzieć się więcej na temat ustawień radiowych oraz poprawnej konfiguracji.
+
+> [!TIP]
+> Odpowiedź w rodzaju `Szczecin 9h` na kanale oznacza, że Twoja wiadomość doleciała do danej osoby (w Szczecinie) po 9 hopach. Jest to powszechnie stosowany sposób potwierdzania odbioru.
 
 ## Role urządzeń
 O roli urządzenia decyduje oprogramowanie (firmware), nie sama płytka. Ten sam sprzęt (np. Heltec V4) może pracować jako `companion`, `repeater`, `room serwer` albo `room-peater`.

@@ -1,13 +1,12 @@
 ---
 title: MeshCore Profiles - publiczne profile operatorów
-tocTitle: Platforma MeshCore Profiles
 description: Serwis łączący publiczne profile operatorów MeshCore z mapą sieci - wyszukiwanie po nazwie, kluczu publicznym lub koncie Discord, oraz komenda /kontakt na Discordzie.
 canonical: /dokumentacja/meshcore/profile-meshcore
 createdAt: 25.07.2026
 updatedAt: 3.08.2026
 ---
 
-# Platforma MeshCore Profiles - publiczne profile operatorów sieci
+# Platforma MeshCore Profiles - publiczne profile operatorów sieci {toc: Platforma MeshCore Profiles}
 
 [meshcoreprofiles.com](https://meshcoreprofiles.com) to serwis, w którym operator sieci MeshCore może założyć własny, publiczny profil i powiązać go ze swoimi urządzeniami: companionem, repeaterami oraz room serwerem.
 W profilu można umieścić używany sprzęt, stronę internetową i preferowany sposób kontaktu (np. Discord lub e-mail), a także zdjęcia urządzeń.

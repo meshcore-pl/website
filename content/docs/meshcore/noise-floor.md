@@ -32,8 +32,7 @@ Najczęściej są to zasilacze impulsowe, przetwornice, ładowarki, falowniki, o
 Sam przewód zwykle nie jest źródłem problemu, ale może przenosić i wypromieniowywać zakłócenia.
 
 > [!IMPORTANT]
-Częstotliwość, na której działamy (869,618 MHz), znajduje się pomiędzy pasmami LTE800 (B20) i LTE900 (B8).
-Spora liczba pobliskich BTS-ów także może mieć realny wpływ na NF.
+> Częstotliwość, na której działamy (869,618 MHz), znajduje się pomiędzy pasmami LTE800 (B20) i LTE900 (B8). Spora liczba pobliskich BTS-ów także może mieć realny wpływ na NF.
 
 ## Jak znaleźć źródło zakłóceń?
 Zacznij od przeniesienia płytki w inne miejsce. Jeżeli jest to możliwe, zasil ją bezpośrednio z ogniwa (np. 18650) i odłączaj po kolei elektronikę znajdującą się w pobliżu.

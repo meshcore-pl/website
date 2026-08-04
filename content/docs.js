@@ -7,6 +7,7 @@ module.exports = [
 		pages: [
 			{ slug: 'wprowadzenie', title: 'Podstawy i słownik pojęć' },
 			{ slug: 'aktualne-presety', title: 'Preset i ustawienia radia' },
+			{ slug: 'regionalizacja-wiadomosci', title: 'Regionalizacja wiadomości' },
 			{ slug: 'noise-floor', title: 'Noise Floor (NF)' },
 			{ slug: 'anteny', title: 'Anteny' },
 			{ slug: 'profile-meshcore', title: 'Profile MeshCore' },

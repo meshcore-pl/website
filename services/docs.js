@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const parseFrontmatter = require('frontmatter-md');
 const groups = require('../content/docs.js');
-const { marked, renderer, assignHeadingIds, getHeadingId, parseDMYDate } = require('./markdown.js');
+const { marked, renderer, assignHeadingIds, getHeadingId, getTocLabel, parseDMYDate } = require('./markdown.js');
 
 const DOCS_DIR = path.join(__dirname, '../content/docs');
 
@@ -36,7 +36,7 @@ const build = () => {
 			assignHeadingIds(tokens);
 			const toc = tokens
 				.filter(t => t.type === 'heading' && t.depth >= 1 && t.depth <= 3)
-				.map(t => ({ id: getHeadingId(t), text: t.depth === 1 && data.tocTitle ? data.tocTitle : t.text, level: t.depth }));
+				.map(t => ({ id: getHeadingId(t), text: getTocLabel(t), level: t.depth }));
 
 			const date = parseDMYDate(data.updatedAt || data.createdAt);
 			if (!group.lastModified || date > group.lastModified) group.lastModified = date;

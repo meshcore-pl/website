@@ -49,11 +49,20 @@ const slugify = text => text.toLowerCase()
 	.replace(/[\s_]+/g, '-')
 	.replace(/(^-|-$)/g, '');
 
+const TOC_LABEL_RE = /\s*\{toc:\s*([^}]+)\}\s*$/;
+const tocLabels = new WeakMap();
+
 const headingIds = new WeakMap();
 const assignHeadingIds = tokens => {
 	const seen = new Map();
 	for (const t of tokens) {
 		if (t.type !== 'heading') continue;
+
+		const tocMatch = TOC_LABEL_RE.exec(t.text);
+		if (tocMatch) {
+			tocLabels.set(t, tocMatch[1].trim());
+			t.text = t.text.slice(0, tocMatch.index);
+		}
 
 		const base = slugify(t.text);
 		const count = seen.get(base) || 0;
@@ -108,5 +117,6 @@ const parseDMYDate = str => {
 };
 
 const getHeadingId = token => headingIds.get(token) || slugify(token.text);
+const getTocLabel = token => tocLabels.get(token) || token.text;
 
-module.exports = { marked, renderer, slugify, assignHeadingIds, getHeadingId, parseDMYDate };
+module.exports = { marked, renderer, slugify, assignHeadingIds, getHeadingId, getTocLabel, parseDMYDate };

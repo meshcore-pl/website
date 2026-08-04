@@ -1,13 +1,12 @@
 ---
 title: Regulamin serwera
-tocTitle: Regulamin serwera
 description: Regulamin obowiązujący na serwerze Discord MeshCore Polska - zasady kultury, treści zakazane oraz konsekwencje ich łamania.
 canonical: /dokumentacja/discord/regulamin
 createdAt: 12.07.2026
 updatedAt: 1.08.2026
 ---
 
-# Regulamin serwera Discord MeshCore Polska
+# Regulamin serwera Discord MeshCore Polska {toc: Regulamin serwera}
 Zależy nam na swobodnej, kulturalnej i pomocnej atmosferze. Szanujemy wolność słowa oraz wymianę opinii, jednak oczekujemy, że będą one wyrażane z zachowaniem kultury osobistej i szacunku wobec innych.
 Większość dorosłych osób doskonale wie, jak należy zachowywać się w kontakcie z innymi, dlatego nie chcemy tworzyć tutaj długiej listy zakazów.
 Wystarczy zdrowy rozsądek, uprzejmość i świadomość, że po drugiej stronie też jest człowiek.

@@ -1,13 +1,12 @@
 ---
 title: Lista zmian - historia aktualizacji meshcorepolska.org
-tocTitle: Lista zmian
 description: Lista aktualizacji na stronie meshcorepolska.org, wersja po wersji.
 canonical: /dokumentacja/community/lista-zmian
 createdAt: 02.08.2026
 updatedAt: 3.08.2026
 ---
 
-# Lista zmian na stronie meshcorepolska.org
+# Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
 Poniżej znajdziesz listę zmian wprowadzanych na stronie meshcorepolska.org.  
 Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym dolnym rogu tamtej strony, przycisk `Lista zmian`.
 

@@ -1,13 +1,12 @@
 ---
 title: Anteny do MeshCore - przewodnik po złączach i doborze
-tocTitle: Wszystko o antenach
 description: Porównanie popularnych anten do modułów LoRa 868 MHz pod companiony, repeatery i Bluetooth - zysk, zasięg i przewody.
 canonical: /dokumentacja/meshcore/anteny
 createdAt: 13.07.2026
-updatedAt: 3.08.2026
+updatedAt: 4.08.2026
 ---
 
-# Wszystko o antenach, złączach i przewodach do MeshCore
+# Wszystko o antenach, złączach i przewodach do MeshCore {toc: Wszystko o antenach}
 Anteny, których używamy lub używaliśmy, a do tego dobór przewodu, kierunkowość i to, kiedy w ogóle sięgnąć po filtr. Polecamy anteny od GIZONT-a. Nie wierz w podany zysk.
 
 > [!WARNING]
@@ -57,12 +56,12 @@ Do tego antena promieniuje też trochę do tyłu.
 
 ### Co oznacza Yagi?
 [Yagi](https://pl.wikipedia.org/wiki/Antena_Yagi) to typ anteny kierunkowej, opracowanej przez Hidetsugu Yagiego i Shintarō Udę z Uniwersytetu Tohoku w Sendai w Japonii.
-Antena tego typu skupia sygnał w określonym kierunku, dzięki czemu zapewnia większy zasięg i lepszą jakość odbioru niż anteny dookólne.
+Anteny tego typu skupiają sygnał w określonym kierunku, dzięki czemu zapewniają większy zasięg i lepszą jakość odbioru niż anteny dookólne.
 Jest często stosowana w telewizji (DVB-T), GSM oraz radiokomunikacji.
 
 
 ## Przewód antenowy
-Nigdy nie używaj przewodu `RF1.13` (one mają czarną izolację). Więcej strat w TX niż pożytku. Zalecamy `RG178`.
+Nigdy nie używaj przewodu `RF1.13` (ma czarną izolację). Więcej strat w TX niż pożytku. Zalecamy `RG178`.
 Jest jeszcze lepsza wersja, czyli `RG316`. Natomiast Chińczycy nie produkują jednak takich kabli ze złączem `RF-1`, bo nie jest to standard.
 Jeśli napiszesz do sprzedawcy na AliExpress, powinien zrobić Ci taki kabel na zamówienie.
 `RF1.13` może się sprawdzić głównie w companionach - zwykle w ciasnych, dobrze zoptymalizowanych obudowach, gdzie łatwiej poprowadzić tak cienki przewód.
