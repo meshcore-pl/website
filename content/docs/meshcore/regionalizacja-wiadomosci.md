@@ -18,8 +18,8 @@ Regionalizacja pozwala temu zaradzić - filtruje, które repeatery przekazują d
 
 ## Jak to działa na repeaterze
 - Brak dodanych regionów (domyślne ustawienie) → repeater ignoruje regiony i przekazuje wszystkie wiadomości dalej, niezależnie od ustawionego regionu wiadomości.
-- Region np.`sosnowiec` ustawiony na `deny` → repeater nie przekazuje wiadomości z tym regionem, ale nadal przekazuje te bez regionu.
-- Region np.`sosnowiec` ustawiony na `allow` → repeater przekazuje wiadomości z tym regionem (i nadal te bez regionu).
+- Region np. `sosnowiec` ustawiony na `deny` → repeater nie przekazuje wiadomości z tym regionem, ale nadal przekazuje te bez regionu.
+- Region np. `sosnowiec` ustawiony na `allow` → repeater przekazuje wiadomości z tym regionem (i nadal te bez regionu).
 
 Domyślnie wiadomości bez przypisanego regionu (tzw. region null, `*`) zawsze przechodzą - administrator może to zmienić komendą w konsoli `region denyf *`, ale obecnie nie jest to zalecane. Kanał `Public` powinien pozostać globalny (bez regionu).
 
