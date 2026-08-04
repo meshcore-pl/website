@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Projekt
 
-Strona [meshcorepolska.org](https://meshcorepolska.org), czyli polska społeczność sieci mesh MeshCore. Express 5 + EJS (SSR), CommonJS, Node >= 20.12. Cała treść strony i komunikaty są po polsku. Licencja PolyForm Noncommercial 1.0.0.
+Strona [meshcorepolska.org](https://meshcorepolska.org), czyli polska społeczność sieci mesh MeshCore. Express 5 + EJS (SSR), CommonJS, Node >= 20.19 (patrz `engines` w `package.json`). Cała treść strony i komunikaty są po polsku. Licencja PolyForm Noncommercial 1.0.0.
 
 ## Uruchamianie
 
@@ -51,6 +51,15 @@ Treść dokumentacji jest plikami Markdown, renderowanymi server-side, z SPA-pod
 - `public/js/docs-router.js`: ładowany wyłącznie na stronach dokumentów, przechwytuje kliknięcia w linki prowadzące do innych stron dokumentów (`/dokumentacja/:group/:slug`), robi `fetch` z `X-Docs-Fetch: 1`, podmienia `#docs-view` i metadane (title, canonical, OG) bez pełnego przeładowania. Linki do indeksu czy strony grupy nie są przechwytywane - to zwykła nawigacja przeglądarki. Zarządza cyklem życia modułów stron przez `public/js/lib/page.js` (rejestr `init`/`destroy` per moduł, żeby np. listenery scrolla z poprzedniej strony nie zostały po nawigacji).
 - `public/js/docs.js`: logika strony treści dokumentacji (podświetlanie bloków kodu, aktywna pozycja w spisie treści przy scrollu, płynne przewijanie do kotwic). Rejestruje się przez `definePage()` z `lib/page.js`, więc `docs-router.js` woła jego `init`/`destroy` przy każdej nawigacji SPA.
 - Pliki `public/js/docs.js`, `docs-router.js`, `lib/page.js` to moduły ES (`import`/`export`, `type="module"` w EJS), inne skrypty w `public/js` są zwykłymi skryptami globalnymi ładowanymi z `defer`.
+
+### System aktualności (`/aktualnosci`)
+
+Blog/newsy - changelogi aplikacji i firmware MeshCore, tłumaczenia wpisów z oficjalnego bloga (`blog.meshcore.io`) oraz treści społecznościowe. Współdzieli parser Markdown (`services/markdown.js`) z systemem dokumentacji, ale ma osobną strukturę danych - nie jest wpisany do `content/docs.js`.
+
+- `content/news/<official|community>/<slug>.md`: treść wpisów, frontmatter (`title`, `description`, `tags`, `createdAt`, opcjonalnie `updatedAt`) + Markdown. Katalog nadrzędny (`official` albo `community`) determinuje źródło wpisu (`SOURCES` w `services/news.js`) - każdy inny nazwany katalog wyrzuci błąd przy starcie. Data i godzina w formacie `DD.MM.RRRR`, jak w dokumentacji.
+- `services/news.js`: wczytuje i parsuje wszystkie wpisy przy starcie procesu, sortuje malejąco po dacie (`updatedAt` albo `createdAt`), buduje mapę tagów (`tagMap`) - każdy wpis może mieć wiele tagów, ale tylko pierwszy (`postTags[0]`) determinuje `tagSlug` i `canonical` wpisu (`/aktualnosci/<tagSlug>/<slug>`, albo `/aktualnosci/<slug>` gdy wpis nie ma tagów). Zmiana treści `.md` wymaga restartu procesu w produkcji (w dev przebudowuje się przy każdym żądaniu, tak jak `services/docs.js`).
+- `routes/News.js`: trzy trasy - indeks (`/aktualnosci`), lista wg tagu (`/aktualnosci/:tag`), pojedynczy wpis (`/aktualnosci/:tag/:title`). Jeśli tag w URL-u nie zgadza się z `tagSlug` wpisu (np. wpis dostał nowy pierwszy tag), trasa robi przekierowanie 301 na aktualny kanoniczny adres zamiast 404. W przeciwieństwie do `routes/Docs.js` nie ma tu wariantu JSON/SPA-fetch - każda nawigacja to pełny render EJS.
+- Widoki (`views/news/index.ejs`, `tag.ejs`, `post.ejs`): listing z kartami wpisów (tytuł, opis, tagi, źródło, data), strona pojedynczego tagu i strona wpisu (`post.html` z markdown renderowane jako `<%- %>`, bo to treść zaufana z repo, nie od użytkownika). `post.ejs` ładuje `public/js/lightbox.js` do powiększania obrazków w treści.
 
 ## Styl kodu
 
