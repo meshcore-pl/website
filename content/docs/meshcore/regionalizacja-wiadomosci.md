@@ -17,7 +17,7 @@ Regionalizacja pozwala temu zaradzić - filtruje, które repeatery przekazują d
 > Zwykła regionalizacja obejmuje tylko wiadomości na kanałach - nie wiadomości prywatne ani adverty. Od firmware **1.15+** da się to rozszerzyć przez domyślny zakres, patrz [sekcja niżej](#domyslny-zakres).
 
 ## Jak to działa na repeaterze
-- Brak dodanych regionów(Domyślne ustawienie) → repeater ignoruje regiony i przekazuje wszystkie wiadomości dalej, niezależnie od ustawionego regionu wiadomości.
+- Brak dodanych regionów (domyślne ustawienie) → repeater ignoruje regiony i przekazuje wszystkie wiadomości dalej, niezależnie od ustawionego regionu wiadomości.
 - Region np.`sosnowiec` ustawiony na `deny` → repeater nie przekazuje wiadomości z tym regionem, ale nadal przekazuje te bez regionu.
 - Region np.`sosnowiec` ustawiony na `allow` → repeater przekazuje wiadomości z tym regionem (i nadal te bez regionu).
 
