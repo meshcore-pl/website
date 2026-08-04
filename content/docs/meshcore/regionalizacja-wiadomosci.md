@@ -10,18 +10,18 @@ createdAt: 03.08.2026
 > [!IMPORTANT]
 > Ten dokument jest obecnie w trakcie tworzenia.
 
-Masz gęstą okolicę i czujesz, że `Public` zaczyna pękać w szwach od wiadomości z drugiego końca Polski (a przy sprzyjającej propagacji nawet Europy)?
-Regionalizacja pozwala temu zaradzić - filtruje, które repeatery przekazują dalej wiadomości kanałowe, dzięki czemu sieć się odciąża, a chaos maleje. Wymagany firmware **1.10+**.
+Masz duży ruch i czujesz, że kanał `Public` zaczyna pękać w szwach od wiadomości z drugiego końca Polski (a przy sprzyjającej propagacji nawet Europy)?
+Regionalizacja pozwala temu zaradzić - filtruje, które repeatery przekazują dalej wiadomości kanałowe, dzięki czemu sieć się odciąża, a chaos maleje. Wymagana wersja firmware **1.10+**.
 
 > [!NOTE]
 > Zwykła regionalizacja obejmuje tylko wiadomości na kanałach - nie wiadomości prywatne ani adverty. Od firmware **1.15+** da się to rozszerzyć przez domyślny zakres, patrz [sekcja niżej](#domyslny-zakres).
 
 ## Jak to działa na repeaterze
-- Brak dodanych regionów → repeater ignoruje regiony i przekazuje wszystko, niezależnie od ustawionego regionu wiadomości.
-- Region ustawiony na `deny` → nie przekazuje wiadomości z tym regionem, ale nadal przekazuje te bez regionu.
-- Region ustawiony na `allow` → przekazuje wiadomości z tym regionem (i nadal te bez regionu).
+- Brak dodanych regionów(Domyślne ustawienie) → repeater ignoruje regiony i przekazuje wszystkie wiadomości dalej, niezależnie od ustawionego regionu wiadomości.
+- Region np.`sosnowiec` ustawiony na `deny` → repeater nie przekazuje wiadomości z tym regionem, ale nadal przekazuje te bez regionu.
+- Region np.`sosnowiec` ustawiony na `allow` → repeater przekazuje wiadomości z tym regionem (i nadal te bez regionu).
 
-Domyślnie wiadomości bez przypisanego regionu (tzw. region null, `*`) zawsze przechodzą - administrator może to zmienić komendą `region denyf *`, ale obecnie nie jest to zalecane. Kanał `Public` powinien pozostać globalny (bez regionu).
+Domyślnie wiadomości bez przypisanego regionu (tzw. region null, `*`) zawsze przechodzą - administrator może to zmienić komendą w konsoli `region denyf *`, ale obecnie nie jest to zalecane. Kanał `Public` powinien pozostać globalny (bez regionu).
 
 Region to dowolna etykieta (kraj, województwo, miasto, dzielnica, grupa) - kluczowa jest spójność nazw między wszystkimi urządzeniami w danym obszarze. Wielkość liter ma znaczenie!
 Jeden kanał to maksymalnie jeden region.
@@ -31,13 +31,13 @@ Jeden kanał to maksymalnie jeden region.
 
 ## Komendy dla repeaterów
 ```mccli
-region                 # sprawdź konfigurację
-region put miasto      # zdefiniuj nazwę regionu
+region                 # pokazuje obecną konfigurację regionów
+region put miasto      # dodaje nazwę regionu( w tym przypadku 'miasto')
 region allowf miasto   # przekazuj ten region
-region denyf zlemiasto # blokuj region (opcjonalnie)
-region remove miasto   # usuń region
-region save            # zapisz
-reboot                 # uruchom ponownie płytkę
+region denyf miasto    # blokuj region (opcjonalnie)
+region remove miasto   # usuwa region o nazwie 'miasto'
+region save            # zapisuje ustawienia regionu
+reboot                 # restart systemu
 ```
 
 Trzy popularne typy konfiguracji (to tylko nazewnictwo używane przez społeczność - komendy są identyczne):
@@ -48,7 +48,7 @@ Trzy popularne typy konfiguracji (to tylko nazewnictwo używane przez społeczno
 > [!NOTE]
 > Od firmware **1.15+** nowo dodany region jest domyślnie `allow flood` (potwierdzenie „OK - (flood allowed)”) - `region allowf` nie zawsze jest już potrzebne.
 
-Po każdej konfiguracji zsynchronizuj czas: `clock sync` (UTC +1h zimą / +2h latem). Jeśli zegar wyprzedza czas rzeczywisty: `clkreboot`, restart, a potem ponowna synchronizacja.
+Po każdej konfiguracji warto zsynchronizować aktualną datę i godzinę w repeaterze komendą: `clock sync` (UTC +1h zimą / +2h latem). Jeśli zegar wyprzedza czas rzeczywisty użyj: `clkreboot`, komenda restartuje system i resetuje datę i godzinę, dzięki niej możesz ustawić na nowo datę i godzinę.
 
 > [!TIP]
 > Od aplikacji **1.39.0** zarządzanie regionami jest też dostępne bez CLI: **Ustawienia → Zarządzaj regionami**, z opcjami zezwolenia lub zablokowania regionu (odpowiedniki `region allowf`/`region denyf`) - zmiany trzeba zatwierdzić „ptaszkiem” na repeaterze.
