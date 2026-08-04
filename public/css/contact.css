@@ -12,19 +12,19 @@
 }
 
 #contact-card {
-	text-align: left;
-	background: var(--glass-bg);
-	-webkit-backdrop-filter: blur(4px);
-	backdrop-filter: blur(4px);
+	padding: 25px;
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
-	padding: 25px;
+	background: var(--glass-bg);
+	text-align: left;
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
 }
 
 .contact-alert {
 	padding: 14px 18px;
-	border-radius: var(--radius);
 	border: 1px solid var(--border);
+	border-radius: var(--radius);
 }
 
 .contact-alert + #contact-form {
@@ -58,46 +58,44 @@
 
 .contact-form__field label {
 	display: block;
+	margin-bottom: 8px;
+	color: var(--text-muted);
 	font-family: var(--font-mono);
 	font-size: 13px;
 	font-weight: 500;
 	letter-spacing: 0.04em;
 	text-transform: uppercase;
-	color: var(--text-muted);
-	margin-bottom: 8px;
 }
 
-.contact-form__field input,
-.contact-form__field textarea {
+.contact-form__field input, .contact-form__field textarea {
 	width: 100%;
-	background: var(--bg);
+	padding: 0.7em 0.9em;
 	border: 1px solid var(--border-strong);
 	border-radius: 10px;
+	background: var(--bg);
 	color: var(--text);
 	font-family: var(--font-body);
 	font-size: 15px;
-	padding: 0.7em 0.9em;
 	transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .contact-form__field textarea {
-	resize: vertical;
 	min-height: 160px;
+	resize: vertical;
 }
 
-.contact-form__field input:focus,
-.contact-form__field textarea:focus {
-	outline: none;
+.contact-form__field input:focus, .contact-form__field textarea:focus {
 	border-color: var(--red-bright);
+	outline: none;
 	box-shadow: 0 0 0 3px var(--red-glow);
 }
 
 #contact-form__hp {
 	position: absolute;
 	left: -9999px;
+	overflow: hidden;
 	width: 1px;
 	height: 1px;
-	overflow: hidden;
 }
 
 .cf-turnstile {

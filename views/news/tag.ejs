@@ -19,14 +19,22 @@
 			<h1><%= tag.label %></h1>
 			<p class="news-hero__lead"><%= tag.posts.length %> <%= pluralizePolish(tag.posts.length, { one: 'wpis', few: 'wpisy', many: 'wpisów' }) %> oznaczonych tym tagiem.</p>
 
-			<% if (tags.length) { %>
-			<div id="news-tags">
-				<a href="/aktualnosci" class="news-tag">Wszystkie tagi</a>
-				<% tags.forEach(t => { %>
-				<a href="/aktualnosci/<%= t.slug %>" class="news-tag<%= t.slug === tag.slug ? ' news-tag--active' : '' %>"><%= t.label %> <span class="news-tag__count"><%= t.posts.length %></span></a>
-				<% }) %>
+			<div id="news-toolbar">
+				<% if (tags.length) { %>
+				<div id="news-tags">
+					<a href="/aktualnosci" class="news-tag">Wszystkie tagi</a>
+					<% tags.forEach(t => { %>
+					<a href="/aktualnosci/<%= t.slug %>" class="news-tag<%= t.slug === tag.slug ? ' news-tag--active' : '' %>"><%= t.label %> <span class="news-tag__count"><%= t.posts.length %></span></a>
+					<% }) %>
+				</div>
+				<% } %>
+
+				<div id="news-search">
+					<svg id="news-search__icon" aria-hidden="true"><use href="/icons.svg#search"></use></svg>
+					<input type="search" id="news-search-input" placeholder="Szukaj wpisów..." autocomplete="off" aria-label="Szukaj wpisów w aktualnościach">
+					<p id="news-search__status" class="sr-only" role="status" aria-live="polite"></p>
+				</div>
 			</div>
-			<% } %>
 		</div>
 	</section>
 
@@ -34,7 +42,7 @@
 		<div class="section__inner">
 			<div id="news-list">
 				<% tag.posts.forEach(post => { %>
-				<a href="<%= post.canonical %>" class="news-post-card">
+				<a href="<%= post.canonical %>" class="news-post-card" data-search="<%= [post.title, post.description, ...post.tags.map(t => t.label)].join(' ').toLowerCase() %>">
 					<div class="news-post-card__head">
 						<h2 class="news-post-card__title"><%= post.title %></h2>
 						<span class="news-post-card__date"><%= post.updatedAt ? `Zaktualizowano: ${post.updatedAt}` : `Opublikowano: ${post.createdAt}` %></span>
@@ -49,8 +57,9 @@
 				</a>
 				<% }) %>
 			</div>
+			<p id="news-search__empty" hidden>Brak wyników dla podanej frazy.</p>
 		</div>
 	</section>
 </main>
 
-<%- include('../includes/footer.ejs', { footer: false }) %>
+<%- include('../includes/footer.ejs', { footer: false, scripts: ['/js/news.js'] }) %>

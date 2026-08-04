@@ -5,6 +5,11 @@ const buildSchema = require('../utils/schema.js');
 
 router.get('/dokumentacja', (req, res) => res.render('docs/index.ejs', { groups: docs.groups }));
 
+router.get('/api/v1/dokumentacja/szukaj', (req, res) => {
+	res.set('Cache-Control', 'no-cache');
+	res.json(docs.searchIndex);
+});
+
 router.get('/dokumentacja/:group', (req, res) => {
 	const group = docs.getGroup(req.params.group);
 	if (!group) return RenderError(res, 404);

@@ -7,27 +7,27 @@
 }
 
 .prose h1 {
-	font-style: normal;
-	text-transform: none;
+	margin: 0 0 16px;
 	font-size: 30px;
 	font-weight: 800;
+	font-style: normal;
+	line-height: 1.25;
 	letter-spacing: normal;
 	word-spacing: normal;
-	line-height: 1.25;
-	margin: 0 0 16px;
+	text-transform: none;
 }
 
 .prose h2 {
-	font-style: normal;
-	text-transform: none;
-	font-size: 22px;
-	font-weight: 700;
-	letter-spacing: normal;
-	word-spacing: normal;
-	line-height: 1.3;
 	margin: 44px 0 16px;
 	padding-bottom: 8px;
 	border-bottom: 1px solid var(--border);
+	font-size: 22px;
+	font-weight: 700;
+	font-style: normal;
+	line-height: 1.3;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
 	scroll-margin-top: 24px;
 }
 
@@ -36,30 +36,29 @@
 }
 
 .prose h3 {
+	margin: 28px 0 10px;
 	font-size: 18px;
 	line-height: 1.35;
-	margin: 28px 0 10px;
 	scroll-margin-top: 24px;
 }
 
 .prose h4 {
+	margin: 24px 0 8px;
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 1.4;
-	margin: 24px 0 8px;
 	scroll-margin-top: 24px;
 }
 
 .prose h5 {
+	margin: 16px 0 6px;
+	color: var(--text-muted);
 	font-size: 14px;
 	font-weight: 700;
-	color: var(--text-muted);
-	margin: 16px 0 6px;
 	scroll-margin-top: 24px;
 }
 
-.prose p,
-.prose li {
+.prose p, .prose li {
 	color: var(--text-muted);
 	font-size: 16px;
 	line-height: 1.65;
@@ -69,8 +68,7 @@
 	color: var(--text);
 }
 
-.prose ul,
-.prose ol {
+.prose ul, .prose ol {
 	margin: 0 0 1em;
 	padding-left: 1.3em;
 }
@@ -81,12 +79,12 @@
 
 .prose img {
 	display: inline-block;
+	width: auto;
 	max-width: min(320px, 100%);
 	max-height: 240px;
-	width: auto;
-	border-radius: var(--radius);
-	border: 1px solid var(--border);
 	margin: 6px 8px 6px 0;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
 	vertical-align: top;
 	cursor: zoom-in;
 }
@@ -105,9 +103,9 @@
 
 .prose .docs-img-row {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: flex-start;
-	flex-wrap: wrap;
 	gap: 16px;
 	margin: 6px 0;
 }
@@ -120,10 +118,10 @@
 }
 
 .prose .docs-img-row img {
-	margin: 0;
-	height: 340px;
 	width: auto;
 	max-width: 100%;
+	height: 340px;
+	margin: 0;
 }
 
 .prose .docs-img-row img.docs-img-row__hero {
@@ -132,85 +130,84 @@
 
 .prose .docs-img-caption {
 	margin: 0;
-	font-size: 0.85em;
 	color: var(--text-muted);
+	font-size: 0.85em;
 }
 
 .prose code {
-	font-family: var(--font-mono);
-	font-size: 0.88em;
-	color: var(--red-bright);
-	background: rgba(255, 51, 82, 0.09);
+	padding: 0.1em 0.45em;
 	border: 1px solid rgba(255, 51, 82, 0.3);
 	border-radius: 6px;
-	padding: 0.1em 0.45em;
+	background: rgba(255, 51, 82, 0.09);
+	color: var(--red-bright);
+	font-family: var(--font-mono);
+	font-size: 0.88em;
 }
 
 .prose pre {
 	position: relative;
 	overflow-x: auto;
+	margin: 0 0 1.25em;
+	padding: 18px 21px;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
 	background: var(--glass-bg);
 	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
-	border: 1px solid var(--border);
-	border-radius: var(--radius);
-	padding: 18px 21px;
-	margin: 0 0 1.25em;
 	tab-size: 3;
 }
 
 .prose pre code {
-	color: var(--text);
-	background: none;
-	border: none;
 	padding: 0;
+	border: none;
+	background: none;
+	color: var(--text);
 }
 
 .pre-label {
 	position: absolute;
 	top: 10px;
 	right: 14px;
+	color: var(--text-muted);
 	font-family: var(--font-mono);
 	font-size: 11px;
-	text-transform: uppercase;
 	letter-spacing: 0.08em;
-	color: var(--text-muted);
+	text-transform: uppercase;
 }
 
 .docs-table {
-	margin: 0 0 1.5em;
 	overflow-x: auto;
 	overflow-y: hidden;
+	margin: 0 0 1.5em;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
 	background: var(--glass-bg);
 	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
-	border: 1px solid var(--border);
-	border-radius: var(--radius);
 }
 
 .docs-table table {
 	width: 100%;
 	margin: 0;
-	border-collapse: collapse;
 	font-size: 14px;
+	border-collapse: collapse;
 }
 
-.docs-table th,
-.docs-table td {
+.docs-table th, .docs-table td {
 	padding: 0.65em 1em;
-	text-align: left;
 	border-bottom: 1px solid var(--border);
+	text-align: left;
 }
 
 .docs-table th {
+	border-bottom: 1px solid var(--border-strong);
 	background: var(--glass-bg-strong);
+	color: var(--text-muted);
 	font-family: var(--font-mono);
 	font-size: 12px;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
-	color: var(--text-muted);
 	white-space: nowrap;
-	border-bottom: 1px solid var(--border-strong);
 }
 
 .docs-table td {
@@ -240,8 +237,7 @@
 	font-weight: 600;
 }
 
-.docs-table:has(.is-legal) th,
-.docs-table:has(.is-legal) td {
+.docs-table:has(.is-legal) th, .docs-table:has(.is-legal) td {
 	text-align: center;
 }
 
@@ -253,8 +249,8 @@
 	margin: 0 0 1.25em;
 	padding: 14px 21px;
 	border-left: 3px solid var(--red);
-	background: var(--card);
 	border-radius: 0 var(--radius) var(--radius) 0;
+	background: var(--card);
 }
 
 .prose blockquote p {
@@ -298,9 +294,9 @@
 
 .docs-alert__body .docs-alert__title {
 	margin: 0;
+	color: var(--alert-accent, var(--red));
 	font-weight: 700;
 	line-height: 1.3;
-	color: var(--alert-accent, var(--red));
 }
 
 .docs-alert__body p:last-child {
@@ -328,7 +324,7 @@
 }
 
 .prose hr {
+	margin: 40px 0;
 	border: none;
 	border-top: 1px solid var(--border);
-	margin: 40px 0;
 }

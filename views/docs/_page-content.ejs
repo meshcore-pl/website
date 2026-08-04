@@ -30,6 +30,13 @@
 			</div>
 			<% } %>
 
+			<div id="docs-search">
+				<svg id="docs-search__icon" aria-hidden="true"><use href="/icons.svg#search"></use></svg>
+				<input type="search" id="docs-search-input" placeholder="Szukaj w dokumentacji..." autocomplete="off" aria-label="Szukaj w dokumentacji" role="combobox" aria-expanded="false" aria-controls="docs-search-results" aria-autocomplete="list" aria-haspopup="listbox">
+				<div id="docs-search-results" role="listbox" aria-label="Wyniki wyszukiwania" hidden></div>
+				<p id="docs-search__status" class="sr-only" role="status" aria-live="polite"></p>
+			</div>
+
 			<a href="/dokumentacja" id="docs-sidebar__home"><svg id="docs-sidebar__home-icon" aria-hidden="true"><use href="/icons.svg#arrow-left"></use></svg> Spis treści</a>
 		</div>
 	</aside>
@@ -96,3 +103,4 @@
 <div id="docs-mobile-toc-backdrop" hidden></div>
 
 <script type="module" src="/js/docs.js"></script>
+<script type="module" src="/js/docs-search.js"></script>

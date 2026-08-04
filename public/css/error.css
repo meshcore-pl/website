@@ -1,14 +1,14 @@
 .section--notfound {
-	text-align: center;
 	padding-top: calc(96px + var(--nav-h));
 	padding-bottom: 96px;
+	text-align: center;
 }
 
 #errorpage__code {
-	font-size: clamp(72px, 14vw, 128px);
-	color: var(--red-bright);
-	text-shadow: 0 0 48px var(--red-glow);
 	margin-bottom: 0.15em;
+	color: var(--red-bright);
+	font-size: clamp(72px, 14vw, 128px);
+	text-shadow: 0 0 48px var(--red-glow);
 }
 
 #errorpage__msg {

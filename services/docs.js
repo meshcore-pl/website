@@ -22,10 +22,11 @@ const extractFaq = tokens => {
 	return faq;
 };
 
-let pages, lastModified;
+let pages, lastModified, searchIndex;
 
 const build = () => {
 	pages = new Map();
+	searchIndex = [];
 	lastModified = null;
 	for (const group of groups) {
 		group.lastModified = null;
@@ -48,9 +49,10 @@ const build = () => {
 			p.updatedAt = data.updatedAt || null;
 			p.date = date;
 
+			const title = data.title || p.title;
 			pages.set(`${group.slug}/${p.slug}`, {
 				slug: p.slug,
-				title: data.title || p.title,
+				title,
 				description: data.description || '',
 				canonical: data.canonical,
 				createdAt: data.createdAt || null,
@@ -62,6 +64,17 @@ const build = () => {
 				faq: extractFaq(tokens),
 				group,
 			});
+
+			if (!p.hidden) {
+				searchIndex.push({
+					title,
+					group: group.title,
+					url: data.canonical,
+					headings: toc
+						.filter(item => item.text.trim().toLowerCase() !== title.trim().toLowerCase())
+						.map(item => ({ id: item.id, text: item.text })),
+				});
+			}
 		}
 
 		group.visiblePages = group.pages.filter(p => !p.hidden);
@@ -78,6 +91,7 @@ const groupMap = new Map(groups.map(g => [g.slug, g]));
 module.exports = {
 	get groups() { ensureFresh(); return groups; },
 	get lastModified() { ensureFresh(); return lastModified; },
+	get searchIndex() { ensureFresh(); return searchIndex; },
 	getGroup: slug => { ensureFresh(); return groupMap.get(slug); },
 	getPage: (groupSlug, pageSlug) => { ensureFresh(); return pages.get(`${groupSlug}/${pageSlug}`); },
 };
