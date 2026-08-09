@@ -29,6 +29,7 @@ if (isProd) app.set('trust proxy', 1);
 app.set('view engine', 'ejs');
 app.locals.domain = `${DOMAIN}${isProd ? '' : `:${PORT}`}`;
 app.locals.mapDomain = MAP_DOMAIN;
+app.locals.discordInviteUrl = `https://discord.com/invite/${process.env.DISCORD_INVITE_CODE}`;
 app.locals.v = version;
 app.locals.buildSchema = buildSchema;
 app.locals.pluralizePolish = pluralizePolish;

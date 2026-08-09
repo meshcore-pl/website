@@ -4,6 +4,7 @@ const initLightbox = () => {
 	overlay.hidden = true;
 
 	const image = document.createElement('img');
+	image.alt = '';
 	overlay.appendChild(image);
 	document.body.appendChild(overlay);
 

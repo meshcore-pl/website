@@ -1,6 +1,6 @@
 ---
 title: Lista zmian - historia aktualizacji meshcorepolska.org
-description: Lista aktualizacji na stronie meshcorepolska.org, wersja po wersji.
+description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/community/lista-zmian
 createdAt: 02.08.2026
 updatedAt: 9.08.2026
@@ -17,6 +17,9 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 1. Dodano wpis „MeshCore Firmware v1.17.0” w Aktualnościach.
 2. Dodano `sourceUrl` dla `content/news/official/**` - plakietka źródła przy wpisie prowadzi teraz do oryginału na blog.meshcore.io.
 3. Poprawiono styl (hover) plakietki źródła na stronie wpisu aktualności.
+4. Wewnętrzne linki do Discorda prowadzą teraz bezpośrednio pod docelowy adres zaproszenia, zamiast przez przekierowujący `/discord` (poprawa SEO - mniej łańcuchów przekierowań).
+5. Dodano brakujący atrybut `alt` dla obrazka w lightboxie.
+6. Poprawiono długość meta opisów (za krótkie: strony tagów w Aktualnościach, Kontakt, Lista zmian; za długi: wpis „Tryb dla dzieci i zdalna administracja”).
 
 ## v1.4.0
 1. Dodano podstronę Aktualności (`/aktualnosci`) z newsami i changelogami MeshCore.
