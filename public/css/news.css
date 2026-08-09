@@ -156,6 +156,11 @@ a.news-tag--active {
 	font-family: var(--font-mono);
 	font-size: 11px;
 	letter-spacing: 0.04em;
+	transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+a.news-source:hover {
+	text-decoration: none;
 }
 
 .news-source--official {
@@ -164,10 +169,20 @@ a.news-tag--active {
 	color: var(--signal);
 }
 
+a.news-source--official:hover {
+	border-color: rgba(61, 220, 132, 0.6);
+	background: rgba(61, 220, 132, 0.18);
+}
+
 .news-source--community {
 	border-color: rgba(88, 166, 255, 0.3);
 	background: rgba(88, 166, 255, 0.1);
 	color: #58a6ff;
+}
+
+a.news-source--community:hover {
+	border-color: rgba(88, 166, 255, 0.6);
+	background: rgba(88, 166, 255, 0.18);
 }
 
 #news-list {

@@ -2,6 +2,7 @@
 title: Domyślny zakres regionu (Default Scope)
 description: Ostatni brakujący element filtrowania regionów - domyślny zakres (default scope) - pozwala teraz obejmować zakresem także wiadomości prywatne, logowania i zapytania, nawet w sieciach mesh blokujących ruch bez zakresu.
 createdAt: 17.04.2026
+sourceUrl: https://blog.meshcore.io/2026/04/20/default-scope
 tags: [Oprogramowanie, Aplikacja]
 ---
 

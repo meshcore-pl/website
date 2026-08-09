@@ -42,6 +42,7 @@ const build = () => {
 				title: data.title,
 				description: data.description || '',
 				source,
+				sourceUrl: data.sourceUrl || null,
 				tagSlug,
 				canonical: tagSlug ? `/aktualnosci/${tagSlug}/${slug}` : `/aktualnosci/${slug}`,
 				createdAt: data.createdAt || null,

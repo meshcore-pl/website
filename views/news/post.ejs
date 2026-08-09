@@ -1,13 +1,13 @@
 <%- include('../includes/header.ejs', {
-	title,
-	description,
-	canonical,
-	css: ['https://cdn.sefinek.net/css/code-viewer.css', 'content', 'docs', 'news'],
-	page: 'news',
-	breadcrumbs,
-	articleType: 'BlogPosting',
-	datePublished: post.publishedAt.toISOString().slice(0, 10),
-	dateModified: post.date.toISOString().slice(0, 10)
+title,
+description,
+canonical,
+css: ['https://cdn.sefinek.net/css/code-viewer.css', 'content', 'docs', 'news'],
+page: 'news',
+breadcrumbs,
+articleType: 'BlogPosting',
+datePublished: post.publishedAt.toISOString().slice(0, 10),
+dateModified: post.date.toISOString().slice(0, 10)
 }) %>
 
 <main>
@@ -39,7 +39,12 @@
 						<div class="news-post-card__tags-list">
 							<% post.tags.forEach(tag => { %><a href="/aktualnosci/<%= tag.slug %>" class="news-tag"><%= tag.label %></a><% }) %>
 						</div>
+
+						<% if (post.sourceUrl) { %>
+						<a href="<%= post.sourceUrl %>" class="news-source news-source--<%= post.source.slug %>" title="Zobacz oryginalny wpis na <%= post.source.label %>" target="_blank" rel="noopener nofollow"><%= post.source.label %></a>
+						<% } else { %>
 						<span class="news-source news-source--<%= post.source.slug %>" title="<%= post.source.description %>"><%= post.source.label %></span>
+						<% } %>
 					</div>
 				</div>
 			</div>

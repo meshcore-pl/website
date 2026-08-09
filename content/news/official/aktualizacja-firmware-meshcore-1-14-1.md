@@ -2,6 +2,7 @@
 title: MeshCore Firmware v1.14.1
 description: 20 marca 2026 ukazało się wydanie oprogramowania v1.14.1 dla MeshCore - egzekwowanie duty cycle metodą token bucket, obsługa nowych urządzeń GAT562 oraz poprawki transmisji pakietów.
 createdAt: 20.03.2026
+sourceUrl: https://blog.meshcore.io/2026/03/20/release-1-14-1
 tags: [Lista zmian, Oprogramowanie]
 ---
 

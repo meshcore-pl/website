@@ -2,6 +2,7 @@
 title: Usprawnienia diagnostyki trasy
 description: Firmware v1.14.0 wprowadza obsługę wielobajtowych skrótów trasy (multibyte path hashes) oraz nowy mechanizm wykrywania pętli (loop detection), znacznie zwiększając precyzję diagnostyki tras w MeshCore.
 createdAt: 06.03.2026
+sourceUrl: https://blog.meshcore.io/2026/03/06/path-diagnostics-improvements
 tags: [Oprogramowanie]
 ---
 

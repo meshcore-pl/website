@@ -2,6 +2,7 @@
 title: Dziękujemy
 description: Zbiórka prawna została zamknięta, a wsparcie społeczności przerosło nasze oczekiwania - status sporu o znak towarowy oraz co dalej z projektem MeshCore.
 createdAt: 28.07.2026
+sourceUrl: https://blog.meshcore.io/2026/07/29/thankyou
 tags: [Społeczność]
 ---
 

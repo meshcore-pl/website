@@ -2,6 +2,7 @@
 title: MeshCore Firmware v1.16.0
 description: 6 czerwca 2026 ukazało się wydanie oprogramowania v1.16.0 dla MeshCore - nowe zmienne CLI ograniczające ruch flood, dłuższy preambuł dla niższych SF, rozszerzone ACK oraz obsługa nowych urządzeń.
 createdAt: 06.06.2026
+sourceUrl: https://blog.meshcore.io/2026/06/06/release-1-16-0
 tags: [Lista zmian, Oprogramowanie]
 ---
 
@@ -10,7 +11,6 @@ tags: [Lista zmian, Oprogramowanie]
 
 6 czerwca 2026 ukazało się wydanie oprogramowania **v1.16.0** dla MeshCore.
 Najnowszy firmware pobierzesz z [flasher.meshcore.io](https://flasher.meshcore.io).
-Pełny wpis (w języku angielskim) przeczytasz na [blog.meshcore.io](https://blog.meshcore.io/2026/06/06/release-1-16-0).
 
 ## Nowe funkcje
 - Nowa zmienna konfiguracyjna CLI `flood.max.unscoped`, ograniczająca ruch flood bez określonego zakresu (unscoped) ([#2661](https://github.com/meshcore-dev/MeshCore/pull/2661))

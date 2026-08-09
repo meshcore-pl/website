@@ -2,6 +2,7 @@
 title: Podsumowanie roku MeshCore
 description: Scott Powell podsumowuje pierwszy rok MeshCore - od pierwszej wiadomości między Bobem a Alice, przez narodziny zespołu, po kamienie milowe, bolączki i ducha społeczności.
 createdAt: 12.12.2025
+sourceUrl: https://blog.meshcore.io/2025/12/12/the-year-in-review
 tags: [Społeczność]
 ---
 
