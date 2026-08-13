@@ -1,6 +1,6 @@
 ---
 title: MeshCore App v1.45.0
-description: 14 czerwca 2026 ukazała się wersja 1.45.0 oficjalnej aplikacji MeshCore - nowy interfejs wprowadzający do wstępnej konfiguracji urządzenia, wykrywanie regionów od urządzeń spoza kontaktów oraz poprawki stabilności.
+description: 14 czerwca 2026 - wersja 1.45.0 aplikacji MeshCore, nowy interfejs wstępnej konfiguracji, wykrywanie regionów spoza kontaktów i poprawki stabilności.
 createdAt: 14.06.2026
 tags: [Lista zmian, Aplikacja]
 ---

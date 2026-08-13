@@ -1,4 +1,4 @@
-module.exports = ({ domain, breadcrumbs, article, faq }) => {
+module.exports = ({ domain, discordInviteUrl, breadcrumbs, article, faq }) => {
 	const organizationId = `${domain}/#organization`;
 	const websiteId = `${domain}/#website`;
 
@@ -11,7 +11,7 @@ module.exports = ({ domain, breadcrumbs, article, faq }) => {
 			url: `${domain}/`,
 			logo: { '@type': 'ImageObject', url: `${domain}/images/brand/logo-3-192.png`, width: 192, height: 192 },
 			email: 'contact@sefinek.net',
-			sameAs: [`${domain}/discord`, 'https://github.com/meshcore-pl'],
+			sameAs: [discordInviteUrl, 'https://github.com/meshcore-pl'],
 		},
 		{
 			'@type': 'WebSite',

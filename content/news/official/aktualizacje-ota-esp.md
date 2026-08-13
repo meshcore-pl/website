@@ -1,7 +1,7 @@
 ---
 title: Aktualizacje OTA na urządzeniach ESP32
-description: Poradnik krok po kroku, jak zaktualizować firmware przemiennika lub room serwera na urządzeniach opartych o ESP32 przez OTA, bez kabla i przeflashowania od zera.
-createdAt: 01.04.2026
+description: Poradnik krok po kroku - jak zaktualizować firmware przemiennika lub room serwera na ESP32 przez OTA, bez kabla i przeflashowania od zera.
+createdAt: 1.04.2026
 sourceUrl: https://blog.meshcore.io/2026/04/01/esp-ota-update
 tags: [Poradnik, Oprogramowanie]
 ---

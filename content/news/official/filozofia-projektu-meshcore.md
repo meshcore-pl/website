@@ -1,7 +1,7 @@
 ---
 title: Filozofia projektu MeshCore
-description: Twórca projektu, Scott Powell, tłumaczy zasady i założenia, które stały u podstaw MeshCore - otwartość, decentralizację, oszczędność zasobów oraz sprawiedliwe wynagradzanie deweloperów.
-createdAt: 01.03.2025
+description: Scott Powell tłumaczy zasady, które stały u podstaw MeshCore - otwartość, decentralizację, oszczędność zasobów oraz sprawiedliwe wynagradzanie deweloperów.
+createdAt: 1.03.2025
 sourceUrl: https://blog.meshcore.io/2025/03/01/meshcore-philosophy
 tags: [Społeczność]
 ---

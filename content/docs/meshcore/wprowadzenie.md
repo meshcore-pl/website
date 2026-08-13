@@ -1,6 +1,6 @@
 ---
 title: Wprowadzenie do MeshCore - pojęcia i przepisy
-description: Słownik pojęć MeshCore (preset, SF, CR, advert), role urządzeń (Companion, Repeater, Room Serwer, Room-Peater) oraz zasady legalnego nadawania w paśmie 868-869 MHz - limity ERP i duty cycle 10%.
+description: Słownik pojęć MeshCore (preset, SF, CR, advert), role urządzeń oraz zasady legalnego nadawania w paśmie 868-869 MHz - limity ERP i duty cycle 10%.
 canonical: /dokumentacja/meshcore/wprowadzenie
 createdAt: 13.07.2026
 updatedAt: 4.08.2026

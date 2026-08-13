@@ -1,5 +1,5 @@
 ---
-title: Anteny do MeshCore - przewodnik po złączach i doborze
+title: Anteny do MeshCore - złącza i dobór
 description: Porównanie popularnych anten do modułów LoRa 868 MHz pod companiony, repeatery i Bluetooth - zysk, zasięg i przewody.
 canonical: /dokumentacja/meshcore/anteny
 createdAt: 13.07.2026

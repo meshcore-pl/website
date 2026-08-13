@@ -1,7 +1,7 @@
 ---
 title: MeshCore Firmware v1.17.0
-description: 9 sierpnia 2026 ukazało się wydanie oprogramowania v1.17.0 dla MeshCore - obsługa radia LR2021, konfiguracja w formacie JSON, usprawnione wykrywanie preambuły oraz obsługa nowych urządzeń.
-createdAt: 09.08.2026
+description: 9 sierpnia 2026 - firmware v1.17.0 MeshCore, obsługa radia LR2021, konfiguracja w JSON, usprawnione wykrywanie preambuły i nowe urządzenia.
+createdAt: 9.08.2026
 sourceUrl: https://blog.meshcore.io/2026/08/09/release-1-17-0
 tags: [Lista zmian, Oprogramowanie]
 ---

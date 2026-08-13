@@ -1,7 +1,7 @@
 ---
 title: Ripple v9.4 dla Heltec V4
 description: Firmware Ripple v9.4 wprowadza obsługę kafelków mapy dla zestawu rozszerzającego Heltec V4 Expansion Kit.
-createdAt: 05.04.2026
+createdAt: 5.04.2026
 sourceUrl: https://blog.meshcore.io/2026/04/04/heltecv4-maps
 tags: [Oprogramowanie, Sprzęt]
 ---

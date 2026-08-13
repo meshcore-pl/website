@@ -1,6 +1,6 @@
 ---
 title: Domyślny zakres regionu (Default Scope)
-description: Ostatni brakujący element filtrowania regionów - domyślny zakres (default scope) - pozwala teraz obejmować zakresem także wiadomości prywatne, logowania i zapytania, nawet w sieciach mesh blokujących ruch bez zakresu.
+description: Domyślny zakres (default scope) obejmuje teraz też wiadomości prywatne, logowania i zapytania - nawet w sieciach blokujących ruch bez zakresu.
 createdAt: 17.04.2026
 sourceUrl: https://blog.meshcore.io/2026/04/20/default-scope
 tags: [Oprogramowanie, Aplikacja]
@@ -10,7 +10,7 @@ tags: [Oprogramowanie, Aplikacja]
 ![Domyślny zakres regionu](https://blog.meshcore.io/assets/images/2026/04/17/banner.png)
 
 > [!NOTE]
-> Jeśli nie znasz jeszcze koncepcji regionów/zakresów, zajrzyj do [poprzedniego wpisu na blogu](/aktualnosci/firmware/filtrowanie-regionow).
+> Jeśli nie znasz jeszcze koncepcji regionów/zakresów, zajrzyj do [poprzedniego wpisu na blogu](https://meshcorepolska.org/aktualnosci/oprogramowanie/filtrowanie-regionow).
 
 Od wydania firmware v1.12.0 możliwe jest obejmowanie zakresem wiadomości _kanałów grupowych_, ale wciąż istnieje kilka przeszkód w efektywniejszym korzystaniu z regionów - zwłaszcza dla sieci mesh takich jak w Niemczech, które próbują **zablokować ruch bez ustawionego zakresu** (czyli `region denyf *`).
 

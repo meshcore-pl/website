@@ -1,8 +1,8 @@
 ---
-title: Regionalizacja wiadomości - filtrowanie kanałów w MeshCore
-description: Jak działa regionalizacja wiadomości kanałowych w MeshCore (firmware 1.10+), konfiguracja CLI na repeaterze, ustawianie zakresu regionu w aplikacji oraz realny schemat regionów wdrożony w Polsce (pl, pl-<województwo>).
+title: Regionalizacja wiadomości w MeshCore
+description: Jak działa regionalizacja wiadomości kanałowych w MeshCore (firmware 1.10+) - konfiguracja CLI, ustawianie zakresu w aplikacji i schemat regionów w Polsce.
 canonical: /dokumentacja/meshcore/regionalizacja-wiadomosci
-createdAt: 03.08.2026
+createdAt: 3.08.2026
 ---
 
 # Regionalizacja wiadomości - filtrowanie kanałów w MeshCore {toc: Regionalizacja wiadomości}

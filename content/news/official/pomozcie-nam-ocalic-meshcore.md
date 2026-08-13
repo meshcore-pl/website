@@ -1,7 +1,7 @@
 ---
 title: Pomóżcie nam ocalić MeshCore
-description: Zespół MeshCore prosi społeczność o wsparcie w sporze o znak towarowy z byłym członkiem zespołu - historia konfliktu, szacowane koszty prawne oraz sposoby pomocy.
-createdAt: 04.07.2026
+description: Zespół MeshCore prosi o wsparcie w sporze o znak towarowy z byłym członkiem zespołu - historia konfliktu, koszty prawne i sposoby pomocy.
+createdAt: 4.07.2026
 sourceUrl: https://blog.meshcore.io/2026/07/04/help-us-save-meshcore
 tags: [Społeczność]
 ---

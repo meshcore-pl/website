@@ -1,7 +1,7 @@
 ---
 title: Tryb dla dzieci i zdalna administracja
 description: Firmware Ripple 7.11 wprowadza zdalną administrację urządzeniami oraz tryb dla dzieci (Kid Mode), ograniczający ekran główny do wybranych kontaktów.
-createdAt: 02.10.2025
+createdAt: 2.10.2025
 sourceUrl: https://blog.meshcore.io/2025/10/02/kid-mode
 tags: [Oprogramowanie, Poradnik]
 ---
