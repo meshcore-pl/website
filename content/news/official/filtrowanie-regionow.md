@@ -19,7 +19,7 @@ Firmware Ripple z graficznym interfejsem jest już gotowy, podobnie jak zmiany w
 Po dyskusjach oraz ze względu na pewne zamieszanie między #kanałami a #regionami, zdecydowano się zrezygnować z wymogu prefiksu „#”.
 Nazwy regionów będą więc zwykłymi ciągami alfanumerycznymi (i „-”), bez prefiksu #.
 
-Dla zachowania wstecznej kompatybilności, nazwy będą _wewnętrznie_ nadal poprzedzone znakiem „#”, ale w żadnym interfejsie klienckim ani w linii poleceń zasadniczo nie zobaczysz już wzmianek o prefiksie „#”.
+Dla zachowania wstecznej kompatybilności nazwy będą _wewnętrznie_ nadal poprzedzone znakiem „#”, ale w żadnym interfejsie klienckim ani w linii poleceń zasadniczo nie zobaczysz już wzmianek o prefiksie „#”.
 Kolejne wydanie firmware (v1.12.0), a następnie firmware Ripple i aplikacja Liama, będą miały zmieniony interfejs bez wymogu prefiksu „#”.
 
 ## Aktualizacja: 20 lutego 2026
@@ -54,7 +54,7 @@ Liam opublikował już [wersję 1.38.0 aplikacji MeshCore](https://play.google.c
 ![Menu Ustaw zakres regionu w aplikacji mobilnej](https://blog.meshcore.io/assets/images/2026/01/20/Screenshot_20260120_at_1.02.54pm.png)
 
 Ekran wyboru i zarządzania regionami powinien być bardzo intuicyjny.
-Po dodaniu regionu i jego wybraniu, pasek tytułowy czatu kanału zmienia się, pokazując, do jakiego regionu ograniczone są Twoje wiadomości.
+Po dodaniu i wybraniu regionu pasek tytułowy czatu kanału zmienia się, pokazując, do jakiego regionu ograniczone są Twoje wiadomości.
 
 ![Pasek tytułowy czatu z wybranym regionem](https://blog.meshcore.io/assets/images/2026/01/20/Screenshot_20260120_at_1.03.12pm.png)
 

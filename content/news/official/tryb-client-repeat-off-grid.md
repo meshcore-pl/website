@@ -34,8 +34,8 @@ Regiony „zwykłe” to te obecnie używane z funkcją „Ustaw zakres”. Pozo
 - Te częstotliwości są wciąż w trakcie ustalania/finalizowania
 
 ## Przełączanie regionu domowego
-Na ekranie głównym, dotknięcie lewego górnego rogu od zawsze służyło do przełączania profili sieciowych (jeśli masz zdefiniowanych kilka profili).
-Zostało to teraz rozszerzone, by wyświetlać również zdefiniowane regiony, pod danym profilem sieciowym.
+Na ekranie głównym dotknięcie lewego górnego rogu od zawsze służyło do przełączania profili sieciowych (jeśli masz zdefiniowanych kilka profili).
+Zostało to teraz rozszerzone, by wyświetlać również zdefiniowane regiony pod danym profilem sieciowym.
 
 ![Przełączanie na region z ekranu głównego](https://blog.meshcore.io/assets/images/2026/02/13/switchtoregion.png)
 

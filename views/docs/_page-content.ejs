@@ -63,6 +63,7 @@
 				<a href="/dokumentacja/<%= group.slug %>/<%= prev.slug %>" class="docs-pagination__link docs-pagination__link--prev">
 					<span><svg class="docs-pagination__icon" aria-hidden="true"><use href="/icons.svg#arrow-left"></use></svg> Poprzednia strona</span>
 					<strong><%= prev.title %></strong>
+					<% if (prev.description) { %><p class="docs-pagination__description"><%= prev.description %></p><% } %>
 				</a>
 				<% } else { %><span></span><% } %>
 
@@ -70,6 +71,7 @@
 				<a href="/dokumentacja/<%= group.slug %>/<%= next.slug %>" class="docs-pagination__link docs-pagination__link--next">
 					<span>Następny dokument <svg class="docs-pagination__icon" aria-hidden="true"><use href="/icons.svg#arrow-right"></use></svg></span>
 					<strong><%= next.title %></strong>
+					<% if (next.description) { %><p class="docs-pagination__description"><%= next.description %></p><% } %>
 				</a>
 				<% } else { %><span></span><% } %>
 			</nav>

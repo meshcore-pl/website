@@ -3,7 +3,7 @@ title: Analizatory sieci MeshCore w Polsce i Europie
 description: Lista publicznych analizatorów sieci MeshCore w Polsce i Europie. Znajdź globalne, regionalne i zagraniczne instancje CoreScope do monitorowania sieci.
 canonical: /dokumentacja/meshcore/lista-analizatorow
 createdAt: 17.07.2026
-updatedAt: 3.08.2026
+updatedAt: 20.08.2026
 ---
 
 # Spis publicznych analizatorów (CoreScope) sieci MeshCore {toc: Spis analizatorów}
@@ -24,8 +24,10 @@ updatedAt: 3.08.2026
 - Finlandia (Finland): [corescope.meshcore.fi](https://corescope.meshcore.fi)
 - Estonia: [corescope.es5nhc.ee](https://corescope.es5nhc.ee)
 
-<br><br>
-Sugestie proszę kierować na [Discordzie](https://meshcorepolska.org/discord) (kanał #propozycje) lub contact@sefinek.net.
+
+## Sugestie
+Masz sugestię dotyczącą listy lub prowadzisz własny analizator?
+Daj nam znać na [Discordzie](https://meshcorepolska.org/discord) (kanał `#propozycje`), przez [formularz kontaktowy](/kontakt) albo e-mailem na adres [contact@sefinek.net](mailto:contact@sefinek.net).
 
 ## Wyłączenie odpowiedzialności
 Powyższe strony to niezależne serwisy prowadzone przez osoby trzecie - nie są w żaden sposób powiązane z MeshCore Polska ani przez nas zarządzane.

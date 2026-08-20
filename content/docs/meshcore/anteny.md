@@ -57,12 +57,12 @@ Do tego antena promieniuje też trochę do tyłu.
 ### Co oznacza Yagi?
 [Yagi](https://pl.wikipedia.org/wiki/Antena_Yagi) to typ anteny kierunkowej, opracowanej przez Hidetsugu Yagiego i Shintarō Udę z Uniwersytetu Tohoku w Sendai w Japonii.
 Anteny tego typu skupiają sygnał w określonym kierunku, dzięki czemu zapewniają większy zasięg i lepszą jakość odbioru niż anteny dookólne.
-Jest często stosowana w telewizji (DVB-T), GSM oraz radiokomunikacji.
+Anteny Yagi są często stosowane w telewizji (DVB-T), GSM oraz radiokomunikacji.
 
 
 ## Przewód antenowy
 Nigdy nie używaj przewodu `RF1.13` (ma czarną izolację). Więcej strat w TX niż pożytku. Zalecamy `RG178`.
-Jest jeszcze lepsza wersja, czyli `RG316`. Natomiast Chińczycy nie produkują jednak takich kabli ze złączem `RF-1`, bo nie jest to standard.
+Jest jeszcze lepsza wersja, czyli `RG316`. Chińczycy nie produkują jednak takich kabli ze złączem `RF-1`, ponieważ nie jest to standard.
 Jeśli napiszesz do sprzedawcy na AliExpress, powinien zrobić Ci taki kabel na zamówienie.
 `RF1.13` może się sprawdzić głównie w companionach - zwykle w ciasnych, dobrze zoptymalizowanych obudowach, gdzie łatwiej poprowadzić tak cienki przewód.
 

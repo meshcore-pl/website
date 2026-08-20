@@ -3,7 +3,7 @@ title: Wprowadzenie do MeshCore - pojęcia i przepisy
 description: Słownik pojęć MeshCore (preset, SF, CR, advert), role urządzeń oraz zasady legalnego nadawania w paśmie 868-869 MHz - limity ERP i duty cycle 10%.
 canonical: /dokumentacja/meshcore/wprowadzenie
 createdAt: 13.07.2026
-updatedAt: 4.08.2026
+updatedAt: 20.08.2026
 ---
 
 # Wprowadzenie do MeshCore: pojęcia, role urządzeń i legalne nadawanie {toc: Wprowadzenie}
@@ -58,7 +58,7 @@ Nie znajdziesz więc tutaj żadnej rozbieżności ani nie pomylisz się przy czy
 ## Role urządzeń
 O roli urządzenia decyduje oprogramowanie (firmware), nie sama płytka. Ten sam sprzęt (np. Heltec V4) może pracować jako `companion`, `repeater`, `room serwer` albo `room-peater`.
 
-### Companion (Kompan)
+### Companion (kompan)
 - Urządzenie osobiste. Parujesz je z telefonem lub komputerem przez Bluetooth albo USB, a następnie za jego pośrednictwem wysyłasz i odbierasz wiadomości.
 - Jeżeli przez pewien czas aplikacja będzie wyłączona lub połączenie Bluetooth zostanie zerwane, wiadomości będą zapisywane w buforze. Ma on określony limit, po jego przekroczeniu najstarsze wiadomości zostaną nadpisywane. Po ponownym połączeniu się ze swoim companionem uzyskasz wgląd w to, co działo się podczas Twojej nieobecności.
 - Companion samodzielnie nie przekazuje dalej wiadomości innych użytkowników. Aby komunikacja mogła wykroczyć poza bezpośredni zasięg radiowy, w pobliżu musi znajdować się repeater lub Room-Peater.
@@ -74,7 +74,7 @@ O roli urządzenia decyduje oprogramowanie (firmware), nie sama płytka. Ten sam
 - Prywatność takiego serwera zależy wyłącznie od ciebie - dopóki nie zmienisz domyślnego hasła, dołączy do niego każdy.
 
 ### Room-peater
-- Room-Peater to repeater i room serwer - połączony w jednym urządzeniu i jednym firmware. Jednocześnie przechowuje wiadomości grupowe i przekazuje pakiety w eterze dalej.
+- Room-Peater to repeater i room serwer połączone w jednym urządzeniu i jednym firmware. Jednocześnie przechowuje wiadomości grupowe i przekazuje pakiety dalej w eter.
 - Wygodne rozwiązanie tam, gdzie nie ma sensu stawiać dwóch osobnych urządzeń, ale w gęściej obstawionej okolicy lepiej rozdzielić te funkcje. Room-peater dzieli jeden budżet duty cycle między obie role naraz.
 
 ### Companion + repeat mode
@@ -118,7 +118,7 @@ set dutycycle 10
 
 ### Czy 10% duty cycle nie ogranicza za bardzo sieci?
 Do komunikacji tekstowej w zupełności to wystarczy. Realny czas nadawania pojedynczego pakietu to zwykle od kilkuset milisekund do 1,6 sekundy (zależnie od długości wiadomości).
-Poniżej znajdziesz zmierzone wartości naszym domyślnym presecie `EU/UK Narrow`:
+Poniżej znajdziesz wartości zmierzone dla naszego domyślnego presetu `EU/UK Narrow`:
 
 | Pakiet                                                    | Companion | Repeater (+1 hop) |
 |-----------------------------------------------------------|-----------|-------------------|
@@ -133,16 +133,18 @@ Poniżej znajdziesz zmierzone wartości naszym domyślnym presecie `EU/UK Narrow
 Nawet najdłuższy z tych pakietów, trwający około 1,6 sekundy, zmieściłby się teoretycznie około 225 razy w budżecie 6 minut nadawania na godzinę.
 Należy jednak pamiętać, że każdy repeater nadaje cały pakiet ponownie. Wartość 16-17 ms widoczna w pomiarach oznacza jedynie wzrost długości retransmitowanego pakietu, wynikający między innymi z dodania informacji o trasie.
 
-W typowej sieci większym ograniczeniem niż sam limit duty cycle może być skalowalność.
-Repeater przekazuje nie tylko wiadomości, lecz także pakiety rozgłoszeniowe (flood routed), które odbiera od urządzeń znajdujących się w jego zasięgu.
-Dlatego przy dużym zagęszczeniu repeaterów nie warto uruchamiać kolejnego, jeśli nie poprawi on zasięgu ani nie połączy odseparowanych obszarów.
-W takim scenariuszu dodatkowy repeater będzie tylko niepotrzebnie zwiększał liczbę retransmisji oraz potencjalnie powodował kolizje pakietów w eterze.
+> [!CAUTION]
+> W typowej sieci większym ograniczeniem niż sam limit duty cycle może być skalowalność.
+> Repeater przekazuje nie tylko wiadomości, lecz także pakiety rozgłoszeniowe (flood routed).
+> Dlatego przy dużym zagęszczeniu repeaterów nie warto uruchamiać kolejnego, jeśli nie poprawi on zasięgu ani nie połączy odseparowanych obszarów.
+> W takim scenariuszu dodatkowy repeater będzie tylko niepotrzebnie zwiększał liczbę retransmisji oraz potencjalnie powodował kolizje pakietów w eterze.
 
 Warto również pamiętać, że MeshCore posiada także system kolejek TX: 32 sloty dla RPT i RS oraz 16 dla companiona. Gdy kolejka się zapełni, pakiety po prostu czekają na swoją kolej.
 
 ### Moc nadajnika i zysk anteny
-Pamiętaj, że liczy się moc promieniowana (ERP), nie moc samego modułu. Zysk anteny (zobacz [listę anten](https://meshcorepolska.org/dokumentacja/meshcore/anteny)) dolicza się do mocy nadajnika.
-Antena kierunkowa z wysokim zyskiem, ustawiona na maksymalną moc, łatwo przekroczy limit.
+Pamiętaj, że liczy się moc promieniowana (ERP), a nie tylko moc samego modułu. Przy jej obliczaniu należy uwzględnić również zysk anteny - zobacz naszą [listę anten](https://meshcorepolska.org/dokumentacja/meshcore/anteny).
+Antena kierunkowa o dużym zysku w połączeniu z maksymalną mocą nadajnika może łatwo spowodować przekroczenie limitu.
+Sam fakt, że w ustawieniach repeatera wybrano moc nadawania 28 dBm, nie oznacza, że cała konfiguracja jest zgodna z przepisami.
 
 ### Jak obliczyć ERP?
 `moc nadajnika w dBm` + `zysk anteny w dBi` - `2,15 dB`. Ta poprawka wynika z różnicy między:

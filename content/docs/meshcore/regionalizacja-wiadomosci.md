@@ -32,9 +32,9 @@ Jeden kanał to maksymalnie jeden region.
 ## Komendy dla repeaterów
 ```mccli
 region                 # pokazuje obecną konfigurację regionów
-region put miasto      # dodaje nazwę regionu( w tym przypadku 'miasto')
+region put miasto      # dodaje nazwę regionu (w tym przypadku 'miasto')
 region allowf miasto   # przekazuj ten region
-region denyf miasto    # blokuj region (opcjonalnie)
+region denyf miasto    # blokuje region
 region remove miasto   # usuwa region o nazwie 'miasto'
 region save            # zapisuje ustawienia regionu
 reboot                 # restart systemu
@@ -48,7 +48,7 @@ Trzy popularne typy konfiguracji (to tylko nazewnictwo używane przez społeczno
 > [!NOTE]
 > Od firmware **1.15+** nowo dodany region jest domyślnie `allow flood` (potwierdzenie „OK - (flood allowed)”) - `region allowf` nie zawsze jest już potrzebne.
 
-Po każdej konfiguracji warto zsynchronizować aktualną datę i godzinę w repeaterze komendą: `clock sync` (UTC +1h zimą / +2h latem). Jeśli zegar wyprzedza czas rzeczywisty użyj: `clkreboot`, komenda restartuje system i resetuje datę i godzinę, dzięki niej możesz ustawić na nowo datę i godzinę.
+Po każdej konfiguracji warto zsynchronizować datę i godzinę w repeaterze komendą `clock sync` (UTC +1 h zimą / +2 h latem). Jeśli zegar wyprzedza czas rzeczywisty, użyj komendy `clkreboot`. Zrestartuje ona system i zresetuje zegar, dzięki czemu będzie można ponownie ustawić prawidłową datę i godzinę.
 
 > [!TIP]
 > Od aplikacji **1.39.0** zarządzanie regionami jest też dostępne bez CLI: **Ustawienia → Zarządzaj regionami**, z opcjami zezwolenia lub zablokowania regionu (odpowiedniki `region allowf`/`region denyf`) - zmiany trzeba zatwierdzić „ptaszkiem” na repeaterze.

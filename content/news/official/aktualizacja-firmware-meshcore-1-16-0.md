@@ -1,6 +1,6 @@
 ---
 title: MeshCore Firmware v1.16.0
-description: 6 czerwca 2026 - firmware v1.16.0 MeshCore, nowe zmienne CLI ograniczające ruch flood, dłuższy preambuł, rozszerzone ACK i obsługa nowych urządzeń.
+description: 6 czerwca 2026 - firmware v1.16.0 MeshCore, nowe zmienne CLI ograniczające ruch flood, dłuższa preambuła, rozszerzone ACK i obsługa nowych urządzeń.
 createdAt: 6.06.2026
 sourceUrl: https://blog.meshcore.io/2026/06/06/release-1-16-0
 tags: [Lista zmian, Oprogramowanie]
@@ -15,7 +15,7 @@ Najnowszy firmware pobierzesz z [flasher.meshcore.io](https://flasher.meshcore.i
 ## Nowe funkcje
 - Nowa zmienna konfiguracyjna CLI `flood.max.unscoped`, ograniczająca ruch flood bez określonego zakresu (unscoped) ([#2661](https://github.com/meshcore-dev/MeshCore/pull/2661))
 - Nowa zmienna konfiguracyjna CLI `flood.max.advert`, ograniczająca liczbę przeskoków (hopów) advertów ([#2702](https://github.com/meshcore-dev/MeshCore/pull/2702))
-- Dłuższy preambuł dla niższych SF (32 symbole dla SF ≤ 8, 16 symboli dla SF > 8) ([#1954](https://github.com/meshcore-dev/MeshCore/pull/1954))
+- Dłuższa preambuła dla niższych SF (32 symbole dla SF ≤ 8, 16 symboli dla SF > 8) ([#1954](https://github.com/meshcore-dev/MeshCore/pull/1954))
 - Aplikacja/companion mogą teraz wykonywać zapytania anon_req/response do urządzeń spoza listy kontaktów ([#2672](https://github.com/meshcore-dev/MeshCore/pull/2672))
 - Automatyczne wyłączanie companiona - wyłączone przy zasilaniu zewnętrznym, nowe ostrzeżenie na wyświetlaczu ([#2663](https://github.com/meshcore-dev/MeshCore/pull/2663))
 - Nowa komenda CLI `region def ...` ([#2540](https://github.com/meshcore-dev/MeshCore/pull/2540))
@@ -75,9 +75,9 @@ Podobnie jak `flood.max`, odrzuca pakiety typu flood bez zakresu, które osiągn
 Nowa zmienna konfiguracyjna CLI `flood.max.advert` służy wyłącznie do ograniczania advertów.
 Podobnie jak `flood.max`, odrzuca pakiety advertów, które osiągnęły określoną liczbę przeskoków. Domyślnie wynosi 8.
 
-## Nowy preambuł
-Przy niższych wartościach Spreading Factor radio ma mniej czasu na zsynchronizowanie się z nadchodzącym pakietem, dlatego ta zmiana wydłuża preambuł dla szybszych SF, zmniejszając ryzyko jego pominięcia.
-Dla SF ≤ 8 preambuł wynosi teraz 32 symbole.
+## Nowa preambuła
+Przy niższych wartościach Spreading Factor radio ma mniej czasu na zsynchronizowanie się z nadchodzącym pakietem, dlatego ta zmiana wydłuża preambułę dla szybszych SF, zmniejszając ryzyko jej pominięcia.
+Dla SF ≤ 8 preambuła ma teraz 32 symbole.
 
 ## Ulepszone wykrywanie regionów w aplikacji mobilnej
 Nowy firmware companiona oraz najnowsza wersja aplikacji pozwalają na wykonywanie doraźnych (ad-hoc) zapytań do pobliskich przemienników bez konieczności wcześniejszego dodawania ich do kontaktów.

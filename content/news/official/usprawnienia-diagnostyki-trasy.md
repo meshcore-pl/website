@@ -8,7 +8,7 @@ tags: [Oprogramowanie]
 
 # Usprawnienia diagnostyki trasy
 Wraz z wydaniem firmware v1.14.0 pojawia się obsługa tzw. „wielobajtowych skrótów trasy” (multibyte path hashes).
-Jednobajtowe prefiksy w trasach, oraz nieuniknione duplikaty, jakie występują w praktyce, od wielu miesięcy były źródłem frustracji, więc to wydanie powinno wielu osobom przynieść ulgę.
+Jednobajtowe prefiksy w trasach oraz nieuniknione duplikaty, jakie występują w praktyce, od wielu miesięcy były źródłem frustracji, więc to wydanie powinno wielu osobom przynieść ulgę.
 
 ![Graf sieci mesh](https://blog.meshcore.io/assets/images/2026/03/06/meshgraph.png)
 

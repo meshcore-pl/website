@@ -35,6 +35,7 @@ const search = (index, query) => {
 
 let onInput = null;
 let onKeydown = null;
+let onFocus = null;
 let onDocClick = null;
 let onFocusOut = null;
 
@@ -43,9 +44,11 @@ const destroy = () => {
 	if (input) {
 		if (onInput) input.removeEventListener('input', onInput);
 		if (onKeydown) input.removeEventListener('keydown', onKeydown);
+		if (onFocus) input.removeEventListener('focus', onFocus);
 	}
 	onInput = null;
 	onKeydown = null;
+	onFocus = null;
 
 	const wrapper = document.getElementById('docs-search');
 	if (wrapper && onFocusOut) wrapper.removeEventListener('focusout', onFocusOut);
@@ -65,8 +68,6 @@ const init = () => {
 	if (!wrapper || !input || !results) return;
 
 	let index = [];
-	loadIndex().then(data => { index = data; });
-
 	let activeIndex = -1;
 
 	const close = () => {
@@ -137,6 +138,11 @@ const init = () => {
 		setActive(0);
 	};
 	input.addEventListener('input', onInput);
+
+	onFocus = () => {
+		loadIndex().then(data => { index = data; });
+	};
+	input.addEventListener('focus', onFocus);
 
 	onKeydown = e => {
 		if (e.key === 'ArrowDown') {

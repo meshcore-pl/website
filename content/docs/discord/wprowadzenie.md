@@ -3,7 +3,7 @@ title: Wprowadzenie do społeczności MeshCore Polska
 description: Zasady działania społeczności MeshCore Polska na Discordzie - rola administracji, wyłączenie odpowiedzialności oraz kwestie prawne.
 canonical: /dokumentacja/discord/wprowadzenie
 createdAt: 12.07.2026
-updatedAt: 3.08.2026
+updatedAt: 21.08.2026
 ---
 
 # Wprowadzenie do społeczności MeshCore Polska na Discordzie {toc: Wprowadzenie do społeczności}
@@ -11,7 +11,7 @@ Witajcie! MeshCore Polska to społecznościowy serwer Discord poświęcony temat
 
 ## Nieoficjalny charakter serwera
 Nie jesteśmy oficjalnym kanałem wsparcia MeshCore ani miejscem zarządzanym przez twórców projektu.
-To społeczność użytkowników, którzy dzielą się wiedzą, doświadczeniem i pomagają sobie nawzajem w miarę możliwości.
+To społeczność użytkowników, którzy dzielą się wiedzą i doświadczeniem oraz w miarę możliwości pomagają sobie nawzajem.
 
 ## Nasza rola
 Nie jesteśmy właścicielami projektu MeshCore i nie zarządzamy nim. Zajmujemy się głównie polskimi tłumaczeniami oficjalnej aplikacji. Czasami zrobimy też jakiś pull request w ich repozytorium.

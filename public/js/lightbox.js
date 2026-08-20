@@ -1,38 +1,33 @@
 const initLightbox = () => {
-	const overlay = document.createElement('div');
-	overlay.className = 'lightbox';
-	overlay.hidden = true;
+	const dialog = document.createElement('dialog');
+	dialog.className = 'lightbox';
+	dialog.setAttribute('aria-label', 'Podgląd obrazka w powiększeniu');
 
 	const image = document.createElement('img');
-	image.alt = '';
-	overlay.appendChild(image);
-	document.body.appendChild(overlay);
+	dialog.appendChild(image);
+	document.body.appendChild(dialog);
 
-	const close = () => overlay.hidden = true;
-
-	const open = (src, alt) => {
+	const open = (src, source) => {
 		image.src = src;
-		image.alt = alt;
-		overlay.hidden = false;
+		image.alt = source?.alt || '';
+		image.toggleAttribute('data-transparent', !!source?.hasAttribute('data-transparent'));
+		dialog.showModal();
 	};
 
 	document.addEventListener('click', e => {
 		const link = e.target.closest('a[data-lightbox]');
 		if (link) {
 			e.preventDefault();
-			const thumb = link.querySelector('img');
-			open(link.href, thumb ? thumb.alt : '');
+			open(link.href, link.querySelector('img'));
 			return;
 		}
 
 		const proseImg = e.target.closest('.prose img');
-		if (proseImg && !proseImg.closest('a')) open(proseImg.currentSrc || proseImg.src, proseImg.alt);
+		if (proseImg && !proseImg.closest('a')) open(proseImg.currentSrc || proseImg.src, proseImg);
 	});
 
-	overlay.addEventListener('click', close);
-	document.addEventListener('keydown', e => {
-		if (e.key === 'Escape' && !overlay.hidden) close();
-	});
+	dialog.addEventListener('click', () => dialog.close());
+	dialog.addEventListener('close', () => image.removeAttribute('src'));
 };
 
 initLightbox();

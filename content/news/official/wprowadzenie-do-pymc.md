@@ -16,7 +16,7 @@ Zaczęło się jako sposób na lepsze zrozumienie protokołu MeshCore, ale doś�
 - Parsowanie i generowanie pakietów MeshCore
 - Zarządzanie tożsamościami i adresowaniem
 - Utrzymywanie zgodności w miarę ewolucji protokołu
-- Obsługę interfejsów radiowych (SPI, KISS, USB-CH341)
+- Obsługa interfejsów radiowych (SPI, KISS, USB-CH341)
 
 Przy ponad 15 obsługiwanych obecnie płytkach i wielu kolejnych w fazie rozwoju, system wyrósł z prostego eksperymentu w praktyczny zestaw narzędzi do budowania i uruchamiania rozproszonej infrastruktury mesh.
 
@@ -31,7 +31,7 @@ Wbudowany firmware jest wydajny i dobrze dopasowany do dedykowanych urządzeń, 
 
 Kluczową decyzją projektową jest sposób obsługi tożsamości. Zamiast zakładać, że jeden fizyczny węzeł to jedna logiczna obecność, pyMC pozwala na istnienie wielu tożsamości na tym samym radiu.
 
-W praktyce jedno urządzenie może przyjmować wiele ról. Może działać jako przemiennik, reprezentować różne logiczne punkty końcowe, albo hostować dodatkowe usługi - każda z własnym kontekstem.
+W praktyce jedno urządzenie może przyjmować wiele ról. Może działać jako przemiennik, reprezentować różne logiczne punkty końcowe albo hostować dodatkowe usługi - każda z własnym kontekstem.
 
 Ta elastyczność pozwala, by `pymc repeater` ewoluował w stację bazową obsługującą wielu companionów jednocześnie. W tym momencie zachowuje się mniej jak zwykły przemiennik pakietów, a bardziej jak lekki hub wiadomości dla sieci mesh.
 

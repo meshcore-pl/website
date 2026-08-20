@@ -93,6 +93,6 @@ set direct.txdelay 0.2    # domyślna górna granica
 #### Repeater 2
 ```mccli
 set flood.advert.interval 8
-set txdelay 1.5           # wyraźnie wyżej niż Repeater 1, w granicach 0-2
-set direct.txdelay 1      # wyraźnie wyżej niż Repeater 1, w granicach 0-2
+set txdelay 1.5           # wyraźnie wyżej niż repeater 1, w granicach 0-2
+set direct.txdelay 1      # wyraźnie wyżej niż repeater 1, w granicach 0-2
 ```

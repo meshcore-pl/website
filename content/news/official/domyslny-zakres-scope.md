@@ -30,7 +30,7 @@ Od wersji v1.15.0 pojawi się nowa komenda CLI:
 
 `region default {name | <null>}`
 
-Ustawia podany region jako domyślny zakres, lub czyści go, jeśli podasz `<null>`. Region jest automatycznie tworzony, jeśli nie znajduje się jeszcze na liście regionów. Dodatkowo automatycznie wykonywane jest niejawne `region save`!
+Ustawia podany region jako domyślny zakres lub czyści go, jeśli podasz `<null>`. Region jest automatycznie tworzony, jeśli nie znajduje się jeszcze na liście regionów. Dodatkowo automatycznie wykonywane jest niejawne `region save`!
 
 Domyślny zakres stosowany jest wyłącznie do pakietów, które _powstają_ na przemienniku/room serwerze. Czyli tylko adverty dla przemiennika. Adverty oraz posty roomu dla room serwera.
 

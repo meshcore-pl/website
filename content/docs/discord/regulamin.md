@@ -18,7 +18,7 @@ Nie ma tu miejsca na wyzwiska, osobiste zaczepki, nękanie, trollowanie, celowe 
 
 ## 2. Zachowaj normalny poziom rozmowy
 Nie rób dram z niczego, nie łap ludzi za każde słowo i nie zamieniaj zwykłej rozmowy w przepychankę.
-Jeśli masz problem, napisz konkretnie o co chodzi. Jeśli chcesz tylko ponarzekać, prowokować albo robić z siebie centrum wydarzeń, to nie jest miejsce na takie zabawy.
+Jeśli masz problem, napisz konkretnie, o co chodzi. Jeśli chcesz tylko ponarzekać, prowokować albo robić z siebie centrum wydarzeń, to nie jest miejsce na takie zabawy.
 
 ## 3. Zero NSFW
 Treści NSFW są zakazane bez wyjątków. Dotyczy to wiadomości, obrazów, linków, nicków, awatarów i opisów profilu.
@@ -29,7 +29,7 @@ Nie spamuj, nie zalewaj kanałów tą samą treścią i nie wrzucaj przypadkowyc
 Jeśli masz coś do dodania, upewnij się, że wnosi to coś do dyskusji, a nie tylko zaśmieca czat.
 
 ## 5. Pisz w odpowiednich kanałach
-Tematy o MeshCore prowadź na `#generalny` lub w odpowiednim kanale technicznym. Luźne rozmowy i dyskusje niezwiązane z MeshCore (np. polityka), wrzucaj na `#off-topic`.
+Tematy o MeshCore prowadź na `#generalny` lub w odpowiednim kanale technicznym. Luźne rozmowy i dyskusje niezwiązane z MeshCore (np. politykę) wrzucaj na `#off-topic`.
 Nie oznaczaj administracji bez potrzeby. Jeśli sprawa nie jest pilna, poczekaj na odpowiedź społeczności. Dzięki temu na serwerze łatwiej utrzymać porządek, a ważne tematy nie giną w przypadkowych dyskusjach.
 
 ## 6. Pomoc techniczna i cudza praca zarobkowa

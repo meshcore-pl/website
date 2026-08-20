@@ -3,7 +3,7 @@ title: Lista zmian meshcorepolska.org
 description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/community/lista-zmian
 createdAt: 2.08.2026
-updatedAt: 9.08.2026
+updatedAt: 20.08.2026
 ---
 
 # Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
@@ -11,7 +11,13 @@ Poniżej znajdziesz listę zmian wprowadzanych na stronie meshcorepolska.org.
 Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym dolnym rogu tamtej strony, przycisk `Lista zmian`.
 
 > [!NOTE]
-> Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie - CTRL + F5.
+> Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
+
+## v1.5.0
+1. Dodano nową grupę [Schematy](https://meshcorepolska.org/dokumentacja/schematy) w dokumentacji.
+2. Drobne poprawki w wyglądzie stron z dokumentacją.
+3. Drobne poprawki w treści witryny.
+4. Zaktualizowano zależności backendu do najnowszej wersji.
 
 ## v1.4.1
 1. Dodano wpis „MeshCore Firmware v1.17.0” w Aktualnościach.

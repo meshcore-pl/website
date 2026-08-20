@@ -49,7 +49,7 @@ Firmware pobierzesz ze [strony wydań projektu](https://github.com/recrof/xiao_n
 13. Przymocuj Xiao do drona, wyślij komendę `start ota` do swojego przemiennika i upewnij się, że Xiao mruga na niebiesko - to oznacza, że jest gotowy do flashowania Twojego przemiennika
 14. Podleć jak najbliżej celu - transfer rozpocznie się, gdy tylko aktualizator wykryje `ble_name` z minimalnym (lub lepszym) `rssi`
 15. Regularnie pinguj swój przemiennik przez LoRa - poinformuje Cię, czy proces się rozpoczął, a po kilku minutach zacznie znów być osiągalny
-16. Odbierz drona i spójrz na kolor diody LED na Xiao - jeśli jest ZIELONA, aktualizacja się powiodła, jeśli CZERWONA, nie powiodła się. Jeśli wciąż miga na niebiesko, oznacza to, że aktualizacja się nawet nie rozpoczęła - `ble_name` nie było ustawione poprawnie, `rssi` było zbyt słabe, albo `start ota` się nie powiodło
+16. Odbierz drona i spójrz na kolor diody LED na Xiao - jeśli jest ZIELONA, aktualizacja się powiodła, jeśli CZERWONA, nie powiodła się. Jeśli wciąż miga na niebiesko, oznacza to, że aktualizacja się nawet nie rozpoczęła - `ble_name` nie było ustawione poprawnie, `rssi` było zbyt słabe albo `start ota` się nie powiodło
 17. (opcjonalnie) możesz zajrzeć do pliku `log.txt` na dysku USB Xiao - powinien zawierać przebieg procesu aktualizacji ze znacznikami czasu względem uruchomienia. Możesz zobaczyć, jak wygląda [log udanej aktualizacji](https://blog.meshcore.io/assets/images/2026/06/22/success.log)
 
 Daj nam znać, czy ten poradnik pomógł Ci zaktualizować odległe przemienniki! Śmiało zadawaj pytania w komentarzach albo na naszym [Discordzie](https://discord.com/channels/1495203904898728149/1509594396482601121).

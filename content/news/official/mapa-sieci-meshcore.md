@@ -22,7 +22,7 @@ Mapa powstała głównie po to, by wskazywać węzły infrastruktury - dzięki n
 Z czasem funkcjonalność rozszerzono o statystyki węzłów, wyszukiwanie, filtrowanie oraz podstawowe monitorowanie kondycji sieci mesh.
 
 ## Warte uwagi funkcje
-Poza oczywistym przeglądaniem mapy i wyszukiwaniem węzłów, dostępny jest rozbudowany filtr, bardzo przydatny przy wyszukiwaniu konkretnych węzłów:
+Poza oczywistym przeglądaniem mapy i wyszukiwaniem węzłów dostępny jest rozbudowany filtr, bardzo przydatny przy wyszukiwaniu konkretnych węzłów:
 - **Szukaj tylko w aktualnym widoku mapy** - przydatne, gdy szukasz konkretnego węzła lub prefiksu klucza publicznego w swojej okolicy
 - **Pokaż tylko duplikaty** - wyświetla wyłącznie nazwy, które pojawiają się na mapie więcej niż raz, przydatne przy porządkowaniu mapy
 
@@ -59,7 +59,7 @@ _Dymek węzła z kodem QR i pełnymi szczegółami_
 ### Linki do udostępniania
 Mapa zapamiętuje Twoją aktualną pozycję oraz otwarty węzeł. Adres URL aktualizuje się w miarę przemieszczania się po mapie, a po otwarciu dymku węzła przełącza się na format `?public_key=...`. Taki URL możesz udostępnić bezpośrednio - każdy, kto go otworzy, trafi prosto do tego węzła z otwartym dymkiem.
 
-Możesz też użyć tego adresu URL na własnej, regionalnej stronie za pomocą `<iframe>`, oto przykład:
+Możesz też użyć tego adresu URL na własnej, regionalnej stronie za pomocą `<iframe>`. Oto przykład:
 ```html
 <iframe src="https://map.meshcore.io/?lat=47.8721&amp;lon=12.5903&amp;zoom=8" style="width:100%;aspect-ratio:3/2" frameborder="0" scrolling="no"></iframe>
 ```

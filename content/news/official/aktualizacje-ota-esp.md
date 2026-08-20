@@ -38,8 +38,8 @@ Alternatywnie możesz użyć samodzielnego urządzenia, takiego jak T-Deck z fir
 
 ![Komenda start ota na samodzielnym urządzeniu](https://blog.meshcore.io/assets/images/2026/04/01/xiao-start-ota.jpg)
 
-## 3. Połącz się z laptopa/telefonu
-Urządzenie ESP32 powinno utworzyć punkt dostępu WiFi o nazwie **MeshCore-OTA**. Po prostu połącz się z nim z laptopa (lub telefonu) i przejdź pod adres URL wyświetlony w odpowiedzi wiersza poleceń (powyżej). Powinieneś zobaczyć stronę podobną do tej poniżej.
+## 3. Połącz się za pomocą laptopa lub telefonu
+Urządzenie ESP32 powinno utworzyć punkt dostępu WiFi o nazwie **MeshCore-OTA**. Po prostu połącz się z nim za pomocą laptopa lub telefonu i przejdź pod adres URL wyświetlony w odpowiedzi wiersza poleceń (powyżej). Powinieneś zobaczyć stronę podobną do tej poniżej.
 
 ![Strona aktualizacji OTA](https://blog.meshcore.io/assets/images/2026/04/01/repeater-ota.png)
 

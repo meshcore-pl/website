@@ -37,7 +37,7 @@ Alternatywnie możesz użyć samodzielnego urządzenia, takiego jak T-Deck z fir
 
 ![Komenda start ota na samodzielnym urządzeniu](https://blog.meshcore.io/assets/images/2026/04/01/xiao-start-ota.jpg)
 
-## 3. Połącz się z telefonu
+## 3. Połącz się za pomocą telefonu
 Jeśli jeszcze jej nie masz, musisz zainstalować aplikację Nordic **nRF Device Firmware Update**, dostępną w [Google Play](https://play.google.com/store/apps/details?id=no.nordicsemi.android.dfu) oraz w [App Store](https://apps.apple.com/us/app/nrf-device-firmware-update/id1624454660).
 
 ### 3.1 Ustawienia aplikacji DFU
