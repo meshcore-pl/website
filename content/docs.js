@@ -41,7 +41,7 @@ module.exports = [
 		],
 	},
 	{
-		slug: 'community',
+		slug: 'spolecznosc',
 		icon: '/images/brand/logo-3-80.png',
 		title: 'Społeczność',
 		description: 'Materiały społeczności MeshCore Polska: loga, banery i inne zasoby graficzne do pobrania i swobodnego użycia.',

@@ -163,24 +163,24 @@ a.news-source:hover {
 	text-decoration: none;
 }
 
-.news-source--official {
+.news-source--oficjalne {
 	border-color: rgba(61, 220, 132, 0.3);
 	background: rgba(61, 220, 132, 0.1);
 	color: var(--signal);
 }
 
-a.news-source--official:hover {
+a.news-source--oficjalne:hover {
 	border-color: rgba(61, 220, 132, 0.6);
 	background: rgba(61, 220, 132, 0.18);
 }
 
-.news-source--community {
+.news-source--spolecznosc {
 	border-color: rgba(88, 166, 255, 0.3);
 	background: rgba(88, 166, 255, 0.1);
 	color: #58a6ff;
 }
 
-a.news-source--community:hover {
+a.news-source--spolecznosc:hover {
 	border-color: rgba(88, 166, 255, 0.6);
 	background: rgba(88, 166, 255, 0.18);
 }
