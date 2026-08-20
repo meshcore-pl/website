@@ -2,7 +2,7 @@
 title: Seeed XIAO nRF52840 - pinout
 description: Pinout płytki Seeed Studio XIAO nRF52840 - piny GPIO/ADC/SPI/I2C od strony górnej oraz układ zarządzania baterią (BAT+/BAT-, SWD) od spodu.
 canonical: /dokumentacja/schematy/xiao-nrf52840
-createdAt: 19.08.2026
+createdAt: 21.08.2026
 ---
 
 # Seeed XIAO nRF52840 - pinout {toc: XIAO nRF52840}

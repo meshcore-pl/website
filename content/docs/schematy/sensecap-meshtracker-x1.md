@@ -2,7 +2,7 @@
 title: SenseCAP MeshTracker X1 - specyfikacja i pinout
 description: Karta techniczna SenseCAP MeshTracker X1 (Seeed Studio) - nRF52840, radio LoRa Semtech LR2021, dwupasmowy GNSS L1+L5, bateria 1100 mAh oraz pinout modułów wewnętrznych.
 canonical: /dokumentacja/schematy/sensecap-meshtracker-x1
-createdAt: 20.08.2026
+createdAt: 21.08.2026
 ---
 
 # SenseCAP MeshTracker X1 - specyfikacja i pinout {toc: SenseCAP MeshTracker X1}

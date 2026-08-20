@@ -2,7 +2,7 @@
 title: Ładowarka solarna CN3791 (MPPT) - schemat modułu
 description: Schemat modułu ładowarki solarnej CN3791 (MPPT) - podłączenie panelu 6 V/9 V/12 V i akumulatora Li-ion/LiPo 3,7 V, typ złączy.
 canonical: /dokumentacja/schematy/cn3791-mppt
-createdAt: 19.08.2026
+createdAt: 21.08.2026
 ---
 
 # Ładowarka solarna CN3791 (MPPT) - schemat modułu {toc: CN3791 MPPT}
