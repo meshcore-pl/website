@@ -2,7 +2,7 @@
 Backend oraz frontend strony www [meshcorepolska.org](https://meshcorepolska.org).
 
 ## Współtworzenie
-Jeśli chcesz dołożyć swoją cegiełkę do tego projektu, albo po prostu poprawić/ulepszyć dokumentację, śmiało zachęcamy do tego!
+Jeśli chcesz dołożyć swoją cegiełkę do tego projektu albo po prostu poprawić lub ulepszyć dokumentację, śmiało zachęcamy do tego!
 [Dokumentacja](https://meshcorepolska.org/dokumentacja) jest dostępna w folderze [content/docs](content/docs).
 
 ## Uruchomienie strony
@@ -22,7 +22,7 @@ Jeśli chcesz dołożyć swoją cegiełkę do tego projektu, albo po prostu popr
    ```bash
    nano .env
    ```
-5. Uruchom aplikację. `CTRL^C` aby zakończyć.
+5. Uruchom aplikację. Naciśnij `Ctrl+C`, aby zakończyć proces.
    ```bash
    node .
    ```
