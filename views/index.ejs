@@ -172,7 +172,7 @@
 
 			<div id="print-offer">
 				<div id="print-offer__copy">
-					<h3>Mam płytkę, ale nie mam obudowy (a chcę)</h3>
+					<h3>Posiadam płytkę, ale nie mam obudowy (a chcę)</h3>
 					<p>Żaden problem! Możemy wydrukować dla Ciebie obudowę na drukarce 3D, dopasowaną do wybranej płytki i sposobu jej wykorzystania.</p>
 				</div>
 				<div id="print-offer__actions">
@@ -185,41 +185,65 @@
 		</div>
 	</section>
 
-	<section class="section section--alt" aria-labelledby="start-heading">
+	<section class="section section--alt section--quickstart" aria-labelledby="start-heading">
 		<div class="section__inner">
-			<div class="section__head">
-				<p class="eyebrow">Szybki start</p>
-				<h2 id="start-heading">Od zera do pierwszej wiadomości</h2>
-			</div>
-			<p class="section__lead">Oto najkrótsza droga do wysłania pierwszej wiadomości w sieci MeshCore. Wszystkie szczegóły znajdziesz w <a href="/dokumentacja">pełnej dokumentacji</a>.</p>
+			<div class="quickstart">
+				<div class="quickstart__content">
+					<div class="section__head">
+						<p class="eyebrow">Szybki start</p>
+						<h2 id="start-heading">Od zera do pierwszej wiadomości</h2>
+					</div>
+					<p class="section__lead">Oto najkrótsza droga do wysłania pierwszej wiadomości w sieci MeshCore. Wszystkie szczegóły znajdziesz w <a href="/dokumentacja">pełnej dokumentacji</a>.</p>
 
-			<ol id="timeline">
-				<li class="timeline__step">
-					<span class="timeline__marker">1</span>
-					<h3>Kup płytkę</h3>
-					<p>Companion za około 180-220 zł, np. Heltec V4.3 lub SenseCAP T1000-E. Koniecznie w wersji na pasmo 868 MHz.</p>
-				</li>
-				<li class="timeline__step">
-					<span class="timeline__marker">2</span>
-					<h3>Podłącz antenę</h3>
-					<p>Dokręć antenę dostrojoną pod 868 MHz, zanim włączysz urządzenie. Nadawanie bez anteny może uszkodzić moduł radiowy.</p>
-				</li>
-				<li class="timeline__step">
-					<span class="timeline__marker">3</span>
-					<h3>Wgraj firmware</h3>
-					<p>Podłącz płytkę kablem USB i wgraj oprogramowanie przez <a href="https://flasher.meshcore.io" target="_blank" rel="noopener">flasher.meshcore.io</a>, bezpośrednio z przeglądarki.</p>
-				</li>
-				<li class="timeline__step">
-					<span class="timeline__marker">4</span>
-					<h3>Zainstaluj aplikację</h3>
-					<p>Pobierz <a href="https://play.google.com/store/apps/details?id=com.liamcottle.meshcore.android&amp;hl=pl" target="_blank" rel="noopener">aplikację MeshCore</a>, włącz Bluetooth, połącz się z płytką w aplikacji, następnie ustaw <a href="/dokumentacja/meshcore/aktualne-presety">preset EU/UK (Narrow)</a>.</p>
-				</li>
-				<li class="timeline__step">
-					<span class="timeline__marker">5</span>
-					<h3>Wyślij pierwszą wiadomość</h3>
-					<p>Przejdź do Kanały i przywitaj się z nami na Public! Utknąłeś? Dołącz na <a href="/discord" target="_blank" rel="noopener">Discorda</a>. Możesz też skorzystać z <a href="/kontakt" target="_blank">formularza kontaktowego</a>.</p>
-				</li>
-			</ol>
+					<ol id="timeline">
+						<li class="timeline__step">
+							<span class="timeline__marker">1</span>
+							<div class="timeline__step-body">
+								<h3>Kup płytkę</h3>
+								<p>Companion za około 180-220 zł, np. Heltec V4.3 lub SenseCAP T1000-E. Koniecznie w wersji na pasmo 868 MHz.</p>
+							</div>
+						</li>
+						<li class="timeline__step">
+							<span class="timeline__marker">2</span>
+							<div class="timeline__step-body">
+								<h3>Podłącz antenę</h3>
+								<p>Dokręć antenę dostrojoną pod 868 MHz, zanim włączysz urządzenie. Nadawanie bez anteny może uszkodzić moduł radiowy.</p>
+							</div>
+						</li>
+						<li class="timeline__step">
+							<span class="timeline__marker">3</span>
+							<div class="timeline__step-body">
+								<h3>Wgraj firmware</h3>
+								<p>Podłącz płytkę kablem USB i wgraj oprogramowanie przez <a href="https://flasher.meshcore.io" target="_blank" rel="noopener">flasher.meshcore.io</a>, bezpośrednio z przeglądarki.</p>
+							</div>
+						</li>
+						<li class="timeline__step">
+							<span class="timeline__marker">4</span>
+							<div class="timeline__step-body">
+								<h3>Zainstaluj aplikację</h3>
+								<p>Pobierz <a href="https://play.google.com/store/apps/details?id=com.liamcottle.meshcore.android&amp;hl=pl" target="_blank" rel="noopener">aplikację MeshCore</a>, włącz Bluetooth, połącz się z płytką w aplikacji, następnie ustaw <a href="/dokumentacja/meshcore/aktualne-presety">preset EU/UK (Narrow)</a>.</p>
+							</div>
+						</li>
+						<li class="timeline__step">
+							<span class="timeline__marker">5</span>
+							<div class="timeline__step-body">
+								<h3>Wyślij pierwszą wiadomość</h3>
+								<p>Przejdź do listy kanałów, napisz coś na Public. Dodaj także kanały takie jak #polska, #test, #bot. Są one powszechnie używane w sieci.</p>
+							</div>
+						</li>
+					</ol>
+
+					<div id="timeline__tip">
+						<p><strong>Nie zniechęcaj się ciszą!</strong> Nie każdy przecież siedzi na MeshCore cały czas. Jeśli Twoja wiadomość dotarła do pobliskich repeaterów, to już duży sukces! Zerknij na <a href="https://mapa.meshcorepolska.org" target="_blank" rel="noopener">mapę</a> albo na jeden z <a href="/dokumentacja/meshcore/lista-analizatorow">publicznych analizatorów</a>. Utknąłeś mimo wszystko? Dołącz na <a href="/discord" target="_blank" rel="noopener">Discorda</a> albo skorzystaj z <a href="/kontakt" target="_blank">formularza kontaktowego</a>.</p>
+					</div>
+				</div>
+
+				<figure class="quickstart__shot">
+					<a href="/images/screens/pierwsza-wiadomosc.png" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ zrzut przykładowej rozmowy na kanale Public w aplikacji MeshCore">
+						<img src="/images/screens/pierwsza-wiadomosc.png" alt="Przykładowa rozmowa na kanale Public w aplikacji MeshCore, wiadomości oznaczone jako odebrane przez 3 repeatery" width="610" height="1086" loading="lazy">
+					</a>
+				</figure>
+			</div>
 		</div>
 	</section>
 

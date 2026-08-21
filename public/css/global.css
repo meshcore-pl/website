@@ -475,6 +475,10 @@ body[data-page="news"] .section__inner {
 	max-width: var(--container-subpages);
 }
 
+.section--quickstart .section__inner {
+	max-width: 90%;
+}
+
 #footer {
 	padding: 36px 24px 32px;
 	border-top: 1px solid rgba(238, 241, 248, 0.08);
