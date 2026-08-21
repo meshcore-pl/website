@@ -1,6 +1,6 @@
 ---
 title: MeshCore App v1.48.0
-description: 15 sierpnia 2026 - wersja 1.48.0 aplikacji MeshCore, powiadomienia push w wersji web, przeglądanie regionów przemienników oraz nowe wymagania systemowe iOS i Android.
+description: 15 sierpnia 2026 - wersja 1.48.0 aplikacji MeshCore, powiadomienia push w wersji web, przeglądanie regionów przemienników i nowe wymagania systemowe.
 createdAt: 15.08.2026
 tags: [Lista zmian, Aplikacja]
 ---

@@ -1,6 +1,6 @@
 ---
-title: EBYTE E22P-868M30S - moduł LoRa SX1262, pinout i dokumentacja
-description: Karta techniczna modułu LoRa EBYTE E22P-868M30S (SX1262 + PA/LNA, pasmo 868 MHz, do 30 dBm) - pinout SPI, parametry elektryczne i link do pełnej dokumentacji producenta.
+title: EBYTE E22P-868M30S - pinout i dokumentacja
+description: Karta techniczna modułu LoRa EBYTE E22P-868M30S (SX1262 + PA/LNA, 868 MHz, do 30 dBm) - pinout SPI, parametry elektryczne i link do dokumentacji producenta.
 canonical: /dokumentacja/schematy/ebyte-e22p-868m30s
 createdAt: 21.08.2026
 ---

@@ -40,7 +40,7 @@
 	width: 96px;
 	height: 96px;
 	border-radius: 20%;
-	object-fit: cover;
+	object-fit: contain;
 }
 
 .docs-hero__lead {
@@ -154,7 +154,7 @@
 	width: 64px;
 	height: 64px;
 	border-radius: 20%;
-	object-fit: cover;
+	object-fit: contain;
 }
 
 .docs-group-card__body {
@@ -498,6 +498,7 @@
 
 img.docs-nav-group__icon {
 	border-radius: 20%;
+	object-fit: contain;
 }
 
 .docs-nav-group ul {

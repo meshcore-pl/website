@@ -9,7 +9,7 @@ module.exports = ({ domain, discordInviteUrl, breadcrumbs, article, faq }) => {
 			name: 'MeshCore Polska',
 			description: 'Pierwsza ogólnopolska społeczność skupiona wokół sieci MeshCore, czyli komunikacji radiowej LoRa działającej bez internetu i GSM.',
 			url: `${domain}/`,
-			logo: { '@type': 'ImageObject', url: `${domain}/images/brand/logo-3-192.png`, width: 192, height: 192 },
+			logo: { '@type': 'ImageObject', url: `${domain}/images/brand/logo-3-192.jpg`, width: 192, height: 192 },
 			email: 'contact@sefinek.net',
 			sameAs: [discordInviteUrl, 'https://github.com/meshcore-pl'],
 		},
