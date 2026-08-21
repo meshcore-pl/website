@@ -13,6 +13,10 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 > [!NOTE]
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
 
+## v1.5.1
+1. Dodano nową sekcję na stronie głównej.
+2. Różne poprawki na stronie głównej.
+
 ## v1.5.0
 1. Dodano nową grupę [Schematy](https://meshcorepolska.org/dokumentacja/schematy) w dokumentacji.
 2. Drobne poprawki w wyglądzie stron z dokumentacją.

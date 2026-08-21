@@ -20,8 +20,8 @@
 					Sprawdź dokumentację, uruchom własny węzeł i buduj sieć razem z nami!
 				</p>
 				<div class="hero__actions">
-					<a href="/dokumentacja" class="btn btn--primary">Jak zacząć z MeshCore</a>
-					<a href="<%= discordInviteUrl %>" class="btn btn--secondary" target="_blank" rel="noopener">Serwer Discord</a>
+					<a href="/dokumentacja/meshcore" class="btn btn--primary">Jak zacząć z MeshCore</a>
+					<a href="/discord" class="btn btn--secondary" target="_blank" rel="noopener">Serwer Discord</a>
 				</div>
 				<div id="hero__stats">
 					<span class="stat"><strong id="stat-repeaters">----</strong> węzłów</span>
@@ -157,7 +157,7 @@
 				</div>
 				<div class="card">
 					<h3>Nie wiesz, co wybrać?</h3>
-					<p>Napisz na naszym <a href="<%= discordInviteUrl %>" target="_blank" rel="noopener">Discordzie</a>. Pomożemy dobrać sprzęt do Twojego budżetu, sposobu zasilania i planowanego zastosowania.</p>
+					<p>Napisz na naszym <a href="/discord" target="_blank" rel="noopener">Discordzie</a>. Pomożemy dobrać sprzęt do Twojego budżetu, sposobu zasilania i planowanego zastosowania.</p>
 				</div>
 			</div>
 
@@ -182,6 +182,55 @@
 			</div>
 
 			<p id="cards__soon">Zajrzyj też do <a href="/dokumentacja/meshcore">naszej dokumentacji</a>, gdzie znajdziesz poradniki, listę anten, instrukcje konfiguracji i wiele więcej!</p>
+		</div>
+	</section>
+
+	<section class="section section--alt" aria-labelledby="start-heading">
+		<div class="section__inner">
+			<div class="section__head">
+				<p class="eyebrow">Szybki start</p>
+				<h2 id="start-heading">Od zera do pierwszej wiadomości</h2>
+			</div>
+			<p class="section__lead">Oto najkrótsza droga do wysłania pierwszej wiadomości w sieci MeshCore. Wszystkie szczegóły znajdziesz w <a href="/dokumentacja">pełnej dokumentacji</a>.</p>
+
+			<ol id="timeline">
+				<li class="timeline__step">
+					<span class="timeline__marker">1</span>
+					<h3>Kup płytkę</h3>
+					<p>Companion za około 180-220 zł, np. Heltec V4.3 lub SenseCAP T1000-E. Koniecznie w wersji na pasmo 868 MHz.</p>
+				</li>
+				<li class="timeline__step">
+					<span class="timeline__marker">2</span>
+					<h3>Podłącz antenę</h3>
+					<p>Dokręć antenę dostrojoną pod 868 MHz, zanim włączysz urządzenie. Nadawanie bez anteny może uszkodzić moduł radiowy.</p>
+				</li>
+				<li class="timeline__step">
+					<span class="timeline__marker">3</span>
+					<h3>Wgraj firmware</h3>
+					<p>Podłącz płytkę kablem USB i wgraj oprogramowanie przez <a href="https://flasher.meshcore.io" target="_blank" rel="noopener">flasher.meshcore.io</a>, bezpośrednio z przeglądarki.</p>
+				</li>
+				<li class="timeline__step">
+					<span class="timeline__marker">4</span>
+					<h3>Zainstaluj aplikację</h3>
+					<p>Pobierz <a href="https://play.google.com/store/apps/details?id=com.liamcottle.meshcore.android&amp;hl=pl" target="_blank" rel="noopener">aplikację MeshCore</a>, włącz Bluetooth, połącz się z płytką w aplikacji, następnie ustaw <a href="/dokumentacja/meshcore/aktualne-presety">preset EU/UK (Narrow)</a>.</p>
+				</li>
+				<li class="timeline__step">
+					<span class="timeline__marker">5</span>
+					<h3>Wyślij pierwszą wiadomość</h3>
+					<p>Przejdź do Kanały i przywitaj się z nami na Public! Utknąłeś? Dołącz na <a href="/discord" target="_blank" rel="noopener">Discorda</a>. Możesz też skorzystać z <a href="/kontakt" target="_blank">formularza kontaktowego</a>.</p>
+				</li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="section" aria-labelledby="wplyw-heading">
+		<div class="section__inner">
+			<div id="callout">
+				<p class="eyebrow">Polskie tłumaczenie</p>
+				<h2 id="wplyw-heading">Realny wpływ</h2>
+				<p>Zajmujemy się tłumaczeniem aplikacji MeshCore na język polski. Masz uwagi, znalazłeś błąd albo chcesz zaproponować lepsze tłumaczenie? Napisz śmiało na <a href="/discord" target="_blank" rel="noopener">naszym Discordzie</a>.</p>
+				<p id="callout__note">Dostęp do edycji polskiego tłumaczenia aplikacji ma wyłącznie Sefinek.</p>
+			</div>
 		</div>
 	</section>
 
@@ -296,18 +345,7 @@
 		</div>
 	</section>
 
-	<section class="section" aria-labelledby="wplyw-heading">
-		<div class="section__inner">
-			<div id="callout">
-				<p class="eyebrow">Polskie tłumaczenie</p>
-				<h2 id="wplyw-heading">Realny wpływ</h2>
-				<p>Zajmujemy się tłumaczeniem aplikacji MeshCore na język polski. Masz uwagi, znalazłeś błąd albo chcesz zaproponować lepsze tłumaczenie? Napisz śmiało na <a href="<%= discordInviteUrl %>" target="_blank" rel="noopener">naszym Discordzie</a>.</p>
-				<p id="callout__note">Dostęp do edycji polskiego tłumaczenia aplikacji ma wyłącznie Sefinek.</p>
-			</div>
-		</div>
-	</section>
-
-	<section class="section section--alt" aria-labelledby="prywatnosc-heading">
+	<section class="section" aria-labelledby="prywatnosc-heading">
 		<div class="section__inner">
 			<div class="section__head">
 				<p class="eyebrow">Prywatność</p>
@@ -317,7 +355,7 @@
 			<p class="section__lead">
 				Meta słynie z inwigilacji użytkowników, dlatego nasza społeczność działa na Discordzie. Nie potrzebujesz konta z prawdziwym imieniem i nazwiskiem, żeby z nami porozmawiać.
 				Czemu nie forum internetowe w takim razie? Większość z nich straciła w ostatnich latach na aktywności i popularności.
-				Konkretną wiedzę trzymamy w <a href="/dokumentacja">dokumentacji</a>, a rozmowy, pomoc techniczna i bieżące ustalenia odbywają się na <a href="<%= discordInviteUrl %>" target="_blank" rel="noopener">Discordzie</a>. Kolejne nieaktywne forum nie miałoby większego sensu.
+				Konkretną wiedzę trzymamy w <a href="/dokumentacja">dokumentacji</a>, a rozmowy, pomoc techniczna i bieżące ustalenia odbywają się na <a href="/discord" target="_blank" rel="noopener">Discordzie</a>. Kolejne nieaktywne forum nie miałoby większego sensu.
 			</p>
 		</div>
 	</section>
