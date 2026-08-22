@@ -32,8 +32,6 @@ app.locals.v = version;
 app.locals.buildSchema = buildSchema;
 app.locals.pluralizePolish = pluralizePolish;
 
-app.use((req, res) => res.send('Prace techniczne (nowa aktualizacja). Wróć tu za 5 minut.'));
-
 // Use middlewares
 app.use(helmet({ crossOriginResourcePolicy: false, contentSecurityPolicy: false }));
 app.use(express.static('public'));
@@ -42,10 +40,12 @@ if (isProd) app.use(limiter.global);
 app.use(timeout());
 app.use(express.urlencoded({ extended: false, limit: '8kb' }));
 
+
 app.use(PagesRouter);
 app.use(DocsRouter);
 app.use(NewsRouter);
 app.use(limiter.contactForm, ContactRouter);
+
 
 // Error handling
 app.use((req, res) => RenderError(res, 404));

@@ -52,7 +52,6 @@ router.get('/dokumentacja/:group/:slug', (req, res) => {
 
 		const schema = buildSchema({
 			domain: req.app.locals.domain,
-			discordInviteUrl: req.app.locals.discordInviteUrl,
 			breadcrumbs: locals.breadcrumbs,
 			article: {
 				title: locals.title,
