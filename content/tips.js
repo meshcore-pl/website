@@ -6,7 +6,7 @@ const tips = [
 	'Czy wiesz, że MeshCore Południe (Bielsko-Biała, Śląsk, Małopolska) używa SF6 zamiast SF8 jak reszta Polski?',
 	'Czy wiesz, że MeshCore działa bez internetu i zasięgu sieci komórkowej? Wiadomości są przesyłane drogą radiową.',
 	'Czy wiesz, że urządzenia klienckie MeshCore nie retransmitują pakietów? Za rozszerzanie zasięgu odpowiadają repeatery.',
-	'Czy wiesz, że Room Serwer przechowuje historię wiadomości?',
+	'Czy wiesz, że room serwer przechowuje historię wiadomości?',
 	'Czy wiesz, że z MeshCore można korzystać bez telefonu? Obsługują to między innymi urządzenia T-Deck od LilyGO (standalone nodes).',
 ];
 

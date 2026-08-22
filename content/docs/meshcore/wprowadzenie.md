@@ -39,8 +39,8 @@ Nie znajdziesz więc tutaj żadnej rozbieżności ani nie pomylisz się przy czy
 | Noise Floor (NF)               | Noise Floor              | Poziom szumu i zakłóceń odbieranych przez radio - im bardziej ujemny wynik, tym lepiej. [Czytaj więcej](https://meshcorepolska.org/dokumentacja/meshcore/noise-floor).       |
 | Companion                      |                          | Urządzenie LoRa, które łączy się z telefonem lub komputerem przez Bluetooth lub USB. Służy do wysyłania i odbierania wiadomości.                                             |
 | Repeater (RPT)                 |                          | Węzeł (tzw. przekaźnik), który przekazuje dalej odebrane pakiety w eter i zwiększa zasięg sieci.                                                                             |
-| Room Serwer (RS)               |                          | Osobny firmware, zwykle używany do grupowych rozmów lokalnych. Przechowuje historię wiadomości i udostępnia ją użytkownikom po połączeniu.                                   |
-| Room-Peater                    |                          | Repeater i room serwer połączone w jednym firmware. Patrz [Role urządzeń](#role-urzadzen) niżej.                                                                             |
+| Room serwer (RS)               |                          | Osobny firmware, zwykle używany do grupowych rozmów lokalnych. Przechowuje historię wiadomości i udostępnia ją użytkownikom po połączeniu.                                   |
+| Room-peater                    |                          | Repeater i room serwer połączone w jednym firmware. Patrz [Role urządzeń](#role-urzadzen) niżej.                                                                             |
 | Advert                         |                          | Pakiet rozgłoszeniowy zawierający informacje o urządzeniu. Po jego odebraniu urządzenie pojawi się na liście kontaktów.                                                      |
 | Hop                            |                          | Jeden przeskok pakietu między urządzeniami - każdy retransmitujący repeater po drodze to +1 hop.                                                                             |
 | Advert 0-hop                   | Advert Zero Hop          | Advert lokalny, który dociera tylko do urządzeń znajdujących się w bezpośrednim zasięgu radiowym. Repeatery nie przekazują go dalej.                                         |
@@ -61,7 +61,7 @@ O roli urządzenia decyduje oprogramowanie (firmware), nie sama płytka. Ten sam
 ### Companion (kompan)
 - Urządzenie osobiste. Parujesz je z telefonem lub komputerem przez Bluetooth albo USB, a następnie za jego pośrednictwem wysyłasz i odbierasz wiadomości.
 - Jeżeli przez pewien czas aplikacja będzie wyłączona lub połączenie Bluetooth zostanie zerwane, wiadomości będą zapisywane w buforze. Ma on określony limit, po jego przekroczeniu najstarsze wiadomości zostaną nadpisywane. Po ponownym połączeniu się ze swoim companionem uzyskasz wgląd w to, co działo się podczas Twojej nieobecności.
-- Companion samodzielnie nie przekazuje dalej wiadomości innych użytkowników. Aby komunikacja mogła wykroczyć poza bezpośredni zasięg radiowy, w pobliżu musi znajdować się repeater lub Room-Peater.
+- Companion samodzielnie nie przekazuje dalej wiadomości innych użytkowników. Aby komunikacja mogła wykroczyć poza bezpośredni zasięg radiowy, w pobliżu musi znajdować się repeater lub room-peater.
 
 ### Repeater (RPT)
 - Jego jedyne zadanie to rozszerzanie zasięgu sieci. Przyjmuje pakiety i przekazuje je dalej. Nie buforuje wiadomości, nie prowadzi żadnej historii i nie zarządza kanałami.
@@ -74,7 +74,7 @@ O roli urządzenia decyduje oprogramowanie (firmware), nie sama płytka. Ten sam
 - Prywatność takiego serwera zależy wyłącznie od ciebie - dopóki nie zmienisz domyślnego hasła, dołączy do niego każdy.
 
 ### Room-peater
-- Room-Peater to repeater i room serwer połączone w jednym urządzeniu i jednym firmware. Jednocześnie przechowuje wiadomości grupowe i przekazuje pakiety dalej w eter.
+- Room-peater to repeater i room serwer połączone w jednym urządzeniu i jednym firmware. Jednocześnie przechowuje wiadomości grupowe i przekazuje pakiety dalej w eter.
 - Wygodne rozwiązanie tam, gdzie nie ma sensu stawiać dwóch osobnych urządzeń, ale w gęściej obstawionej okolicy lepiej rozdzielić te funkcje. Room-peater dzieli jeden budżet duty cycle między obie role naraz.
 
 ### Companion + repeat mode
