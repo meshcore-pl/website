@@ -42,7 +42,7 @@ module.exports = [
 	},
 	{
 		slug: 'spolecznosc',
-		icon: '/images/brand/logo-3-80.jpg',
+		icon: '/images/brand/logo-3-180.jpg',
 		title: 'Społeczność',
 		description: 'Materiały społeczności MeshCore Polska: loga, banery i inne zasoby graficzne do pobrania i swobodnego użycia.',
 		pages: [

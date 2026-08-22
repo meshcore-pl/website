@@ -60,6 +60,13 @@
 			<% } else { %>
 			<p>Nie ma jeszcze żadnych wpisów. Zajrzyj tu wkrótce.</p>
 			<% } %>
+
+			<% if (tip) { %>
+			<div class="docs-tip">
+				<svg class="docs-tip__icon" aria-hidden="true"><use href="/icons.svg#alert-tip"></use></svg>
+				<p><%= tip %></p>
+			</div>
+			<% } %>
 		</div>
 	</section>
 </main>

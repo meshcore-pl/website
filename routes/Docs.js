@@ -2,8 +2,9 @@ const router = require('express').Router();
 const RenderError = require('../utils/renderError.js');
 const docs = require('../services/docs.js');
 const buildSchema = require('../utils/schema.js');
+const { getRandomTip } = require('../content/tips.js');
 
-router.get('/dokumentacja', (req, res) => res.render('docs/index.ejs', { groups: docs.groups }));
+router.get('/dokumentacja', (req, res) => res.render('docs/index.ejs', { groups: docs.groups, tip: getRandomTip() }));
 
 router.get('/api/v1/dokumentacja/szukaj', (req, res) => {
 	res.set('Cache-Control', 'no-cache');
@@ -16,7 +17,7 @@ router.get('/dokumentacja/:group', (req, res) => {
 
 	res.set('Last-Modified', group.lastModified.toUTCString());
 	res.set('Cache-Control', 'no-cache');
-	res.render('docs/group.ejs', { groups: docs.groups, group });
+	res.render('docs/group.ejs', { groups: docs.groups, group, tip: getRandomTip() });
 });
 
 router.get('/dokumentacja/:group/:slug', (req, res) => {

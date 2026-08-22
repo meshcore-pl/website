@@ -17,6 +17,9 @@
 			<p class="eyebrow">Kompendium wiedzy</p>
 			<h1>Dokumentacja i lektura</h1>
 			<p class="docs-hero__lead">Znajdziesz tu informacje o naszym serwerze Discord oraz materiały o MeshCore, choć te wciąż nie są kompletne i cały czas nad nimi pracujemy. Strona jest jeszcze w budowie. Jeśli masz jakieś propozycje, podziel się nimi na naszym Discordzie.</p>
+			<div id="docs-hero__actions">
+				<a href="/#od-zera-do-pierwszej-wiadomosci" class="btn btn--primary">Szybki start</a>
+			</div>
 		</div>
 	</section>
 
@@ -38,6 +41,13 @@
 				</a>
 				<% }) %>
 			</div>
+
+			<% if (tip) { %>
+			<div class="docs-tip">
+				<svg class="docs-tip__icon" aria-hidden="true"><use href="/icons.svg#alert-tip"></use></svg>
+				<p><%= tip %></p>
+			</div>
+			<% } %>
 		</div>
 	</section>
 </main>

@@ -3,7 +3,7 @@ title: Lista zmian meshcorepolska.org
 description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/spolecznosc/lista-zmian
 createdAt: 2.08.2026
-updatedAt: 21.08.2026
+updatedAt: 22.08.2026
 ---
 
 # Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
@@ -13,9 +13,13 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 > [!NOTE]
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
 
-## v1.5.1
+## v1.6.0
 1. Dodano nową sekcję na stronie głównej.
 2. Różne poprawki na stronie głównej.
+3. Dodano losowe ciekawostki („Czy wiesz, że...?”) na dole `/dokumentacja` i `/aktualnosci`.
+4. Dodano przycisk „Szybki start” w `/dokumentacja`, prowadzący do sekcji „Od zera do pierwszej wiadomości”.
+5. Nagłówki sekcji na stronie głównej można teraz kliknąć, aby skopiować bezpośredni link do danej sekcji.
+6. Różne poprawki.
 
 ## v1.5.0
 1. Dodano nową grupę [Schematy](https://meshcorepolska.org/dokumentacja/schematy) w dokumentacji.
