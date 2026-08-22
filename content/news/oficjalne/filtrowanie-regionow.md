@@ -1,6 +1,6 @@
 ---
 title: Filtrowanie regionów
-description: Filtrowanie regionów trafia do MeshCore - firmware przemiennika, Ripple i aplikacja Liama pozwalają ograniczać zasięg wiadomości kanałowych do regionu.
+description: Filtrowanie regionów trafia do MeshCore - firmware repeatera, Ripple i aplikacja Liama pozwalają ograniczać zasięg wiadomości kanałowych do regionu.
 createdAt: 20.01.2026
 updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/01/20/region-filtering
@@ -9,7 +9,7 @@ tags: [Oprogramowanie, Aplikacja]
 
 # Ograniczanie zasięgu wiadomości kanałowych w MeshCore
 Wreszcie wszystkie elementy układanki trafiają na swoje miejsce - filtrowanie regionów jest już dostępne.
-Poprzedziło je kilka kluczowych zmian w kodzie, które musiały pojawić się wcześniej, by zapewnić odpowiednie wsparcie - między innymi obsługa kodów transportowych w nagłówkach pakietów, a ostatnio, wraz z wydaniem firmware przemiennika v1.10.0, konfiguracja regionów i właściwa logika filtrowania.
+Poprzedziło je kilka kluczowych zmian w kodzie, które musiały pojawić się wcześniej, by zapewnić odpowiednie wsparcie - między innymi obsługa kodów transportowych w nagłówkach pakietów, a ostatnio, wraz z wydaniem firmware repeatera v1.10.0, konfiguracja regionów i właściwa logika filtrowania.
 
 Ostatnim elementem układanki jest obsługa po stronie urządzeń klienckich oraz interfejs, który (miejmy nadzieję) jest wygodny w obsłudze.
 Firmware Ripple z graficznym interfejsem jest już gotowy, podobnie jak zmiany w aplikacji Liama.
@@ -33,12 +33,12 @@ Najpierw musisz zdefiniować nazwy regionów na nowym ekranie **Regiony** (z men
 
 ![Ekran Regiony w Ripple](https://blog.meshcore.io/assets/images/2026/01/20/regionsscreen.jpg)
 
-Możesz zrobić to ręcznie z poziomu menu **Dodaj nowy**, ale fajną nową funkcją firmware przemiennika v1.12.0 (kolejne wydanie) jest obsługa nowych typów żądań, w tym automatyczne wykrywanie regionów w Twojej okolicy!
+Możesz zrobić to ręcznie z poziomu menu **Dodaj nowy**, ale fajną nową funkcją firmware repeatera v1.12.0 (kolejne wydanie) jest obsługa nowych typów żądań, w tym automatyczne wykrywanie regionów w Twojej okolicy!
 Aby z tego skorzystać, wybierz menu **Skanuj lokalnie**.
 
 ![Menu Skanuj lokalnie](https://blog.meshcore.io/assets/images/2026/01/20/regionsscan.jpg)
 
-Wykorzystuje ono nowe żądanie typu Discover, na które odpowiadają wszystkie przemienniki w zasięgu, przesyłając listę regionów, jakie są skonfigurowane do obsługi.
+Wykorzystuje ono nowe żądanie typu Discover, na które odpowiadają wszystkie repeatery w zasięgu, przesyłając listę regionów, jakie są skonfigurowane do obsługi.
 Wyniki są następnie zestawiane, a jeśli któryś z nich nie znajduje się na liście Twojego urządzenia, zostaniesz zapytany, czy chcesz go dodać.
 
 ![Propozycja dodania znalezionego regionu](https://blog.meshcore.io/assets/images/2026/01/20/regionaddfound.jpg)
@@ -60,7 +60,7 @@ Po dodaniu i wybraniu regionu pasek tytułowy czatu kanału zmienia się, pokazu
 ![Pasek tytułowy czatu z wybranym regionem](https://blog.meshcore.io/assets/images/2026/01/20/Screenshot_20260120_at_1.03.12pm.png)
 
 ## Co dalej
-Pierwszy krok należy do administratorów przemienników.
+Pierwszy krok należy do administratorów repeaterów.
 Będzie to wymagało dyskusji na forach, z których korzystacie (albo nawet przez samą sieć mesh!), by dojść do konsensusu, jak podzielić swój obszar geograficzny.
 Nazwy regionów muszą być _dokładne_ - jakakolwiek literówka będzie traktowana jako zupełnie inny region! Obowiązuje kilka zasad dotyczących nazw:
 
@@ -68,41 +68,41 @@ Nazwy regionów muszą być _dokładne_ - jakakolwiek literówka będzie traktow
 - wyłącznie małe znaki alfanumeryczne oraz „-” (myślnik)
 - dla danej sieci mesh nazwy regionów muszą być unikalne
 
-Każdy przemiennik może obsługiwać wiele regionów, więc możesz mieć super-regiony obejmujące np. całe województwo, z mniejszymi podregionami powiatowymi.
+Każdy repeater może obsługiwać wiele regionów, więc możesz mieć super-regiony obejmujące np. całe województwo, z mniejszymi podregionami powiatowymi.
 Hierarchia regionów może sięgać dowolnie głęboko.
 
 ![Przykładowa hierarchia regionów](https://blog.meshcore.io/assets/images/2026/01/20/exampleregions.png)
 
 Dla przykładu: większy region zaznaczony na czerwono mógłby nazywać się **sample-city**, zielony podregion **sample-west**, a pomarańczowy podregion **sample-east**.
-Administratorzy przemienników musieliby wtedy dodać różne nazwy regionów do konfiguracji każdego przemiennika (można to zrobić zdalnie).
+Administratorzy repeaterów musieliby wtedy dodać różne nazwy regionów do konfiguracji każdego repeatera (można to zrobić zdalnie).
 
-Dla obszarów granicznych, jak w środku, rozsądnie jest uwzględnić _oba_ regiony. Przemienniki **E** i **F** skonfigurowałyby więc: **sample-city, sample-east, sample-west**.
+Dla obszarów granicznych, jak w środku, rozsądnie jest uwzględnić _oba_ regiony. Repeatery **E** i **F** skonfigurowałyby więc: **sample-city, sample-east, sample-west**.
 
-Przemienniki **A, B** i **C** skonfigurowałyby: **sample-city, sample-west**.
+Repeatery **A, B** i **C** skonfigurowałyby: **sample-city, sample-west**.
 
-Przemienniki **I, G** i **H** skonfigurowałyby: **sample-city, sample-east**.
+Repeatery **I, G** i **H** skonfigurowałyby: **sample-city, sample-east**.
 
-A odosobniony przemiennik **D** miałby tylko: **sample-city**.
+A odosobniony repeater **D** miałby tylko: **sample-city**.
 
-Zajrzyj do [dokumentacji poleceń CLI przemiennika](https://docs.meshcore.io/cli_commands), do sekcji zarządzania regionami.
+Zajrzyj do [dokumentacji poleceń CLI repeatera](https://docs.meshcore.io/cli_commands), do sekcji zarządzania regionami.
 Aby zdefiniować region, wydaj komendę „**region put ..**”, a następnie „**region allowf ...**”, by zezwolić na pakiety flood dla tego regionu.
 I nie zapomnij o „**region save**” na koniec! Musisz to zrobić tylko raz (lub za każdym razem, gdy zmieniają się regiony).
 
-Zwykli użytkownicy urządzeń klienckich będą musieli poczekać, aż ta konfiguracja przemienników się rozpowszechni, po czym będą mogli postąpić zgodnie z krokami opisanymi powyżej - albo automatycznie wykryć regiony w swojej okolicy, albo dodać je ręcznie.
+Zwykli użytkownicy urządzeń klienckich będą musieli poczekać, aż ta konfiguracja repeaterów się rozpowszechni, po czym będą mogli postąpić zgodnie z krokami opisanymi powyżej - albo automatycznie wykryć regiony w swojej okolicy, albo dodać je ręcznie.
 
 ## FAQ
-**Pytanie: Jako administrator przemiennika, jeśli skonfiguruję jakieś regiony, czy oznacza to, że wiadomości przestaną docierać?**
+**Pytanie: Jako administrator repeatera, jeśli skonfiguruję jakieś regiony, czy oznacza to, że wiadomości przestaną docierać?**
 
 Nie. Domyślnie większość aplikacji klienckich wysyła wiadomości kanałowe z użyciem regionu _null_ („*”). To ustawienie odziedziczone, oznaczające, że wiadomość (obecnie) trafi wszędzie.
 
-**Pytanie: Co się dzieje, gdy nadawca ustawi region zakresu, a wciąż jest wielu przemienników bez skonfigurowanych regionów?**
+**Pytanie: Co się dzieje, gdy nadawca ustawi region zakresu, a wciąż jest wielu repeaterów bez skonfigurowanych regionów?**
 
-Od wersji v1.10.0 obowiązuje podstawowa reguła filtrowania, która (w takim przypadku) _nie_ przekaże dalej pakietów flood z ustawionym zakresem, jeśli w konfiguracji przemiennika nie ma pasującego regionu. Odziedziczone pakiety flood (jak opisano powyżej) nadal będą przekazywane. Jeśli jednak w danym obszarze wciąż działają przemienniki sprzed wersji v1.10.0, pakiety flood z ustawionym zakresem będą „przeciekać” do innych regionów.
+Od wersji v1.10.0 obowiązuje podstawowa reguła filtrowania, która (w takim przypadku) _nie_ przekaże dalej pakietów flood z ustawionym zakresem, jeśli w konfiguracji repeatera nie ma pasującego regionu. Odziedziczone pakiety flood (jak opisano powyżej) nadal będą przekazywane. Jeśli jednak w danym obszarze wciąż działają repeatery sprzed wersji v1.10.0, pakiety flood z ustawionym zakresem będą „przeciekać” do innych regionów.
 
 **Pytanie: Czy można zablokować odziedziczone pakiety flood (czyli bez ustawionego zakresu)?**
 
-Tak. Odziedziczone pakiety flood (czyli bez dołączonego kodu transportowego zakresu) są dopasowywane do regionu _null_, a administratorzy przemienników mogą również zmienić uprawnienia tego regionu. UWAGA: na tym etapie nie jest to zalecane, ale z poziomu linii poleceń można wydać komendę „region denyf *”, która zablokuje przekazywanie odziedziczonych pakietów flood. W takim przypadku nadawcy byliby zmuszeni _zawsze_ ustawiać zakres dla każdego pakietu flood. To może w przyszłości stać się wymogiem.
+Tak. Odziedziczone pakiety flood (czyli bez dołączonego kodu transportowego zakresu) są dopasowywane do regionu _null_, a administratorzy repeaterów mogą również zmienić uprawnienia tego regionu. UWAGA: na tym etapie nie jest to zalecane, ale z poziomu linii poleceń można wydać komendę „region denyf *”, która zablokuje przekazywanie odziedziczonych pakietów flood. W takim przypadku nadawcy byliby zmuszeni _zawsze_ ustawiać zakres dla każdego pakietu flood. To może w przyszłości stać się wymogiem.
 
-**Pytanie: Jak wyświetlić wszystkie regiony skonfigurowane na moim przemienniku?**
+**Pytanie: Jak wyświetlić wszystkie regiony skonfigurowane na moim repeaterze?**
 
 Obecnie można to zrobić wyłącznie przez połączenie USB i konsolę/CLI. Wynikowa lista może być zbyt długa, by przesłać ją przez LoRa w zdalnym CLI. Mamy nadzieję, że w niedalekiej przyszłości pojawi się na to lepszy sposób. Na razie pozostają wyłącznie zdalne komendy CLI **get/put/allowf/denyf/remove**.

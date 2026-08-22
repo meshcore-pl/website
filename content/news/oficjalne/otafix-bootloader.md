@@ -11,7 +11,7 @@ tags: [Poradnik, Oprogramowanie]
 ![Bootloader OTAFix](https://blog.meshcore.io/assets/images/2026/04/06/otafix-banner.jpg)
 
 ## Geneza
-Gdy zaczynałem przygodę z MeshCore, zauważyłem, że urządzenia nRF52 potrafią wykonywać aktualizacje OTA przez BLE, co oczywiście jest świetną funkcją, gdy trzeba zaktualizować przemiennik zamontowany na dachu.
+Gdy zaczynałem przygodę z MeshCore, zauważyłem, że urządzenia nRF52 potrafią wykonywać aktualizacje OTA przez BLE, co oczywiście jest świetną funkcją, gdy trzeba zaktualizować repeater zamontowany na dachu.
 
 Niestety, rzadko udawało mi się to uruchomić bez problemów. Jeśli miałeś szczęście i użyłeś odpowiednich ustawień, mogło to zadziałać na RAK4631, ale na urządzeniach ProMicro w zasadzie nigdy nie działało. To skłoniło mnie do przekopania GitHuba, gdzie znalazłem kilka starych, zapomnianych PR-ów naprawiających część tych problemów.
 

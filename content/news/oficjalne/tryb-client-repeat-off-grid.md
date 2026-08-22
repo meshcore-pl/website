@@ -1,19 +1,19 @@
 ---
 title: Tryb off-grid (client repeat)
-description: Firmware Ripple wprowadza tryb off-grid (client repeat) - urządzenia klienckie mogą pełnić funkcję przemiennika poza publiczną siecią mesh.
+description: Firmware Ripple wprowadza tryb off-grid (client repeat) - urządzenia klienckie mogą pełnić funkcję repeatera poza publiczną siecią mesh.
 createdAt: 13.02.2026
 updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/02/13/off-grid-client-repeat-mode
 tags: [Oprogramowanie]
 ---
 
-# Client repeat - urządzenia klienckie jako przemienniki
+# Client repeat - urządzenia klienckie jako repeatery
 Kolejna wersja firmware Ripple MeshCore będzie (wreszcie) obsługiwać tryb off-grid, znany też jako tryb „client repeat”.
 Wiele osób o to prosiło, ale to coś, co trzeba było zrobić bardzo ostrożnie - to jeden z dużych błędów, jaki popełnił Meshtastic, i nie chcemy go powtórzyć.
 
 ![Tryb off-grid w MeshCore](https://blog.meshcore.io/assets/images/2026/02/13/offgridmode.jpg)
 
-Jedną z wyraźnych cech MeshCore, i jednym z kluczy do jego skalowalności, jest to, że klienci _nie przekazują pakietów dalej_! Istnieje jednak kilka bardzo uzasadnionych przypadków użycia, w których urządzenia klienckie działające jednocześnie jako przemienniki mogłyby pomóc - jednym z nich jest sytuacja, gdy jesteśmy poza zasięgiem publicznych sieci mesh, na odludziu (czyli _off-grid_).
+Jedną z wyraźnych cech MeshCore, i jednym z kluczy do jego skalowalności, jest to, że klienci _nie przekazują pakietów dalej_! Istnieje jednak kilka bardzo uzasadnionych przypadków użycia, w których urządzenia klienckie działające jednocześnie jako repeatery mogłyby pomóc - jednym z nich jest sytuacja, gdy jesteśmy poza zasięgiem publicznych sieci mesh, na odludziu (czyli _off-grid_).
 
 Aby te przypadki użycia pozostały wyraźnie odseparowane, wciąż trwają prace nad wypracowaniem konsensusu w sprawie zarezerwowania zakresu częstotliwości wyłącznie do użytku off-grid (czyli poza publiczną siecią mesh). Dzięki temu nikt przypadkiem nie zostawi włączonego radia i nie wróci do publicznej sieci mesh, mieszając w trasach.
 

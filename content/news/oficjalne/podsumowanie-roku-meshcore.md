@@ -62,7 +62,7 @@ Kilka aktualnych statystyk:
 
 ## Bolączki
 W ciągu tego pierwszego roku pojawiło się kilka bolesnych problemów, które wymagały mnóstwa wysiłku, by je rozwiązać:
-- Deaf-gate - tak nazwaliśmy tajemniczy nawyk przemienników do „głuchnięcia” w pozornie losowych momentach. Problem ten opierał się wyjaśnieniu przez wiele miesięcy. Ostatecznie okazało się, że to usterka AGC (automatycznej regulacji wzmocnienia), wymagająca wymuszonego resetu modułów LoRa. Nadanie tymczasowo usuwało problem, ale ponieważ MeshCore jest oszczędny w nadawaniu, czasem przemiennik pozostawał „głuchy” godzinami. Ostatecznym obejściem stała się komenda `set agc.reset.interval ...`
+- Deaf-gate - tak nazwaliśmy tajemniczy nawyk repeaterów do „głuchnięcia” w pozornie losowych momentach. Problem ten opierał się wyjaśnieniu przez wiele miesięcy. Ostatecznie okazało się, że to usterka AGC (automatycznej regulacji wzmocnienia), wymagająca wymuszonego resetu modułów LoRa. Nadanie tymczasowo usuwało problem, ale ponieważ MeshCore jest oszczędny w nadawaniu, czasem repeater pozostawał „głuchy” godzinami. Ostatecznym obejściem stała się komenda `set agc.reset.interval ...`
 - Uszkodzenia pakietów - tylko w bardzo wczesnych miesiącach, gdy błędnie założyłem, że nie potrzebujemy sprzętowych sum CRC
 - Rozłączenia iOS i BLE - odwieczny cierń w boku Liama przez cały ten rok
 - Uszkodzenia Little-(F)FS - plaga dotykająca wszystkich użytkowników nRF52. Tajemnicze sytuacje niskiego poboru mocy, rozłączenia BLE i uszkodzone bloki LFS. Dzięki niesamowitej pracy Taco i systemowi ExtraFS problem ten został ograniczony (choć czasem wciąż daje o sobie znać)
@@ -81,18 +81,18 @@ Marzec był naprawdę szalonym miesiącem - Liam i ja wypuszczaliśmy funkcje i 
 Nie mam pojęcia, jak będzie wyglądał 2026 rok! Będzie ciekawie porównać wykresy pod koniec przyszłego roku.
 
 ## Duch MeshCore
-Coś, co naprawdę mnie wzrusza, to jak wiele osób podjęło wyzwanie w swoich okolicach - czy to szerząc informacje, czy faktycznie rozbudowując sieć, budując i wdrażając przemienniki.
+Coś, co naprawdę mnie wzrusza, to jak wiele osób podjęło wyzwanie w swoich okolicach - czy to szerząc informacje, czy faktycznie rozbudowując sieć, budując i wdrażając repeatery.
 W wielu kluczowych regionach spoczywało to czasem na barkach garstki osób, które wspinały się na góry, drzewa i wieże, by zbudować szkielet sieci.
 
 W moim własnym stanie Victoria w Australii, w ciągu zaledwie ostatnich dwóch miesięcy nastąpił ogromny wzrost sieci mesh i teraz wiadomości docierają na setki kilometrów, obejmując około połowę stanu.
 To w dużej mierze zasługa garstki odważnych dusz (np. @silentlightning), które znalazły kluczowe szczyty gór i połączyły to wszystko w całość.
 Przyznaję, że nigdy nie spodziewałem się, że sieć mesh sięgnie dalej niż tylko metropolitalny Melbourne. Cieszę się, że się myliłem. :-)
 
-Widać też bardzo pomysłowego ducha w przerabianiu niedrogiego sprzętu na domowe konstrukcje przemienników.
+Widać też bardzo pomysłowego ducha w przerabianiu niedrogiego sprzętu na domowe konstrukcje repeaterów.
 Jest mnóstwo przerobionych solarnych lamp powodziowych, które sprawdzają się zaskakująco dobrze, a tutaj w Melbourne krąży żart, że nie jesteś prawdziwym MeshCorowcem, dopóki nie masz masztu z tyczki basenowej z Bunnings.
 Sprzedaż tyczek basenowych w tym roku poszybowała w górę.
 
-![Domowe konstrukcje przemienników społeczności](https://blog.meshcore.io/assets/images/2025/12/12/montage2.png)
+![Domowe konstrukcje repeaterów społeczności](https://blog.meshcore.io/assets/images/2025/12/12/montage2.png)
 
 Więc wszystkim dobrym, wolnościowym ludziom tam na zewnątrz - chylę czoła. Dobra robota!
 

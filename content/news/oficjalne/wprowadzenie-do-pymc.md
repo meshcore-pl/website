@@ -32,11 +32,11 @@ Wbudowany firmware jest wydajny i dobrze dopasowany do dedykowanych urządzeń, 
 
 Kluczową decyzją projektową jest sposób obsługi tożsamości. Zamiast zakładać, że jeden fizyczny węzeł to jedna logiczna obecność, pyMC pozwala na istnienie wielu tożsamości na tym samym radiu.
 
-W praktyce jedno urządzenie może przyjmować wiele ról. Może działać jako przemiennik, reprezentować różne logiczne punkty końcowe albo hostować dodatkowe usługi - każda z własnym kontekstem.
+W praktyce jedno urządzenie może przyjmować wiele ról. Może działać jako repeater, reprezentować różne logiczne punkty końcowe albo hostować dodatkowe usługi - każda z własnym kontekstem.
 
-Ta elastyczność pozwala, by `pymc repeater` ewoluował w stację bazową obsługującą wielu companionów jednocześnie. W tym momencie zachowuje się mniej jak zwykły przemiennik pakietów, a bardziej jak lekki hub wiadomości dla sieci mesh.
+Ta elastyczność pozwala, by `pymc repeater` ewoluował w stację bazową obsługującą wielu companionów jednocześnie. W tym momencie zachowuje się mniej jak zwykły repeater pakietów, a bardziej jak lekki hub wiadomości dla sieci mesh.
 
-Inaczej mówiąc: pyMC daje MeshCore natywną powierzchnię działania na Linuksie. Może uruchamiać przemienniki, hostować usługi, zasilać analitykę lub wspierać zupełnie nowe aplikacje mesh - bez utraty kompatybilności z bazową warstwą radiową.
+Inaczej mówiąc: pyMC daje MeshCore natywną powierzchnię działania na Linuksie. Może uruchamiać repeatery, hostować usługi, zasilać analitykę lub wspierać zupełnie nowe aplikacje mesh - bez utraty kompatybilności z bazową warstwą radiową.
 
 ![Mapa w pyMC](https://blog.meshcore.io/assets/images/2026/05/12/image.pymc-map.webp)
 ![Statystyki w pyMC](https://blog.meshcore.io/assets/images/2026/05/12/image.pymc-stats.webp)
@@ -45,9 +45,9 @@ Inaczej mówiąc: pyMC daje MeshCore natywną powierzchnię działania na Linuks
 ## Gdzie mieści się pymc_console
 Jednym z przykładów tej szerszej przestrzeni projektowej jest `pymc_console` - działający w przeglądarce dashboard zbudowany na bazie pymc repeater.
 
-Tam, gdzie pyMC zajmuje się warstwą protokołu i przemiennika, `pymc_console` przekształca tę aktywność w coś, co faktycznie można zobaczyć i zrozumieć. Przepływ pakietów, stan radia, podłączone tożsamości, dane z obserwatora, wykorzystanie czasu antenowego oraz zachowanie sieci - wszystko to można wyświetlić w znacznie bardziej przystępnym interfejsie.
+Tam, gdzie pyMC zajmuje się warstwą protokołu i repeatera, `pymc_console` przekształca tę aktywność w coś, co faktycznie można zobaczyć i zrozumieć. Przepływ pakietów, stan radia, podłączone tożsamości, dane z obserwatora, wykorzystanie czasu antenowego oraz zachowanie sieci - wszystko to można wyświetlić w znacznie bardziej przystępnym interfejsie.
 
-Ma to znaczenie, bo sieć mesh trudno jest ulepszać, jeśli jest niewidoczna. Gdy pakiety, trasy, jakość sygnału i wzorce wykorzystania stają się obserwowalne, przemiennik przestaje być zwykłym węzłem przekazującym - staje się lokalnym oknem na kondycję i zachowanie sieci mesh.
+Ma to znaczenie, bo sieć mesh trudno jest ulepszać, jeśli jest niewidoczna. Gdy pakiety, trasy, jakość sygnału i wzorce wykorzystania stają się obserwowalne, repeater przestaje być zwykłym węzłem przekazującym - staje się lokalnym oknem na kondycję i zachowanie sieci mesh.
 
 W tym sensie `pymc_console` to nie tyle osobny pomysł, co naturalne rozszerzenie architektury pyMC. Ten sam, natywny dla Linuksa fundament, który pozwala pyMC rozmawiać z radiami, umożliwia też budowanie analityki, dashboardów, doświadczeń companiona i nowych narzędzi wokół sieci mesh.
 
@@ -65,7 +65,7 @@ Kod źródłowy i instrukcje konfiguracji znajdziesz na [https://github.com/pyMC
 Albo dołącz do nas na Discordzie pyMC: [https://discord.gg/hRjW9ha6m](https://discord.gg/hRjW9ha6m)
 
 ## Polecany sprzęt
-Dla bezproblemowej konfiguracji pyMC polecam następujące, przetestowane i kompatybilne platformy sprzętowe. MeshToad i MeshTadpole świetnie sprawdzają się przy lekkich instalacjach, domowych labach i użytku biurkowym, natomiast PiMesh to doskonałe rozwiązanie oparte na Raspberry Pi do zastosowań infrastrukturalnych i bramkowych. Dla instalacji skupionych na roli przemiennika, UltraPeater Luckfox Pico Ultra HAT oferuje kompaktową i wydajną, dedykowaną platformę przemiennika.
+Dla bezproblemowej konfiguracji pyMC polecam następujące, przetestowane i kompatybilne platformy sprzętowe. MeshToad i MeshTadpole świetnie sprawdzają się przy lekkich instalacjach, domowych labach i użytku biurkowym, natomiast PiMesh to doskonałe rozwiązanie oparte na Raspberry Pi do zastosowań infrastrukturalnych i bramkowych. Dla instalacji skupionych na roli repeatera, UltraPeater Luckfox Pico Ultra HAT oferuje kompaktową i wydajną, dedykowaną platformę repeatera.
 
 - MeshToad V3 - [https://muzi.works/products/nullhop-meshtoad-v3](https://muzi.works/products/nullhop-meshtoad-v3)
 - MeshTadpole SX1262 USB Stick - [https://www.elecrow.com/meshtadpole-sx1262-usb-stick.html](https://www.elecrow.com/meshtadpole-sx1262-usb-stick.html)

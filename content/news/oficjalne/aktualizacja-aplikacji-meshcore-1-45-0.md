@@ -15,7 +15,7 @@ tags: [Lista zmian, Aplikacja]
 - Dodano przycisk dodawania kontaktu, gdy lista kontaktów jest pusta
 - Naprawiono błąd powodujący awarię aplikacji po jednoczesnym naciśnięciu obu przycisków w oknie dialogowym
 - Naprawiono błąd, przez który kanał się nie ładował, jeśli firmware miało wiele kanałów z tym samym kluczem
-- Naprawiono błąd, przez który mapa sąsiadów nie uwzględniała własnego przemiennika podczas dopasowywania znaczników na mapie
+- Naprawiono błąd, przez który mapa sąsiadów nie uwzględniała własnego repeatera podczas dopasowywania znaczników na mapie
 - Naprawiono błąd, przez który dodanie aktualnej pozycji do wiadomości w rzeczywistości nie pobierało zaktualizowanej pozycji
 - Naprawiono błąd, przez który filtrowanie listy wykrywania według rozmiaru skrótu trasy ignorowało filtr typu kontaktu
 - Naprawiono błąd, przez który usługa działająca w tle (foreground service) na Androidzie mogła powodować awarię aplikacji

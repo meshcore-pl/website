@@ -18,7 +18,7 @@ Najnowszy firmware pobierzesz z [flasher.meshcore.io](https://flasher.meshcore.i
 - Obsługa nowych pakietów GROUP_DATA (binarnych) ([#1928](https://github.com/meshcore-dev/MeshCore/pull/1928), [#2130](https://github.com/meshcore-dev/MeshCore/pull/2130))
 - Obsługa Heltec V4.3 ([#1867](https://github.com/meshcore-dev/MeshCore/pull/1867))
 - Obsługa Heltec nRF Tracker (T096) ([#2097](https://github.com/meshcore-dev/MeshCore/pull/2097))
-- Obsługa przemiennika i room serwera GAT562 Mesh EVB Pro ([#2042](https://github.com/meshcore-dev/MeshCore/pull/2042))
+- Obsługa repeatera i room serwera GAT562 Mesh EVB Pro ([#2042](https://github.com/meshcore-dev/MeshCore/pull/2042))
 - `radio.rxgain` domyślnie włączone (ON) ([#2124](https://github.com/meshcore-dev/MeshCore/pull/2124))
 - Obsługiwany zakres częstotliwości radia obniżony do 150 MHz ([#2126](https://github.com/meshcore-dev/MeshCore/pull/2126))
 - Poprawka zachowywania ustawienia GPS ([#2018](https://github.com/meshcore-dev/MeshCore/pull/2018))

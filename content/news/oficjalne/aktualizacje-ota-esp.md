@@ -1,6 +1,6 @@
 ---
 title: Aktualizacje OTA na urządzeniach ESP32
-description: Poradnik krok po kroku - jak zaktualizować firmware przemiennika lub room serwera na ESP32 przez OTA, bez kabla i przeflashowania od zera.
+description: Poradnik krok po kroku - jak zaktualizować firmware repeatera lub room serwera na ESP32 przez OTA, bez kabla i przeflashowania od zera.
 createdAt: 1.04.2026
 updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/04/01/esp-ota-update
@@ -8,7 +8,7 @@ tags: [Poradnik, Oprogramowanie]
 ---
 
 # OTA na ESP32 - aktualizacja firmware bez kabla
-Aktualizacja firmware Twoich przemienników lub room serwerów jest bardzo prosta dla węzłów opartych o ESP32.
+Aktualizacja firmware Twoich repeaterów lub room serwerów jest bardzo prosta dla węzłów opartych o ESP32.
 
 ## 1. Pobierz nowy plik .bin
 Wejdź na [webflasher](https://flasher.meshcore.io), znajdź swoje urządzenie, wybierz rolę Repeater lub Room Server, a następnie najnowszą wersję.
@@ -21,10 +21,10 @@ Alternatywnie, wejdź na stronę [wydań na GitHubie](https://github.com/meshcor
 > [!NOTE]
 > Nie pobieraj pliku -merged.bin!
 
-## 2. Zaloguj się do przemiennika/room serwera
+## 2. Zaloguj się do repeatera/room serwera
 Za pomocą aplikacji mobilnej zaloguj się do swojego urządzenia.
 
-![Logowanie do przemiennika w aplikacji MeshCore](https://blog.meshcore.io/assets/images/2026/04/01/app-repeater-login.png)
+![Logowanie do repeatera w aplikacji MeshCore](https://blog.meshcore.io/assets/images/2026/04/01/app-repeater-login.png)
 
 Następnie przełącz się na Wiersz poleceń (Command Line) i wpisz komendę `start ota`.
 

@@ -25,7 +25,7 @@ Najnowszy firmware pobierzesz z [flasher.meshcore.io](https://flasher.meshcore.i
 - Companion może teraz nadpisać domyślny zakres (scope) na jawnie nieokreślony (unscoped) ([#2492](https://github.com/meshcore-dev/MeshCore/pull/2492))
 
 ## Usprawnienia
-- Poprawki oszczędzania energii dla wszystkich przemienników na ESP ([#1687](https://github.com/meshcore-dev/MeshCore/pull/1687))
+- Poprawki oszczędzania energii dla wszystkich repeaterów na ESP ([#1687](https://github.com/meshcore-dev/MeshCore/pull/1687))
 - Poprawki oszczędzania energii dla companionów na nRF ([#2286](https://github.com/meshcore-dev/MeshCore/pull/2286))
 
 ## Nowo obsługiwane urządzenia
@@ -39,7 +39,7 @@ Najnowszy firmware pobierzesz z [flasher.meshcore.io](https://flasher.meshcore.i
 - Poprawki budowania dla platformy docelowej RP2040 ([#2684](https://github.com/meshcore-dev/MeshCore/pull/2684))
 - Zwiększono maksymalny rozmiar ramki protokołu companiona (teraz 176) ([#2022](https://github.com/meshcore-dev/MeshCore/pull/2022))
 - Poprawki RAK Wismesh Tag ([#2664](https://github.com/meshcore-dev/MeshCore/pull/2664))
-- Naprawiono błąd wykrywania sąsiadów przez przemiennik, gdy `path.hash.mode` != 0
+- Naprawiono błąd wykrywania sąsiadów przez repeater, gdy `path.hash.mode` != 0
 - RAK4631 - użycie sterownika Bosch dla czujnika BME680 ([#2634](https://github.com/meshcore-dev/MeshCore/pull/2634))
 - Włączono komendę CLI `radio.rxgain` dla LR1110 (T1000e) ([#2235](https://github.com/meshcore-dev/MeshCore/pull/2235))
 - Domyślny interwał advertu typu flood zwiększony do 47 godzin (wcześniej 12) ([#2608](https://github.com/meshcore-dev/MeshCore/pull/2608))
@@ -60,7 +60,7 @@ Najnowszy firmware pobierzesz z [flasher.meshcore.io](https://flasher.meshcore.i
 - Heltec - LNA domyślnie wyłączone ([#2439](https://github.com/meshcore-dev/MeshCore/pull/2439))
 - Nowe ekrany powitalne (splash screens) ([#2424](https://github.com/meshcore-dev/MeshCore/pull/2424))
 - Poprawka diody LED Tx dla Sensecap Solar ([#2157](https://github.com/meshcore-dev/MeshCore/pull/2157))
-- Nowy wariant przemiennika: zestaw rozszerzający Heltec V4 ([#2326](https://github.com/meshcore-dev/MeshCore/pull/2326))
+- Nowy wariant repeatera: zestaw rozszerzający Heltec V4 ([#2326](https://github.com/meshcore-dev/MeshCore/pull/2326))
 - Nowe warianty companiona T-Echo Lite bez powłoki (non-shell) ([#2503](https://github.com/meshcore-dev/MeshCore/pull/2503), [#2353](https://github.com/meshcore-dev/MeshCore/pull/2353))
 - T-Echo Lite - poprawka pomiaru baterii ([#2287](https://github.com/meshcore-dev/MeshCore/pull/2287))
 - RAK4631 - poprawka pinu resetu sx1262 ([#2008](https://github.com/meshcore-dev/MeshCore/pull/2008))
@@ -81,8 +81,8 @@ Przy niższych wartościach Spreading Factor radio ma mniej czasu na zsynchroniz
 Dla SF ≤ 8 preambuła ma teraz 32 symbole.
 
 ## Ulepszone wykrywanie regionów w aplikacji mobilnej
-Nowy firmware companiona oraz najnowsza wersja aplikacji pozwalają na wykonywanie doraźnych (ad-hoc) zapytań do pobliskich przemienników bez konieczności wcześniejszego dodawania ich do kontaktów.
-Usprawni to zarówno wykrywanie przemienników, jak i regionów.
+Nowy firmware companiona oraz najnowsza wersja aplikacji pozwalają na wykonywanie doraźnych (ad-hoc) zapytań do pobliskich repeaterów bez konieczności wcześniejszego dodawania ich do kontaktów.
+Usprawni to zarówno wykrywanie repeaterów, jak i regionów.
 
 ## Nowa komenda `region def`
 Definiowanie regionów przez CLI było dotychczas dość rozwlekłe.
@@ -94,7 +94,7 @@ Więcej informacji znajdziesz w [dokumentacji poleceń CLI](https://docs.meshcor
 Najnowsze firmware wprowadzają obsługę „rozszerzonych ACK” (extended ACK) - mają one 6 bajtów zamiast 4.
 Dodatkowe bajty zawierają rozszerzony numer próby oraz dodatkowy losowy bajt.
 To przygotowanie pod przyszłą funkcję aplikacji, która pozwoli na znacznie więcej niż 4 próby wysyłania wiadomości bezpośrednich.
-Na razie w pierwszej kolejności trzeba zaktualizować przemienniki.
+Na razie w pierwszej kolejności trzeba zaktualizować repeatery.
 
 ## Surowe pakiety companiona
 Najnowsze firmware companiona pozwalają teraz aplikacjom na komponowanie pełnego pakietu, czyli nagłówków, trasy i danych.

@@ -16,7 +16,7 @@ tags: [Lista zmian, Aplikacja]
 - Dodano możliwość otwierania adresów `meshcore://` w zewnętrznych aplikacjach
 - Dodano możliwość skanowania kodów QR MeshCore w systemowej aplikacji aparatu
 - Dodano możliwość dołączania zakresów regionalnych do kodu QR podczas udostępniania kanału
-- Dodano możliwość pobierania informacji o właścicielu i wysyłania prośby o nazwę do przemienników w narzędziu wykrywania pobliskich urządzeń
+- Dodano możliwość pobierania informacji o właścicielu i wysyłania prośby o nazwę do repeaterów w narzędziu wykrywania pobliskich urządzeń
 - Dodano możliwość wyboru szerokości pasma LoRa obsługiwanych przez radia 2,4 GHz
 - Dotknięcie wykrytego pobliskiego węzła może teraz otworzyć ekran wykrytego kontaktu, jeśli jest dostępny
 - Przeniesiono nazwę nadawcy wiadomości do wnętrza dymku wiadomości, aby poprawić widoczność ciemnych nazw w trybie ciemnym

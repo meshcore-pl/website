@@ -33,14 +33,14 @@ Mając na uwadze te ograniczenia, zabrałem się za projektowanie czegoś nowego
 - Ewoluujący, rozszerzalny protokół, z wiadomościami jako elementem rdzeniowym, interoperacyjny z możliwie największą liczbą firmware'ów. Elastyczny wobec zastosowań takich jak sieci czujników, a nawet w pełni prywatnych systemów z własnymi protokołami zbudowanymi na bazie protokołu rdzeniowego
 
 ## Podział pracy, praw i odpowiedzialności
-Podobnie jak Reticulum, MeshCore jednoznacznie przenosi odpowiedzialność za trasowanie pakietów wyłącznie na przemienniki.
+Podobnie jak Reticulum, MeshCore jednoznacznie przenosi odpowiedzialność za trasowanie pakietów wyłącznie na repeatery.
 Węzły brzegowe, takie jak klienci czatu czy węzły czujnikowe, nie zaśmiecają eteru.
-Przemienniki zwykle montowane są w dobrych, wyniesionych lokalizacjach i mają stałą pozycję.
+Repeatery zwykle montowane są w dobrych, wyniesionych lokalizacjach i mają stałą pozycję.
 Węzły brzegowe mogą się przemieszczać (rozszerzenia protokołu wspomagające i optymalizujące mobilne węzły są wciąż w fazie rozwoju).
 
-Skoro to przemienniki wykonują „pracę” sieci mesh, administrator przemiennika ma prawo odrzucać lub zezwalać na dowolny ruch.
-Może to być nieco kontrowersyjne albo postrzegane jako furtka do dyskryminacji ze strony administratorów przemienników, jednak prywatność wbudowana w protokół rdzeniowy celowo utrudnia takie działania.
-Obecnie standardowy firmware przemiennika nie nakłada żadnych ograniczeń, ale może powstać wiele różnych firmware'ów przemienników - część z nich z rozszerzoną kontrolą administracyjną, np. ograniczaniem liczby żądań (rate-limiting), niestandardowym priorytetyzowaniem (lub karaniem) określonych typów pakietów czy obserwowanych wzorców użycia.
+Skoro to repeatery wykonują „pracę” sieci mesh, administrator repeatera ma prawo odrzucać lub zezwalać na dowolny ruch.
+Może to być nieco kontrowersyjne albo postrzegane jako furtka do dyskryminacji ze strony administratorów repeaterów, jednak prywatność wbudowana w protokół rdzeniowy celowo utrudnia takie działania.
+Obecnie standardowy firmware repeatera nie nakłada żadnych ograniczeń, ale może powstać wiele różnych firmware'ów repeaterów - część z nich z rozszerzoną kontrolą administracyjną, np. ograniczaniem liczby żądań (rate-limiting), niestandardowym priorytetyzowaniem (lub karaniem) określonych typów pakietów czy obserwowanych wzorców użycia.
 
 Uważam, że bardziej organiczna strategia eliminowania złych węzłów jest lepszym podejściem niż odgórnie narzucane zasady.
 Dzięki większej liczbie opcji i wyborowi firmware'u poszczególne obszary czy sieci mesh same znajdą swoje rozwiązania problemów takich jak nasycenie kanału.
@@ -59,12 +59,12 @@ Po tej sekwencji zarówno A, jak i B przechowują bezpośrednie trasy (do drugie
 
 Efektem ubocznym tego jest to, że nadawcy mogą przechowywać trasy i samodzielnie wybierać, której użyć.
 Aplikacja Liama idzie o krok dalej i pozwala ręcznie skonstruować trasę samodzielnie.
-Jeśli jesteś administratorem zestawu przemienników i znasz optymalną trasę, może to być korzystne i skutkować mniejszą liczbą floodów.
+Jeśli jesteś administratorem zestawu repeaterów i znasz optymalną trasę, może to być korzystne i skutkować mniejszą liczbą floodów.
 
 ## Flood stanie się „kosztowny”
 Przyszłe skalowanie MeshCore wciąż pozostaje dużym znakiem zapytania.
 Jestem ostrożnie optymistyczny co do jego wzrostu, ale myślę, że można bezpiecznie założyć, iż tryb flood stanie się tym, co nazywam „kosztownym”.
-Najbardziej podstawową formą tego kosztu będzie czas - dotarcie floodu do celu będzie po prostu trwało dłużej (to zresztą już obecne zachowanie - firmware przemiennika nadaje coraz niższy priorytet pakietom flood pochodzącym od odległych nadawców).
+Najbardziej podstawową formą tego kosztu będzie czas - dotarcie floodu do celu będzie po prostu trwało dłużej (to zresztą już obecne zachowanie - firmware repeatera nadaje coraz niższy priorytet pakietom flood pochodzącym od odległych nadawców).
 Dla większości użytkowników i przypadków użycia to wystarczy, by zacząć szukać lepszych opcji.
 
 Jedną z takich opcji jest korzystanie z relatywnie lokalnego room serwera.
@@ -91,7 +91,7 @@ Mam nadzieję, że produkty konsumenckie kompatybilne z MeshCore w końcu powsta
 
 ## Plany na przyszłość
 Podsumowując, kilka uwag na temat przyszłych kierunków:
-- Interakcja administratora przemiennika i room serwera trafi do aplikacji Liama
+- Interakcja administratora repeatera i room serwera trafi do aplikacji Liama
 - Więcej narzędzi diagnostycznych dla planujących sieć, takich jak pakiety Trace z SNR
 - Ogólne poszerzanie obsługi urządzeń: prace nad dopracowaniem wsparcia dla T1000e, więcej ról dla T1114 itd.
 - Prace nad standaryzacją telemetrii danych z czujników

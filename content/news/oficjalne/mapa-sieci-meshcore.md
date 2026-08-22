@@ -19,7 +19,7 @@ Liczba węzłów rosła bardzo szybko - pierwszy tysiąc węzłów osiągnęliś
 _Tak wyglądała mapa w maju 2025 roku_
 
 ## Podstawowe założenia
-Mapa powstała głównie po to, by wskazywać węzły infrastruktury - dzięki niej dokładnie wiesz, gdzie znajdują się inne przemienniki i jakich ustawień radiowych używają.
+Mapa powstała głównie po to, by wskazywać węzły infrastruktury - dzięki niej dokładnie wiesz, gdzie znajdują się inne repeatery i jakich ustawień radiowych używają.
 Z czasem funkcjonalność rozszerzono o statystyki węzłów, wyszukiwanie, filtrowanie oraz podstawowe monitorowanie kondycji sieci mesh.
 
 ## Warte uwagi funkcje
@@ -32,7 +32,7 @@ Poza oczywistym przeglądaniem mapy i wyszukiwaniem węzłów dostępny jest roz
 _Menu filtra otwiera się po kliknięciu ikony filtra_
 
 ### Świeżość węzła
-Węzły aktualizowane przez [MeshCore Map Auto Uploader](https://github.com/recrof/map.meshcore.io-uploader) są oznaczone kolorami, dzięki czemu wiesz, który przemiennik/room serwer/czujnik był ostatnio słyszany:
+Węzły aktualizowane przez [MeshCore Map Auto Uploader](https://github.com/recrof/map.meshcore.io-uploader) są oznaczone kolorami, dzięki czemu wiesz, który repeater/room serwer/czujnik był ostatnio słyszany:
 
 | Kolor | Status | Znaczenie |
 |-------|--------|-----------|
@@ -76,13 +76,13 @@ Możesz też użyć tego adresu URL na własnej, regionalnej stronie za pomocą 
 ![Dodawanie siebie do mapy](https://blog.meshcore.io/assets/images/2026/04/04/map-add-self.png)
 _Dodawanie siebie do mapy_
 
-### Dodawanie przemiennika lub room serwera
+### Dodawanie repeatera lub room serwera
 1. Otwórz zakładkę **Kontakty** w aplikacji MeshCore
-2. Dotknij **⋮** obok przemiennika lub room serwera, który chcesz dodać
+2. Dotknij **⋮** obok repeatera lub room serwera, który chcesz dodać
 3. Dotknij **Share**, a następnie **Upload to Internet Map**
 
-![Dodawanie przemiennika do mapy](https://blog.meshcore.io/assets/images/2026/04/04/map-add-repeater.png)
-_Dodawanie przemiennika do mapy_
+![Dodawanie repeatera do mapy](https://blog.meshcore.io/assets/images/2026/04/04/map-add-repeater.png)
+_Dodawanie repeatera do mapy_
 
 ### Usuwanie węzła
 Usunięcie węzła jest możliwe wyłącznie tym samym radiem companion (tym samym kluczem publicznym), którym węzeł został dodany.
@@ -93,4 +93,4 @@ Usunięcie węzła jest możliwe wyłącznie tym samym radiem companion (tym sam
 4. Znajdź węzeł, który chcesz usunąć, dotknij go i wybierz **Delete Marker**
 
 ## Poza interfejsem
-[MeshCore Map Auto Uploader](https://github.com/recrof/map.meshcore.io-uploader) pozwala automatycznie dodawać i aktualizować wszystkie przemienniki, room serwery i czujniki w momencie, gdy rozgłaszają advert. To główny powód, dla którego świeżość węzła widać po kolorze jego ikony.
+[MeshCore Map Auto Uploader](https://github.com/recrof/map.meshcore.io-uploader) pozwala automatycznie dodawać i aktualizować wszystkie repeatery, room serwery i czujniki w momencie, gdy rozgłaszają advert. To główny powód, dla którego świeżość węzła widać po kolorze jego ikony.

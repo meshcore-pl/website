@@ -1,6 +1,6 @@
 ---
 title: Aktualizacje OTA na urządzeniach nRF
-description: Poradnik krok po kroku - jak zaktualizować firmware przemiennika lub room serwera na urządzeniach nRF przez OTA za pomocą nRF Device Firmware Update.
+description: Poradnik krok po kroku - jak zaktualizować firmware repeatera lub room serwera na urządzeniach nRF przez OTA za pomocą nRF Device Firmware Update.
 createdAt: 2.04.2026
 updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/04/02/nrf-ota-update
@@ -8,7 +8,7 @@ tags: [Poradnik, Oprogramowanie]
 ---
 
 # OTA na nRF - aktualizacja firmware bez kabla
-Aktualizacja firmware Twoich przemienników lub room serwerów jest bardzo prosta dla węzłów opartych o nRF.
+Aktualizacja firmware Twoich repeaterów lub room serwerów jest bardzo prosta dla węzłów opartych o nRF.
 
 ![Aktualizacja OTA na urządzeniu nRF](https://blog.meshcore.io/assets/images/2026/04/02/nRF-DFU.webp)
 
@@ -20,10 +20,10 @@ W prawym dolnym rogu kliknij przycisk **Download**, a następnie wybierz plik .z
 
 Alternatywnie, wejdź na stronę [wydań na GitHubie](https://github.com/meshcore-dev/MeshCore/releases) i znajdź odpowiedni plik, np. [T114 Repeater](https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.14.1/Heltec_t114_repeater-v1.14.1-467959c.zip).
 
-## 2. Zaloguj się do przemiennika/room serwera
+## 2. Zaloguj się do repeatera/room serwera
 Za pomocą aplikacji mobilnej zaloguj się do swojego urządzenia.
 
-![Logowanie do przemiennika w aplikacji MeshCore](https://blog.meshcore.io/assets/images/2026/04/01/app-repeater-login.png)
+![Logowanie do repeatera w aplikacji MeshCore](https://blog.meshcore.io/assets/images/2026/04/01/app-repeater-login.png)
 
 Następnie przełącz się na Wiersz poleceń (Command Line) i wpisz komendę `start ota`.
 

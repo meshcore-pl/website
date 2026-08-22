@@ -26,7 +26,7 @@ Najnowszy firmware pobierzesz z [flasher.meshcore.io](https://flasher.meshcore.i
 
 ## Poprawki błędów i pozostałe zmiany
 - Piny T-Echo Lite dostosowane do zaktualizowanego schematu Lilygo, napięcie TCXO ustawione na 3,0 V ([#3140](https://github.com/meshcore-dev/MeshCore/pull/3140))
-- Poprawka budowania dla R1 Neo i przemiennika Minewsemi ([#3142](https://github.com/meshcore-dev/MeshCore/pull/3142))
+- Poprawka budowania dla R1 Neo i repeatera Minewsemi ([#3142](https://github.com/meshcore-dev/MeshCore/pull/3142))
 - Podbite wzmocnienie odbioru (Rx boosted gain) nie jest już resetowane do wartości skompilowanej po resecie AGC ([#3158](https://github.com/meshcore-dev/MeshCore/pull/3158))
 - Poprawka wyświetlacza T-Beam Supreme S3 ([#3164](https://github.com/meshcore-dev/MeshCore/pull/3164))
 - Porządki w mapie pinów ProMicro, piny LoRa przeniesione do variant.h ([#3170](https://github.com/meshcore-dev/MeshCore/pull/3170))
@@ -36,7 +36,7 @@ Najnowszy firmware pobierzesz z [flasher.meshcore.io](https://flasher.meshcore.i
 - Companion - preferencja `fem_radio_rx/txgain` wyłączona do czasu, aż będzie możliwa do ustawienia ([#3203](https://github.com/meshcore-dev/MeshCore/pull/3203))
 
 ## Poprawki i usprawnienia dla urządzeń z FEM
-Ustawienie `radio.fem.rxgain` nie było prawidłowo zapisywane w v1.17.1 - to zostało teraz naprawione. Administratorzy przemienników powinni po aktualizacji sprawdzić, czy `radio.fem.rxgain` i `radio.rxgain` są skonfigurowane zgodnie z ich preferencjami.
+Ustawienie `radio.fem.rxgain` nie było prawidłowo zapisywane w v1.17.1 - to zostało teraz naprawione. Administratorzy repeaterów powinni po aktualizacji sprawdzić, czy `radio.fem.rxgain` i `radio.rxgain` są skonfigurowane zgodnie z ich preferencjami.
 Firmware companiona nie ma jeszcze możliwości konfiguracji tych ustawień, więc na razie będą używane wyłącznie wartości domyślne.
 
 ## Poprawka błędu transmisji na Heltec T096
