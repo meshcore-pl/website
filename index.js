@@ -32,6 +32,8 @@ app.locals.v = version;
 app.locals.buildSchema = buildSchema;
 app.locals.pluralizePolish = pluralizePolish;
 
+app.get('*', (req, res) => res.send('Prace techniczne. Wróć tu za 5 minut.'));
+
 // Use middlewares
 app.use(helmet({ crossOriginResourcePolicy: false, contentSecurityPolicy: false }));
 app.use(express.static('public'));
