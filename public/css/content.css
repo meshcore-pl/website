@@ -6,6 +6,15 @@
 	--alert-caution: var(--red-bright);
 }
 
+.section--legal {
+	padding-top: calc(68px + var(--nav-h));
+}
+
+.prose--narrow {
+	max-width: 980px;
+	margin: 0 auto;
+}
+
 .prose h1 {
 	margin: 0 0 16px;
 	font-size: 30px;

@@ -2,16 +2,16 @@ const rateLimit = require('express-rate-limit');
 const RenderError = require('../utils/renderError.js');
 
 exports.global = rateLimit({
-	windowMs: 40 * 1000,
-	limit: 52,
+	windowMs: 60 * 1000,
+	limit: 100,
 	standardHeaders: 'draft-7',
 	legacyHeaders: false,
 	handler: (req, res) => RenderError(res, 429),
 });
 
 exports.contactForm = rateLimit({
-	windowMs: 4 * 60 * 60 * 1000,
-	limit: 2,
+	windowMs: 60 * 60 * 1000,
+	limit: 3,
 	standardHeaders: 'draft-7',
 	legacyHeaders: false,
 	skip: req => req.method !== 'POST',
