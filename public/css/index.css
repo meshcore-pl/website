@@ -2,11 +2,6 @@
 	position: relative;
 	overflow: hidden;
 	padding: calc(72px + var(--nav-h)) 24px 64px;
-	background:
-		radial-gradient(ellipse var(--glow-size) at var(--glow-pos), var(--glow-color-hero), transparent 65%),
-		radial-gradient(ellipse var(--glow-size-2) at var(--glow-pos-2), var(--glow-color-hero-2), transparent 65%),
-		radial-gradient(circle at 1px 1px, rgba(154, 171, 209, 0.07) 1px, transparent 1px) 0 0 / 26px 26px,
-		var(--bg);
 }
 
 #hero__inner {
@@ -99,12 +94,6 @@
 
 #hero__map::after {
 	position: absolute;
-	background:
-			radial-gradient(
-					ellipse 78% 78% at 50% 50%,
-					rgba(8, 11, 17, 0) 55%,
-					rgba(8, 11, 17, 0.35) 100%
-			);
 	pointer-events: none;
 	content: '';
 	inset: 0;
@@ -166,10 +155,10 @@
 	width: 52px;
 	height: 52px;
 	margin-bottom: 18px;
-	border: 1px solid rgba(224, 18, 48, 0.35);
+	border: 1px solid rgba(224, 18, 48, 0.26);
 	border-radius: 50%;
 	background: var(--bg-alt);
-	box-shadow: 0 0 18px rgba(224, 18, 48, 0.18);
+	box-shadow: 0 0 24px rgba(224, 18, 48, 0.3);
 	color: var(--red-bright);
 	font-family: var(--font-mono);
 	font-size: 18px;

@@ -34,7 +34,7 @@
 				<% groups.forEach(group => { %>
 				<a href="/dokumentacja/<%= group.slug %>" class="docs-group-card">
 					<div class="docs-group-card__icon">
-						<% if (group.icon.startsWith('/')) { %><img src="<%= group.icon %>" alt="<%= group.title %>" width="40" height="40" loading="lazy"><% } else { %><%- group.icon %><% } %>
+						<% if (group.icon.startsWith('/')) { %><img src="<%= group.icon %>" alt="<%= group.title %>" width="40" height="40" loading="lazy"><% } else if (group.icon.startsWith('#')) { %><svg width="40" height="40" aria-hidden="true"><use href="/icons.svg<%= group.icon %>"></use></svg><% } else { %><%- group.icon %><% } %>
 					</div>
 					<div class="docs-group-card__body">
 						<div class="docs-group-card__head">

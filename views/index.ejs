@@ -405,6 +405,6 @@
 		</div>
 	</section>
 
-	<script>window.MAP_DOMAIN = '<%= mapDomain %>';</script>
+	<script>window.MAP_DOMAIN = '<%= process.env.MAP_DOMAIN %>';</script>
 
 	<%- include('./includes/footer.ejs', { outro: true, scripts: ['/js/index.js', '/js/lightbox.js', '/js/mesh-map.js'] }) %>

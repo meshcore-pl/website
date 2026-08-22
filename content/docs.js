@@ -16,7 +16,7 @@ module.exports = [
 	},
 	{
 		slug: 'schematy',
-		icon: '/images/boards/rak_4631.svg',
+		icon: '/images/schematy-320.png',
 		title: 'Schematy',
 		description: 'Schematy, mapy pinów i noty katalogowe popularnych płytek oraz podzespołów używanych w sieci MeshCore.',
 		pages: [
@@ -32,7 +32,7 @@ module.exports = [
 	},
 	{
 		slug: 'discord',
-		icon: '/images/brand/discord.png',
+		icon: '#discord',
 		title: 'Serwer Discord',
 		description: 'Dokumentacja serwera społecznościowego - miejsce, w którym dzielimy się wiedzą, pomagamy w konfiguracji sprzętu i wspólnie rozwijamy sieć.',
 		pages: [

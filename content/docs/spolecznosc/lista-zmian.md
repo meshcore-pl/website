@@ -3,7 +3,7 @@ title: Lista zmian meshcorepolska.org
 description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/spolecznosc/lista-zmian
 createdAt: 2.08.2026
-updatedAt: 22.08.2026
+updatedAt: 23.08.2026
 ---
 
 # Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
@@ -22,7 +22,12 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 6. Dodano wpis [Aktualizacja aplikacji MeshCore 1.49.0](https://meshcorepolska.org/aktualnosci/lista-zmian/aktualizacja-aplikacji-meshcore-1-49-0) w Aktualnościach.
 7. Poprawiono pod SEO nagłówki w Aktualnościach i Dokumentacji - H1 nie jest już duplikatem tytułu strony.
 8. Dodano [Politykę prywatności](https://meshcorepolska.org/polityka-prywatnosci).
-9. Różne poprawki.
+9. Dodano link Oficjalna dokumentacja w stopce strony.
+10. Zaktualizowano komplet favicon i ikon PWA. Zmieniono logo w stopce na nowy wordmark MeshCore Polska.
+11. Ikona Discorda w dokumentacji to teraz grafika wektorowa (SVG) zamiast PNG.
+12. Zwiększono limity ochrony formularza kontaktowego i ogólnego ruchu przed nadużyciami.
+13. Poprawiono spójność tła na stronie głównej.
+14. Różne poprawki.
 
 ## v1.5.0
 1. Dodano nową grupę [Schematy](https://meshcorepolska.org/dokumentacja/schematy) w dokumentacji.
@@ -35,7 +40,7 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 1. Dodano wpis „[MeshCore Firmware v1.17.0](https://meshcorepolska.org/aktualnosci/lista-zmian/aktualizacja-firmware-meshcore-1-17-0)” w Aktualnościach.
 2. Dodano `sourceUrl` dla `content/news/oficjalne/**` - plakietka źródła przy wpisie prowadzi teraz do oryginału na blog.meshcore.io.
 3. Poprawiono styl (hover) plakietki źródła na stronie wpisu aktualności.
-4. Wewnętrzne linki do Discorda prowadzą teraz bezpośrednio pod docelowy adres zaproszenia, zamiast przez przekierowujący `/discord` (poprawa SEO - mniej łańcuchów przekierowań).
+4. ~~Wewnętrzne linki do Discorda prowadzą teraz bezpośrednio pod docelowy adres zaproszenia, zamiast przez przekierowujący `/discord` (poprawa SEO - mniej łańcuchów przekierowań).~~
 5. Dodano brakujący atrybut `alt` dla obrazka w lightboxie.
 6. Poprawiono długość ponad 20 meta opisów oraz 4 zbyt długich tytułów stron (Aktualności, Dokumentacja).
 

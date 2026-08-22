@@ -5,7 +5,7 @@
 				<% groups.forEach(g => { %>
 				<div class="docs-nav-group">
 					<p class="docs-nav-group__title">
-						<% if (g.icon.startsWith('/')) { %><img class="docs-nav-group__icon" src="<%= g.icon %>" alt="<%= g.title %>" width="16" height="16" loading="lazy"><% } else { %><span class="docs-nav-group__icon"><%= g.icon %></span><% } %>
+						<% if (g.icon.startsWith('/')) { %><img class="docs-nav-group__icon" src="<%= g.icon %>" alt="<%= g.title %>" width="16" height="16" loading="lazy"><% } else if (g.icon.startsWith('#')) { %><svg class="docs-nav-group__icon" width="16" height="16" aria-hidden="true"><use href="/icons.svg<%= g.icon %>"></use></svg><% } else { %><span class="docs-nav-group__icon"><%= g.icon %></span><% } %>
 						<%= g.title %>
 					</p>
 					<ul>
