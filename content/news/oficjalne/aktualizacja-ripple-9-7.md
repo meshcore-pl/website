@@ -2,11 +2,12 @@
 title: Interfejs Ripple v9.7
 description: Najnowszy firmware Ripple wprowadza jasny i ciemny motyw interfejsu oraz możliwość personalizacji koloru akcentu.
 createdAt: 30.04.2026
+updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/04/30/ripple-9.7
 tags: [Oprogramowanie]
 ---
 
-# Interfejs Ripple v9.7
+# Ripple v9.7 - jasny i ciemny motyw interfejsu
 Najnowsze wydanie firmware z interfejsem Ripple przeszło spory remont (pod maską), a interfejs zyskał teraz motywy Light i Dark, a dodatkowo możesz personalizować kolor akcentu używany w całym firmware.
 
 ![Ripple na T-Pager w wersji 9.7](https://blog.meshcore.io/assets/images/2026/04/30/t-pager-9.7.png)

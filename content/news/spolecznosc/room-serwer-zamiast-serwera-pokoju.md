@@ -2,10 +2,11 @@
 title: Room serwer zamiast serwera pokoju
 description: Zmieniamy sposób zapisu określenia room server. Od teraz konsekwentnie używamy formy „room serwer” zamiast dotychczasowego tłumaczenia „serwer pokoju”.
 createdAt: 30.07.2026
+updatedAt: 22.08.2026
 tags: [Tłumaczenia, Aplikacja]
 ---
 
-# Room serwer zamiast serwera pokoju
+# Dlaczego mówimy „room serwer”, a nie „serwer pokoju”
 Zmieniliśmy sposób zapisu określenia room server. Dotychczas stosowaliśmy tłumaczenie *serwer pokoju*, jednak od teraz będziemy używać formy **room serwer**.
 
 ## Dlaczego taka zmiana?

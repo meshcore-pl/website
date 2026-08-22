@@ -1,11 +1,12 @@
 ---
-title: MeshCore App v1.47.0
+title: Aktualizacja aplikacji MeshCore 1.47.0
 description: 10 lipca 2026 - wersja 1.47.0 aplikacji MeshCore, karta mapy w podglądzie trasy, udostępnianie kanałów z edytora wiadomości oraz obsługa adresów meshcore://.
 createdAt: 10.07.2026
+updatedAt: 22.08.2026
 tags: [Lista zmian, Aplikacja]
 ---
 
-# MeshCore App v1.47.0
+# Aplikacja MeshCore v1.47.0 - mapa w podglądzie trasy
 10 lipca 2026 ukazała się wersja **1.47.0** oficjalnej aplikacji MeshCore. Plik jest możliwy do pobrania pod linkiem [files.liamcottle.net/MeshCore/v1.47.0](https://files.liamcottle.net/MeshCore/v1.47.0).
 
 ## Lista zmian

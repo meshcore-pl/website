@@ -1,12 +1,13 @@
 ---
-title: MeshCore Firmware v1.16.0
+title: Aktualizacja firmware MeshCore 1.16.0
 description: 6 czerwca 2026 - firmware v1.16.0 MeshCore, nowe zmienne CLI ograniczające ruch flood, dłuższa preambuła, rozszerzone ACK i obsługa nowych urządzeń.
 createdAt: 6.06.2026
+updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/06/06/release-1-16-0
 tags: [Lista zmian, Oprogramowanie]
 ---
 
-# MeshCore Firmware v1.16.0
+# Firmware MeshCore v1.16.0 - ograniczanie ruchu flood
 ![MeshCore Firmware](https://blog.meshcore.io/assets/images/firmware_release.jpg)
 
 6 czerwca 2026 ukazało się wydanie oprogramowania **v1.16.0** dla MeshCore.

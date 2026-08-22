@@ -3,9 +3,10 @@ title: SenseCAP MeshTracker X1 - specyfikacja i pinout
 description: Karta techniczna SenseCAP MeshTracker X1 (Seeed Studio) - nRF52840, LoRa Semtech LR2021, dwupasmowy GNSS L1+L5, bateria 1100 mAh oraz pinout modułów.
 canonical: /dokumentacja/schematy/sensecap-meshtracker-x1
 createdAt: 21.08.2026
+updatedAt: 22.08.2026
 ---
 
-# SenseCAP MeshTracker X1 - specyfikacja i pinout {toc: SenseCAP MeshTracker X1}
+# SenseCAP MeshTracker X1 - nRF52840 z GPS dwupasmowym {toc: SenseCAP MeshTracker X1}
 Kieszonkowe urządzenie od Seeed Studio z fabrycznie wbudowanym, dwupasmowym GPS (L1+L5), przeznaczone do śledzenia lokalizacji w sieci mesh bez internetu i zasięgu GSM. Fabrycznie działa na firmware Meshtastic, ale sprzęt (`nRF52840` + radio LoRa) pozwala też na przeflashowanie na MeshCore.
 
 ## Najważniejsze parametry

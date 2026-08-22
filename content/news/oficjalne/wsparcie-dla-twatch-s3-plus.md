@@ -2,11 +2,12 @@
 title: LilyGo T-Watch S3 Plus
 description: Firmware Ripple zyskuje wsparcie dla LilyGo T-Watch S3 Plus - programowalnego zegarka z GPS, radiem LoRa sx1262 i 1,5-calowym kolorowym ekranem dotykowym.
 createdAt: 28.03.2026
+updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/03/28/twatch-s3-plus
 tags: [Oprogramowanie, Sprzęt]
 ---
 
-# LilyGo T-Watch S3 Plus
+# Ripple zyskuje obsługę GPS i LoRa na T-Watch S3 Plus
 Dodałem właśnie obsługę [T-Watch S3 Plus](https://www.lilygo.cc/products/t-watch-s3-plus?bg_ref=cq3pUU7cD3).
 To naszpikowany funkcjami, programowalny zegarek od LilyGo, z wbudowanym GPS, radiem LoRa sx1262 oraz 1,5-calowym kolorowym ekranem dotykowym.
 

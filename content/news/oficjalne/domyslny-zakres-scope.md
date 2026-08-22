@@ -2,11 +2,12 @@
 title: Domyślny zakres regionu (Default Scope)
 description: Domyślny zakres (default scope) obejmuje teraz też wiadomości prywatne, logowania i zapytania - nawet w sieciach blokujących ruch bez zakresu.
 createdAt: 17.04.2026
+updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/04/20/default-scope
 tags: [Oprogramowanie, Aplikacja]
 ---
 
-# Domyślny zakres regionu (Default Scope)
+# Default Scope obejmuje teraz wiadomości prywatne
 ![Domyślny zakres regionu](https://blog.meshcore.io/assets/images/2026/04/17/banner.png)
 
 > [!NOTE]

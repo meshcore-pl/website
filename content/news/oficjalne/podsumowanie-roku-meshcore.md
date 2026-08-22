@@ -2,11 +2,12 @@
 title: Podsumowanie roku MeshCore
 description: Scott Powell podsumowuje pierwszy rok MeshCore - od pierwszej wiadomości między Bobem a Alice, po kamienie milowe i ducha społeczności.
 createdAt: 12.12.2025
+updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2025/12/12/the-year-in-review
 tags: [Społeczność]
 ---
 
-# Podsumowanie roku MeshCore
+# Pierwszy rok MeshCore - kamienie milowe i społeczność
 ![Podsumowanie roku MeshCore](https://blog.meshcore.io/assets/images/2025/12/12/year_in_review.jpg)
 
 Cóż, ale to był rok! MeshCore ma już niemal rok, więc pomyślałem, że to dobry moment, by spojrzeć wstecz na ten pierwszy, megaudany rok i przypomnieć sobie kamienie milowe, które udało nam się pokonać.

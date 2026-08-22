@@ -3,9 +3,10 @@ title: Heltec WiFi LoRa 32 V4 - pinmap i dokumentacja
 description: Karta techniczna Heltec WiFi LoRa 32 V4 - mapa pinów (Header J2/J3, LoRa, GNSS), zasilanie i link do pełnej dokumentacji producenta.
 canonical: /dokumentacja/schematy/heltec-wifi-lora-32-v4
 createdAt: 21.08.2026
+updatedAt: 22.08.2026
 ---
 
-# Heltec WiFi LoRa 32 V4 - pinmap i dokumentacja {toc: Heltec WiFi LoRa 32 V4}
+# Heltec WiFi LoRa 32 V4 - wyświetlacz OLED i wzmacniacz LNA {toc: Heltec WiFi LoRa 32 V4}
 Najnowsza wersja popularnej płytki Heltec (Wi-Fi, Bluetooth, LoRa, wyświetlacz OLED 0,96", wzmacniacz LNA). Dobry wybór pod companiona.
 
 <div class="docs-schematic">

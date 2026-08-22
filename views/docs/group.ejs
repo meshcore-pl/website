@@ -30,9 +30,14 @@
 				</div>
 			</div>
 			<p class="docs-hero__lead"><%= group.description %></p>
-			<div id="docs-hero__actions">
-				<a href="/dokumentacja/<%= group.slug %>/<%= group.visiblePages[0].slug %>" class="btn btn--primary">Zacznij od: <%= group.visiblePages[0].title %></a>
-				<span id="docs-hero__count"><%= group.visiblePages.length %> <%= pluralizePolish(group.visiblePages.length, { one: 'strona', few: 'strony', many: 'stron' }) %></span>
+
+			<div id="docs-hero__search-row">
+				<%- include('./_search-box.ejs', { heroVariant: true }) %>
+
+				<div id="docs-hero__actions">
+					<a href="/dokumentacja/<%= group.slug %>/<%= group.visiblePages[0].slug %>" class="btn btn--primary">Zacznij od: <%= group.visiblePages[0].title %></a>
+					<span id="docs-hero__count"><%= group.visiblePages.length %> <%= pluralizePolish(group.visiblePages.length, { one: 'strona', few: 'strony', many: 'stron' }) %></span>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -64,5 +69,7 @@
 		</div>
 	</section>
 </main>
+
+<script type="module" src="/js/docs-search.js"></script>
 
 <%- include('../includes/footer.ejs', { footer: false }) %>

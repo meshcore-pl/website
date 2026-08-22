@@ -2,11 +2,12 @@
 title: Tryb dla dzieci i zdalna administracja
 description: Firmware Ripple 7.11 wprowadza zdalną administrację urządzeniami oraz tryb dla dzieci (Kid Mode), ograniczający ekran główny do wybranych kontaktów.
 createdAt: 2.10.2025
+updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2025/10/02/kid-mode
 tags: [Oprogramowanie, Poradnik]
 ---
 
-# Tryb dla dzieci i zdalna administracja
+# Kid Mode i zdalna administracja w firmware Ripple
 Najnowsze firmware (v7.11) dla T-Deck, T-Deck Pro, T-Watch S3 Plus i T-Pager ma teraz możliwość zdalnego administrowania, a pierwszą funkcją jest **tryb dla dzieci** (Kid Mode).
 
 ![Ekran główny w trybie dla dzieci](https://blog.meshcore.io/assets/images/2025/10/02/kidmodehome.png)

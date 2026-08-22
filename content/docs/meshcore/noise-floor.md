@@ -3,10 +3,10 @@ title: Noise Floor - czym jest?
 description: Czym jest Noise Floor w MeshCore, jak poprawnie go zmierzyć, znaleźć źródło zakłóceń i kiedy warto zastosować filtr BPF.
 canonical: /dokumentacja/meshcore/noise-floor
 createdAt: 13.07.2026
-updatedAt: 20.08.2026
+updatedAt: 22.08.2026
 ---
 
-# Noise Floor - czym jest?
+# Co oznacza Noise Floor i jak go zmierzyć? {toc: Noise Floor}
 Jest to wskaźnik poziomu szumu i zakłóceń odbieranych przez radio. Im bardziej ujemny wynik, tym lepiej: `-120 dB` oznacza znacznie lepsze warunki niż `-90 dB`.
 Wysoki NF utrudnia odbiór słabszych repeaterów i zmniejsza realny zasięg.
 

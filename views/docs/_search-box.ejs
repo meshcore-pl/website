@@ -1,0 +1,6 @@
+<div id="docs-search"<%- typeof heroVariant !== 'undefined' && heroVariant ? ' class="docs-search--hero"' : '' %>>
+	<svg id="docs-search__icon" aria-hidden="true"><use href="/icons.svg#search"></use></svg>
+	<input type="search" id="docs-search-input" placeholder="Szukaj w dokumentacji..." autocomplete="off" aria-label="Szukaj w dokumentacji" role="combobox" aria-expanded="false" aria-controls="docs-search-results" aria-autocomplete="list" aria-haspopup="listbox">
+	<div id="docs-search-results" role="listbox" aria-label="Wyniki wyszukiwania" hidden></div>
+	<p id="docs-search__status" class="sr-only" role="status" aria-live="polite"></p>
+</div>

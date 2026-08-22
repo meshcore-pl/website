@@ -2,11 +2,12 @@
 title: Dziękujemy
 description: Zbiórka prawna została zamknięta, a wsparcie społeczności przerosło nasze oczekiwania - status sporu o znak towarowy oraz co dalej z projektem MeshCore.
 createdAt: 28.07.2026
+updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/07/29/thankyou
 tags: [Społeczność]
 ---
 
-# Dziękujemy
+# Zbiórka na ratowanie MeshCore zakończona sukcesem
 [Zbiórka na GiveALittle](https://givealittle.co.nz/cause/help-us-save-meshcore) została już zamknięta, a wyniki, nawet po pierwszych 12 godzinach, przerosły nasze oczekiwania!
 
 ![Cel zbiórki osiągnięty](https://blog.meshcore.io/assets/images/2026/07/28/goal-reached.png)

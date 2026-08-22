@@ -1,12 +1,13 @@
 ---
-title: MeshCore Firmware v1.15.0
+title: Aktualizacja firmware MeshCore 1.15.0
 description: 19 kwietnia 2026 - firmware v1.15.0 MeshCore, domyślny zakres (Default Scope), pakiety GROUP_DATA, obsługa Heltec V4.3 i T096 oraz aktualizacje OTA dla nRF.
 createdAt: 19.04.2026
+updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/04/19/release-1-15-0
 tags: [Lista zmian, Oprogramowanie]
 ---
 
-# MeshCore Firmware v1.15.0
+# Firmware MeshCore v1.15.0 - domyślny zakres regionu
 ![MeshCore Firmware](https://blog.meshcore.io/assets/images/firmware_release.jpg)
 
 19 kwietnia 2026 ukazało się wydanie oprogramowania **v1.15.0** dla MeshCore.

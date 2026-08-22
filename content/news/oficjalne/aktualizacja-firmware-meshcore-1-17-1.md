@@ -1,12 +1,13 @@
 ---
-title: MeshCore Firmware v1.17.1
+title: Aktualizacja firmware MeshCore 1.17.1
 description: 14 sierpnia 2026 - firmware v1.17.1 MeshCore, nowe komendy CLI dla wzmocnienia FEM, poprawki logowania i wykrywania preambuły oraz naprawa Tx dla Heltec T096.
 createdAt: 14.08.2026
+updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/08/14/release-1-17-1
 tags: [Lista zmian, Oprogramowanie]
 ---
 
-# MeshCore Firmware v1.17.1
+# Firmware MeshCore v1.17.1 - komendy CLI dla FEM
 ![MeshCore Firmware](https://blog.meshcore.io/assets/images/firmware_release.jpg)
 
 14 sierpnia 2026 ukazało się wydanie oprogramowania **v1.17.1** dla MeshCore.

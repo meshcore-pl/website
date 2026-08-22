@@ -19,7 +19,9 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 3. Dodano losowe ciekawostki („Czy wiesz, że...?”) na dole `/dokumentacja` i `/aktualnosci`.
 4. Dodano przycisk „Szybki start” w `/dokumentacja`, prowadzący do sekcji „Od zera do pierwszej wiadomości”.
 5. Nagłówki sekcji na stronie głównej można teraz kliknąć, aby skopiować bezpośredni link do danej sekcji.
-6. Różne poprawki.
+6. Dodano wpis „[Aktualizacja aplikacji MeshCore 1.49.0](https://meshcorepolska.org/aktualnosci/lista-zmian/aktualizacja-aplikacji-meshcore-1-49-0)” w Aktualnościach.
+7. Poprawiono pod SEO nagłówki w Aktualnościach i Dokumentacji - H1 nie jest już duplikatem tytułu strony.
+8. Różne poprawki.
 
 ## v1.5.0
 1. Dodano nową grupę [Schematy](https://meshcorepolska.org/dokumentacja/schematy) w dokumentacji.
@@ -29,7 +31,7 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 5. Inne poprawki i ulepszenia.
 
 ## v1.4.1
-1. Dodano wpis „MeshCore Firmware v1.17.0” w Aktualnościach.
+1. Dodano wpis „[MeshCore Firmware v1.17.0](https://meshcorepolska.org/aktualnosci/lista-zmian/aktualizacja-firmware-meshcore-1-17-0)” w Aktualnościach.
 2. Dodano `sourceUrl` dla `content/news/oficjalne/**` - plakietka źródła przy wpisie prowadzi teraz do oryginału na blog.meshcore.io.
 3. Poprawiono styl (hover) plakietki źródła na stronie wpisu aktualności.
 4. Wewnętrzne linki do Discorda prowadzą teraz bezpośrednio pod docelowy adres zaproszenia, zamiast przez przekierowujący `/discord` (poprawa SEO - mniej łańcuchów przekierowań).

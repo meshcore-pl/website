@@ -2,11 +2,12 @@
 title: Meshcore.io - dlaczego rozłam?
 description: Zespół MeshCore tłumaczy powody przeniesienia się na nową stronę meshcore.io oraz spór o znak towarowy z byłym członkiem zespołu, Andym Kirby.
 createdAt: 23.04.2026
+updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/04/23/the-split
 tags: [Społeczność]
 ---
 
-# Meshcore.io - dlaczego rozłam?
+# Dlaczego zespół MeshCore przeniósł się na meshcore.io
 Od samego początku zespół deweloperski MeshCore ciężko pracował nad budową MeshCore.
 
 Wydaliśmy ponad 85 wersji firmware Companion, Repeater i Room Server dla MeshCore, z obsługą ponad 75 wariantów sprzętu.
