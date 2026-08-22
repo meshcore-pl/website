@@ -10,13 +10,13 @@ Miniaturowa płytka z MCU `nRF52840` (BLE) od Seeed Studio, wykorzystywana w nie
 
 <div class="docs-schematic-row">
 	<div class="docs-schematic docs-schematic--transparent">
-		<a href="/pliki/schematy/obrazy/xiao-nrf52840-pinout-przod.png" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ pinout XIAO nRF52840 od góry">
+		<a href="/pliki/schematy/obrazy/xiao-nrf52840-pinout-przod.png" data-lightbox aria-label="Powiększ pinout XIAO nRF52840 od góry">
 			<img src="/pliki/schematy/obrazy/xiao-nrf52840-pinout-przod.png" alt="Pinout płytki XIAO nRF52840 od góry" width="1942" height="1030" data-transparent>
 		</a>
 		<p class="docs-img-caption">Widok od góry - GPIO, ADC, SPI, I2C, UART, RGB LED</p>
 	</div>
 	<div class="docs-schematic docs-schematic--transparent">
-		<a href="/pliki/schematy/obrazy/xiao-nrf52840-pinout-tyl.png" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ pinout XIAO nRF52840 od spodu">
+		<a href="/pliki/schematy/obrazy/xiao-nrf52840-pinout-tyl.png" data-lightbox aria-label="Powiększ pinout XIAO nRF52840 od spodu">
 			<img src="/pliki/schematy/obrazy/xiao-nrf52840-pinout-tyl.png" alt="Pinout płytki XIAO nRF52840 od spodu" width="2047" height="1143" data-transparent>
 		</a>
 		<p class="docs-img-caption">Widok od spodu - SWD, BAT+/BAT-, NFC</p>

@@ -9,7 +9,7 @@ createdAt: 21.08.2026
 Popularny, tani moduł ładowania z algorytmem MPPT (Maximum Power Point Tracking) - często stosowany w repeaterach zasilanych panelem słonecznym i akumulatorem Li-ion/LiPo 3,7 V (patrz [Role urządzeń](https://meshcorepolska.org/dokumentacja/meshcore/wprowadzenie#repeater-rpt)).
 
 <div class="docs-schematic">
-	<a href="/pliki/schematy/obrazy/cn3791-mppt-solar-charger.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ schemat podłączenia modułu CN3791 MPPT">
+	<a href="/pliki/schematy/obrazy/cn3791-mppt-solar-charger.jpg" data-lightbox aria-label="Powiększ schemat podłączenia modułu CN3791 MPPT">
 		<img src="/pliki/schematy/obrazy/cn3791-mppt-solar-charger.jpg" alt="Schemat podłączenia modułu ładowarki solarnej CN3791 MPPT" width="1483" height="1061">
 	</a>
 </div>

@@ -9,7 +9,7 @@ createdAt: 21.08.2026
 Najnowsza wersja popularnej płytki Heltec (Wi-Fi, Bluetooth, LoRa, wyświetlacz OLED 0,96", wzmacniacz LNA). Dobry wybór pod companiona.
 
 <div class="docs-schematic">
-	<a href="/pliki/schematy/obrazy/heltec-wifi-lora-32-v4-pinmap.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ mapę pinów Heltec WiFi LoRa 32 V4">
+	<a href="/pliki/schematy/obrazy/heltec-wifi-lora-32-v4-pinmap.jpg" data-lightbox aria-label="Powiększ mapę pinów Heltec WiFi LoRa 32 V4">
 		<img src="/pliki/schematy/obrazy/heltec-wifi-lora-32-v4-pinmap.jpg" alt="Mapa pinów płytki Heltec WiFi LoRa 32 V4" width="1457" height="1079">
 	</a>
 </div>

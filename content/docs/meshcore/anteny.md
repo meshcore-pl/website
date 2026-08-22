@@ -21,12 +21,12 @@ Przykładowo, jeśli antena posiada złącze `RP-SMA Female` (z pinem w środku)
 
 <div class="docs-img-row">
 	<div class="docs-img-row__item">
-		<a href="/images/photos/sma-female-i-sma-male_new.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ zdjęcie złącza SMA Female i SMA Male">
+		<a href="/images/photos/sma-female-i-sma-male_new.jpg" data-lightbox aria-label="Powiększ zdjęcie złącza SMA Female i SMA Male">
 			<img src="/images/photos/sma-female-i-sma-male_new.jpg" alt="Złącze SMA Female obok złącza SMA Male" width="760" height="380" class="docs-img-row__hero">
 		</a>
 	</div>
 	<div class="docs-img-row__item">
-		<a href="/images/photos/schemat-zlaczy-sma-i-rp-sma.jpg" target="_blank" rel="noopener" data-lightbox aria-label="Powiększ schemat złączy SMA i RP-SMA">
+		<a href="/images/photos/schemat-zlaczy-sma-i-rp-sma.jpg" data-lightbox aria-label="Powiększ schemat złączy SMA i RP-SMA">
 			<img src="/images/photos/schemat-zlaczy-sma-i-rp-sma.jpg" alt="Schemat złączy SMA i RP-SMA - gniazdo i wtyk" width="340" height="340">
 		</a>
 		<p class="docs-img-caption">Źródło: <a href="https://download.kamami.pl/p562285-connection-diagram.jpg" target="_blank" rel="noopener nofollow">kamami.pl</a></p>
