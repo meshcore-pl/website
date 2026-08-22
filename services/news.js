@@ -63,8 +63,8 @@ const build = () => {
 		}
 	}
 
-	posts.sort((a, b) => b.date - a.date);
-	for (const tag of tagMap.values()) tag.posts.sort((a, b) => b.date - a.date);
+	posts.sort((a, b) => b.publishedAt - a.publishedAt);
+	for (const tag of tagMap.values()) tag.posts.sort((a, b) => b.publishedAt - a.publishedAt);
 
 	tags = [...tagMap.values()].sort((a, b) => b.posts.length - a.posts.length || a.label.localeCompare(b.label, 'pl'));
 	lastModified = posts.reduce((acc, p) => (!acc || p.date > acc ? p.date : acc), null);
