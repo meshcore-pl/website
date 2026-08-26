@@ -7,7 +7,7 @@
 }
 
 .section--legal {
-	padding-top: calc(68px + var(--nav-h));
+	padding-top: calc(32px + var(--nav-h));
 }
 
 .prose--narrow {
