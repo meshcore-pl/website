@@ -1,0 +1,124 @@
+.stats-page {
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+.stats-summary {
+	display: grid;
+	gap: 16px;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	margin: 20px 0 32px;
+}
+
+.stats-tile {
+	padding: 15px;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background: var(--glass-bg);
+	text-align: center;
+	box-shadow: var(--shadow-card);
+	-webkit-backdrop-filter: blur(1px);
+	backdrop-filter: blur(1px);
+}
+
+.stats-tile strong {
+	display: block;
+	margin-bottom: 4px;
+	color: var(--text);
+	font-family: var(--font-mono);
+	font-size: clamp(26px, 3.6vw, 34px);
+	font-weight: 700;
+}
+
+.stats-tile span {
+	color: var(--text-muted);
+	font-size: 13px;
+}
+
+.stats-chart-card {
+	padding: 24px;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background: var(--glass-bg);
+	box-shadow: var(--shadow-card);
+	-webkit-backdrop-filter: blur(1px);
+	backdrop-filter: blur(1px);
+}
+
+.stats-chart-card h2 {
+	margin: 0 0 8px;
+	font-size: 20px;
+}
+
+.stats-chart-card p {
+	margin: 0 0 20px;
+	color: var(--text-muted);
+	font-size: 15px;
+}
+
+.stats-range {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 6px;
+	margin-bottom: 20px;
+}
+
+.stats-range button {
+	padding: 6px 14px;
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	background: var(--glass-bg);
+	color: var(--text-muted);
+	font-family: var(--font-mono);
+	font-size: 12px;
+	cursor: pointer;
+	transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.stats-range button:hover {
+	border-color: var(--border-strong);
+	color: var(--text);
+}
+
+.stats-range button.is-active {
+	border-color: var(--red-bright);
+	background: rgba(255, 51, 82, 0.12);
+	color: var(--text);
+}
+
+#stats-chart-wrap {
+	position: relative;
+	height: 340px;
+}
+
+.stats-empty {
+	padding: 48px 20px;
+	color: var(--text-muted);
+	text-align: center;
+}
+
+.stats-empty[hidden] {
+	display: none;
+}
+
+#stats-error {
+	margin: 0;
+}
+
+#stats-error[hidden] {
+	display: none;
+}
+
+.stats-page__note {
+	margin: 20px 0 0;
+	color: var(--text-muted);
+	font-size: 13px;
+	text-align: center;
+}
+
+@media (max-width: 640px) {
+	#stats-chart-wrap {
+		height: 260px;
+	}
+}

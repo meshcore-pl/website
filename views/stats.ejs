@@ -1,0 +1,71 @@
+<%- include('./includes/header.ejs', {
+	title: 'Statystyki sieci MeshCore w Polsce | MeshCore Polska',
+	description: 'Dzienna historia sieci MeshCore w Polsce: liczba repeaterów, room serwerów i companionów w czasie, na podstawie danych z mapy węzłów.',
+	canonical: '/statystyki',
+	css: ['content', 'stats'],
+	page: 'stats'
+}) %>
+
+<main>
+	<section class="section section--legal">
+		<div class="section__inner">
+			<article class="prose prose--narrow stats-page">
+				<p class="eyebrow">Dane z mapy węzłów</p>
+				<h1>Statystyki sieci</h1>
+				<p>
+					Codzienna historia sieci MeshCore w Polsce - jak zmienia się w czasie liczba urządzeń, w podziale na repeatery, room serwery i companiony.
+					Dane pochodzą z <a href="https://mapa.meshcorepolska.org" target="_blank" rel="noopener dofollow">mapy węzłów</a> i obejmują wyłącznie urządzenia, których operatorzy zdecydowali się upublicznić w internecie.
+				</p>
+
+				<div class="stats-summary" id="stats-summary" hidden>
+					<div class="stats-tile">
+						<strong id="stats-nodes-latest">-</strong>
+						<span>urządzeń łącznie</span>
+					</div>
+					<div class="stats-tile">
+						<strong id="stats-repeaters-latest">-</strong>
+						<span>repeaterów</span>
+					</div>
+					<div class="stats-tile">
+						<strong id="stats-roomservers-latest">-</strong>
+						<span>room serwerów</span>
+					</div>
+					<div class="stats-tile">
+						<strong id="stats-companions-latest">-</strong>
+						<span>companionów</span>
+					</div>
+				</div>
+
+				<div class="stats-chart-card">
+					<h2>Sieć w czasie</h2>
+					<p>Liczba urządzeń w sieci dzień po dniu, w podziale na typy.</p>
+					<div class="stats-range" id="stats-range" role="group" aria-label="Zakres dat">
+						<button type="button" data-days="30">30 dni</button>
+						<button type="button" data-days="90" class="is-active">90 dni</button>
+						<button type="button" data-days="180">180 dni</button>
+						<button type="button" data-days="365">Rok</button>
+						<button type="button" data-days="all">Wszystkie</button>
+					</div>
+					<div id="stats-chart-wrap">
+						<canvas id="stats-chart"></canvas>
+					</div>
+					<p class="stats-empty" id="stats-empty" hidden>Brak jeszcze wystarczających danych historycznych - wróć za kilka dni.</p>
+					<div class="docs-alert docs-alert--caution" id="stats-error" hidden>
+						<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-caution"></use></svg>
+						<div class="docs-alert__body">
+							<p class="docs-alert__title">Coś poszło nie tak</p>
+							<p id="stats-error-detail">Spróbuj ponownie. Jeśli problem nie ustąpi, zgłoś go nam.</p>
+						</div>
+					</div>
+				</div>
+
+				<p class="stats-page__note">Odświeżane raz dziennie o północy. <a href="https://mapa.meshcorepolska.org" target="_blank" rel="noopener dofollow">Zobacz mapę na żywo →</a></p>
+			</article>
+		</div>
+	</section>
+</main>
+
+<script>window.MAP_DOMAIN = '<%= process.env.MAP_DOMAIN %>';</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js"></script>
+
+<%- include('./includes/footer.ejs', { scripts: ['/js/stats.js'] }) %>
