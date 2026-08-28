@@ -3,7 +3,7 @@ title: Lista zmian meshcorepolska.org
 description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/spolecznosc/lista-zmian
 createdAt: 2.08.2026
-updatedAt: 23.08.2026
+updatedAt: 28.08.2026
 ---
 
 # Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
@@ -12,6 +12,15 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 
 > [!NOTE]
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
+
+## v1.7.0
+1. Dodano nową podstronę [Statystyki](https://meshcorepolska.org/statystyki) - codzienna historia sieci MeshCore w Polsce (łączna liczba urządzeń, repeaterów, room serwerów i companionów) w formie wykresu, z wyborem zakresu (30 dni, 90 dni, 180 dni, rok, wszystkie).
+2. Dodano link do Statystyk w menu nawigacyjnym.
+3. Dodano wpis [Modem KISS](https://meshcorepolska.org/aktualnosci/oprogramowanie/modem-kiss) w Aktualnościach.
+4. Rozszerzono stronę [Nasze logo](https://meshcorepolska.org/dokumentacja/spolecznosc/nasze-logo) o komplet faviconek do pobrania.
+5. Ujednolicono zapis „room serwer” i „room-peater” w dokumentacji i ciekawostkach.
+6. Zaktualizowano zależności backendu do najnowszej wersji.
+7. Różne drobne poprawki.
 
 ## v1.6.0
 1. Dodano nową sekcję na stronie głównej.

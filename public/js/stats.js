@@ -11,7 +11,6 @@ const SERIES = [
 ];
 
 let chart = null;
-let liveStats = null;
 
 const formatDateLabel = dateStr => {
 	const d = new Date(`${dateStr}T00:00:00`);
@@ -81,18 +80,6 @@ const renderChart = history => {
 	});
 };
 
-const fetchLiveTotals = async () => {
-	try {
-		const res = await fetch(`${window.MAP_DOMAIN}/api/v1/repeater-stats`, { signal: AbortSignal.timeout(8000) });
-		if (!res.ok) return null;
-
-		const body = await res.json();
-		return body?.success ? body.data : null;
-	} catch {
-		return null;
-	}
-};
-
 const fetchHistory = async days => {
 	let res;
 	try {
@@ -113,10 +100,10 @@ const updateTiles = history => {
 	const summary = document.getElementById('stats-summary');
 	const latest = history[history.length - 1];
 
-	setTile('stats-nodes-latest', liveStats?.nodes ?? latest.nodes);
-	setTile('stats-repeaters-latest', liveStats?.types?.repeater ?? latest.types.repeater);
-	setTile('stats-roomservers-latest', liveStats?.types?.roomServer ?? latest.types.roomServer);
-	setTile('stats-companions-latest', liveStats?.types?.client ?? latest.types.client);
+	setTile('stats-nodes-latest', latest.nodes);
+	setTile('stats-repeaters-latest', latest.types.repeater);
+	setTile('stats-roomservers-latest', latest.types.roomServer);
+	setTile('stats-companions-latest', latest.types.client);
 	if (summary) summary.hidden = false;
 };
 
@@ -179,7 +166,6 @@ const getInitialRange = () => {
 
 const init = async () => {
 	setupRangeButtons();
-	liveStats = await fetchLiveTotals();
 	await loadRange(getInitialRange());
 };
 
