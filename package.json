@@ -1,6 +1,6 @@
 {
   "name": "meshcore-polska",
-  "version": "1.7.0-beta.0",
+  "version": "1.7.0",
   "private": true,
   "homepage": "https://meshcorepolska.org",
   "bugs": {
@@ -30,7 +30,7 @@
     "helmet": "^8.3.0",
     "marked": "^18.0.11",
     "morgan": "^1.11.0",
-    "nodemailer": "^9.0.5"
+    "nodemailer": "^9.0.6"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
