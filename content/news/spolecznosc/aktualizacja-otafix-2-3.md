@@ -2,12 +2,13 @@
 title: OTAFIX 2.3 / Board Package 1.4
 description: Bootloader OTAFIX w wersji 2.3 dodaje obsługę wyświetlacza ST7735 oraz nowe płytki - Heltec T096, Heltec T1 i RAK 3401.
 createdAt: 20.08.2026
-updatedAt: 22.08.2026
+updatedAt: 31.08.2026
 tags: [Lista zmian, Oprogramowanie]
 ---
 
 # Bootloader OTAFIX 2.3 - nowe płytki i wyświetlacz ST7735
-19 sierpnia 2026 ukazała się nowa wersja bootloadera **OTAFIX** - **2.3** (Board Package 1.4). Jeśli masz już zainstalowaną wersję 2.2, aktualizacja nie jest konieczna - to głównie wydanie dodające obsługę nowych płytek.
+19 sierpnia 2026 roku ukazała się nowa wersja bootloadera **OTAFIX** - **2.3** (Board Package 1.4).
+Jeśli masz już zainstalowaną wersję 2.2, aktualizacja nie jest konieczna. Nowe wydanie skupia się głównie na dodaniu obsługi nowych płytek.
 
 ## Co nowego w OTAFIX 2.3
 - **Obsługa wyświetlacza ST7735** - dodano sterownik ST7735, a kod obsługi wyświetlacza został przebudowany tak, by rozmiar ekranu dało się konfigurować na poziomie płytki
