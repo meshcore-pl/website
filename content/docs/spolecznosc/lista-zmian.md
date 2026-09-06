@@ -14,11 +14,12 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
 
 ## v1.7.1
-1. Dodano plik [llms.txt](https://meshcorepolska.org/llms.txt) z zasadami dla agentów AI oraz link „Instrukcje AI” w stopce strony. Większość agentów i tak ignoruje ten plik ze względu na prompt injection, ale niech sobie będzie.
+1. Dodano plik [llms.txt](https://meshcorepolska.org/llms.txt) z zasadami dla agentów AI oraz link „Instrukcje AI” w stopce strony. Większość agentów go i tak ignoruje ze względu na prompt injection, ale niech sobie będzie.
 2. Zmieniono drugi przycisk w sekcji hero z „Serwer Discord” na „Oficjalna dokumentacja”, prowadzący do [docs.meshcorepolska.org](https://docs.meshcorepolska.org).
 3. Dodano podpowiedzi (atrybut `title`) do linków w menu nawigacyjnym oraz przycisków w sekcji hero.
 4. Zwiększono szerokość paska nawigacji, treści stron i stopki.
 5. Zwiększono szerokość treści artykułów w Aktualnościach.
+6. Dodano wpis [docs.meshcorepolska.org - spolszczona dokumentacja](https://meshcorepolska.org/aktualnosci/spolecznosc/docs-meshcorepolska-org) w Aktualnościach.
 
 ## v1.7.0
 1. Dodano nową podstronę [Statystyki](https://meshcorepolska.org/statystyki) - codzienna historia sieci MeshCore w Polsce (łączna liczba urządzeń, repeaterów, room serwerów i companionów) w formie wykresu, z wyborem zakresu (30 dni, 90 dni, 180 dni, rok, wszystkie).
