@@ -79,17 +79,17 @@
 
 		<div id="nav__right">
 			<nav id="nav-menu" aria-label="Menu główne">
-				<a href="/dokumentacja" class="nav__link<%= locals.page === 'docs' ? ' nav__link--active' : '' %>">Dokumentacja</a>
-				<a href="/aktualnosci" class="nav__link<%= locals.page === 'news' ? ' nav__link--active' : '' %>">Aktualności</a>
-				<a href="/kontakt" class="nav__link<%= locals.page === 'contact' ? ' nav__link--active' : '' %>">Kontakt</a>
-				<a href="/statystyki" class="nav__link<%= locals.page === 'stats' ? ' nav__link--active' : '' %>">Statystyki</a>
-				<a href="https://mapa.meshcorepolska.org" class="nav__link" target="_blank" rel="noopener dofollow">Mapa węzłów</a>
-				<a href="https://flasher.meshcore.io" class="nav__link" target="_blank" rel="noopener nofollow">Flasher</a>
-				<a href="https://meshcore.io" class="nav__link" target="_blank" rel="noopener nofollow">MeshCore.io</a>
-				<a href="https://www.dxinfocentre.com/tropo_eur.html" class="nav__link" target="_blank" rel="noopener nofollow">Propagacja</a>
-				<a href="/discord" class="btn btn--primary" id="nav__links-cta" target="_blank" rel="noopener">Serwer Discord</a>
+				<a href="/dokumentacja" class="nav__link<%= locals.page === 'docs' ? ' nav__link--active' : '' %>" title="Dokumentacja projektu MeshCore Polska">Dokumentacja</a>
+				<a href="/aktualnosci" class="nav__link<%= locals.page === 'news' ? ' nav__link--active' : '' %>" title="Aktualności i changelogi MeshCore">Aktualności</a>
+				<a href="/kontakt" class="nav__link<%= locals.page === 'contact' ? ' nav__link--active' : '' %>" title="Formularz kontaktowy">Kontakt</a>
+				<a href="/statystyki" class="nav__link<%= locals.page === 'stats' ? ' nav__link--active' : '' %>" title="Statystyki sieci MeshCore Polska">Statystyki</a>
+				<a href="https://mapa.meshcorepolska.org" class="nav__link" target="_blank" title="Interaktywna mapa węzłów sieci MeshCore w Polsce" rel="noopener dofollow">Mapa węzłów</a>
+				<a href="https://flasher.meshcore.io" class="nav__link" target="_blank" title="Narzędzie do wgrywania firmware MeshCore na urządzenia" rel="noopener nofollow">Flasher</a>
+				<a href="https://meshcore.io" class="nav__link" target="_blank" title="Oficjalna strona projektu MeshCore" rel="noopener nofollow">MeshCore.io</a>
+				<a href="https://www.dxinfocentre.com/tropo_eur.html" class="nav__link" target="_blank" title="Prognoza propagacji troposferycznej fal radiowych" rel="noopener nofollow">Propagacja</a>
+				<a href="/discord" class="btn btn--primary" id="nav__links-cta" target="_blank" title="Dołącz do naszego serwera Discord" rel="noopener">Serwer Discord</a>
 			</nav>
-			<a href="/discord" class="btn btn--primary btn--sm" id="nav__cta" target="_blank" rel="noopener">Serwer Discord</a>
+			<a href="/discord" class="btn btn--primary btn--sm" id="nav__cta" target="_blank" title="Dołącz do naszego serwera Discord" rel="noopener">Serwer Discord</a>
 			<button id="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Menu">
 				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
 			</button>

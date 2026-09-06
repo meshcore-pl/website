@@ -3,7 +3,7 @@ title: Lista zmian meshcorepolska.org
 description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/spolecznosc/lista-zmian
 createdAt: 2.08.2026
-updatedAt: 28.08.2026
+updatedAt: 6.09.2026
 ---
 
 # Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
@@ -12,6 +12,13 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 
 > [!NOTE]
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
+
+## v1.7.1
+1. Dodano plik [llms.txt](https://meshcorepolska.org/llms.txt) z zasadami dla agentów AI oraz link „Instrukcje AI” w stopce strony. Większość agentów i tak ignoruje ten plik ze względu na prompt injection, ale niech sobie będzie.
+2. Zmieniono drugi przycisk w sekcji hero z „Serwer Discord” na „Oficjalna dokumentacja”, prowadzący do [docs.meshcorepolska.org](https://docs.meshcorepolska.org).
+3. Dodano podpowiedzi (atrybut `title`) do linków w menu nawigacyjnym oraz przycisków w sekcji hero.
+4. Zwiększono szerokość paska nawigacji, treści stron i stopki.
+5. Zwiększono szerokość treści artykułów w Aktualnościach.
 
 ## v1.7.0
 1. Dodano nową podstronę [Statystyki](https://meshcorepolska.org/statystyki) - codzienna historia sieci MeshCore w Polsce (łączna liczba urządzeń, repeaterów, room serwerów i companionów) w formie wykresu, z wyborem zakresu (30 dni, 90 dni, 180 dni, rok, wszystkie).
