@@ -50,6 +50,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,800;1,900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="/css/global.css">
+	<link rel="stylesheet" href="/css/scrollbar.css">
 	<% if (locals.css) { (Array.isArray(css) ? css : [css]).forEach(c => { %><link rel="stylesheet" href="<%= c.startsWith('http') ? c : `/css/${c}.css` %>"><% }) } %>
 
 	<!-- schema.org -->
