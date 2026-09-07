@@ -1,4 +1,4 @@
-const axios = require('./axios.js');
+const axios = require('../global/services/axios.js');
 
 module.exports = async (token, ip) => {
 	if (!token) return false;

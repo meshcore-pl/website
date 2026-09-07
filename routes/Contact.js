@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const emailValidator = require('@sefinek/email-validator');
 const verifyMx = require('@sefinek/email-validator/mx');
-const tcpClient = require('../services/tcpClient.js');
+const tcpClient = require('../global/services/tcpClient.js');
 const sendMail = require('../services/mailer.js');
 const verifyTurnstile = require('../services/turnstile.js');
 
