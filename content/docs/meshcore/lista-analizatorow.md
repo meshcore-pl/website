@@ -27,7 +27,7 @@ updatedAt: 20.08.2026
 
 ## Sugestie
 Masz sugestię dotyczącą listy lub prowadzisz własny analizator?
-Daj nam znać na [Discordzie](https://meshcorepolska.org/discord) (kanał `#propozycje`), przez [formularz kontaktowy](/kontakt) albo e-mailem na adres [contact@sefinek.net](mailto:contact@sefinek.net).
+Daj nam znać na [Discordzie](https://meshcorepolska.org/discord) (kanał `#propozycje`), przez [formularz kontaktowy](https://meshcorepolska.org/kontakt) albo e-mailem na adres [contact@sefinek.net](mailto:contact@sefinek.net).
 
 ## Wyłączenie odpowiedzialności
 Powyższe strony to niezależne serwisy prowadzone przez osoby trzecie - nie są w żaden sposób powiązane z MeshCore Polska ani przez nas zarządzane.
