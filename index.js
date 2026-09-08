@@ -5,15 +5,18 @@ const { version } = require('./package.json');
 const { DOMAIN, NODE_ENV, PORT } = process.env;
 const isProd = NODE_ENV === 'production';
 
+require('./global/database/mongoose.js');
+
 // Routes
 const PagesRouter = require('./routes/Pages.js');
+const ApiRouter = require('./routes/Api.js');
 const DocsRouter = require('./routes/Docs.js');
 const NewsRouter = require('./routes/News.js');
 const ContactRouter = require('./routes/Contact.js');
 
 // Middleware imports
 const timeout = require('./middlewares/timeout.js');
-const logger = require('./middlewares/morgan.js');
+const logger = require('./global/middlewares/morgan.js');
 const limiter = require('./middlewares/ratelimit.js');
 
 // Utils
@@ -42,6 +45,7 @@ app.use(express.urlencoded({ extended: false, limit: '8kb' }));
 
 
 app.use(PagesRouter);
+app.use(ApiRouter);
 app.use(DocsRouter);
 app.use(NewsRouter);
 app.use(limiter.contactForm, ContactRouter);

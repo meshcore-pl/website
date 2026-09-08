@@ -83,15 +83,15 @@ const renderChart = history => {
 const fetchHistory = async days => {
 	let res;
 	try {
-		res = await fetch(`${window.MAP_DOMAIN}/api/v1/stats/history?region=${REGION}&days=${days}`, { signal: AbortSignal.timeout(8000) });
+		res = await fetch(`/api/v1/stats/history?region=${REGION}&days=${days}`, { signal: AbortSignal.timeout(8000) });
 	} catch (err) {
-		throw new Error(err.name === 'TimeoutError' ? 'Serwer mapy nie odpowiedział na czas. Zgłoś nam ten problem.' : 'Nie udało się połączyć z API serwera mapy (mapa.meshcorepolska.org). Jeśli problem nie ustępuje, zgłoś go nam.', { cause: err });
+		throw new Error(err.name === 'TimeoutError' ? 'Serwer nie odpowiedział na czas. Zgłoś nam ten problem.' : 'Nie udało się pobrać statystyk. Jeśli problem nie ustępuje, zgłoś go nam.', { cause: err });
 	}
 
-	if (!res.ok) throw new Error(`Serwer mapy zwrócił błąd ${res.status}${res.statusText ? ` (${res.statusText})` : ''}.`);
+	if (!res.ok) throw new Error(`Serwer zwrócił błąd ${res.status}${res.statusText ? ` (${res.statusText})` : ''}.`);
 
 	const body = await res.json().catch(() => null);
-	if (!body?.success || !Array.isArray(body.data)) throw new Error('Serwer mapy zwrócił nieprawidłową odpowiedź.');
+	if (!body?.success || !Array.isArray(body.data)) throw new Error('Serwer zwrócił nieprawidłową odpowiedź.');
 
 	return body.data;
 };
