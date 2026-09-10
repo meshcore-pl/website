@@ -32,7 +32,7 @@ Wymaga pliku `.env` (wzór w `.env.example`; ładowany przez `process.loadEnvFil
 - `D:\Projects\meshcore-profiles\meshcoreprofiles.com\global`
 - `D:\Projects\meshcore-profiles\flasher.meshcoreprofiles.com\global`
 
-Pliki, których to repo faktycznie używa z `global/`: `services/redis.js`, `services/axios.js`, `services/nodeCache.js` (czyta bufory węzłów z Redis, patrz `routes/Api.js` niżej), `services/tcpClient.js`, `utils/nodeStats.js` (`computeStats`, współdzielone z `cronjobs` i `map.meshcoreprofiles.com`), `middlewares/morgan.js`, `database/mongoose.js`, `database/models/statsDaily.model.js` (ten model jest śledzony **wewnątrz samego submodułu**, identyczny w każdym repo, mimo że komentarz w `global/database/syncIndexes.js` twierdzi inaczej), `IndexNow.js`.
+Pliki, których to repo faktycznie używa z `global/`: `services/redis.js`, `services/axios.js`, `services/nodeCache.js` (czyta bufory węzłów z Redis, patrz `routes/Api.js` niżej), `services/tcpClient.js`, `utils/nodeStats.js` (`computeStats`, współdzielone z `cronjobs` i `map.meshcoreprofiles.com`), `middlewares/morgan.js`, `database/mongoose.js`, `database/models/statsDaily.model.js` (ten model jest śledzony **wewnątrz samego submodułu**, identyczny w każdym repo), `IndexNow.js`.
 
 ## Architektura
 
