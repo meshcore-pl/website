@@ -23,6 +23,17 @@ Wymaga pliku `.env` (wzór w `.env.example`; ładowany przez `process.loadEnvFil
 - `global/services/redis.js` to współdzielony klient Redis (baza 8) - importowany zamiast trzymania własnej kopii; używa go m.in. `middlewares/ratelimit.js`.
 - `global/middlewares/morgan.js` to współdzielony logger requestów, podpięty w `index.js` jako `logger` - identyczny plik co w `map.meshcoreprofiles.com`.
 
+### Współdzielony submoduł `global`
+
+`global/` to submoduł gita ([meshcore-profiles/global](https://github.com/meshcore-profiles/global)) współdzielony **jeden do jednego** przez wszystkie backendowe repo MeshCore, nie tylko to. Na tej maszynie ten sam submoduł (każde repo robi własny `git pull`, więc mogą chwilowo być na różnych commitach, dopóki ktoś ich nie zsynchronizuje) jest wypięty jako `global/` w każdym z tych repo:
+- `D:\Projects\meshcore\meshcorepolska.org\global` (to repo)
+- `D:\Projects\meshcore-profiles\map.meshcoreprofiles.com\global`
+- `D:\Projects\meshcore-profiles\cronjobs\global`
+- `D:\Projects\meshcore-profiles\meshcoreprofiles.com\global`
+- `D:\Projects\meshcore-profiles\flasher.meshcoreprofiles.com\global`
+
+Pliki, których to repo faktycznie używa z `global/`: `services/redis.js`, `services/axios.js`, `services/nodeCache.js` (czyta bufory węzłów z Redis, patrz `routes/Api.js` niżej), `services/tcpClient.js`, `utils/nodeStats.js` (`computeStats`, współdzielone z `cronjobs` i `map.meshcoreprofiles.com`), `middlewares/morgan.js`, `database/mongoose.js`, `database/models/statsDaily.model.js` (ten model jest śledzony **wewnątrz samego submodułu**, identyczny w każdym repo, mimo że komentarz w `global/database/syncIndexes.js` twierdzi inaczej), `IndexNow.js`.
+
 ## Architektura
 
 `index.js` składa całość: helmet (bez CSP), `express.static('public')`, morgan, rate limiter (tylko w produkcji), timeout, potem routery i obsługa błędów. `app.locals.domain` ustawiany raz przy starcie.
