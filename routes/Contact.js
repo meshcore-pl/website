@@ -42,6 +42,8 @@ router.post('/api/v1/kontakt', async (req, res) => {
 	if (!errors.length && (await tcpClient.checkTempEmail(email))?.blacklisted) errors.push('Tymczasowe adresy e-mail są niedozwolone.');
 	if (errors.length) return renderForm(req, res, 400, { errors, values });
 
+	console.log(`New contact message received from ${email}`);
+
 	try {
 		const subject = 'Kontakt przez formularz MeshCore Polska';
 		const adminMail = await sendMail({
