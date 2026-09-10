@@ -74,11 +74,15 @@ const assignHeadingIds = tokens => {
 const renderer = new marked.Renderer();
 renderer.heading = token => `<h${token.depth} id="${headingIds.get(token) || slugify(token.text)}">${token.text}</h${token.depth}>\n`;
 
-const EXTERNAL_LINK_RE = /^https?:\/\/(?!(www\.)?meshcorepolska\.org(\/|$))/i;
+const OWN_ORIGIN_RE = /^https?:\/\/(www\.)?meshcorepolska\.org(\/|$)/i;
+const DOFOLLOW_FAMILY_RE = /^https?:\/\/([a-z0-9-]+\.)*(meshcorepolska\.org|sefinek\.net|meshcoreprofiles\.com)(\/|$)/i;
 const baseLink = renderer.link.bind(renderer);
 renderer.link = function(token) {
 	const html = baseLink(token);
-	return EXTERNAL_LINK_RE.test(token.href) ? html.replace('>', ' target="_blank" rel="noopener nofollow">') : html;
+	if (OWN_ORIGIN_RE.test(token.href)) return html;
+
+	const rel = DOFOLLOW_FAMILY_RE.test(token.href) ? 'noopener dofollow' : 'noopener nofollow';
+	return html.replace('>', ` target="_blank" rel="${rel}">`);
 };
 
 const baseTable = renderer.table.bind(renderer);
