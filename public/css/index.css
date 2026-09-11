@@ -195,6 +195,7 @@
 .quickstart__shot img {
 	width: 100%;
 	height: auto;
+	aspect-ratio: 610 / 916;
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 }
@@ -553,6 +554,18 @@
 	margin: 0 auto 18px;
 }
 
+.card__img--sensecap {
+	aspect-ratio: 848 / 1264;
+}
+
+.card__img--heltec {
+	aspect-ratio: 1440 / 736;
+}
+
+.card__img--rak {
+	aspect-ratio: 1280 / 832;
+}
+
 .card__img-link {
 	display: block;
 }
@@ -768,6 +781,7 @@
 	display: block;
 	width: 100%;
 	height: auto;
+	aspect-ratio: 2560 / 1237;
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 }

@@ -36,7 +36,27 @@ app.locals.buildSchema = buildSchema;
 app.locals.pluralizePolish = pluralizePolish;
 
 // Use middlewares
-app.use(helmet({ crossOriginResourcePolicy: false, contentSecurityPolicy: false }));
+app.use(helmet({
+	crossOriginResourcePolicy: false,
+	contentSecurityPolicy: {
+		useDefaults: false,
+		directives: {
+			defaultSrc: ['\'self\''],
+			baseUri: ['\'self\''],
+			objectSrc: ['\'none\''],
+			scriptSrc: ['\'self\'', 'https://cdn.sefinek.net', 'https://cdn.jsdelivr.net', 'https://challenges.cloudflare.com'],
+			styleSrc: ['\'self\'', 'https://fonts.googleapis.com'],
+			fontSrc: ['\'self\'', 'https://fonts.gstatic.com'],
+			imgSrc: ['\'self\'', 'https://flasher.meshcore.io'],
+			connectSrc: ['\'self\'', 'https://challenges.cloudflare.com'],
+			frameSrc: ['https://challenges.cloudflare.com'],
+			workerSrc: ['\'self\''],
+			manifestSrc: ['\'self\''],
+			frameAncestors: ['\'self\''],
+			formAction: ['\'self\''],
+		},
+	},
+}));
 app.use(express.static('public'));
 app.use(logger);
 if (isProd) app.use(limiter.global);
