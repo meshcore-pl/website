@@ -77,7 +77,7 @@ renderer.heading = token => `<h${token.depth} id="${headingIds.get(token) || slu
 const OWN_ORIGIN_RE = /^https?:\/\/(www\.)?meshcorepolska\.org(\/|$)/i;
 const DOFOLLOW_FAMILY_RE = /^https?:\/\/([a-z0-9-]+\.)*(meshcorepolska\.org|sefinek\.net|meshcoreprofiles\.com)(\/|$)/i;
 const baseLink = renderer.link.bind(renderer);
-renderer.link = function(token) {
+renderer.link = token => {
 	const html = baseLink(token);
 	if (OWN_ORIGIN_RE.test(token.href)) return html;
 
@@ -89,7 +89,7 @@ const baseTable = renderer.table.bind(renderer);
 renderer.table = token => `<div class="docs-table">\n${baseTable(token)}</div>\n`;
 
 const baseImage = renderer.image.bind(renderer);
-renderer.image = function(token) {
+renderer.image = token => {
 	const html = baseImage(token);
 	const size = getLocalImageSize(token.href);
 	return size ? html.replace('>', ` width="${size.width}" height="${size.height}">`) : html;
