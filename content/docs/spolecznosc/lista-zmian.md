@@ -3,7 +3,7 @@ title: Lista zmian meshcorepolska.org
 description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/spolecznosc/lista-zmian
 createdAt: 2.08.2026
-updatedAt: 6.09.2026
+updatedAt: 15.09.2026
 ---
 
 # Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
@@ -12,6 +12,12 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 
 > [!NOTE]
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
+
+## v1.7.2
+1. Rozwiązano znane problemy CSP (Content-Security-Policy).
+2. Dodano wpis [Wprowadzenie do węzłów czujnikowych](https://meshcorepolska.org/aktualnosci/poradnik/wprowadzenie-do-wezlow-czujnikowych) w Aktualnościach.
+3. Zaktualizowano zależności backendu do najnowszej wersji.
+4. Różne drobne poprawki.
 
 ## v1.7.1
 1. Dodano plik [llms.txt](https://meshcorepolska.org/llms.txt) z zasadami dla agentów AI oraz link „Instrukcje AI” w stopce strony. Większość agentów go i tak ignoruje ze względu na prompt injection, ale niech sobie będzie.
