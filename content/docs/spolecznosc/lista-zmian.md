@@ -14,7 +14,7 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
 
 ## v1.7.2
-1. Rozwiązano znane problemy CSP (Content-Security-Policy).
+1. Rozwiązano znane problemy z CSP (Content-Security-Policy).
 2. Dodano wpis [Wprowadzenie do węzłów czujnikowych](https://meshcorepolska.org/aktualnosci/poradnik/wprowadzenie-do-wezlow-czujnikowych) w Aktualnościach.
 3. Zaktualizowano zależności backendu do najnowszej wersji.
 4. Różne drobne poprawki.
