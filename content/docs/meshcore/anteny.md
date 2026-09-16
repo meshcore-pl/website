@@ -34,7 +34,7 @@ Przykładowo, jeśli antena posiada złącze `RP-SMA Female` (z pinem w środku)
 </div>
 
 ## Pod companiony
-1. [AliExpress](https://pl.aliexpress.com/item/1005004607615001.html) `(zysk 10 dBi)` - znakomita pod companiona, da się na niej sporo kilometrów wykręcić. Pamiętaj, aby wybrać wersję 868 MHz.
+1. [AliExpress](https://pl.aliexpress.com/item/1005008862849597.html) `(zysk 10 dBi)` - znakomita pod companiona, da się na niej sporo kilometrów wykręcić. Pamiętaj, aby wybrać wersję 868 MHz.
 2. [AliExpress](https://pl.aliexpress.com/item/1005007308749444.html) `(zysk 10 dBi)` - zwykle nie ma potrzeby kupowania opcji z kablem. Przeczytaj informacje na samym dole.
 3. [AliExpress](https://pl.aliexpress.com/item/1005001386195377.html) `(zysk 3-5 dBi)` - mały kikucik. Jeśli jesteś bardzo blisko jakiegokolwiek RPT, a z companionem i tak nie wychodzisz na dwór, wersja 5 cm lub 11 cm będzie w sam raz.
 
