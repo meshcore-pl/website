@@ -3,7 +3,7 @@ title: Regulamin serwera
 description: Regulamin obowiązujący na serwerze Discord MeshCore Polska - zasady kultury, treści zakazane oraz konsekwencje ich łamania.
 canonical: /dokumentacja/discord/regulamin
 createdAt: 12.07.2026
-updatedAt: 1.08.2026
+updatedAt: 23.09.2026
 ---
 
 # Regulamin serwera Discord MeshCore Polska {toc: Regulamin serwera}
@@ -39,7 +39,7 @@ Pojedyncze, naturalne pytania są w porządku. Natarczywe proszenie o pomoc przy
 
 ## 7. Reklamy i sprzedaż
 Nie wrzucaj reklam, ofert komercyjnych ani autopromocji bez związku z rozmową.
-Okazjonalna sprzedaż, wymiana czy pomoc między użytkownikami jest w porządku, dopóki dzieje się naturalnie i nie zamienia serwera w tablicę ogłoszeń.
+Okazjonalna sprzedaż czy wymiana jest w porządku, dopóki dzieje się naturalnie i nie zamienia serwera w tablicę ogłoszeń.
 Dotyczy to na przykład sprzedania komuś płytki, anteny, obudowy albo wydruku 3D.
 Jeśli chcesz regularnie promować swój sklep, usługę czy projekt, stanowcze nie.
 
