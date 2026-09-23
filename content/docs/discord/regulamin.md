@@ -10,7 +10,7 @@ updatedAt: 23.09.2026
 Zależy nam na swobodnej, kulturalnej i pomocnej atmosferze. Szanujemy wolność słowa oraz wymianę opinii, jednak oczekujemy, że będą one wyrażane z zachowaniem kultury osobistej i szacunku wobec innych.
 Większość dorosłych osób doskonale wie, jak należy zachowywać się w kontakcie z innymi, dlatego nie chcemy tworzyć tutaj długiej listy zakazów.
 Wystarczy zdrowy rozsądek, uprzejmość i świadomość, że po drugiej stronie też jest człowiek.
-**Nie tolerujemy także hipokryzji, osób sprzeciwiających się liberalizmowi oraz malkontentów.**
+Nie tolerujemy także hipokryzji, osób sprzeciwiających się liberalizmowi oraz malkontentów.
 
 ## 1. Szanuj innych
 Nie obrażaj, nie prowokuj i nie atakuj innych. Krytyka jest dopuszczalna, o ile dotyczy tematu, a nie osoby.
