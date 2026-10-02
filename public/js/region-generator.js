@@ -47,8 +47,7 @@ const rcForm = document.getElementById('rc-form');
 
 const parseCurrentRegions = text => {
 	const lines = text.split(/\r?\n/).filter(line => !line.trim().startsWith('>'));
-	// Repeater ucina wynik `region` do 159 bajtów - ostatnia linia może zawierać tylko fragment nazwy.
-	// Próg z zapasem, bo aplikacja przy kopiowaniu potrafi zgubić wcięcia i końcowe znaki nowej linii.
+	// Repeater ucina wynik `region` do 159 bajtów, więc przy długim wyniku ostatnia linia może być niepełna (próg z zapasem na zgubione wcięcia)
 	if (new TextEncoder().encode(lines.join('\n').trim()).length >= RG_MAX_LINE - 10) {
 		while (lines.length && !lines[lines.length - 1].trim()) lines.pop();
 		lines.pop();
