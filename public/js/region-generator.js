@@ -46,10 +46,18 @@ const rgForm = document.getElementById('rg-form');
 const rcForm = document.getElementById('rc-form');
 
 const parseCurrentRegions = text => {
+	const lines = text.split(/\r?\n/).filter(line => !line.trim().startsWith('>'));
+	// Repeater ucina wynik `region` do 159 bajtów - ostatnia linia może zawierać tylko fragment nazwy.
+	// Próg z zapasem, bo aplikacja przy kopiowaniu potrafi zgubić wcięcia i końcowe znaki nowej linii.
+	if (new TextEncoder().encode(lines.join('\n').trim()).length >= RG_MAX_LINE - 10) {
+		while (lines.length && !lines[lines.length - 1].trim()) lines.pop();
+		lines.pop();
+	}
+
 	const names = [];
-	for (const raw of text.split(/\r?\n/)) {
+	for (const raw of lines) {
 		const line = raw.trim();
-		if (!line || line.startsWith('>')) continue;
+		if (!line) continue;
 
 		const name = line.split(/\s+/)[0].replace(/\^$/, '');
 		if (name === '*' || RG_CLI_REPLIES.has(name) || !(/^[$#\p{L}\p{N}_-]+$/u).test(name) || names.includes(name)) continue;

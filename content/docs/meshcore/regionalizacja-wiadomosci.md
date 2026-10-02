@@ -1,6 +1,6 @@
 ---
 title: Regionalizacja wiadomości w MeshCore
-description: Jak działa regionalizacja wiadomości kanałowych w MeshCore (firmware 1.16+) - konfiguracja CLI, ustawianie zakresu w aplikacji i schemat regionów w Polsce.
+description: Jak działa regionalizacja wiadomości kanałowych w MeshCore (firmware 1.10+) - konfiguracja CLI, ustawianie zakresu w aplikacji i schemat regionów w Polsce.
 canonical: /dokumentacja/meshcore/regionalizacja-wiadomosci
 createdAt: 3.08.2026
 updatedAt: 2.10.2026
@@ -12,7 +12,7 @@ updatedAt: 2.10.2026
 > Ten dokument jest obecnie w trakcie tworzenia.
 
 Masz duży ruch i czujesz, że kanał `Public` zaczyna pękać w szwach od wiadomości z drugiego końca Polski (a przy sprzyjającej propagacji nawet Europy)?
-Regionalizacja pozwala temu zaradzić - filtruje, które repeatery przekazują dalej wiadomości kanałowe, dzięki czemu sieć się odciąża, a chaos maleje. Wymagana wersja firmware **1.16+**.
+Regionalizacja pozwala temu zaradzić - filtruje, które repeatery przekazują dalej wiadomości kanałowe, dzięki czemu sieć się odciąża, a chaos maleje. Filtrowanie regionów działa od firmware **1.10**, a opisana niżej komenda `region def` wymaga **1.16+**.
 
 > [!TIP]
 > Nie chcesz składać komend ręcznie? [Generator regionów](https://meshcorepolska.org/generator-regionow) przygotuje komendy CLI dla repeatera i listę kanałów do ustawienia w aplikacji.
@@ -32,7 +32,7 @@ Wiadomość z regionem dociera więc tylko tak daleko, jak sięga łańcuch repe
 > [!NOTE]
 > - Regionem oznacza się kanał - jeden kanał może mieć maksymalnie jeden region. Wiadomości prywatne i adverty obejmuje dopiero [domyślny zakres](#domyslny-zakres).
 > - Kanał `Public` powinien zostać globalny, bez regionu.
-> - Ruch bez regionu (`*`) można zablokować komendą `region denyf *`, ale obecnie nie jest to zalecane.
+> - Ruch bez regionu (`*`) można zablokować komendą `region denyf *`, ale obecnie nie jest to zalecane. Łagodniejszą alternatywą (firmware 1.16+) jest ograniczenie jego zasięgu, np. `set flood.max.unscoped 3`.
 > - Region to tylko etykieta, **nie** szyfrowanie.
 
 Nazwa regionu to dowolna etykieta (kraj, województwo, miasto), ale musi być identyczna na wszystkich urządzeniach - każda literówka to zupełnie inny region. Stosuj tylko małe litery, cyfry i myślnik, bez prefiksu `#`, maksymalnie 29 bajtów. Wielkość liter ma znaczenie: `PL` i `pl` to dwa różne regiony.
@@ -97,7 +97,7 @@ Od aplikacji **1.39.0** regionami zarządzisz też bez CLI: w zdalnym zarządzan
 2. W każdym kanale ustaw zakres: **3 kropki → Ustaw zakres regionu** i wybierz region z listy (nowy dodasz przyciskiem „+”), np. `pl` dla `#polska` i `pl-zp` dla `#zp`.
 3. Zakres usuniesz w tym samym miejscu: **3 kropki → Wyczyść zakres**.
 
-Opcja **Wykryj regiony** (aplikacja 1.39.0+) odpytuje najbliższe repeatery (0 hop) o zezwolone regiony i pozwala dodać je z listy. Działa też dla repeaterów spoza kontaktów (aplikacja 1.45.0+).
+Opcja **Wykryj regiony** (aplikacja 1.39.0+) odpytuje najbliższe repeatery (0 hop) o zezwolone regiony i pozwala dodać je z listy. Działa też dla repeaterów spoza kontaktów (aplikacja 1.45.0+, repeater z firmware 1.16.0+).
 
 Nowsze wersje aplikacji dodały też: zakres regionu w kodzie QR kanału (1.47.0), w eksporcie i imporcie konfiguracji (1.48.0), wyświetlanie regionu przy odebranych wiadomościach (1.49.0) oraz na liście kanałów (1.50.0).
 
