@@ -3,7 +3,7 @@ title: Lista zmian meshcorepolska.org
 description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/spolecznosc/lista-zmian
 createdAt: 2.08.2026
-updatedAt: 15.09.2026
+updatedAt: 2.10.2026
 ---
 
 # Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
@@ -12,6 +12,14 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 
 > [!NOTE]
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
+
+## v1.8.0
+1. Dodano nową podstronę [Generator regionów](https://meshcorepolska.org/generator-regionow) - generuje komendy CLI regionów dla repeatera zgodnie z polskim schematem `pl` / `pl-<województwo>` (z opcjonalnym regionem miejskim i sąsiednimi województwami), podgląd oczekiwanego drzewa regionów oraz listę kanałów i zakresów do ustawienia na companionie. Zawiera też narzędzie zamieniające wynik komendy `region` na komendy usuwające obecne regiony.
+2. Przepisano dokument [Regionalizacja wiadomości](https://meshcorepolska.org/dokumentacja/meshcore/regionalizacja-wiadomosci) pod firmware 1.16+ (komenda `region def`), z nowymi sekcjami o konfiguracji repeatera, companiona i domyślnym zakresie.
+3. Zmieniono menu nawigacyjne - dodano Generator regionów, a Statystyki, oficjalną witrynę MeshCore i prognozę propagacji przeniesiono do stopki.
+4. Przebudowano stopkę - linki są teraz podzielone na grupy: Sieć, Zasoby, Społeczność i Informacje.
+5. Dodano link do Statystyk w sekcji „Sieć w liczbach” na stronie głównej.
+6. Różne drobne poprawki.
 
 ## v1.7.2
 1. Rozwiązano znane problemy z CSP (Content-Security-Policy).

@@ -51,6 +51,7 @@ Pliki, których to repo faktycznie używa z `global/`: `services/redis.js`, `ser
 - `public/js/index.js`: pobiera statystyki repeaterów i odsłania widget w hero strony głównej.
 - `public/js/contact.js`: obsługa formularza kontaktowego - wysyła `POST /api/v1/kontakt` przez `fetch` z `Accept: application/json`, żeby dostać JSON zamiast pełnego renderu, i podmienia stan formularza bez przeładowania strony.
 - `public/js/lightbox.js`: powiększanie obrazów w overlayu; podpina się pod każdy link `a[data-lightbox]`.
+- `public/js/region-generator.js`: generator komend CLI regionów na `/generator-regionow` (`views/region-generator.ejs`) - drzewo `pl` → `pl-<województwo>` (+ opcjonalny region miejski i sąsiednie województwa z mapy `RG_VOIVODESHIPS`), aliasy starych nazw w `RG_ALIASES` (np. `wlkp` dla `wp`), warianty `region def` (1.16+) / `region put` (1.15) / `put` + `allowf` (starsze). Osobne narzędzie na tej samej stronie (`#rc-form`) zamienia wklejony wynik komendy `region` na komendy `region remove` w odwróconej kolejności (dzieci przed rodzicami).
 - `public/js/nav.js`: zachowanie nagłówka (cień przy scrollu, mobilne menu).
 
 ### System dokumentacji (`/dokumentacja`)

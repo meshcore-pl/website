@@ -396,7 +396,11 @@
 	line-height: 1.3;
 }
 
-.docs-alert__body p:last-child {
+.docs-alert__body ul {
+	padding-left: 1em;
+}
+
+.docs-alert__body > :last-child {
 	margin-bottom: 0;
 }
 

@@ -439,12 +439,6 @@
 	text-align: center;
 }
 
-#network-stats__note-icon {
-	width: 12px;
-	height: 12px;
-	vertical-align: -1px;
-}
-
 .section--alt {
 	border-top: 1px solid var(--border);
 	border-bottom: 1px solid var(--border);

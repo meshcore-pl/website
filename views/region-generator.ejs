@@ -1,0 +1,152 @@
+<%- include('./includes/header.ejs', {
+	title: 'Generator regionów MeshCore | MeshCore Polska',
+	description: 'Wygeneruj komendy CLI regionów dla repeatera MeshCore zgodnie z polskim schematem pl / pl-<województwo> i sprawdź, jakie kanały i zakresy ustawić na companionie.',
+	canonical: '/generator-regionow',
+	css: ['https://cdn.sefinek.net/css/code-viewer.css', 'content', 'region-generator'],
+	page: 'region-generator'
+}) %>
+
+<main>
+	<section class="section section--legal">
+		<div class="section__inner">
+			<article class="prose prose--narrow rg-page">
+				<p class="eyebrow">Narzędzie</p>
+				<h1>Generator regionów</h1>
+				<p>
+					Regiony ustawia się zarówno na repeaterach, jak i na companionach.
+					Na companionie wybierasz, do jakiego regionu mają trafiać Twoje wiadomości - osobno dla każdego kanału albo globalnie przez <a href="/dokumentacja/meshcore/regionalizacja-wiadomosci#domyslny-zakres">domyślny zakres</a>.
+					Repeater przekaże taką wiadomość dalej tylko wtedy, gdy ma dodany ten region i zezwala na jego przekazywanie. Repeatery bez żadnych regionów przepuszczają wyłącznie wiadomości bez regionu.
+					Do korzystania z regionów nie potrzebujesz więc własnego repeatera - wystarczy skonfigurować companiona, o ile repeatery w Twojej okolicy obsługują wybrane regiony.
+				</p>
+				<p>
+					Po wybraniu województwa dostaniesz komendy CLI dla repeatera, zgodne z <a href="/dokumentacja/meshcore/regionalizacja-wiadomosci#schemat-regionow-wdrozony-w-polsce">polskim schematem regionów</a>, oraz listę kanałów i zakresów do ustawienia na companionie.
+					Masz tylko companiona? Pomiń komendy i przejdź od razu do tabeli <a href="#kanaly-w-aplikacji">Kanały w aplikacji</a>.
+					Więcej o tym, jak działają regiony, przeczytasz w <a href="/dokumentacja/meshcore/regionalizacja-wiadomosci">dokumentacji regionalizacji</a>.
+				</p>
+
+				<h2>Szybki przewodnik</h2>
+				<ol>
+					<li>Otwórz wiersz poleceń (CLI) repeatera jako administrator.</li>
+					<li>Wpisz <code>region</code>. Jeśli repeater ma już jakieś regiony poza <code>*</code>, usuń je komendami z narzędzia <a href="#usuwanie-regionow">Usuwanie obecnych regionów</a>.</li>
+					<li>Wybierz wersję firmware, województwo repeatera, sąsiednie województwa, do których realnie sięga, i opcjonalnie region miejski.</li>
+					<li>Wpisuj wygenerowane komendy po kolei, jedną po drugiej. Jeśli któraś zwróci <code>Err - ...</code>, sprawdź konfigurację przed zapisaniem zmian (<code>region save</code>).</li>
+					<li>Porównaj wynik ostatniej komendy <code>region</code> z podglądem drzewa.</li>
+					<li>Na swoim companionie dołącz do kanałów z tabeli i ustaw im odpowiedni zakres regionu. Ten krok dotyczy każdego użytkownika, także bez własnego repeatera.</li>
+				</ol>
+
+				<noscript>
+					<div class="docs-alert docs-alert--warning">
+						<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-warning"></use></svg>
+						<div class="docs-alert__body">
+							<p class="docs-alert__title">Wymagany JavaScript</p>
+							<p>Generator działa w przeglądarce - włącz JavaScript, żeby z niego skorzystać.</p>
+						</div>
+					</div>
+				</noscript>
+
+				<h2>Generator komend</h2>
+				<form class="rg-card" id="rg-form" autocomplete="off">
+					<div class="rg-field">
+						<label for="rg-fw">Wersja firmware repeatera</label>
+						<select id="rg-fw">
+							<option value="116">1.16 lub nowsza (komenda region def)</option>
+							<option value="115">1.15 (komendy region put)</option>
+							<option value="old">starsza niż 1.15 (region put + allowf)</option>
+						</select>
+					</div>
+
+					<div class="rg-field">
+						<label for="rg-home">Twoje województwo</label>
+						<select id="rg-home"></select>
+					</div>
+
+					<fieldset class="rg-field">
+						<legend>Sąsiednie województwa w zasięgu (maks. 2)</legend>
+						<p class="rg-hint">Wybierz te, które są w zasięgu Twojego repeatera (np. gdy znajduje się blisko granicy), albo te, z którymi chcesz utrzymywać łączność.</p>
+						<div class="rg-checks" id="rg-neighbors"></div>
+					</fieldset>
+
+					<div class="rg-field">
+						<label for="rg-city">Region miejski (opcjonalnie)</label>
+						<div class="rg-prefixed">
+							<span aria-hidden="true">pl-</span>
+							<input type="text" id="rg-city" maxlength="26" spellcheck="false" placeholder="np. waw">
+						</div>
+						<p class="rg-hint">Tylko dla dużych miast z własnym, uzgodnionym w społeczności regionem. Trafi pod region województwa.</p>
+					</div>
+
+					<div class="rg-option">
+						<label class="rg-check">
+							<input type="checkbox" id="rg-default">
+							<span>Ustaw domyślny zakres repeatera na <code>pl</code> (firmware 1.15+)</span>
+						</label>
+						<p class="rg-hint">Pakiety wysyłane przez sam repeater, głównie jego adverty, otrzymają oznaczenie regionu <code>pl</code>. Przekażą je dalej tylko repeatery, które mają region <code>pl</code> - te bez niego (także bez żadnych regionów, np. za granicą) je odrzucą. Nie wpłynie to na wiadomości innych użytkowników przekazywane przez repeater. Zaznacz tę opcję, jeśli okoliczne repeatery korzystają już z tego schematu regionów.</p>
+					</div>
+				</form>
+
+				<div id="rg-output" hidden>
+					<div class="docs-alert docs-alert--caution" id="rg-errors" hidden>
+						<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-caution"></use></svg>
+						<div class="docs-alert__body">
+							<p class="docs-alert__title">Popraw dane</p>
+							<ul id="rg-errors-list"></ul>
+						</div>
+					</div>
+
+					<div id="rg-result">
+						<h3>Komendy dla repeatera</h3>
+						<pre><code id="rg-commands" class="language-mccli"></code></pre>
+
+						<h3>Oczekiwany wynik komendy <code>region</code></h3>
+						<pre><code id="rg-tree"></code></pre>
+
+						<h3 id="kanaly-w-aplikacji">Kanały w aplikacji</h3>
+						<p>Dodaj kanały (Dodaj kanał → Dołącz do kanału hashtagowego), a następnie w każdym z nich ustaw zakres regionu (3 kropki → Ustaw zakres regionu). Gdy repeatery w okolicy mają już region <code>pl</code>, ustaw go też jako domyślny zakres companiona w głównym ekranie Ustawień (aplikacja 1.49.0+) - regionem zostaną wtedy oznaczone także wiadomości prywatne i adverty.</p>
+						<div class="docs-table">
+							<table>
+								<thead>
+									<tr>
+										<th>Kanał</th>
+										<th>Zakres regionu</th>
+									</tr>
+								</thead>
+								<tbody id="rg-channels"></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<h2 id="usuwanie-regionow">Usuwanie obecnych regionów</h2>
+				<p>Wpisz na repeaterze komendę <code>region</code> i wklej jej wynik poniżej. Dostaniesz komendy usuwające wszystkie regiony poza <code>*</code>, w kolejności od najbardziej podrzędnych, bo regionu z podregionami nie da się usunąć. Repeater ucina wynik komendy po 160 znakach, więc przy wielu regionach po usunięciu wpisz <code>region</code> ponownie i w razie potrzeby powtórz.</p>
+				<div class="docs-alert docs-alert--warning">
+					<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-warning"></use></svg>
+					<div class="docs-alert__body">
+						<p class="docs-alert__title">Zanim usuniesz regiony zdalnie</p>
+						<p>
+							Sprawdź, czy przy <code>*</code> w wyniku komendy <code>region</code> widnieje <code>F</code> - tylko wtedy repeater przepuszcza ruch bez regionu. Upewnij się też, że Twój companion łączy się z repeaterem bez zakresu regionu - jeśli korzysta z usuwanego regionu (np. jako domyślnego zakresu), możesz utracić zdalny dostęp do repeatera.
+						</p>
+						<p>
+							Jeśli usuwasz region ustawiony jako domyślny zakres repeatera, po zmianach ustaw nowy domyślny zakres.<br>
+							Bieżące ustawienie sprawdzisz komendą <code>region default</code>.
+						</p>
+					</div>
+				</div>
+
+				<form class="rg-card" id="rc-form" autocomplete="off">
+					<div class="rg-field">
+						<label for="rc-current">Wynik komendy region</label>
+						<textarea id="rc-current" rows="6" spellcheck="false" placeholder="*^ F&#10; pl F&#10; wlkp F"></textarea>
+					</div>
+				</form>
+
+				<p class="rg-hint" id="rc-empty" hidden>Nie znaleziono żadnych regionów do usunięcia.</p>
+				<div id="rc-output" hidden>
+					<h3>Komendy usuwające</h3>
+					<pre><code id="rc-commands" class="language-mccli"></code></pre>
+				</div>
+			</article>
+		</div>
+	</section>
+</main>
+
+<%- include('./includes/footer.ejs', { scripts: ['/js/region-generator.js'] }) %>

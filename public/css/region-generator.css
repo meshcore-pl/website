@@ -1,0 +1,163 @@
+.rg-page {
+	max-width: 1250px;
+}
+
+.rg-card {
+	margin: 0 0 32px;
+	padding: 25px;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background: var(--glass-bg);
+	box-shadow: var(--shadow-card);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+}
+
+.rg-field {
+	margin: 0 0 22px;
+	padding: 0;
+	border: none;
+}
+
+.rg-field > label, .rg-field legend {
+	display: block;
+	margin-bottom: 8px;
+	padding: 0;
+	color: var(--text-muted);
+	font-family: var(--font-mono);
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.rg-hint {
+	margin: 0 0 10px;
+	color: var(--text-muted);
+	font-size: 14px;
+}
+
+.rg-field .rg-prefixed + .rg-hint {
+	margin: 8px 0 0;
+}
+
+.rg-field select, .rg-field input[type="text"], .rg-field textarea {
+	width: 100%;
+	padding: 0.7em 0.9em;
+	border: 1px solid var(--border-strong);
+	border-radius: 10px;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-body);
+	font-size: 15px;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.rg-field select {
+	padding-right: 2.4em;
+	background-image: linear-gradient(45deg, transparent 50%, var(--text-muted) 50%), linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+	background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%;
+	background-size: 5px 5px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.rg-field select option {
+	background: var(--card);
+	color: var(--text);
+}
+
+.rg-field textarea {
+	min-height: 120px;
+	font-family: var(--font-mono);
+	font-size: 14px;
+	resize: vertical;
+}
+
+.rg-field select:focus, .rg-field input[type="text"]:focus, .rg-field textarea:focus {
+	border-color: var(--red-bright);
+	outline: none;
+	box-shadow: 0 0 0 3px var(--red-glow);
+}
+
+.rg-prefixed {
+	display: flex;
+	align-items: stretch;
+}
+
+.rg-prefixed span {
+	display: flex;
+	align-items: center;
+	padding: 0 0.8em;
+	border: 1px solid var(--border-strong);
+	border-right: none;
+	border-radius: 10px 0 0 10px;
+	background: var(--card);
+	color: var(--text-muted);
+	font-family: var(--font-mono);
+	font-size: 15px;
+}
+
+.rg-prefixed input[type="text"] {
+	border-radius: 0 10px 10px 0;
+	font-family: var(--font-mono);
+}
+
+.rg-checks {
+	display: grid;
+	gap: 8px 20px;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.rg-check {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: var(--text);
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.rg-option {
+	margin: 0 0 22px;
+}
+
+.rg-option .rg-hint {
+	margin: 6px 0 0 27px;
+}
+
+.rg-check:has(input:disabled) {
+	color: var(--text-muted);
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+.rg-check input:disabled {
+	cursor: not-allowed;
+}
+
+.rg-check input {
+	flex-shrink: 0;
+	width: 17px;
+	height: 17px;
+	margin: 0;
+	accent-color: var(--red-bright);
+	cursor: pointer;
+}
+
+#rg-errors ul {
+	margin: 0;
+	padding-left: 20px;
+}
+
+@media (max-width: 620px) {
+	.rg-card {
+		padding: 24px 20px;
+	}
+}
+
+.rg-page [hidden] {
+	display: none;
+}
