@@ -11,6 +11,24 @@ const SERIES = [
 ];
 
 let chart = null;
+let loadId = 0;
+
+const storageGet = key => {
+	try {
+		return localStorage.getItem(key);
+	} catch {
+		return null;
+	}
+};
+
+const storageSet = (key, value) => {
+	try {
+		localStorage.setItem(key, value);
+		return true;
+	} catch {
+		return false;
+	}
+};
 
 const formatDateLabel = dateStr => {
 	const d = new Date(`${dateStr}T00:00:00`);
@@ -101,9 +119,9 @@ const updateTiles = history => {
 	const latest = history[history.length - 1];
 
 	setTile('stats-nodes-latest', latest.nodes);
-	setTile('stats-repeaters-latest', latest.types.repeater);
-	setTile('stats-roomservers-latest', latest.types.roomServer);
-	setTile('stats-companions-latest', latest.types.client);
+	setTile('stats-repeaters-latest', latest.types?.repeater);
+	setTile('stats-roomservers-latest', latest.types?.roomServer);
+	setTile('stats-companions-latest', latest.types?.client);
 	if (summary) summary.hidden = false;
 };
 
@@ -120,13 +138,15 @@ const showState = ({ error, empty } = {}) => {
 };
 
 const loadRange = async days => {
+	const id = ++loadId;
 	let history;
 	try {
 		history = await fetchHistory(days);
 	} catch (err) {
-		showState({ error: err.message });
+		if (id === loadId) showState({ error: err.message });
 		return;
 	}
+	if (id !== loadId) return;
 
 	if (!history.length) {
 		showState({ empty: true });
@@ -148,15 +168,15 @@ const setupRangeButtons = () => {
 
 		container.querySelectorAll('button').forEach(b => b.classList.remove('is-active'));
 		btn.classList.add('is-active');
-		localStorage.setItem(RANGE_STORAGE_KEY, btn.dataset.days);
+		storageSet(RANGE_STORAGE_KEY, btn.dataset.days);
 		void loadRange(btn.dataset.days);
 	});
 };
 
 const getInitialRange = () => {
 	const container = document.getElementById('stats-range');
-	const stored = localStorage.getItem(RANGE_STORAGE_KEY);
-	const storedBtn = stored && container?.querySelector(`button[data-days="${stored}"]`);
+	const stored = storageGet(RANGE_STORAGE_KEY);
+	const storedBtn = stored && container?.querySelector(`button[data-days="${CSS.escape(stored)}"]`);
 	if (!storedBtn) return DEFAULT_DAYS;
 
 	container.querySelectorAll('button').forEach(b => b.classList.remove('is-active'));

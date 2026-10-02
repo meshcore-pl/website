@@ -6,8 +6,14 @@ let indexPromise = null;
 const loadIndex = () => {
 	if (!indexPromise) {
 		indexPromise = fetch('/api/v1/dokumentacja/szukaj')
-			.then(res => (res.ok ? res.json() : []))
-			.catch(() => []);
+			.then(res => {
+				if (!res.ok) throw new Error(`HTTP ${res.status}`);
+				return res.json();
+			})
+			.catch(() => {
+				indexPromise = null;
+				return null;
+			});
 	}
 	return indexPromise;
 };
@@ -67,7 +73,7 @@ const init = () => {
 	const status = document.getElementById('docs-search__status');
 	if (!wrapper || !input || !results) return;
 
-	let index = [];
+	let index = null;
 	let activeIndex = -1;
 
 	const close = () => {
@@ -90,7 +96,10 @@ const init = () => {
 		input.setAttribute('aria-activedescendant', els[activeIndex].id);
 	};
 
-	onInput = () => {
+	onInput = async () => {
+		index ??= await loadIndex();
+		if (!input.isConnected) return;
+
 		results.replaceChildren();
 		activeIndex = -1;
 
@@ -102,7 +111,7 @@ const init = () => {
 			return;
 		}
 
-		const items = search(index, query);
+		const items = index ? search(index, query) : [];
 		if (!items.length) {
 			const empty = document.createElement('p');
 			empty.id = 'docs-search__empty';
@@ -140,7 +149,7 @@ const init = () => {
 	input.addEventListener('input', onInput);
 
 	onFocus = () => {
-		loadIndex().then(data => { index = data; });
+		loadIndex().then(data => { index ??= data; });
 	};
 	input.addEventListener('focus', onFocus);
 

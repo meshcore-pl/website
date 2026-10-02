@@ -1,7 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const parseFrontmatter = require('frontmatter-md');
-const { marked, renderer, assignHeadingIds, slugify, parseDMYDate } = require('./markdown.js');
+const { marked, renderer, assignHeadingIds, slugify, getExternalRel, parseDMYDate } = require('./markdown.js');
 
 const NEWS_DIR = path.join(__dirname, '../content/news');
 
@@ -43,6 +43,7 @@ const build = () => {
 				description: data.description || '',
 				source,
 				sourceUrl: data.sourceUrl || null,
+				sourceRel: data.sourceUrl ? getExternalRel(data.sourceUrl) : null,
 				tagSlug,
 				canonical: tagSlug ? `/aktualnosci/${tagSlug}/${slug}` : `/aktualnosci/${slug}`,
 				createdAt: data.createdAt || null,

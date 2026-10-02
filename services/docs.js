@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const parseFrontmatter = require('frontmatter-md');
 const groups = require('../content/docs.js');
-const { marked, renderer, assignHeadingIds, getHeadingId, getTocLabel, parseDMYDate } = require('./markdown.js');
+const { marked, renderer, assignHeadingIds, getHeadingId, getTocLabel, getPlainText, parseDMYDate } = require('./markdown.js');
 
 const DOCS_DIR = path.join(__dirname, '../content/docs');
 
@@ -10,14 +10,17 @@ const extractFaq = tokens => {
 	const faq = [];
 	for (let i = 0; i < tokens.length; i++) {
 		const heading = tokens[i];
-		if (heading.type !== 'heading' || heading.depth !== 2 || !heading.text.trim().endsWith('?')) continue;
+		if (heading.type !== 'heading' || heading.depth !== 2) continue;
+
+		const question = getPlainText(heading);
+		if (!question.endsWith('?')) continue;
 
 		const answerTokens = [];
 		for (let j = i + 1; j < tokens.length && !(tokens[j].type === 'heading' && tokens[j].depth <= 2); j++) {
 			answerTokens.push(tokens[j]);
 		}
 
-		faq.push({ question: heading.text, answerHtml: marked.parser(answerTokens, { renderer }) });
+		faq.push({ question, answerHtml: marked.parser(answerTokens, { renderer }) });
 	}
 	return faq;
 };

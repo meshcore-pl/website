@@ -67,7 +67,7 @@
 			type: locals.articleType,
 		} : null,
 		faq: locals.faq,
-	})) %>
+	})).replace(/</g, '\\u003c') %>
 	</script>
 </head>
 <body data-page="<%= locals.page || '' %>">
@@ -83,8 +83,8 @@
 				<a href="/dokumentacja" class="nav__link<%= locals.page === 'docs' ? ' nav__link--active' : '' %>" title="Dokumentacja projektu MeshCore Polska">Dokumentacja</a>
 				<a href="/aktualnosci" class="nav__link<%= locals.page === 'news' ? ' nav__link--active' : '' %>" title="Aktualności i changelogi MeshCore">Aktualności</a>
 				<a href="/generator-regionow" class="nav__link<%= locals.page === 'region-generator' ? ' nav__link--active' : '' %>" title="Generator komend CLI regionów dla repeaterów i companionów">Generator regionów</a>
-				<a href="https://mapa.meshcorepolska.org" class="nav__link" target="_blank" title="Interaktywna mapa węzłów sieci MeshCore w Polsce" rel="noopener dofollow">Mapa węzłów</a>
-				<a href="https://flasher.meshcore.io" class="nav__link" target="_blank" title="Narzędzie do wgrywania firmware MeshCore na urządzenia" rel="noopener nofollow">Flasher</a>
+				<a href="https://mapa.meshcorepolska.org" class="nav__link" target="_blank" title="Interaktywna mapa węzłów sieci MeshCore w Polsce" rel="noopener">Mapa węzłów</a>
+				<a href="https://flasher.meshcore.io" class="nav__link" target="_blank" title="Narzędzie do wgrywania firmware MeshCore na urządzenia" rel="noopener">Flasher</a>
 				<a href="/kontakt" class="nav__link<%= locals.page === 'contact' ? ' nav__link--active' : '' %>" title="Formularz kontaktowy">Kontakt</a>
 				<a href="/discord" class="btn btn--primary" id="nav__links-cta" target="_blank" title="Dołącz do naszego serwera Discord" rel="noopener">Serwer Discord</a>
 			</nav>

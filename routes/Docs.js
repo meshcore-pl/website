@@ -45,6 +45,7 @@ router.get('/dokumentacja/:group/:slug', (req, res) => {
 		],
 	};
 
+	res.vary('X-Docs-Fetch');
 	if (req.get('X-Docs-Fetch') !== '1') return res.render('docs/page.ejs', locals);
 
 	res.render('docs/_page-content.ejs', locals, (err, html) => {

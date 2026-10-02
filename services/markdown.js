@@ -49,40 +49,54 @@ const slugify = text => text.toLowerCase()
 	.replace(/[\s_]+/g, '-')
 	.replace(/(^-|-$)/g, '');
 
+const PLAIN_TOKEN_TYPES = new Set(['text', 'codespan', 'escape']);
+const toPlainText = tokens => tokens
+	.map(t => (t.tokens ? toPlainText(t.tokens) : PLAIN_TOKEN_TYPES.has(t.type) ? t.text : ''))
+	.join('');
+
 const TOC_LABEL_RE = /\s*\{toc:\s*([^}]+)\}\s*$/;
 const tocLabels = new WeakMap();
-
+const plainTexts = new WeakMap();
 const headingIds = new WeakMap();
+
 const assignHeadingIds = tokens => {
 	const seen = new Map();
-	for (const t of tokens) {
-		if (t.type !== 'heading') continue;
+	marked.walkTokens(tokens, t => {
+		if (t.type !== 'heading') return;
 
 		const tocMatch = TOC_LABEL_RE.exec(t.text);
 		if (tocMatch) {
 			tocLabels.set(t, tocMatch[1].trim());
 			t.text = t.text.slice(0, tocMatch.index);
+			t.tokens = marked.Lexer.lexInline(t.text);
 		}
 
-		const base = slugify(t.text);
+		const plain = toPlainText(t.tokens).trim();
+		plainTexts.set(t, plain);
+
+		const base = slugify(plain);
 		const count = seen.get(base) || 0;
 		seen.set(base, count + 1);
 		headingIds.set(t, count === 0 ? base : `${base}-${count + 1}`);
-	}
+	});
 };
 
+const getPlainText = token => plainTexts.get(token) ?? toPlainText(token.tokens).trim();
+const getHeadingId = token => headingIds.get(token) || slugify(getPlainText(token));
+const getTocLabel = token => tocLabels.get(token) || getPlainText(token);
+
 const renderer = new marked.Renderer();
-renderer.heading = token => `<h${token.depth} id="${headingIds.get(token) || slugify(token.text)}">${token.text}</h${token.depth}>\n`;
+renderer.heading = token => `<h${token.depth} id="${getHeadingId(token)}">${renderer.parser.parseInline(token.tokens)}</h${token.depth}>\n`;
 
 const OWN_ORIGIN_RE = /^https?:\/\/(www\.)?meshcorepolska\.org(\/|$)/i;
-const DOFOLLOW_FAMILY_RE = /^https?:\/\/([a-z0-9-]+\.)*(meshcorepolska\.org|sefinek\.net|meshcoreprofiles\.com)(\/|$)/i;
+const FAMILY_RE = /^https?:\/\/([a-z0-9-]+\.)*(meshcorepolska\.org|meshcore\.io|sefinek\.net|meshcoreprofiles\.com)(\/|$)/i;
+const getExternalRel = href => (FAMILY_RE.test(href) ? 'noopener' : 'noopener nofollow');
+
 const baseLink = renderer.link.bind(renderer);
 renderer.link = token => {
 	const html = baseLink(token);
-	if (OWN_ORIGIN_RE.test(token.href)) return html;
-
-	const rel = DOFOLLOW_FAMILY_RE.test(token.href) ? 'noopener dofollow' : 'noopener nofollow';
-	return html.replace('>', ` target="_blank" rel="${rel}">`);
+	if (!(/^https?:\/\//i).test(token.href) || OWN_ORIGIN_RE.test(token.href)) return html;
+	return html.replace('>', ` target="_blank" rel="${getExternalRel(token.href)}">`);
 };
 
 const baseTable = renderer.table.bind(renderer);
@@ -120,7 +134,4 @@ const parseDMYDate = str => {
 	return new Date(Date.UTC(year, month - 1, day));
 };
 
-const getHeadingId = token => headingIds.get(token) || slugify(token.text);
-const getTocLabel = token => tocLabels.get(token) || token.text;
-
-module.exports = { marked, renderer, slugify, assignHeadingIds, getHeadingId, getTocLabel, parseDMYDate };
+module.exports = { marked, renderer, slugify, assignHeadingIds, getHeadingId, getTocLabel, getPlainText, getExternalRel, parseDMYDate };

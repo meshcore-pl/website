@@ -4,6 +4,7 @@ const verifyMx = require('@sefinek/email-validator/mx');
 const tcpClient = require('../global/services/tcpClient.js');
 const sendMail = require('../services/mailer.js');
 const verifyTurnstile = require('../services/turnstile.js');
+const limiter = require('../middlewares/ratelimit.js');
 
 const renderForm = (req, res, status, overrides = {}) => {
 	const payload = {
@@ -19,7 +20,7 @@ const renderForm = (req, res, status, overrides = {}) => {
 
 router.get('/kontakt', (req, res) => renderForm(req, res, 200));
 
-router.post('/api/v1/kontakt', async (req, res) => {
+router.post('/api/v1/kontakt', limiter.contactForm, async (req, res) => {
 	const username = (req.body.username || '').trim();
 	const email = (req.body.email || '').trim();
 	const message = (req.body.message || '').trim();
@@ -48,7 +49,7 @@ router.post('/api/v1/kontakt', async (req, res) => {
 		const subject = 'Kontakt przez formularz MeshCore Polska';
 		const adminMail = await sendMail({
 			from: `MeshCore Polska <${process.env.MAILER_AUTH_USER}>`,
-			replyTo: `"${username}" <${email}>`,
+			replyTo: { name: username, address: email },
 			to: `Sefinek <${process.env.MAILER_AUTH_USER}>`,
 			subject,
 			text: `// Wiadomość od ${username} (${email})\n\n${message}`,
@@ -57,7 +58,7 @@ router.post('/api/v1/kontakt', async (req, res) => {
 		await sendMail({
 			from: `Sefinek <${process.env.MAILER_AUTH_USER}>`,
 			replyTo: `Sefinek <${process.env.MAILER_AUTH_USER}>`,
-			to: `"${username}" <${email}>`,
+			to: { name: username, address: email },
 			subject,
 			inReplyTo: adminMail.messageId,
 			references: [adminMail.messageId],

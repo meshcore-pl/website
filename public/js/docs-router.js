@@ -6,6 +6,7 @@ const view = document.getElementById('docs-view');
 
 let activeModules = [];
 let controller = null;
+let renderedPath = location.pathname;
 
 const collectActiveModules = () => [...view.querySelectorAll('script[type="module"]')]
 	.map(s => new URL(s.getAttribute('src'), location.href).href)
@@ -99,6 +100,7 @@ const navigate = async (href, { push = true } = {}) => {
 		syncMeta(data);
 		syncSchema(data.schema);
 		await swapView(data.html);
+		renderedPath = url.pathname;
 
 		if (push) history.pushState(null, '', url.href);
 
@@ -135,6 +137,7 @@ document.addEventListener('click', e => {
 });
 
 window.addEventListener('popstate', () => {
+	if (location.pathname === renderedPath) return;
 	void navigate(location.href, { push: false });
 });
 

@@ -68,12 +68,16 @@ app.use(PagesRouter);
 app.use(ApiRouter);
 app.use(DocsRouter);
 app.use(NewsRouter);
-app.use(limiter.contactForm, ContactRouter);
+app.use(ContactRouter);
 
 
 // Error handling
 app.use((req, res) => RenderError(res, 404));
-app.use((err, req, res, _next) => RenderError(res, 500, err));
+app.use((err, req, res, next) => {
+	if (res.headersSent) return next(err);
+	const status = err.status >= 400 && err.status < 600 ? err.status : 500;
+	RenderError(res, status, status >= 500 ? err : null);
+});
 
 // Start the server
 app.listen(PORT, () => process.send ? process.send('ready') : console.log(`Server running at ${DOMAIN}:${PORT}`));
