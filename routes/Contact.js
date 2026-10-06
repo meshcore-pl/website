@@ -62,7 +62,7 @@ router.post('/api/v1/kontakt', limiter.contactForm, async (req, res) => {
 			subject,
 			inReplyTo: adminMail.messageId,
 			references: [adminMail.messageId],
-			text: `Witaj ${username}! Pomyślnie otrzymaliśmy Twoją wiadomość. Jeśli masz coś jeszcze do dodania, odpowiedz na tego maila. Poniżej znajduje się kopia Twojej wiadomości.\n\n${message}`,
+			text: `Witaj ${username}! Pomyślnie otrzymaliśmy Twoją wiadomość. Jeśli masz coś jeszcze do dodania, odpowiedz na tego maila.`,
 		});
 
 		renderForm(req, res, 200, { sent: true });
