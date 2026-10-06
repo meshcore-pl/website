@@ -433,6 +433,8 @@
 
 	let lastTime = 0;
 	let spawnTimer = 400;
+	let frameId = 0;
+	let isVisible = true;
 
 	const tick = time => {
 		const dt = Math.min(time - lastTime || 16, 50);
@@ -475,7 +477,7 @@
 		}
 
 		draw(time);
-		requestAnimationFrame(tick);
+		frameId = isVisible ? requestAnimationFrame(tick) : 0;
 	};
 
 	const start = () => {
@@ -483,9 +485,16 @@
 			requestAnimationFrame(start);
 			return;
 		}
-		requestAnimationFrame(tick);
+		frameId = requestAnimationFrame(tick);
 	};
 
 	new ResizeObserver(() => scheduleResize(resize)).observe(canvas);
+	new IntersectionObserver(([entry]) => {
+		isVisible = entry.isIntersecting;
+		if (isVisible && !frameId && staticLayer) {
+			lastTime = 0;
+			frameId = requestAnimationFrame(tick);
+		}
+	}).observe(canvas);
 	start();
 })();
