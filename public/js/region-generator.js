@@ -120,6 +120,10 @@ const buildCommands = ({ tree, firmware, setDefault }) => {
 const buildTreePreview = tree => ['*^ F', ...flattenTree(tree).map(({ name, depth }) => `${' '.repeat(depth)}${name} F`)].join('\n');
 
 const buildChannels = (home, city, neighbors) => [
+	{ channel: 'Public', scope: null },
+	{ channel: '#test', scope: null },
+	{ channel: '#bot', scope: null },
+	{ channel: '#info', scope: null },
 	{ channel: '#polska', scope: RG_ROOT },
 	{ channel: `#${home}`, scope: `pl-${home}` },
 	...(city ? [{ channel: `#${city}`, scope: `pl-${city}` }] : []),
@@ -197,9 +201,13 @@ const renderOutput = () => {
 		const tr = document.createElement('tr');
 		[channel, scope].forEach(value => {
 			const td = document.createElement('td');
-			const code = document.createElement('code');
-			code.textContent = value;
-			td.append(code);
+			if (value === null) {
+				td.textContent = channel === 'Public' ? 'Bez regionu (kanał domyślny, dostępny od razu)' : 'Bez regionu';
+			} else {
+				const code = document.createElement('code');
+				code.textContent = value;
+				td.append(code);
+			}
 			tr.append(td);
 		});
 		return tr;
