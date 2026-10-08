@@ -158,6 +158,14 @@
 	}
 }
 
+.rg-page .docs-table th:first-child {
+	width: 40%;
+}
+
+.rg-actions {
+	text-align: center;
+}
+
 .rg-page [hidden] {
 	display: none;
 }

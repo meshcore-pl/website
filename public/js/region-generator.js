@@ -21,6 +21,12 @@ const RG_ALIASES = {
 	wp: ['wlkp'],
 };
 
+const RG_DISCORD_SERVERS = {
+	pl: 'https://discord.gg/g4W4Gx6Aw',
+	sk: 'https://discord.gg/rksm5bKxDg',
+	ld: 'https://discord.gg/jzrYzbBtwg',
+};
+
 const RG_ROOT = 'pl';
 const RG_MAX_NAME_BYTES = 29;
 const RG_MAX_LINE = 160;
@@ -173,6 +179,7 @@ const renderOutput = () => {
 	const home = document.getElementById('rg-home').value;
 	const city = document.getElementById('rg-city').value.trim().toLowerCase();
 	const firmware = document.getElementById('rg-fw').value;
+	document.getElementById('rg-fw-warning').hidden = firmware === '116';
 	const defaultInput = document.getElementById('rg-default');
 	defaultInput.disabled = firmware === 'old';
 	const setDefault = defaultInput.checked && !defaultInput.disabled;
@@ -210,6 +217,26 @@ const renderOutput = () => {
 			}
 			tr.append(td);
 		});
+		return tr;
+	}));
+	document.getElementById('rg-community-groups').replaceChildren(...[RG_ROOT, home, ...neighbors].map(code => {
+		const tr = document.createElement('tr');
+		const region = document.createElement('td');
+		const name = code === RG_ROOT ? 'Globalny (Polska)' : RG_VOIVODESHIPS[code].name;
+		region.textContent = name.charAt(0).toUpperCase() + name.slice(1);
+		const server = document.createElement('td');
+		const url = RG_DISCORD_SERVERS[code];
+		if (url) {
+			const link = document.createElement('a');
+			link.href = url;
+			link.target = '_blank';
+			link.rel = 'noopener';
+			link.textContent = 'Dołącz teraz';
+			server.append(link);
+		} else {
+			server.textContent = 'Brak znanego serwera';
+		}
+		tr.append(region, server);
 		return tr;
 	}));
 };

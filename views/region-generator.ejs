@@ -55,6 +55,14 @@
 						</select>
 					</div>
 
+					<div class="docs-alert docs-alert--warning" id="rg-fw-warning" role="status" hidden>
+						<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-warning"></use></svg>
+						<div class="docs-alert__body">
+							<p class="docs-alert__title">Zaktualizuj firmware repeatera</p>
+							<p>Korzystasz ze starszej wersji oprogramowania. Prosimy dokonać aktualizacji do najnowszej wersji przez <a href="https://flasher.meshcore.io" target="_blank" rel="noopener">MeshCore Flasher</a>.</p>
+						</div>
+					</div>
+
 					<div class="rg-field">
 						<label for="rg-home">Twoje województwo</label>
 						<select id="rg-home"></select>
@@ -117,6 +125,20 @@
 								<tbody id="rg-channels"></tbody>
 							</table>
 						</div>
+
+						<h3 id="grupy-spolecznosciowe">Grupy społecznościowe</h3>
+						<div class="docs-table">
+							<table>
+								<thead>
+									<tr>
+										<th>Region</th>
+										<th>Grupa na Discordzie</th>
+									</tr>
+								</thead>
+								<tbody id="rg-community-groups"></tbody>
+							</table>
+						</div>
+						<p class="rg-actions"><a href="/dokumentacja/meshcore/lista-analizatorow" class="btn btn--secondary btn--sm">Lista analizatorów</a></p>
 					</div>
 				</div>
 
