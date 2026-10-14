@@ -81,5 +81,5 @@ Blog/newsy - changelogi aplikacji i firmware MeshCore, tłumaczenia wpisów z of
 
 - Tabulatory, pojedyncze cudzysłowy, średniki, `prefer-const`, przecinki końcowe w wieloliniowych tablicach/obiektach (patrz `eslint.config.mjs`).
 - Nie dodawaj komentarzy w kodzie, właściciel utrzymuje kod bez komentarzy.
-- Nie używaj znaku — (pauzy) w plikach zapisywanych do repo.
+- Nie używaj znaku pauzy (—) w plikach zapisywanych do repo.
 - Backend (`routes/`, `services/`, `middlewares/`, `utils/`) to CommonJS (`require`/`module.exports`). `public/js` to skrypty przeglądarkowe: większość to globalne IIFE-podobne skrypty bez modułów, ale pliki związane z dokumentacją (`docs.js`, `docs-router.js`, `lib/page.js`) są modułami ES.
