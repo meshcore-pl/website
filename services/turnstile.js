@@ -5,7 +5,7 @@ module.exports = async (token, ip) => {
 
 	try {
 		const { data } = await axios.post('https://challenges.cloudflare.com/turnstile/v0/siteverify', new URLSearchParams({
-			secret: process.env.TURNSTILE_SECRET_KEY,
+			secret: process.env.TURNSTILE_SECRET,
 			response: token,
 			remoteip: ip,
 		}));
