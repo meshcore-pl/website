@@ -62,7 +62,7 @@ router.post('/api/v1/kontakt', limiter.contactForm, async (req, res) => {
 			subject,
 			inReplyTo: adminMail.messageId,
 			references: [adminMail.messageId],
-			text: `Witaj ${username}! Pomyślnie otrzymaliśmy Twoją wiadomość. Jeśli masz coś jeszcze do dodania, odpowiedz na tego maila.`,
+			text: `Witaj ${username}!\n\nPomyślnie otrzymaliśmy Twoją wiadomość. Jeśli masz coś jeszcze do dodania, odpowiedz na tego maila.\n\nPozdrawiamy,\nMeshCore Polska (https://meshcorepolska.org).`,
 		});
 
 		renderForm(req, res, 200, { sent: true });
