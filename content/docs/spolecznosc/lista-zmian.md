@@ -3,7 +3,7 @@ title: Lista zmian meshcorepolska.org
 description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/spolecznosc/lista-zmian
 createdAt: 2.08.2026
-updatedAt: 2.10.2026
+updatedAt: 15.10.2026
 ---
 
 # Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
@@ -12,6 +12,10 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 
 > [!NOTE]
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
+
+## v1.8.1
+1. Uporządkowano style CSS, ujednolicono rozmiary i odstępy w `px` oraz uproszczono zapis kolorów.
+2. Poprawiono treści na stronie głównej i w dokumentacji, w tym artykuł o Discordzie i grupach na Facebooku.
 
 ## v1.8.0
 1. Dodano nową podstronę [Generator regionów](https://meshcorepolska.org/generator-regionow) - generuje komendy CLI regionów dla repeatera zgodnie z polskim schematem `pl` / `pl-<województwo>` (z opcjonalnym regionem miejskim i sąsiednimi województwami), podgląd oczekiwanego drzewa regionów oraz listę kanałów i zakresów do ustawienia na companionie. Zawiera też narzędzie zamieniające wynik komendy `region` na komendy usuwające obecne regiony.

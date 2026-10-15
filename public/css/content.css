@@ -226,8 +226,8 @@
 	font-size: 11px;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
-	pointer-events: none;
 	transition: opacity 0.12s ease;
+	pointer-events: none;
 }
 
 .code-viewer--compact .code-copy {
@@ -235,26 +235,25 @@
 	right: 14px;
 }
 
-.code-viewer--compact:hover .pre-label,
-.code-viewer--compact:has(.code-copy.is-copied) .pre-label {
+.code-viewer--compact:hover .pre-label, .code-viewer--compact:has(.code-copy.is-copied) .pre-label {
 	opacity: 0;
 }
 
 .code-copy {
 	position: absolute;
-	z-index: 2;
 	top: 34px;
 	right: 10px;
-	background: var(--glass-bg-strong);
-	border: 1px solid var(--border);
-	color: var(--text-muted);
-	border-radius: 6px;
+	z-index: 2;
 	padding: 4px 10px;
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	background: var(--glass-bg-strong);
+	color: var(--text-muted);
+	opacity: 0;
 	font-family: var(--font-body);
 	font-size: 12px;
-	cursor: pointer;
-	opacity: 0;
 	transition: opacity 0.12s ease, color 0.14s ease, border-color 0.14s ease;
+	cursor: pointer;
 }
 
 .prose pre:hover .code-copy {
@@ -262,13 +261,13 @@
 }
 
 .code-copy:hover {
-	color: var(--text);
 	border-color: var(--red-bright);
+	color: var(--text);
 }
 
 .code-copy.is-copied {
-	color: var(--signal);
 	border-color: var(--signal);
+	color: var(--signal);
 	opacity: 1;
 }
 

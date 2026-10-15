@@ -16,7 +16,7 @@
 .rg-field {
 	margin: 0 0 22px;
 	padding: 0;
-	border: none;
+	border: 0;
 }
 
 .rg-field > label, .rg-field legend {
@@ -27,7 +27,7 @@
 	font-family: var(--font-mono);
 	font-size: 14px;
 	font-weight: 500;
-	letter-spacing: 0.04em;
+	letter-spacing: .04em;
 	text-transform: uppercase;
 }
 
@@ -50,15 +50,15 @@
 	color: var(--text);
 	font-family: var(--font-body);
 	font-size: 15px;
-	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+	transition: border-color .15s ease, box-shadow .15s ease;
 }
 
 .rg-field select {
 	padding-right: 36px;
 	background-image: linear-gradient(45deg, transparent 50%, var(--text-muted) 50%), linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+	background-repeat: no-repeat;
 	background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%;
 	background-size: 5px 5px;
-	background-repeat: no-repeat;
 	cursor: pointer;
 	-webkit-appearance: none;
 	appearance: none;
@@ -79,7 +79,7 @@
 
 .rg-field select:focus, .rg-field input[type="text"]:focus, .rg-field textarea:focus {
 	border-color: var(--red-bright);
-	outline: none;
+	outline: 0;
 	box-shadow: 0 0 0 3px var(--red-glow);
 }
 
@@ -93,7 +93,7 @@
 	align-items: center;
 	padding: 0 12px;
 	border: 1px solid var(--border-strong);
-	border-right: none;
+	border-right: 0;
 	border-radius: 10px 0 0 10px;
 	background: var(--card);
 	color: var(--text-muted);
@@ -131,7 +131,7 @@
 
 .rg-check:has(input:disabled) {
 	color: var(--text-muted);
-	opacity: 0.55;
+	opacity: .55;
 	cursor: not-allowed;
 }
 
@@ -144,8 +144,8 @@
 	width: 17px;
 	height: 17px;
 	margin: 0;
-	accent-color: var(--red-bright);
 	cursor: pointer;
+	accent-color: var(--red-bright);
 }
 
 #rg-errors ul {

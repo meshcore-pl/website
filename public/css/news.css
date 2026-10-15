@@ -103,7 +103,7 @@
 
 #news-search-input:focus {
 	border-color: var(--red-bright);
-	outline: none;
+	outline: 0;
 	box-shadow: 0 0 0 3px var(--red-glow);
 }
 

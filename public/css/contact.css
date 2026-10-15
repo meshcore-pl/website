@@ -38,12 +38,12 @@
 
 .contact-alert--success {
 	border-color: var(--signal);
-	background: rgba(61, 220, 132, 0.08);
+	background: rgba(61, 220, 132, .08);
 }
 
 .contact-alert--error {
 	border-color: var(--red-bright);
-	background: rgba(224, 18, 48, 0.08);
+	background: rgba(224, 18, 48, .08);
 }
 
 .contact-alert--error ul {
@@ -63,7 +63,7 @@
 	font-family: var(--font-mono);
 	font-size: 13px;
 	font-weight: 500;
-	letter-spacing: 0.04em;
+	letter-spacing: .04em;
 	text-transform: uppercase;
 }
 
@@ -76,7 +76,7 @@
 	color: var(--text);
 	font-family: var(--font-body);
 	font-size: 15px;
-	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+	transition: border-color .15s ease, box-shadow .15s ease;
 }
 
 .contact-form__field textarea {
@@ -86,7 +86,7 @@
 
 .contact-form__field input:focus, .contact-form__field textarea:focus {
 	border-color: var(--red-bright);
-	outline: none;
+	outline: 0;
 	box-shadow: 0 0 0 3px var(--red-glow);
 }
 
