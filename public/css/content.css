@@ -78,8 +78,8 @@
 }
 
 .prose ul, .prose ol {
-	margin: 0 0 1em;
-	padding-left: 1.3em;
+	margin: 0 0 16px;
+	padding-left: 21px;
 }
 
 .prose li::marker {
@@ -188,7 +188,7 @@
 }
 
 .prose code {
-	padding: 0.1em 0.45em;
+	padding: 1px 6px;
 	border: 1px solid rgba(255, 51, 82, 0.3);
 	border-radius: 6px;
 	background: rgba(255, 51, 82, 0.09);
@@ -200,7 +200,7 @@
 .prose pre {
 	position: relative;
 	overflow-x: auto;
-	margin: 0 0 1.25em;
+	margin: 0 0 20px;
 	padding: 18px 21px;
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
@@ -275,7 +275,7 @@
 .docs-table {
 	overflow-x: auto;
 	overflow-y: hidden;
-	margin: 0 0 1.5em;
+	margin: 0 0 24px;
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
 	background: var(--glass-bg);
@@ -291,12 +291,13 @@
 }
 
 .docs-table th, .docs-table td {
-	padding: 0.65em 1em;
+	padding: 9px 14px;
 	border-bottom: 1px solid var(--border);
 	text-align: left;
 }
 
 .docs-table th {
+	padding: 8px 12px;
 	border-bottom: 1px solid var(--border-strong);
 	background: var(--glass-bg-strong);
 	color: var(--text-muted);
@@ -343,7 +344,7 @@
 }
 
 .prose blockquote {
-	margin: 0 0 1.25em;
+	margin: 0 0 20px;
 	padding: 14px 21px;
 	border-left: 3px solid var(--red);
 	border-radius: 0 var(--radius) var(--radius) 0;
@@ -357,7 +358,7 @@
 .docs-alert {
 	display: flex;
 	gap: 14px;
-	margin: 0 0 1.25em;
+	margin: 0 0 20px;
 	padding: 16px 20px;
 	border: 1px solid var(--border);
 	border-left: 3px solid var(--alert-accent, var(--red));
@@ -385,7 +386,7 @@
 }
 
 .docs-alert__body p {
-	margin: 0 0 0.6em;
+	margin: 0 0 10px;
 	color: var(--text-muted);
 }
 
@@ -397,7 +398,7 @@
 }
 
 .docs-alert__body ul {
-	padding-left: 1em;
+	padding-left: 16px;
 }
 
 .docs-alert__body > :last-child {

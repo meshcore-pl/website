@@ -5,7 +5,7 @@
 }
 
 #errorpage__code {
-	margin-bottom: 0.15em;
+	margin-bottom: 19px;
 	color: var(--red-bright);
 	font-size: 128px;
 	text-shadow: 0 0 48px var(--red-glow);
@@ -24,6 +24,7 @@
 
 @media (max-width: 880px) {
 	#errorpage__code {
+		margin-bottom: 14px;
 		font-size: 96px;
 	}
 
@@ -35,6 +36,7 @@
 
 @media (max-width: 600px) {
 	#errorpage__code {
+		margin-bottom: 11px;
 		font-size: 72px;
 	}
 }

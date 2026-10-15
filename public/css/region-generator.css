@@ -43,7 +43,7 @@
 
 .rg-field select, .rg-field input[type="text"], .rg-field textarea {
 	width: 100%;
-	padding: 0.7em 0.9em;
+	padding: 11px 14px;
 	border: 1px solid var(--border-strong);
 	border-radius: 10px;
 	background: var(--bg);
@@ -54,7 +54,7 @@
 }
 
 .rg-field select {
-	padding-right: 2.4em;
+	padding-right: 36px;
 	background-image: linear-gradient(45deg, transparent 50%, var(--text-muted) 50%), linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
 	background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%;
 	background-size: 5px 5px;
@@ -71,6 +71,7 @@
 
 .rg-field textarea {
 	min-height: 120px;
+	padding: 10px 13px;
 	font-family: var(--font-mono);
 	font-size: 14px;
 	resize: vertical;
@@ -90,7 +91,7 @@
 .rg-prefixed span {
 	display: flex;
 	align-items: center;
-	padding: 0 0.8em;
+	padding: 0 12px;
 	border: 1px solid var(--border-strong);
 	border-right: none;
 	border-radius: 10px 0 0 10px;

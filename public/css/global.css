@@ -118,17 +118,17 @@ a:focus-visible, button:focus-visible {
 }
 
 h1, h2 {
-	margin: 0 0 0.55em;
+	margin: 0 0 18px;
 	font-weight: 900;
 	font-style: italic;
 	line-height: 1.06;
 	letter-spacing: -0.015em;
-	word-spacing: 0.18em;
+	word-spacing: 6px;
 	text-transform: uppercase;
 }
 
 h3 {
-	margin: 0 0 0.4em;
+	margin: 0 0 8px;
 	font-weight: 700;
 	line-height: 1.2;
 }
@@ -148,7 +148,7 @@ h1:has(> .heading-anchor), h2:has(> .heading-anchor) {
 }
 
 .heading-anchor::after {
-	margin-left: 0.35em;
+	margin-left: 8px;
 	color: var(--red-bright);
 	opacity: 0;
 	content: '#';
@@ -160,7 +160,7 @@ h1:has(> .heading-anchor), h2:has(> .heading-anchor) {
 }
 
 p {
-	margin: 0 0 1em;
+	margin: 0 0 16px;
 	color: var(--text-muted);
 }
 
@@ -188,8 +188,8 @@ p {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	gap: 0.5em;
-	padding: 0.5em 1.1em;
+	gap: 9px;
+	padding: 9px 19px;
 	border: 1px solid transparent;
 	border-radius: 10px;
 	font-size: 17px;
@@ -252,13 +252,14 @@ p {
 
 @media (max-width: 620px) {
 	.btn {
-		padding: 0.55em 1.15em;
+		padding: 9px 18px;
 		font-size: 16px;
 	}
 }
 
 .btn--sm {
-	padding: 0.55em 1.2em;
+	gap: 7px;
+	padding: 8px 17px;
 	font-size: 14px;
 }
 
