@@ -807,7 +807,7 @@ img.docs-nav-group__icon {
 		border-radius: 50%;
 		background: var(--red-bright);
 		color: #fff;
-		box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+		box-shadow: 0 6px 20px #00000066;
 		cursor: pointer;
 	}
 

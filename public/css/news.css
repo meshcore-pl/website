@@ -184,7 +184,7 @@ a.news-source:hover {
 }
 
 a.news-source--oficjalne:hover {
-	border-color: rgba(61, 220, 132, 0.6);
+	border-color: #3ddc8499;
 	background: rgba(61, 220, 132, 0.18);
 }
 
@@ -195,7 +195,7 @@ a.news-source--oficjalne:hover {
 }
 
 a.news-source--spolecznosc:hover {
-	border-color: rgba(88, 166, 255, 0.6);
+	border-color: #58a6ff99;
 	background: rgba(88, 166, 255, 0.18);
 }
 

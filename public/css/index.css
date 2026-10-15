@@ -500,7 +500,7 @@
 	height: auto;
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
-	box-shadow: 0 28px 48px -22px rgba(0, 0, 0, 0.6), 0 10px 22px -14px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 28px 48px -22px #00000099, 0 10px 22px -14px rgba(0, 0, 0, 0.5);
 	aspect-ratio: 3 / 2;
 	object-fit: cover;
 }
@@ -783,7 +783,7 @@
 #profile__main {
 	display: block;
 	border-radius: var(--radius);
-	box-shadow: 0 28px 48px -22px rgba(0, 0, 0, 0.6), 0 10px 22px -14px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 28px 48px -22px #00000099, 0 10px 22px -14px rgba(0, 0, 0, 0.5);
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -849,7 +849,7 @@
 
 #callout p#callout__note {
 	margin: 20px 0 0;
-	color: rgba(153, 161, 181, 0.8);
+	color: #99a1b5cc;
 	font-family: var(--font-mono);
 	font-size: 12px;
 }
@@ -910,7 +910,7 @@
 	height: auto;
 	border: 1px solid var(--border-strong);
 	border-radius: 18px;
-	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 32px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45), 0 0 32px #00000066;
 	aspect-ratio: 16 / 9;
 	object-fit: cover;
 }
@@ -920,7 +920,7 @@
 }
 
 #outro #footer {
-	background: linear-gradient(180deg, rgba(14, 17, 24, 0.68), rgba(14, 17, 24, 0.8));
+	background: linear-gradient(180deg, rgba(14, 17, 24, 0.68), #0e1118cc);
 	-webkit-backdrop-filter: blur(6px) saturate(0.9);
 	backdrop-filter: blur(6px) saturate(0.9);
 }
@@ -938,7 +938,7 @@
 
 .section--photo::before {
 	position: absolute;
-	background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(224, 18, 48, 0.14), transparent 65%), linear-gradient(180deg, rgba(10, 12, 17, 0.32) 0%, rgba(10, 12, 17, 0.4) 100%);
+	background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(224, 18, 48, 0.14), transparent 65%), linear-gradient(180deg, rgba(10, 12, 17, 0.32) 0%, #0a0c1166 100%);
 	content: '';
 	inset: 0;
 }
@@ -951,7 +951,7 @@
 .section--photo .card {
 	padding: 24px;
 	background: rgba(18, 21, 30, 0.55);
-	box-shadow: 0 0 14px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 0 14px #00000066;
 	-webkit-backdrop-filter: blur(4px);
 	backdrop-filter: blur(4px);
 }
