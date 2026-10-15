@@ -26,7 +26,7 @@
 	margin-bottom: 4px;
 	color: var(--text);
 	font-family: var(--font-mono);
-	font-size: clamp(26px, 3.6vw, 34px);
+	font-size: 34px;
 	font-weight: 700;
 }
 
@@ -118,6 +118,10 @@
 }
 
 @media (max-width: 640px) {
+	.stats-tile strong {
+		font-size: 26px;
+	}
+
 	#stats-chart-wrap {
 		height: 260px;
 	}

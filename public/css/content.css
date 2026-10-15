@@ -140,7 +140,7 @@
 .prose .docs-img-caption {
 	margin: 0;
 	color: var(--text-muted);
-	font-size: 0.85em;
+	font-size: 14px;
 }
 
 .prose .docs-schematic {
@@ -194,7 +194,7 @@
 	background: rgba(255, 51, 82, 0.09);
 	color: var(--red-bright);
 	font-family: var(--font-mono);
-	font-size: 0.88em;
+	font-size: 14px;
 }
 
 .prose pre {

@@ -7,7 +7,7 @@
 #errorpage__code {
 	margin-bottom: 0.15em;
 	color: var(--red-bright);
-	font-size: clamp(72px, 14vw, 128px);
+	font-size: 128px;
 	text-shadow: 0 0 48px var(--red-glow);
 }
 
@@ -23,8 +23,18 @@
 }
 
 @media (max-width: 880px) {
+	#errorpage__code {
+		font-size: 96px;
+	}
+
 	.section--notfound {
 		padding-top: calc(64px + var(--nav-h));
 		padding-bottom: 64px;
+	}
+}
+
+@media (max-width: 600px) {
+	#errorpage__code {
+		font-size: 72px;
 	}
 }
