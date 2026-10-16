@@ -58,11 +58,11 @@ app.use(helmet({
 		},
 	},
 }));
-app.use(blockAiBots);
 app.use(express.static('public'));
 app.use(logger);
 if (isProd) app.use(limiter.global);
 app.use(timeout());
+app.use(blockAiBots);
 app.use(express.urlencoded({ extended: false, limit: '8kb' }));
 
 
