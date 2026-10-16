@@ -17,6 +17,7 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 1. Uporządkowano style CSS, ujednolicono rozmiary i odstępy w `px` oraz uproszczono zapis kolorów.
 2. Poprawiono treści na stronie głównej i w dokumentacji, w tym artykuł o Discordzie i grupach na Facebooku.
 3. Dodano blokowanie wybranych agentów AI na podstawie nagłówka `User-Agent` oraz zaktualizowano informacje w `llms.txt`.
+4. Dodano wpis [Aktualizacja firmware MeshCore 1.18.0](https://meshcorepolska.org/aktualnosci/lista-zmian/aktualizacja-firmware-meshcore-1-18-0) w Aktualnościach.
 
 ## v1.8.0
 1. Dodano nową podstronę [Generator regionów](https://meshcorepolska.org/generator-regionow) - generuje komendy CLI regionów dla repeatera zgodnie z polskim schematem `pl` / `pl-<województwo>` (z opcjonalnym regionem miejskim i sąsiednimi województwami), podgląd oczekiwanego drzewa regionów oraz listę kanałów i zakresów do ustawienia na companionie. Zawiera też narzędzie zamieniające wynik komendy `region` na komendy usuwające obecne regiony.

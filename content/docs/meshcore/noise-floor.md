@@ -13,7 +13,7 @@ Wysoki NF utrudnia odbiór słabszych repeaterów i zmniejsza realny zasięg.
 ## Jak prawidłowo sprawdzić NF?
 Nie sugeruj się jednym odczytem. Sprawdź NF kilka razy i porównaj wyniki o różnych porach. Porównuj pomiary wykonane na tym samym urządzeniu, z tą samą anteną i konfiguracją.
 
-![Jak sprawdzić Noise Floor](/images/screens/jak-sprawdzic-nf.jpg)
+![Jak sprawdzić Noise Floor](/images/screens/noise-floor/jak-sprawdzic-nf.jpg)
 
 ## Poziomy NF
 
