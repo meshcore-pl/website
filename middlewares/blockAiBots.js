@@ -7,5 +7,5 @@ module.exports = (req, res, next) => {
 	if (!AI_USER_AGENT.test(req.get('User-Agent') || '')) return next();
 
 	res.set('Cache-Control', 'no-store');
-	return res.status(403).sendFile(LLMS_PATH, { cacheControl: false });
+	return res.sendFile(LLMS_PATH, { cacheControl: false });
 };
