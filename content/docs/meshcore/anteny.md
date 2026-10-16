@@ -21,8 +21,8 @@ Przykładowo, jeśli antena posiada złącze `RP-SMA Female` (z pinem w środku)
 
 <div class="docs-img-row">
 	<div class="docs-img-row__item">
-		<a href="/images/photos/sma-female-i-sma-male_new.jpg" data-lightbox aria-label="Powiększ zdjęcie złącza SMA Female i SMA Male">
-			<img src="/images/photos/sma-female-i-sma-male_new.jpg" alt="Złącze SMA Female obok złącza SMA Male" width="760" height="380" class="docs-img-row__hero">
+		<a href="/images/photos/sma-female-i-sma-male.jpg" data-lightbox aria-label="Powiększ zdjęcie złącza SMA Female i SMA Male">
+			<img src="/images/photos/sma-female-i-sma-male.jpg" alt="Złącze SMA Female obok złącza SMA Male" width="760" height="380" class="docs-img-row__hero">
 		</a>
 	</div>
 	<div class="docs-img-row__item">
@@ -66,7 +66,7 @@ Jest jeszcze lepsza wersja, czyli `RG316`. Chińczycy nie produkują jednak taki
 Jeśli napiszesz do sprzedawcy na AliExpress, powinien zrobić Ci taki kabel na zamówienie.
 `RF1.13` może się sprawdzić głównie w companionach - zwykle w ciasnych, dobrze zoptymalizowanych obudowach, gdzie łatwiej poprowadzić tak cienki przewód.
 
-![Porównanie kabla RG178 i 1.13 Cable](/images/photos/rg178-i-rf1.13_new.jpg)
+![Porównanie kabla RG178 i 1.13 Cable](/images/photos/rg178-i-rf1.13.jpg)
 
 > [!CAUTION]
 > Pigtail RG316 nie będzie zbyt elastyczny. W niektórych przypadkach złącze `RF-1` może samo odpiąć się od płytki. W każdym razie i tak zalecamy `RG178` - w większości przypadków nie ma sensu kombinować. Mimo wszystko, jeśli wybierzesz ten lepszy, musisz być świadomy tego, co robisz.
