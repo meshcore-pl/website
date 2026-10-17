@@ -44,6 +44,14 @@ router.get('/api/v1/stats/history', async (req, res) => {
 	}
 });
 
+router.get('/api/v1/news/post', (req, res) => {
+	const post = news.posts.find(p => p.sourceUrl && p.sourceUrl === req.query.sourceUrl);
+	if (!post) return res.status(404).json({ success: false, status: 404, message: 'Nie znaleziono wpisu.' });
+
+	res.set('Cache-Control', 'public, max-age=300');
+	res.json({ success: true, status: 200, message: 'OK', data: { url: post.canonical, title: post.title, markdown: post.markdown } });
+});
+
 router.get('/api/v1/news/sources', (req, res) => {
 	const data = {};
 	for (const post of news.posts) {

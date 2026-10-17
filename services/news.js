@@ -52,6 +52,7 @@ const build = () => {
 				date,
 				tags: postTags,
 				html: marked.parser(tokens, { renderer }),
+				markdown: content,
 			};
 
 			posts.push(post);
