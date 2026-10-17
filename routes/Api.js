@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const news = require('../services/news.js');
 const { getStats, formatWarsawDate } = require('../global/services/nodeCache.js');
 const StatsDaily = require('../global/database/models/statsDaily.model.js');
 
@@ -41,6 +42,16 @@ router.get('/api/v1/stats/history', async (req, res) => {
 		console.error(err);
 		res.status(500).json({ success: false, status: 500, message: 'Wewnętrzny błąd serwera.' });
 	}
+});
+
+router.get('/api/v1/news/sources', (req, res) => {
+	const data = {};
+	for (const post of news.posts) {
+		if (post.sourceUrl) data[post.sourceUrl] = post.canonical;
+	}
+
+	res.set('Cache-Control', 'public, max-age=300');
+	res.json({ success: true, status: 200, message: 'OK', data });
 });
 
 module.exports = router;
