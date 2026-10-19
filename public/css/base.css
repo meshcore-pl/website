@@ -1,0 +1,185 @@
+:root {
+	--bg: #080b11;
+	--bg-alt: #0e1118;
+	--card: #10131b;
+	--border: rgba(148, 166, 204, .12);
+	--border-strong: rgba(148, 166, 204, .24);
+	--text: #eef1f8;
+	--text-muted: #99a1b5;
+	--red: #c20e2b;
+	--red-bright: #ff3352;
+	--red-dark: #b30d26;
+	--red-glow: rgba(224, 18, 48, .32);
+	--red-glow-bg: rgba(224, 18, 48, .14);
+	--signal: #3ddc84;
+	--radius: 12px;
+	--shadow-card: 0 1px 0 rgba(255, 255, 255, .03) inset, 0 14px 32px -20px #0009;
+	--shadow-card-hover: 0 1px 0 rgba(255, 255, 255, .05) inset, 0 22px 44px -18px rgba(0, 0, 0, .65), 0 0 40px -10px var(--red-glow-bg);
+	--shadow-panel: inset 0 26px 34px -30px rgba(0, 0, 0, .7), inset 0 -26px 34px -30px rgba(0, 0, 0, .7);
+	--container: 1450px;
+	--container-subpages: 1550px;
+	--nav-h: 68px;
+	--glow-size: 130% 55%;
+	--glow-pos: 50% -12%;
+	--glow-color: rgba(224, 18, 48, .11);
+	--glow-color-hero: rgba(224, 18, 48, .26);
+	--glow-size-2: 100% 90%;
+	--glow-pos-2: 2% -6%;
+	--glow-color-2: rgba(224, 18, 48, .08);
+	--glow-color-hero-2: rgba(224, 18, 48, .16);
+	--glass-bg: #10131b99;
+	--glass-bg-strong: rgba(14, 17, 24, .78);
+	--font-body: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+::selection {
+	background: var(--red);
+	color: #fff;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+	cursor: pointer;
+}
+
+.sr-only {
+	position: absolute;
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	white-space: nowrap;
+}
+
+body {
+	margin: 0;
+	background: radial-gradient(ellipse var(--glow-size) at var(--glow-pos), var(--glow-color), transparent 65%), radial-gradient(ellipse var(--glow-size-2) at var(--glow-pos-2), var(--glow-color-2), transparent 65%), radial-gradient(circle at 1px 1px, rgba(154, 171, 209, .07) 1px, transparent 1px) 0 0 / 26px 26px, var(--bg);
+	background-attachment: fixed;
+	color: var(--text);
+	font-family: var(--font-body);
+	font-size: 16px;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+}
+
+body:not([data-page="home"]) {
+	--glow-size: 100% 55%;
+	--glow-pos: 50% -10%;
+	--glow-color: rgba(224, 18, 48, .22);
+}
+
+body[data-page="home"] {
+	--glow-color: var(--glow-color-hero);
+	--glow-color-2: var(--glow-color-hero-2);
+}
+
+@supports (-webkit-touch-callout: none) {
+	body {
+		background-attachment: scroll;
+	}
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+a {
+	color: #58a6ff;
+	text-decoration: none;
+	transition: color .15s ease;
+}
+
+a:hover {
+	color: #7fbbff;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #3d8fe0;
+	text-decoration: none;
+}
+
+a:focus-visible, button:focus-visible {
+	outline: 2px solid var(--red-bright);
+	outline-offset: 3px;
+}
+
+h1, h2 {
+	margin: 0 0 18px;
+	font-weight: 900;
+	font-style: italic;
+	line-height: 1.06;
+	letter-spacing: -.015em;
+	word-spacing: 6px;
+	text-transform: uppercase;
+}
+
+h3 {
+	margin: 0 0 8px;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+h1:has(> .heading-anchor), h2:has(> .heading-anchor) {
+	scroll-margin-top: calc(var(--nav-h) + 70px);
+}
+
+.heading-anchor {
+	color: inherit;
+	text-decoration: none;
+}
+
+.heading-anchor:hover {
+	color: inherit;
+	text-decoration: none;
+}
+
+.heading-anchor::after {
+	margin-left: 8px;
+	color: var(--red-bright);
+	opacity: 0;
+	transition: opacity .15s ease;
+	content: '#';
+}
+
+.heading-anchor:hover::after {
+	opacity: 1;
+}
+
+p {
+	margin: 0 0 16px;
+	color: var(--text-muted);
+}
+
+.eyebrow {
+	margin: 0 0 18px;
+	color: var(--text-muted);
+	font-family: var(--font-mono);
+	font-size: 13px;
+	font-weight: 500;
+	letter-spacing: .13em;
+	text-transform: uppercase;
+}
+
+.eyebrow::before {
+	color: var(--red-bright);
+	font-weight: 600;
+	content: '// ';
+}
+
+.eyebrow:has(+ .eyebrow) {
+	margin-bottom: 5px;
+}

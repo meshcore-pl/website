@@ -1,0 +1,133 @@
+#callout {
+	max-width: 760px;
+	margin: 0 auto;
+	padding: 36px 36px 32px;
+	border: 1px solid var(--border);
+	border-left: 3px solid var(--red);
+	border-radius: var(--radius);
+	background: var(--glass-bg);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+}
+
+#callout .eyebrow {
+	margin-bottom: 11px;
+}
+
+#callout h2 {
+	margin-bottom: 10px;
+	font-size: 29px;
+}
+
+#callout p:not(.eyebrow) {
+	font-size: 16px;
+}
+
+#callout p#callout__note {
+	margin: 20px 0 0;
+	color: #99a1b5cc;
+	font-family: var(--font-mono);
+	font-size: 12px;
+}
+
+#callout p#callout__note::before {
+	color: var(--red-bright);
+	content: '# ';
+}
+
+#outro {
+	background: url('/images/photos/miasto-z-drona.jpg') center / cover no-repeat fixed, var(--bg-alt);
+}
+
+@supports (-webkit-touch-callout: none) {
+	#outro {
+		background-attachment: scroll;
+	}
+}
+
+#cta {
+	position: relative;
+	overflow: hidden;
+	padding: 82px 24px;
+	background: radial-gradient(ellipse 60% 70% at 50% 125%, rgba(224, 18, 48, .18), transparent 65%), linear-gradient(180deg, var(--bg) 0, rgba(10, 12, 17, .74) 10%, rgba(10, 12, 17, .72) 100%);
+}
+
+#cta__inner {
+	position: relative;
+	display: grid;
+	align-items: center;
+	gap: 96px;
+	grid-template-columns: 1.1fr 1fr;
+	max-width: 1180px;
+	margin: 0 auto;
+}
+
+#cta h2 {
+	font-size: 42px;
+}
+
+#cta h2 span {
+	display: block;
+}
+
+#cta p:not(.eyebrow) {
+	margin-bottom: 0;
+	color: #c3cadb;
+	font-size: 17px;
+}
+
+#cta__photo {
+	margin: 0;
+}
+
+#cta__photo img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border: 1px solid var(--border-strong);
+	border-radius: 18px;
+	box-shadow: 0 18px 40px rgba(0, 0, 0, .45), 0 0 32px #0006;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+
+#cta .btn {
+	margin-top: 24px;
+}
+
+#outro #footer {
+	background: linear-gradient(180deg, rgba(14, 17, 24, .68), #0e1118cc);
+	-webkit-backdrop-filter: blur(6px) saturate(.9);
+	backdrop-filter: blur(6px) saturate(.9);
+}
+
+.section--photo {
+	position: relative;
+	background: url('/images/photos/zachod-nad-miasteczkiem.jpg') center / cover no-repeat fixed, var(--bg);
+}
+
+@supports (-webkit-touch-callout: none) {
+	.section--photo {
+		background-attachment: scroll;
+	}
+}
+
+.section--photo::before {
+	position: absolute;
+	background: radial-gradient(ellipse 60% 60% at 50% 0, rgba(224, 18, 48, .14), transparent 65%), linear-gradient(180deg, rgba(10, 12, 17, .32) 0, #0a0c1166 100%);
+	content: '';
+	inset: 0;
+}
+
+.section--photo .section__inner {
+	position: relative;
+	text-shadow: 0 0 6px #000;
+}
+
+.section--photo .card {
+	padding: 24px;
+	background: rgba(18, 21, 30, .55);
+	box-shadow: 0 0 14px #0006;
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+}

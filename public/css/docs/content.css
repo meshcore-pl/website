@@ -1,0 +1,122 @@
+#docs-content {
+	overflow-y: auto;
+	min-width: 0;
+	height: calc(100vh - var(--nav-h));
+	padding: 40px 36px 64px;
+	border-right: 1px solid var(--border);
+}
+
+.docs-layout--no-toc #docs-content {
+	border-right: 0;
+}
+
+#docs-footer {
+	margin-top: 56px;
+	padding-top: 28px;
+	border-top: 1px solid var(--border);
+}
+
+#docs-meta {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	margin: 20px 0 0;
+	color: var(--text-muted);
+	font-size: 14px;
+	text-align: center;
+}
+
+#docs-pagination {
+	display: grid;
+	gap: 16px;
+	grid-template-columns: 1fr 1fr;
+}
+
+.docs-pagination__link {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	padding: 16px 19px;
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	background: var(--glass-bg);
+	color: var(--text);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+	transition: border-color .2s ease;
+}
+
+.docs-pagination__link:hover {
+	border-color: var(--red-bright);
+	text-decoration: none;
+}
+
+.docs-pagination__link span {
+	color: var(--text-muted);
+	font-family: var(--font-mono);
+	font-size: 12px;
+}
+
+.docs-pagination__icon {
+	width: 12px;
+	height: 12px;
+	vertical-align: -1px;
+}
+
+.docs-pagination__link--next {
+	grid-column: 2;
+	text-align: right;
+}
+
+.docs-pagination__description {
+	display: -webkit-box;
+	overflow: hidden;
+	margin: 0;
+	color: var(--text-muted);
+	font-size: 15px!important;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+}
+
+#docs-toc {
+	position: sticky;
+	top: var(--nav-h);
+	overflow-y: auto;
+	height: calc(100vh - var(--nav-h));
+}
+
+#docs-toc__inner {
+	padding: 24px 18px 40px;
+}
+
+.docs-nav-group__title, .docs-toc__title {
+	margin: 0 0 12px;
+	color: var(--text-muted);
+	font-family: var(--font-mono);
+	font-size: 12px;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.docs-toc__list {
+	display: grid;
+	gap: 2px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.docs-toc__list a {
+	padding: 6px 10px;
+}
+
+.docs-toc__link--h1 {
+	color: var(--text);
+	font-weight: 700;
+}
+
+.docs-toc__link--h3 {
+	padding-left: 22px !important;
+}

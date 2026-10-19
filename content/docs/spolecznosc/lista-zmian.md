@@ -3,7 +3,7 @@ title: Lista zmian meshcorepolska.org
 description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/spolecznosc/lista-zmian
 createdAt: 2.08.2026
-updatedAt: 15.10.2026
+updatedAt: 19.10.2026
 ---
 
 # Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
@@ -12,6 +12,11 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 
 > [!NOTE]
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
+
+## v1.9.0
+1. Przebudowano strukturę stylów CSS - pliki zostały podzielone na mniejsze moduły (współdzielone komponenty oraz osobne pliki dla poszczególnych sekcji strony głównej i dokumentacji), co ułatwia dalszy rozwój strony. Wygląd pozostał bez zmian.
+2. Dodano endpointy API dla Aktualności: `/api/v1/news/sources` oraz `/api/v1/news/post`.
+3. Zaktualizowano zależności backendu do najnowszej wersji.
 
 ## v1.8.1
 1. Uporządkowano style CSS, ujednolicono rozmiary i odstępy w `px` oraz uproszczono zapis kolorów.

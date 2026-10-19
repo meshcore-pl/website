@@ -49,9 +49,15 @@
 	<link rel="preconnect" href="https://cdn.sefinek.net" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,800;1,900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="/css/global.css">
-	<link rel="stylesheet" href="/css/scrollbar.css">
-	<% if (locals.css) { (Array.isArray(css) ? css : [css]).forEach(c => { %><link rel="stylesheet" href="<%= c.startsWith('http') ? c : `/css/${c}.css` %>"><% }) } %>
+	<%
+	const BASE_SHEETS = ['base', 'scrollbar', 'components/buttons', 'components/nav', 'components/section', 'components/footer', 'components/lightbox', 'components/docs-tip', 'components/responsive'];
+	const BUNDLES = {
+		index: ['index', 'index/timeline', 'index/network', 'index/sections', 'index/cards', 'index/steps', 'index/profile', 'index/cta', 'index/responsive'],
+		docs: ['docs', 'docs/cards', 'docs/layout', 'docs/sidebar', 'docs/content', 'docs/responsive'],
+	};
+	const pageSheets = (locals.css ? (Array.isArray(css) ? css : [css]) : []).flatMap(sheet => BUNDLES[sheet] || sheet);
+	[...BASE_SHEETS, ...pageSheets].forEach(sheet => { %><link rel="stylesheet" href="<%= sheet.startsWith('http') ? sheet : `/css/${sheet}.css` %>">
+	<% }) %>
 
 	<!-- schema.org -->
 	<script type="application/ld+json" data-seo>

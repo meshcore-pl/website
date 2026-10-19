@@ -1,0 +1,136 @@
+@media (max-width: 1600px) {
+	#hero__inner {
+		gap: 112px;
+	}
+
+	.about, #profile {
+		gap: 96px;
+	}
+
+	#cta__inner {
+		gap: 80px;
+	}
+}
+
+@media (max-width: 1100px) {
+	#hero__inner, .about, #profile {
+		gap: 80px;
+	}
+
+	#cta__inner {
+		gap: 60px;
+	}
+
+	#hero h1 {
+		margin-bottom: 23px;
+		font-size: 46px;
+	}
+
+	.section h2 {
+		font-size: 30px;
+	}
+
+	#callout h2 {
+		margin-bottom: 9px;
+		font-size: 25px;
+	}
+
+	#cta h2 {
+		font-size: 36px;
+	}
+
+	.about h2, #profile h2 {
+		margin-bottom: 17px;
+	}
+}
+
+@media (max-width: 880px) {
+	#hero h1 {
+		margin-bottom: 17px;
+		font-size: 34px;
+	}
+
+	.network-stat strong {
+		font-size: 28px;
+	}
+
+	.section h2 {
+		font-size: 25px;
+	}
+
+	#callout h2 {
+		margin-bottom: 8px;
+		font-size: 22px;
+	}
+
+	#cta h2 {
+		font-size: 29px;
+	}
+
+	.about h2, #profile h2 {
+		margin-bottom: 14px;
+	}
+
+	#hero {
+		padding: calc(52px + var(--nav-h)) 20px 52px;
+		text-align: center;
+	}
+
+	#hero__inner {
+		gap: 44px;
+		grid-template-columns: 1fr;
+	}
+
+	#hero__lead {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.hero__actions, #hero__stats {
+		justify-content: center;
+	}
+
+	#hero__map {
+		justify-self: center;
+		max-width: 460px;
+	}
+
+	#hero__map-caption {
+		white-space: nowrap;
+	}
+
+	.about, #profile, #cta__inner {
+		gap: 44px;
+		grid-template-columns: 1fr;
+	}
+
+	.about__caption, .profile__caption {
+		text-align: center;
+	}
+
+	#cta__copy {
+		text-align: center;
+	}
+
+	.section__head {
+		margin-bottom: 32px;
+	}
+
+	#cta {
+		padding: 88px 20px;
+	}
+
+	#callout {
+		padding: 28px 24px 24px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.card {
+		transition: none;
+	}
+
+	.stat--online::before {
+		animation: none;
+	}
+}
