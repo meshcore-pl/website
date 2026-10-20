@@ -31,7 +31,7 @@
     "marked": "^18.1.1",
     "mongoose": "^9.11.2",
     "morgan": "^1.12.1",
-    "msgpackr": "^2.1.1",
+    "msgpackr": "^2.1.2",
     "nodemailer": "^10.1.7",
     "rate-limit-redis": "^6.0.1",
     "redis": "^6.3.0"
