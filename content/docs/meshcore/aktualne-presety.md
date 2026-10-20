@@ -73,15 +73,16 @@ set flood.advert.interval 12  # interwał advertów do wszystkich
 ```
 
 ### 2 repeatery obok siebie?
-Jeśli masz 2 repeatery obok siebie (np. jeden na antenie kierunkowej, a drugi na dookólnej), zmień kilka ustawień, żeby ograniczyć kolizje pakietów.
+Tak, to możliwe, np. jeden na antenie kierunkowej, a drugi na dookólnej. Warto zmienić kilka ustawień, żeby ograniczyć kolizje pakietów.
 
 `flood.advert.interval` ustaw zgodnie z sekcją wyżej (zależnie od wielkości miejscowości).
 Każdemu kolejnemu repeaterowi w tej samej lokalizacji dodaj do tej wartości `1`, żeby ich adverty do wszystkich przypadkowo nie wystrzeliły w dokładnie tym samym momencie.
 
-`txdelay` i `direct.txdelay` to nie stały czas oczekiwania, tylko górna granica losowego opóźnienia. Dopuszczalny zakres to **0-2**.
-Ustawienie np. `2 sekund` nie oznacza, że repeater odpowie dopiero po `2 sekundach` - opóźnienie zostanie wylosowane gdzieś w tym zakresie.
-Domyślnie to **0.5** (`txdelay`) i **0.2** (`direct.txdelay`).
-Każdemu kolejnemu repeaterowi w tej samej lokalizacji ustaw wyraźnie wyższą wartość niż poprzedniemu (w granicach 0-2) - inaczej oba mogą wylosować zbliżone opóźnienie i zderzyć się ze sobą.
+> [!IMPORTANT]
+> `txdelay` i `direct.txdelay` to nie stały czas oczekiwania, tylko górna granica losowego opóźnienia. Dopuszczalny zakres to **0-2**.
+> Ustawienie np. 2 sekund nie oznacza, że repeater odpowie dopiero po 2 sekundach - opóźnienie zostanie wylosowane gdzieś w tym zakresie.  
+> Domyślnie to **0.5** (`txdelay`) i **0.2** (`direct.txdelay`).  
+> Każdemu kolejnemu repeaterowi w tej samej lokalizacji ustaw wyraźnie wyższą wartość niż poprzedniemu (w granicach 0-2) - inaczej oba mogą wylosować zbliżone opóźnienie i zderzyć się ze sobą.
 
 #### Repeater 1
 ```mccli
