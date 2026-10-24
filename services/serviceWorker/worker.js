@@ -10,9 +10,11 @@ const KEEP_CACHES = [STATIC_CACHE, PAGES_CACHE, API_CACHE, FILES_CACHE, EXTERNAL
 
 const PAGE_PATHS = new Set([/* __PAGE_PATHS__ */]);
 const ENDPOINTS = {/* __ENDPOINTS__ */};
-const APP_PAGES = [...PAGE_PATHS, ENDPOINTS.manifest];
+const DOC_PAGES = [/* __DOC_PAGES__ */];
+const DOC_ASSETS = [/* __DOC_ASSETS__ */];
+const APP_PAGES = [...PAGE_PATHS, ...DOC_PAGES, ENDPOINTS.manifest];
 const NETWORK_TIMEOUT_MS = 5000;
-const MAX_FILES = 150;
+const MAX_FILES = 300;
 const MAX_EXTERNAL = 150;
 const MAX_API = 60;
 const EXTERNAL_DESTINATIONS = new Set(['style', 'script', 'font', 'image']);
@@ -121,6 +123,23 @@ self.addEventListener('install', event => {
 				console.warn('Could not precache page', page, err);
 			}
 		}));
+
+		const filesCache = await caches.open(FILES_CACHE);
+		await Promise.all(DOC_ASSETS.map(async asset => {
+			try {
+				const response = await fetch(asset);
+				if (response.ok) await filesCache.put(asset, response);
+			} catch (err) {
+				console.warn('Could not precache asset', asset, err);
+			}
+		}));
+
+		try {
+			const response = await fetch(ENDPOINTS.docsSearch, { cache: 'reload' });
+			if (response.ok) await (await caches.open(API_CACHE)).put(ENDPOINTS.docsSearch, response);
+		} catch (err) {
+			console.warn('Could not precache docs search index', err);
+		}
 
 		await self.skipWaiting();
 	})());

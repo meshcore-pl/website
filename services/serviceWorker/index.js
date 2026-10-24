@@ -1,6 +1,7 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const docs = require('../docs.js');
 
 const PUBLIC_DIR = path.join(__dirname, '../../public');
 const TEMPLATE_PATH = path.join(__dirname, 'worker.js');
@@ -8,7 +9,8 @@ const PRECACHE_DIRS = ['css', 'js', 'images/logo', 'images/meshcore'];
 const EXTRA_FILES = ['favicon.ico', 'icons.svg'];
 const EXCLUDED_RE = /\.(map|md|txt)$|(^|\/)LICENSE[^/]*$|\.LICENSE$/;
 
-const ENDPOINTS = { serviceWorker: '/service-worker.js', manifest: '/manifest.webmanifest' };
+const ENDPOINTS = { serviceWorker: '/service-worker.js', manifest: '/manifest.webmanifest', docsSearch: '/api/v1/dokumentacja/szukaj' };
+const DOC_ASSET_RE = /(?:src|href)="(\/(?:images|pliki)\/[^"]+)"/g;
 const PAGE_PATHS = ['/', '/statystyki', '/generator-regionow', '/kontakt', '/polityka-prywatnosci', '/dokumentacja', '/aktualnosci'];
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -38,14 +40,37 @@ const collectAssets = async () => {
 	return assets;
 };
 
+const collectDocs = () => {
+	const pages = new Set(['/dokumentacja']);
+	const assets = new Set();
+	let contentHash = crypto.createHash('sha1');
+
+	for (const group of docs.groups) {
+		pages.add(`/dokumentacja/${group.slug}`);
+		if (group.icon?.startsWith('/')) assets.add(group.icon);
+
+		for (const { slug } of group.pages) {
+			const page = docs.getPage(group.slug, slug);
+			pages.add(page.canonical);
+			contentHash = contentHash.update(page.html);
+			for (const [, asset] of page.html.matchAll(DOC_ASSET_RE)) assets.add(asset);
+		}
+	}
+
+	return { pages: [...pages], assets: [...assets].map(encodeURI), hash: contentHash.digest('hex') };
+};
+
 const build = async () => {
 	const [template, assets] = await Promise.all([fs.readFile(TEMPLATE_PATH, 'utf8'), collectAssets()]);
-	const version = crypto.createHash('sha1').update(template).update(assets.map(a => a.signature).join('\n')).digest('hex').slice(0, 12);
+	const doc = collectDocs();
+	const version = crypto.createHash('sha1').update(template).update(doc.hash).update(assets.map(a => a.signature).join('\n')).digest('hex').slice(0, 12);
 
 	return template
 		.replace('__VERSION__', version)
 		.replace('/* __ENDPOINTS__ */', JSON.stringify(ENDPOINTS).slice(1, -1))
 		.replace('/* __PAGE_PATHS__ */', JSON.stringify(PAGE_PATHS).slice(1, -1))
+		.replace('/* __DOC_PAGES__ */', JSON.stringify(doc.pages).slice(1, -1))
+		.replace('/* __DOC_ASSETS__ */', JSON.stringify(doc.assets).slice(1, -1))
 		.replace('/* __PRECACHE__ */', JSON.stringify(assets.map(a => a.urlPath)).slice(1, -1));
 };
 
