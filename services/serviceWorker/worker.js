@@ -12,14 +12,15 @@ const PAGE_PATHS = new Set([/* __PAGE_PATHS__ */]);
 const ENDPOINTS = {/* __ENDPOINTS__ */};
 const DOC_PAGES = [/* __DOC_PAGES__ */];
 const DOC_ASSETS = [/* __DOC_ASSETS__ */];
+const EXTERNAL_PRECACHE = [/* __EXTERNAL_PRECACHE__ */];
 const APP_PAGES = [...PAGE_PATHS, ...DOC_PAGES, ENDPOINTS.manifest];
 const NETWORK_TIMEOUT_MS = 5000;
+const MAX_PAGES = 200;
 const MAX_FILES = 300;
 const MAX_EXTERNAL = 150;
 const MAX_API = 60;
 const EXTERNAL_DESTINATIONS = new Set(['style', 'script', 'font', 'image']);
 const FILE_PATH_RE = /^\/(images|pliki)\//;
-const UNCACHED_HOSTS = new Set();
 const PASSTHROUGH_PATHS = new Set([ENDPOINTS.serviceWorker, '/robots.txt', '/sitemap.xml', '/llms.txt', '/discord']);
 
 const isCacheable = response => response.ok || response.type === 'opaque';
@@ -88,7 +89,7 @@ const cachedPage = async url => {
 
 const handleNavigation = async (event, request, url) => {
 	const network = fetch(request).then(response => {
-		if (response.ok) event.waitUntil(store(PAGES_CACHE, pageKey(url), response.clone()));
+		if (response.ok) event.waitUntil(store(PAGES_CACHE, pageKey(url), response.clone(), MAX_PAGES));
 		return response;
 	});
 	event.waitUntil(network.catch(() => null));
@@ -109,37 +110,29 @@ const handleNavigation = async (event, request, url) => {
 	}
 };
 
+const precacheAll = async (cacheName, urls, init) => {
+	const cache = await caches.open(cacheName);
+	await Promise.all(urls.map(async url => {
+		try {
+			const response = await fetch(url, init);
+			if (response.ok) await cache.put(url, response);
+		} catch (err) {
+			console.warn('Could not precache', url, err);
+		}
+	}));
+};
+
 self.addEventListener('install', event => {
 	event.waitUntil((async () => {
 		const staticCache = await caches.open(STATIC_CACHE);
 		await staticCache.addAll([...PRECACHE].map(path => new Request(path, { cache: 'reload' })));
 
-		const pagesCache = await caches.open(PAGES_CACHE);
-		await Promise.all(APP_PAGES.map(async page => {
-			try {
-				const response = await fetch(page, { cache: 'reload' });
-				if (response.ok) await pagesCache.put(page, response);
-			} catch (err) {
-				console.warn('Could not precache page', page, err);
-			}
-		}));
-
-		const filesCache = await caches.open(FILES_CACHE);
-		await Promise.all(DOC_ASSETS.map(async asset => {
-			try {
-				const response = await fetch(asset);
-				if (response.ok) await filesCache.put(asset, response);
-			} catch (err) {
-				console.warn('Could not precache asset', asset, err);
-			}
-		}));
-
-		try {
-			const response = await fetch(ENDPOINTS.docsSearch, { cache: 'reload' });
-			if (response.ok) await (await caches.open(API_CACHE)).put(ENDPOINTS.docsSearch, response);
-		} catch (err) {
-			console.warn('Could not precache docs search index', err);
-		}
+		await Promise.all([
+			precacheAll(PAGES_CACHE, APP_PAGES, { cache: 'reload' }),
+			precacheAll(API_CACHE, [ENDPOINTS.docsSearch], { cache: 'reload' }),
+			precacheAll(FILES_CACHE, DOC_ASSETS),
+			precacheAll(EXTERNAL_CACHE, EXTERNAL_PRECACHE),
+		]);
 
 		await self.skipWaiting();
 	})());
@@ -162,7 +155,7 @@ self.addEventListener('fetch', event => {
 	const respond = handler => event.respondWith(handler().catch(() => Response.error()));
 
 	if (url.origin !== self.location.origin) {
-		if (url.protocol === 'https:' && !UNCACHED_HOSTS.has(url.hostname) && EXTERNAL_DESTINATIONS.has(request.destination)) {
+		if (url.protocol === 'https:' && EXTERNAL_DESTINATIONS.has(request.destination)) {
 			respond(() => staleWhileRevalidate(event, request, EXTERNAL_CACHE, MAX_EXTERNAL));
 		}
 		return;
