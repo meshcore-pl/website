@@ -44,17 +44,14 @@ if (form) {
 
 			if (data.sent) {
 				card.replaceChildren(buildAlert('success'));
-				window.haptics?.success();
 				return;
 			}
 
 			form.before(buildAlert('error', data.errors?.length ? data.errors : ['Nie udało się wysłać wiadomości. Spróbuj ponownie później.']));
 			window.turnstile?.reset();
-			window.haptics?.error();
 		} catch {
 			form.before(buildAlert('error', ['Nie udało się wysłać wiadomości. Spróbuj ponownie później.']));
 			window.turnstile?.reset();
-			window.haptics?.error();
 		} finally {
 			submitBtn.disabled = false;
 			submitBtn.textContent = submitLabel;

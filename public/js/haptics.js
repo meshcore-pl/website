@@ -1,14 +1,7 @@
 (() => {
-	const canVibrate = typeof navigator.vibrate === 'function' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-	const vibrate = pattern => { if (canVibrate) navigator.vibrate(pattern); };
-
-	window.haptics = {
-		tap: () => vibrate(10),
-		success: () => vibrate([15, 40, 15]),
-		error: () => vibrate([40, 60, 40]),
-	};
+	if (typeof navigator.vibrate !== 'function' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
 	document.addEventListener('click', e => {
-		if (e.target.closest('[data-haptic]')) window.haptics.tap();
-	});
+		if (e.target.closest('button, a, input[type="checkbox"], input[type="radio"], input[type="range"]')) navigator.vibrate(10);
+	}, { passive: true });
 })();
