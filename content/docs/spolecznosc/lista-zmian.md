@@ -3,7 +3,7 @@ title: Lista zmian meshcorepolska.org
 description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/spolecznosc/lista-zmian
 createdAt: 2.08.2026
-updatedAt: 24.10.2026
+updatedAt: 25.10.2026
 ---
 
 # Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
@@ -20,7 +20,9 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 4. Dodano subtelne wibracje (haptic feedback) na urządzeniach z Androidem podczas klikania przycisków, linków i pól wyboru, podobnie jak wcześniej na mapie. Funkcja uwzględnia systemowe ustawienia ograniczania animacji.
 5. Mapa witryny (`sitemap.xml`) jest teraz generowana automatycznie na podstawie dostępnych stron, dokumentacji i aktualności.
 6. Chart.js na stronie Statystyki jest ładowany od teraz zawsze w najnowszej wersji (4.x).
-7. Zaktualizowano zależności backendu do najnowszych wersji.
+7. Dodano w regulaminie serwera Discord linki do Terms of Service oraz Community Guidelines Discorda.
+8. Zaktualizowano zależności backendu do najnowszych wersji.
+9. Wprowadzono także inne zmiany oraz ulepszenia.
 
 ## v1.9.0
 1. Przebudowano strukturę stylów CSS - pliki zostały podzielone na mniejsze moduły (współdzielone komponenty oraz osobne pliki dla poszczególnych sekcji strony głównej i dokumentacji), co ułatwia dalszy rozwój strony. Wygląd pozostał bez zmian.

@@ -1,4 +1,5 @@
 const VERSION = '__VERSION__';
+const OFFLINE_HEADER = '__OFFLINE_HEADER__';
 const PRECACHE = new Set([/* __PRECACHE__ */]);
 
 const STATIC_CACHE = `static-${VERSION}`;
@@ -61,17 +62,29 @@ const networkFirst = async (event, request, cacheName, maxEntries) => {
 
 const pageKey = url => new Request(url.origin + url.pathname);
 
-const cachedPage = async url => {
-	const shell = PAGE_PATHS.has(url.pathname) ? url.pathname : '/';
-	return await caches.match(pageKey(url), { cacheName: PAGES_CACHE })
-		?? caches.match(new Request(url.origin + shell), { cacheName: PAGES_CACHE });
+// A redirected response cannot be served for a navigation request, so it is stored as a plain copy
+const unredirect = async response => response.redirected
+	? new Response(await response.blob(), { status: response.status, statusText: response.statusText, headers: response.headers })
+	: response;
+
+const storePage = async (url, response) => {
+	if (!response.ok || !response.headers.get('content-type')?.includes('text/html')) return;
+
+	const plain = await unredirect(response);
+	await store(PAGES_CACHE, pageKey(url), plain.clone(), MAX_PAGES);
+	if (response.redirected) await store(PAGES_CACHE, pageKey(new URL(response.url)), plain.clone(), MAX_PAGES);
 };
 
+const cachedPage = async url => await caches.match(pageKey(url), { cacheName: PAGES_CACHE })
+	?? caches.match(new Request(url.origin + ENDPOINTS.offline), { cacheName: PAGES_CACHE });
+
+// Promise.race instead of AbortSignal: re-creating a navigate request with init changes its mode and redirect handling.
 const handleNavigation = async (event, request, url) => {
-	const network = fetch(request).then(response => {
-		if (response.ok) event.waitUntil(store(PAGES_CACHE, pageKey(url), response.clone(), MAX_PAGES));
+	const network = (async () => {
+		const response = await event.preloadResponse ?? await fetch(request);
+		event.waitUntil(storePage(url, response.clone()));
 		return response;
-	});
+	})();
 	event.waitUntil(network.catch(() => null));
 
 	let timer;
@@ -95,7 +108,8 @@ const precacheAll = async (cacheName, urls, init) => {
 	await Promise.all(urls.map(async url => {
 		try {
 			const response = await fetch(url, init);
-			if (response.ok || response.type === 'opaque') await cache.put(url, response);
+			if (response.type === 'opaque') await cache.put(url, response);
+			else if (response.ok) await cache.put(url, await unredirect(response));
 		} catch (err) {
 			console.warn('Could not precache', url, err);
 		}
@@ -109,6 +123,7 @@ self.addEventListener('install', event => {
 
 		await Promise.all([
 			precacheAll(PAGES_CACHE, APP_PAGES, { cache: 'reload' }),
+			precacheAll(PAGES_CACHE, [ENDPOINTS.offline], { cache: 'reload', headers: { [OFFLINE_HEADER]: '1' } }),
 			precacheAll(API_CACHE, [ENDPOINTS.docsSearch], { cache: 'reload' }),
 			precacheAll(FILES_CACHE, DOC_ASSETS),
 			precacheAll(EXTERNAL_CACHE, EXTERNAL_PRECACHE),
@@ -124,6 +139,7 @@ self.addEventListener('activate', event => {
 		for (const name of await caches.keys()) {
 			if (!KEEP_CACHES.includes(name)) await caches.delete(name);
 		}
+		await self.registration.navigationPreload?.enable();
 		await self.clients.claim();
 	})());
 });

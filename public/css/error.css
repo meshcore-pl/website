@@ -22,10 +22,18 @@
 	margin-bottom: 0;
 }
 
+[data-page="offline"] #errorpage__code {
+	font-size: 80px;
+}
+
 @media (max-width: 880px) {
 	#errorpage__code {
 		margin-bottom: 14px;
 		font-size: 96px;
+	}
+
+	[data-page="offline"] #errorpage__code {
+		font-size: 64px;
 	}
 
 	.section--notfound {
@@ -38,5 +46,9 @@
 	#errorpage__code {
 		margin-bottom: 11px;
 		font-size: 72px;
+	}
+
+	[data-page="offline"] #errorpage__code {
+		font-size: 52px;
 	}
 }

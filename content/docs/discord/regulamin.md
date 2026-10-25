@@ -3,7 +3,7 @@ title: Regulamin serwera
 description: Regulamin obowiązujący na serwerze Discord MeshCore Polska - zasady kultury, treści zakazane oraz konsekwencje ich łamania.
 canonical: /dokumentacja/discord/regulamin
 createdAt: 12.07.2026
-updatedAt: 23.09.2026
+updatedAt: 25.10.2026
 ---
 
 # Regulamin serwera Discord MeshCore Polska {toc: Regulamin serwera}
@@ -65,7 +65,7 @@ Zrzuty publicznych wiadomości z MeshCore możesz publikować, o ile nie narusza
 Nie publikuj też cudzych danych osobowych, adresów, numerów telefonu ani dokładnych lokalizacji. Takie rzeczy szybko robią się problemem, nawet jeśli na początku wygląda to niewinnie.
 
 ## 12. Zasady Discorda
-Korzystając z serwera, przestrzegasz też zasad Discorda, czyli Terms of Service oraz Community Guidelines. To, co jest zakazane przez Discorda, jest zakazane także tutaj - logiczne.
+Korzystając z serwera, przestrzegasz też zasad Discorda, czyli [Terms of Service](https://discord.com/terms) oraz [Community Guidelines](https://discord.com/guidelines). To, co jest zakazane przez Discorda, jest zakazane także tutaj - logiczne.
 
 ## 13. Konsekwencje
 Za łamanie zasad administracja może usuwać treści i reagować zależnie od sytuacji: ostrzeżeniem, wyciszeniem, wyrzuceniem albo banem. Im poważniejsze naruszenie i im więcej masz już na koncie, tym ostrzejsza może być reakcja.

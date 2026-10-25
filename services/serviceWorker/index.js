@@ -11,7 +11,9 @@ const PRECACHE_DIRS = ['css', 'js', 'images/logo', 'images/meshcore'];
 const EXTRA_FILES = ['favicon.ico', 'icons.svg'];
 const EXCLUDED_RE = /\.(map|md|txt)$|(^|\/)LICENSE[^/]*$|\.LICENSE$/;
 
-const ENDPOINTS = { serviceWorker: '/service-worker.js', manifest: '/manifest.webmanifest', docsSearch: '/api/v1/dokumentacja/szukaj' };
+const ENDPOINTS = { serviceWorker: '/service-worker.js', manifest: '/manifest.webmanifest', offline: '/offline', docsSearch: '/api/v1/dokumentacja/szukaj' };
+// Strona offline jest serwowana wyłącznie żądaniu workera z tym nagłówkiem, bezpośrednie wejście daje 404
+const OFFLINE_HEADER = 'X-Offline-Precache';
 const EXTERNAL_PRECACHE = [
 	'https://cdn.sefinek.net/js/progressbar.js',
 	'https://cdn.sefinek.net/js/console.js',
@@ -89,6 +91,7 @@ const build = async () => {
 
 	return template
 		.replace('__VERSION__', version)
+		.replace('__OFFLINE_HEADER__', OFFLINE_HEADER)
 		.replace('/* __ENDPOINTS__ */', JSON.stringify(ENDPOINTS).slice(1, -1))
 		.replace('/* __PAGE_PATHS__ */', JSON.stringify(PAGE_PATHS).slice(1, -1))
 		.replace('/* __DOC_PAGES__ */', JSON.stringify(doc.pages).slice(1, -1))
@@ -108,4 +111,4 @@ const getScript = () => {
 	});
 };
 
-module.exports = { getScript, ENDPOINTS };
+module.exports = { getScript, ENDPOINTS, OFFLINE_HEADER };

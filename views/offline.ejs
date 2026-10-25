@@ -1,0 +1,23 @@
+<%- include('./includes/header.ejs', {
+	title: 'Brak połączenia: MeshCore Polska',
+	description: 'Ta strona nie jest dostępna offline.',
+	noindex: true,
+	css: 'error',
+	page: 'offline'
+}) %>
+
+<main>
+	<section class="section section--notfound">
+		<div class="section__inner">
+			<p class="eyebrow">Brak sygnału</p>
+			<h1 id="errorpage__code">Offline</h1>
+			<p id="errorpage__msg">Ta strona nie została jeszcze zapisana w pamięci podręcznej, więc nie można jej otworzyć bez internetu. Połącz się z siecią i spróbuj ponownie.</p>
+			<div class="hero__actions">
+				<button type="button" class="btn btn--primary" data-reload>Spróbuj ponownie</button>
+				<a href="/" class="btn btn--secondary">Strona główna</a>
+			</div>
+		</div>
+	</section>
+</main>
+
+<%- include('./includes/footer.ejs', { footer: false }) %>
