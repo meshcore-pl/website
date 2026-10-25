@@ -23,7 +23,7 @@ const EXTERNAL_DESTINATIONS = new Set(['style', 'script', 'font', 'image']);
 const FILE_PATH_RE = /^\/(images|pliki)\//;
 const PASSTHROUGH_PATHS = new Set([ENDPOINTS.serviceWorker, '/robots.txt', '/sitemap.xml', '/llms.txt', '/discord']);
 
-const isCacheable = response => response.ok || response.type === 'opaque';
+const isCacheable = response => response.status === 200 || response.type === 'opaque';
 
 const trimCache = async (cache, maxEntries) => {
 	const keys = await cache.keys();
@@ -42,19 +42,10 @@ const fetchWithTimeout = (request, timeoutMs) => {
 	return fetch(request, { signal: controller.signal }).finally(() => clearTimeout(timer));
 };
 
-const cacheFirst = async (event, request, cacheName, maxEntries) => {
-	const cached = await caches.match(request, { cacheName });
-	if (cached) return cached;
-
-	const response = await fetch(request);
-	if (isCacheable(response)) event.waitUntil(store(cacheName, request, response.clone(), maxEntries));
-	return response;
-};
-
 const networkFirst = async (event, request, cacheName, maxEntries) => {
 	try {
 		const response = await fetchWithTimeout(request, NETWORK_TIMEOUT_MS);
-		if (response.ok) {
+		if (isCacheable(response)) {
 			event.waitUntil(store(cacheName, request, response.clone(), maxEntries));
 			return response;
 		}
@@ -65,18 +56,6 @@ const networkFirst = async (event, request, cacheName, maxEntries) => {
 		if (cached) return cached;
 		throw err;
 	}
-};
-
-const staleWhileRevalidate = async (event, request, cacheName, maxEntries) => {
-	const cached = await caches.match(request, { cacheName });
-	const refresh = fetch(request).then(response => {
-		if (isCacheable(response)) event.waitUntil(store(cacheName, request, response.clone(), maxEntries));
-		return response;
-	});
-
-	if (!cached) return refresh;
-	event.waitUntil(refresh.catch(() => null));
-	return cached;
 };
 
 const pageKey = url => new Request(url.origin + url.pathname);
@@ -156,7 +135,7 @@ self.addEventListener('fetch', event => {
 
 	if (url.origin !== self.location.origin) {
 		if (url.protocol === 'https:' && EXTERNAL_DESTINATIONS.has(request.destination)) {
-			respond(() => staleWhileRevalidate(event, request, EXTERNAL_CACHE, MAX_EXTERNAL));
+			respond(() => networkFirst(event, request, EXTERNAL_CACHE, MAX_EXTERNAL));
 		}
 		return;
 	}
@@ -164,8 +143,8 @@ self.addEventListener('fetch', event => {
 	if (PASSTHROUGH_PATHS.has(url.pathname)) return;
 
 	if (url.pathname === ENDPOINTS.manifest) respond(() => networkFirst(event, request, PAGES_CACHE));
-	else if (FILE_PATH_RE.test(url.pathname)) respond(() => cacheFirst(event, request, FILES_CACHE, MAX_FILES));
+	else if (FILE_PATH_RE.test(url.pathname)) respond(() => networkFirst(event, request, FILES_CACHE, MAX_FILES));
 	else if (url.pathname.startsWith('/api/')) respond(() => networkFirst(event, request, API_CACHE, MAX_API));
 	else if (request.mode === 'navigate' || PAGE_PATHS.has(url.pathname)) respond(() => handleNavigation(event, request, url));
-	else if (PRECACHE.has(url.pathname)) respond(() => cacheFirst(event, request, STATIC_CACHE));
+	else if (PRECACHE.has(url.pathname)) respond(() => networkFirst(event, request, STATIC_CACHE));
 });

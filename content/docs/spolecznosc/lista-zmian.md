@@ -14,10 +14,13 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
 
 ## v1.10.0
-1. Dodano tryb offline (service worker) - strona zapisuje w pamięci przeglądarki zasoby statyczne oraz całą dokumentację wraz z obrazkami, plikami i wyszukiwarką, więc po pierwszej wizycie można z niej korzystać bez internetu. Odwiedzone wcześniej strony, w tym Aktualności, również są dostępne offline.
+1. Od teraz strona jest dostępna również offline! Nie potrzebujesz połączenia z internetem, aby ją odwiedzić!
 2. Dodano wpis [Jak poprawić zasięg SenseCAP Solar P1](https://meshcorepolska.org/aktualnosci/poradnik/poprawa-zasiegu-sensecap-solar-p1) w Aktualnościach.
 3. Dodano wpis [Tryb repeat companiona na Wio Tracker L1 Pro](https://meshcorepolska.org/aktualnosci/poradnik/tryb-repeat-companiona-wio-tracker-l1-pro) w Aktualnościach.
-4. Zaktualizowano zależności backendu do najnowszej wersji.
+4. Dodano delikatne wibracje (haptic feedback) na telefonach z Androidem - przy otwieraniu menu i spisu treści, zmianie zakresu wykresu w Statystykach oraz po wysłaniu formularza kontaktowego (inny wzór dla sukcesu i błędu). Wibracje respektują systemowe ustawienie ograniczenia animacji.
+5. Mapa witryny (`sitemap.xml`) jest teraz generowana automatycznie na podstawie stron, dokumentacji i aktualności.
+6. Chart.js na stronie Statystyki jest ładowany od teraz zawsze w najnowszej wersji (4.x).
+7. Zaktualizowano zależności backendu do najnowszej wersji.
 
 ## v1.9.0
 1. Przebudowano strukturę stylów CSS - pliki zostały podzielone na mniejsze moduły (współdzielone komponenty oraz osobne pliki dla poszczególnych sekcji strony głównej i dokumentacji), co ułatwia dalszy rozwój strony. Wygląd pozostał bez zmian.

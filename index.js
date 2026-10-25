@@ -13,6 +13,7 @@ const ApiRouter = require('./routes/Api.js');
 const DocsRouter = require('./routes/Docs.js');
 const NewsRouter = require('./routes/News.js');
 const ContactRouter = require('./routes/Contact.js');
+const SitemapRouter = require('./routes/Sitemap.js');
 
 // Middleware imports
 const timeout = require('./middlewares/timeout.js');
@@ -71,6 +72,7 @@ app.use(ApiRouter);
 app.use(DocsRouter);
 app.use(NewsRouter);
 app.use(ContactRouter);
+app.use(SitemapRouter);
 
 
 // Error handling

@@ -2,6 +2,7 @@ const fs = require('node:fs/promises');
 const path = require('node:path');
 const crypto = require('node:crypto');
 const docs = require('../docs.js');
+const sitePages = require('../../content/pages.js');
 
 const PUBLIC_DIR = path.join(__dirname, '../../public');
 const TEMPLATE_PATH = path.join(__dirname, 'worker.js');
@@ -16,10 +17,10 @@ const EXTERNAL_PRECACHE = [
 	'https://cdn.sefinek.net/js/codeBlocks.js',
 	'https://cdn.sefinek.net/js/highlight.js',
 	'https://cdn.sefinek.net/css/code-viewer.css',
-	'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.js',
+	'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js',
 ];
 const DOC_ASSET_RE = /(?:src|href)="(\/(?:images|pliki)\/[^"]+)"/g;
-const PAGE_PATHS = ['/', '/statystyki', '/generator-regionow', '/kontakt', '/polityka-prywatnosci', '/dokumentacja', '/aktualnosci'];
+const PAGE_PATHS = sitePages.map(page => page.path);
 
 const isProd = process.env.NODE_ENV === 'production';
 
