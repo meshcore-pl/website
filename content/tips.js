@@ -1,6 +1,6 @@
 const tips = [
 	'Czy wiesz, że aplikacja MeshCore jest dostępna także na komputery?',
-	'Czy wiesz, że Meshtastic powstał już na początku 2020 roku, a konkurencyjny MeshCore dopiero pod koniec 2024 roku?',
+	'Czy wiesz, że Meshtastic powstał na początku 2020 roku, a konkurencyjny MeshCore dopiero pod koniec 2024?',
 	'Czy wiesz, że repeatery zwykle są zasilane ogniwami i panelami słonecznymi, niezależnie od dostawców energii?',
 	'Czy wiesz, że ta strona jak i cała dokumentacja jest open source? Kod znajdziesz na GitHubie.',
 	'Czy wiesz, że MeshCore Południe (Bielsko-Biała, Śląsk, Małopolska) używa SF6 zamiast SF8 jak reszta Polski?',
