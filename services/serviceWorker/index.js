@@ -5,6 +5,7 @@ const docs = require('../docs.js');
 const sitePages = require('../../content/pages.js');
 
 const PUBLIC_DIR = path.join(__dirname, '../../public');
+const VIEWS_DIR = path.join(__dirname, '../../views');
 const TEMPLATE_PATH = path.join(__dirname, 'worker.js');
 const PRECACHE_DIRS = ['css', 'js', 'images/logo', 'images/meshcore'];
 const EXTRA_FILES = ['favicon.ico', 'icons.svg'];
@@ -19,6 +20,7 @@ const EXTERNAL_PRECACHE = [
 	'https://cdn.sefinek.net/css/code-viewer.css',
 	'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js',
 ];
+const EXTERNAL_IMAGE_RE = /https:\/\/flasher\.meshcore\.io\/img\/[\w.-]+\.svg/g;
 const DOC_ASSET_RE = /(?:src|href)="(\/(?:images|pliki)\/[^"]+)"/g;
 const PAGE_PATHS = sitePages.map(page => page.path);
 
@@ -49,6 +51,12 @@ const collectAssets = async () => {
 	return assets;
 };
 
+const collectExternalImages = async () => {
+	const files = (await walk(VIEWS_DIR)).filter(file => file.endsWith('.ejs'));
+	const sources = await Promise.all(files.map(file => fs.readFile(file, 'utf8')));
+	return [...new Set(sources.flatMap(source => source.match(EXTERNAL_IMAGE_RE) ?? []))].sort();
+};
+
 const collectDocs = async () => {
 	const pages = new Set(['/dokumentacja']);
 	const assets = new Set();
@@ -76,8 +84,8 @@ const collectDocs = async () => {
 };
 
 const build = async () => {
-	const [template, assets, doc] = await Promise.all([fs.readFile(TEMPLATE_PATH, 'utf8'), collectAssets(), collectDocs()]);
-	const version = crypto.createHash('sha1').update(template).update(doc.hash).update(EXTERNAL_PRECACHE.join('\n')).update(assets.map(a => a.signature).join('\n')).digest('hex').slice(0, 12);
+	const [template, assets, doc, externalImages] = await Promise.all([fs.readFile(TEMPLATE_PATH, 'utf8'), collectAssets(), collectDocs(), collectExternalImages()]);
+	const version = crypto.createHash('sha1').update(template).update(doc.hash).update(EXTERNAL_PRECACHE.join('\n')).update(externalImages.join('\n')).update(assets.map(a => a.signature).join('\n')).digest('hex').slice(0, 12);
 
 	return template
 		.replace('__VERSION__', version)
@@ -86,6 +94,7 @@ const build = async () => {
 		.replace('/* __DOC_PAGES__ */', JSON.stringify(doc.pages).slice(1, -1))
 		.replace('/* __DOC_ASSETS__ */', JSON.stringify(doc.assets).slice(1, -1))
 		.replace('/* __EXTERNAL_PRECACHE__ */', JSON.stringify(EXTERNAL_PRECACHE).slice(1, -1))
+		.replace('/* __EXTERNAL_IMAGES__ */', JSON.stringify(externalImages).slice(1, -1))
 		.replace('/* __PRECACHE__ */', JSON.stringify(assets.map(a => a.urlPath)).slice(1, -1));
 };
 

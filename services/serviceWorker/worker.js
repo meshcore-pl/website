@@ -13,6 +13,7 @@ const ENDPOINTS = {/* __ENDPOINTS__ */};
 const DOC_PAGES = [/* __DOC_PAGES__ */];
 const DOC_ASSETS = [/* __DOC_ASSETS__ */];
 const EXTERNAL_PRECACHE = [/* __EXTERNAL_PRECACHE__ */];
+const EXTERNAL_IMAGES = [/* __EXTERNAL_IMAGES__ */];
 const APP_PAGES = [...PAGE_PATHS, ...DOC_PAGES, ENDPOINTS.manifest];
 const NETWORK_TIMEOUT_MS = 5000;
 const MAX_PAGES = 200;
@@ -94,7 +95,7 @@ const precacheAll = async (cacheName, urls, init) => {
 	await Promise.all(urls.map(async url => {
 		try {
 			const response = await fetch(url, init);
-			if (response.ok) await cache.put(url, response);
+			if (response.ok || response.type === 'opaque') await cache.put(url, response);
 		} catch (err) {
 			console.warn('Could not precache', url, err);
 		}
@@ -111,6 +112,7 @@ self.addEventListener('install', event => {
 			precacheAll(API_CACHE, [ENDPOINTS.docsSearch], { cache: 'reload' }),
 			precacheAll(FILES_CACHE, DOC_ASSETS),
 			precacheAll(EXTERNAL_CACHE, EXTERNAL_PRECACHE),
+			precacheAll(EXTERNAL_CACHE, EXTERNAL_IMAGES, { mode: 'no-cors' }),
 		]);
 
 		await self.skipWaiting();
