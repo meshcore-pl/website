@@ -15,6 +15,7 @@ const ENDPOINTS = { serviceWorker: '/service-worker.js', manifest: '/manifest.we
 // Strona offline jest serwowana wyłącznie żądaniu workera z tym nagłówkiem, bezpośrednie wejście daje 404
 const OFFLINE_HEADER = 'X-Offline-Precache';
 const EXTERNAL_PRECACHE = [
+	'https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,800;1,900&family=IBM+Plex+Mono:wght@400;500;600&display=swap',
 	'https://cdn.sefinek.net/js/progressbar.js',
 	'https://cdn.sefinek.net/js/console.js',
 	'https://cdn.sefinek.net/js/codeBlocks.js',

@@ -52,9 +52,9 @@ const networkFirst = async (event, request, cacheName, maxEntries) => {
 			return response;
 		}
 
-		return await caches.match(request, { cacheName }) ?? response;
+		return await caches.match(request, { cacheName, ignoreVary: true }) ?? response;
 	} catch (err) {
-		const cached = await caches.match(request, { cacheName });
+		const cached = await caches.match(request, { cacheName, ignoreVary: true });
 		if (cached) return cached;
 		throw err;
 	}
