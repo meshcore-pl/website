@@ -17,7 +17,7 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 1. Strona jest teraz dostępna również offline! Po jej wcześniejszym załadowaniu możesz korzystać z niej bez połączenia z internetem.
 2. Dodano wpis [Jak poprawić zasięg SenseCAP Solar P1](https://meshcorepolska.org/aktualnosci/poradnik/poprawa-zasiegu-sensecap-solar-p1) w Aktualnościach.
 3. Dodano wpis [Tryb repeat companiona na Wio Tracker L1 Pro](https://meshcorepolska.org/aktualnosci/poradnik/tryb-repeat-companiona-wio-tracker-l1-pro) w Aktualnościach.
-4. Dodano subtelne wibracje (haptic feedback) na urządzeniach z Androidem podczas klikania przycisków, linków i pól wyboru, podobnie jak wcześniej na mapie. Funkcja uwzględnia systemowe ustawienia ograniczania animacji.
+4. Dodano subtelne wibracje (haptic feedback) na urządzeniach z Androidem podczas klikania przycisków, linków i pól wyboru, podobnie jak wcześniej na mapie. ~~Funkcja uwzględnia systemowe ustawienia ograniczania animacji.~~
 5. Mapa witryny (`sitemap.xml`) jest teraz generowana automatycznie na podstawie dostępnych stron, dokumentacji i aktualności.
 6. Chart.js na stronie Statystyki jest ładowany od teraz zawsze w najnowszej wersji (4.x).
 7. Dodano w regulaminie serwera Discord linki do Terms of Service oraz Community Guidelines Discorda.
