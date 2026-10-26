@@ -24,7 +24,7 @@ router.post('/api/v1/kontakt', limiter.contactForm, async (req, res) => {
 	const username = (req.body.username || '').trim();
 	const email = (req.body.email || '').trim();
 	const message = (req.body.message || '').trim();
-	const turnstileToken = (req.body['cf-turnstile-response'] || '').trim();
+	const turnstileToken = req.body['cf-turnstile-response'];
 	const values = { username, email, message };
 
 	// Honeypot
@@ -37,7 +37,7 @@ router.post('/api/v1/kontakt', limiter.contactForm, async (req, res) => {
 	if (username.length < 2 || username.length > 64) errors.push('Nazwa użytkownika musi mieć od 2 do 64 znaków.');
 	if (!emailValidator(email)) errors.push('Podaj poprawny adres e-mail.');
 	if (message.length < 10 || message.length > 4000) errors.push('Wiadomość musi mieć od 10 do 4000 znaków.');
-	if (!(await verifyTurnstile(turnstileToken, req.ip))) errors.push('Weryfikacja captcha Cloudflare Turnstile nie powiodła się. Odśwież stronę i spróbuj ponownie.');
+	if (!(await verifyTurnstile(turnstileToken, req.ip)).valid) errors.push('Weryfikacja captcha Cloudflare Turnstile nie powiodła się. Odśwież stronę i spróbuj ponownie.');
 
 	if (!errors.length && !(await verifyMx(email))) errors.push('Domena podanego adresu e-mail nie przyjmuje poczty.');
 	if (!errors.length && (await tcpClient.checkTempEmail(email))?.blacklisted) errors.push('Tymczasowe adresy e-mail są niedozwolone.');

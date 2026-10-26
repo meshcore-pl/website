@@ -21,7 +21,7 @@ const EXTERNAL_PRECACHE = [
 	'https://cdn.sefinek.net/js/codeBlocks.js',
 	'https://cdn.sefinek.net/js/highlight.js',
 	'https://cdn.sefinek.net/css/code-viewer.css',
-	'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.js',
+	'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js',
 ];
 const EXTERNAL_IMAGE_RE = /https:\/\/flasher\.meshcore\.io\/img\/[\w.-]+\.svg/g;
 const DOC_ASSET_RE = /(?:src|href)="(\/(?:images|pliki)\/[^"]+)"/g;
