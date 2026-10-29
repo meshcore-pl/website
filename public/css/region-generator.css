@@ -2,6 +2,17 @@
 	max-width: 1250px;
 }
 
+.rg-unavailable-wrapper {
+	cursor: not-allowed;
+}
+
+.rg-unavailable {
+	filter: blur(4px);
+	opacity: .45;
+	pointer-events: none;
+	user-select: none;
+}
+
 .rg-card {
 	margin: 0 0 32px;
 	padding: 25px;

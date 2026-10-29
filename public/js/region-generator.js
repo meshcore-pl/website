@@ -241,7 +241,7 @@ const renderOutput = () => {
 	}));
 };
 
-if (rgForm) {
+if (rgForm && !rgForm.closest('[inert]')) {
 	const homeSelect = document.getElementById('rg-home');
 	homeSelect.append(...Object.entries(RG_VOIVODESHIPS).map(([code, { name }]) => new Option(`${name} (${regionLabel(code)})`, code)));
 
