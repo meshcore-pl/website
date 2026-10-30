@@ -1,9 +1,9 @@
 ---
 title: Analizatory sieci MeshCore w Polsce i Europie
-description: Lista publicznych analizatorów sieci MeshCore w Polsce i Europie. Znajdź globalne, regionalne i zagraniczne instancje CoreScope do monitorowania sieci.
+description: Lista publicznych analizatorów sieci MeshCore w Polsce i Europie oraz nasze zastrzeżenia dotyczące prywatności, archiwizowania danych i profilowania aktywności.
 canonical: /dokumentacja/meshcore/lista-analizatorow
 createdAt: 17.07.2026
-updatedAt: 20.08.2026
+updatedAt: 28.10.2026
 ---
 
 # Spis publicznych analizatorów (CoreScope) sieci MeshCore {toc: Spis analizatorów}
@@ -15,13 +15,13 @@ updatedAt: 20.08.2026
 ## Regionalne
 - Piła: [corescope.epila.pl](https://corescope.epila.pl)
 - Kraków: [meshcorekrk.cma.pl](https://meshcorekrk.cma.pl)
-- Południe: Analizatory dla sieci [MeshCore Południe](https://meshcoresouth.pl) (Bielsko-Biała, Śląsk, Małopolska), działającej na innym presecie niż zalecany [EU/UK Narrow](https://meshcorepolska.org/dokumentacja/meshcore/aktualne-presety).
-  - Śląsk (trochę Wrocław i okolice): [live.meshcorekk.xyz](https://live.meshcorekk.xyz), [mc.inside.net.pl](https://mc.inside.net.pl)
+- Południe: analizatory dla sieci [MeshCore Południe](https://meshcoresouth.pl) (Bielsko-Biała, Śląsk, Małopolska), działającej na innym presecie niż zalecany [EU/UK Narrow](https://meshcorepolska.org/dokumentacja/meshcore/aktualne-presety).
+  - Śląsk, częściowo także Wrocław i okolice: [live.meshcorekk.xyz](https://live.meshcorekk.xyz), [mc.inside.net.pl](https://mc.inside.net.pl)
   - Oficjalne (MeshCore Południe): [live.meshcoresouth.pl](https://live.meshcoresouth.pl), [stats.meshcoresouth.pl](https://stats.meshcoresouth.pl)
 
 
 ## Pozostałe
-- Finlandia (Finland): [corescope.meshcore.fi](https://corescope.meshcore.fi)
+- Finlandia: [corescope.meshcore.fi](https://corescope.meshcore.fi)
 - Estonia: [corescope.es5nhc.ee](https://corescope.es5nhc.ee)
 
 

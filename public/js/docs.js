@@ -38,9 +38,9 @@ const init = () => {
 	const content = document.getElementById('docs-content');
 	if (!content) return;
 
-	import('https://cdn.sefinek.net/js/codeBlocks.js')
+	import(`${document.body.dataset.cdn}/js/codeBlocks.js`)
 		.then(({ highlightCodeBlocks }) => highlightCodeBlocks(content))
-		.catch(err => console.error('[docs] nie udało się załadować podświetlania kodu', err));
+		.catch(err => console.error('Failed to load code highlighting', err));
 
 	const targetFor = href => href && href[0] === '#' && href.length > 1
 		? content.querySelector(`#${CSS.escape(decodeURIComponent(href.slice(1)))}`)

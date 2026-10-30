@@ -1,5 +1,5 @@
 # meshcorepolska.org 🌍
-Backend oraz frontend strony www [meshcorepolska.org](https://meshcorepolska.org).
+Backend oraz frontend strony www [meshcorepolska.org](https://meshcorepolska.org). Nasz serwer Discord: http://meshcorepolska.org/discord
 
 ## Współtworzenie
 Jeśli chcesz dołożyć swoją cegiełkę do tego projektu albo po prostu poprawić lub ulepszyć dokumentację, śmiało zachęcamy do tego!

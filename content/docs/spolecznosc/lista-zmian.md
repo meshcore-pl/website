@@ -3,7 +3,7 @@ title: Lista zmian meshcorepolska.org
 description: Historia aktualizacji strony meshcorepolska.org, wersja po wersji - nowe funkcje, poprawki i zmiany w kodzie oraz treści.
 canonical: /dokumentacja/spolecznosc/lista-zmian
 createdAt: 2.08.2026
-updatedAt: 25.10.2026
+updatedAt: 30.10.2026
 ---
 
 # Lista zmian na stronie meshcorepolska.org {toc: Lista zmian}
@@ -12,6 +12,15 @@ Zmiany dla `mapa.meshcorepolska.org` znajdziesz osobno - pod ikoną `i` w prawym
 
 > [!NOTE]
 > Jeśli po aktualizacji strona nie wyświetla się poprawnie, wykonaj twarde odświeżenie kombinacją `CTRL + F5`.
+
+## v1.10.1
+1. Poprawiono [Generator regionów](https://meshcorepolska.org/generator-regionow) - przypisania kanałów i zakresów oraz wygląd. Dodano wybór regionów lokalnych i zapamiętywanie ustawień.
+2. Zaktualizowano dokumentację regionalizacji i rozszerzono informacje o prywatności na liście analizatorów.
+3. Usprawniono działanie strony offline (service worker). Przy pierwszej wizycie nie jest już pobierana cała witryna wraz z dokumentacją - w tle zapisują się tylko niezbędne zasoby, a kolejne podstrony trafiają do pamięci podręcznej dopiero po ich odwiedzeniu.
+4. Zmieniono wygląd powiadomień o utracie i przywróceniu połączenia: mniejsze zaokrąglenie rogów, a ostrzeżenie o braku internetu ma teraz kolor żółty zamiast czerwonego. Ich kod jest wspólny i ładowany z CDN, dzięki czemu używają go również [docs.meshcorepolska.org](https://docs.meshcorepolska.org) oraz Flasher.
+5. Połączono wspólne pliki CSS (zmienne, przyciski, nawigacja, stopka i inne) w jeden plik `global.css`, co ogranicza liczbę żądań. Wygląd strony pozostał bez zmian.
+6. Zaktualizowano zależności backendu.
+7. Inne ulepszenia oraz poprawki.
 
 ## v1.10.0
 1. Strona jest teraz dostępna również offline! Po jej wcześniejszym załadowaniu możesz korzystać z niej bez połączenia z internetem.

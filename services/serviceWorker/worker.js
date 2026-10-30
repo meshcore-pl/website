@@ -6,16 +6,11 @@ const STATIC_CACHE = `static-${VERSION}`;
 const PAGES_CACHE = 'pages';
 const API_CACHE = 'api';
 const FILES_CACHE = 'files';
-const EXTERNAL_CACHE = 'external';
+const EXTERNAL_CACHE = 'external-v2';
 const KEEP_CACHES = [STATIC_CACHE, PAGES_CACHE, API_CACHE, FILES_CACHE, EXTERNAL_CACHE];
 
 const PAGE_PATHS = new Set([/* __PAGE_PATHS__ */]);
 const ENDPOINTS = {/* __ENDPOINTS__ */};
-const DOC_PAGES = [/* __DOC_PAGES__ */];
-const DOC_ASSETS = [/* __DOC_ASSETS__ */];
-const EXTERNAL_PRECACHE = [/* __EXTERNAL_PRECACHE__ */];
-const EXTERNAL_IMAGES = [/* __EXTERNAL_IMAGES__ */];
-const APP_PAGES = [...PAGE_PATHS, ...DOC_PAGES, ENDPOINTS.manifest];
 const NETWORK_TIMEOUT_MS = 5000;
 const MAX_PAGES = 200;
 const MAX_FILES = 300;
@@ -44,6 +39,12 @@ const fetchWithTimeout = (request, timeoutMs) => {
 	return fetch(request, { signal: controller.signal }).finally(() => clearTimeout(timer));
 };
 
+// An opaque response cannot answer a CORS request, so entries cached before a tag gained `crossorigin` are treated as a miss
+const matchCached = async (key, request, cacheName) => {
+	const cached = await caches.match(key, { cacheName, ignoreVary: true });
+	return cached?.type === 'opaque' && request.mode !== 'no-cors' ? undefined : cached;
+};
+
 const networkFirst = async (event, request, cacheName, maxEntries) => {
 	try {
 		const response = await fetchWithTimeout(request, NETWORK_TIMEOUT_MS);
@@ -52,9 +53,9 @@ const networkFirst = async (event, request, cacheName, maxEntries) => {
 			return response;
 		}
 
-		return await caches.match(request, { cacheName, ignoreVary: true }) ?? response;
+		return await matchCached(request, request, cacheName) ?? response;
 	} catch (err) {
-		const cached = await caches.match(request, { cacheName, ignoreVary: true });
+		const cached = await matchCached(request, request, cacheName);
 		if (cached) return cached;
 		throw err;
 	}
@@ -103,32 +104,13 @@ const handleNavigation = async (event, request, url) => {
 	}
 };
 
-const precacheAll = async (cacheName, urls, init) => {
-	const cache = await caches.open(cacheName);
-	await Promise.all(urls.map(async url => {
-		try {
-			const response = await fetch(url, init);
-			if (response.type === 'opaque') await cache.put(url, response);
-			else if (response.ok) await cache.put(url, await unredirect(response));
-		} catch (err) {
-			console.warn('Could not precache', url, err);
-		}
-	}));
-};
-
 self.addEventListener('install', event => {
 	event.waitUntil((async () => {
 		const staticCache = await caches.open(STATIC_CACHE);
 		await staticCache.addAll([...PRECACHE].map(path => new Request(path, { cache: 'reload' })));
 
-		await Promise.all([
-			precacheAll(PAGES_CACHE, APP_PAGES, { cache: 'reload' }),
-			precacheAll(PAGES_CACHE, [ENDPOINTS.offline], { cache: 'reload', headers: { [OFFLINE_HEADER]: '1' } }),
-			precacheAll(API_CACHE, [ENDPOINTS.docsSearch], { cache: 'reload' }),
-			precacheAll(FILES_CACHE, DOC_ASSETS),
-			precacheAll(EXTERNAL_CACHE, EXTERNAL_PRECACHE),
-			precacheAll(EXTERNAL_CACHE, EXTERNAL_IMAGES, { mode: 'no-cors' }),
-		]);
+		const offline = await fetch(ENDPOINTS.offline, { cache: 'reload', headers: { [OFFLINE_HEADER]: '1' } });
+		if (offline.ok) await store(PAGES_CACHE, new Request(self.location.origin + ENDPOINTS.offline), await unredirect(offline));
 
 		await self.skipWaiting();
 	})());

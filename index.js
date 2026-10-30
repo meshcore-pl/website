@@ -2,8 +2,9 @@ process.loadEnvFile();
 const express = require('express');
 const helmet = require('helmet');
 const { version } = require('./package.json');
-const { DOMAIN, NODE_ENV, PORT } = process.env;
+const { DOMAIN, NODE_ENV, PORT, CDN_SEFINEK_URL } = process.env;
 const isProd = NODE_ENV === 'production';
+if (!CDN_SEFINEK_URL) throw new Error('Missing required environment variable: CDN_SEFINEK_URL');
 
 require('./global/database/mongoose.js');
 
@@ -33,6 +34,7 @@ const app = express();
 if (isProd) app.set('trust proxy', 1);
 app.set('view engine', 'ejs');
 app.locals.domain = `${DOMAIN}${isProd ? '' : `:${PORT}`}`;
+app.locals.cdn = CDN_SEFINEK_URL;
 app.locals.v = version;
 app.locals.buildSchema = buildSchema;
 app.locals.pluralizePolish = pluralizePolish;
@@ -46,8 +48,8 @@ app.use(helmet({
 			defaultSrc: ['\'self\''],
 			baseUri: ['\'self\''],
 			objectSrc: ['\'none\''],
-			scriptSrc: ['\'self\'', 'https://cdn.sefinek.net', 'https://cdn.jsdelivr.net', 'https://challenges.cloudflare.com'],
-			styleSrc: ['\'self\'', 'https://cdn.sefinek.net', 'https://fonts.googleapis.com'],
+			scriptSrc: ['\'self\'', CDN_SEFINEK_URL, 'https://cdn.jsdelivr.net', 'https://challenges.cloudflare.com'],
+			styleSrc: ['\'self\'', CDN_SEFINEK_URL, 'https://fonts.googleapis.com'],
 			fontSrc: ['\'self\'', 'https://fonts.gstatic.com'],
 			imgSrc: ['\'self\'', 'https://flasher.meshcore.io', 'https://blog.meshcore.io'],
 			connectSrc: ['\'self\'', 'https://challenges.cloudflare.com', 'https://cdn.jsdelivr.net'],

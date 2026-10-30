@@ -34,7 +34,7 @@
 	<meta name="twitter:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
 
 	<!-- JavaScript -->
-	<script src="https://cdn.sefinek.net/js/progressbar.js" defer></script>
+	<script src="<%= cdn %>/js/progressbar.js" crossorigin defer></script>
 
 	<!-- Icons & manifest -->
 	<link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64 128x128 256x256">
@@ -45,18 +45,18 @@
 	<!-- Stylesheets -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="preconnect" href="https://cdn.sefinek.net">
-	<link rel="preconnect" href="https://cdn.sefinek.net" crossorigin>
+	<link rel="preconnect" href="<%= cdn %>" crossorigin>
+	<link rel="stylesheet" href="<%= cdn %>/css/meshcore/toast.css" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,800;1,900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
 	<%
-	const BASE_SHEETS = ['base', 'scrollbar', 'components/buttons', 'components/nav', 'components/section', 'components/footer', 'components/lightbox', 'components/toast', 'components/docs-tip', 'components/responsive'];
+	const BASE_SHEETS = ['global'];
 	const BUNDLES = {
 		index: ['index', 'index/timeline', 'index/network', 'index/sections', 'index/cards', 'index/steps', 'index/profile', 'index/cta', 'index/responsive'],
 		docs: ['docs', 'docs/cards', 'docs/layout', 'docs/sidebar', 'docs/content', 'docs/responsive'],
 	};
 	const pageSheets = (locals.css ? (Array.isArray(css) ? css : [css]) : []).flatMap(sheet => BUNDLES[sheet] || sheet);
-	[...BASE_SHEETS, ...pageSheets].forEach(sheet => { %><link rel="stylesheet" href="<%= sheet.startsWith('http') ? sheet : `/css/${sheet}.css` %>">
+	[...BASE_SHEETS, ...pageSheets].forEach(sheet => { %><link rel="stylesheet" href="<%= sheet.startsWith('http') ? sheet : `/css/${sheet}.css` %>"<%= sheet.startsWith('http') ? ' crossorigin' : '' %>>
 	<% }) %>
 
 	<!-- schema.org -->
@@ -76,7 +76,7 @@
 	})).replace(/</g, '\\u003c') %>
 	</script>
 </head>
-<body data-page="<%= locals.page || '' %>">
+<body data-page="<%= locals.page || '' %>" data-cdn="<%= cdn %>">
 <header id="nav">
 	<div id="nav__inner">
 		<a href="/" id="nav__brand">

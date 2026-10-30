@@ -42,10 +42,10 @@
 
 <script src="/js/haptics.js" defer></script>
 <script src="/js/nav.js" defer></script>
-<template id="sw-messages" data-offline="Połączenie z internetem zostało zerwane. Strona potrafi działać offline, więc możesz dalej z niej korzystać." data-online="Połączenie zostało przywrócone."></template>
+<template id="sw-messages" data-offline="Połączenie z internetem zostało zerwane. Odwiedzone strony nadal są dostępne offline." data-online="Połączenie zostało przywrócone."></template>
 <script src="/js/sw-register.js" defer></script>
-<script src="/js/offline.js" defer></script>
+<script type="module" src="<%= cdn %>/js/meshcore/offline-toast.js"></script>
 <% (locals.scripts || []).forEach(src => { %><script src="<%= src %>" defer></script><% }) %>
-<script src="https://cdn.sefinek.net/js/console.js" data-start-year="2026" data-license="PolyForm Noncommercial 1.0.0" defer></script>
+<script src="<%= cdn %>/js/console.js" crossorigin data-start-year="2026" data-license="PolyForm Noncommercial 1.0.0" defer></script>
 </body>
 </html>
