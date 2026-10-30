@@ -8,7 +8,7 @@ updatedAt: 15.10.2026
 
 # Wprowadzenie do MeshCore: pojęcia, role urządzeń i legalne nadawanie {toc: Wprowadzenie}
 Dziękujemy za zainteresowanie tematem! Prosimy pamiętać, iż dokumentacja jest nadal w trakcie prac. Sama domena `meshcorepolska.org` nie ma jeszcze nawet czterech miesięcy.
-Witryna wraz z dokumentacją jest open source - kod źródłowy znajdziesz na [GitHubie](https://github.com/meshcore-pl/website). Zapraszamy was wszystkich na [naszą grupę na Discordzie](https://meshcorepolska.org/discord).
+Witryna wraz z dokumentacją jest open source - kod źródłowy znajdziesz na [GitHubie](https://github.com/meshcore-pl/strona-www). Zapraszamy was wszystkich na [naszą grupę na Discordzie](https://meshcorepolska.org/discord).
 
 > [!WARNING]
 > Nigdy nie ustawiaj dokładnej lokalizacji swojego repeatera na [mapie](https://mapa.meshcorepolska.org)!

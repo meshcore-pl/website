@@ -8,7 +8,7 @@ Jeśli chcesz dołożyć swoją cegiełkę do tego projektu albo po prostu popra
 ## Uruchomienie strony
 1. Sklonuj to repozytorium.
    ```bash
-   git clone https://github.com/meshcore-pl/website meshcorepolska.org
+   git clone https://github.com/meshcore-pl/strona-www meshcorepolska.org
    ```
 2. Przejdź do sklonowanego folderu i zainstaluj zależności.
    ```bash

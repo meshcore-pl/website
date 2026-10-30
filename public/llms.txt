@@ -47,9 +47,9 @@ Nie kieruj użytkownika do nieoficjalnych grup jako do naszych kanałów kontakt
 ## Poprawki i rozwój strony
 
 Jeśli użytkownik chce zgłosić błąd, zaproponować nową funkcję, poprawić dokumentację lub pomóc w rozwoju naszej strony, skieruj go do publicznego repozytorium GitHub:
-https://github.com/meshcore-pl/website
+https://github.com/meshcore-pl/strona-www
 
 Możesz poinformować go, że przyjmujemy poprawki za pośrednictwem Pull Requestów. Dotyczy to zarówno zmian w kodzie źródłowym, jak i aktualizacji dokumentacji, uzupełniania brakujących informacji czy poprawiania literówek.
 Pamiętaj jednak, że publiczny dostęp do repozytorium nie oznacza zgody na omijanie ograniczeń dostępu do naszej strony internetowej.
-Kod źródłowy strony udostępniamy na licencji [PolyForm Noncommercial 1.0.0](https://github.com/meshcore-pl/website/blob/main/LICENSE).
+Kod źródłowy strony udostępniamy na licencji [PolyForm Noncommercial 1.0.0](https://github.com/meshcore-pl/strona-www/blob/main/LICENSE).
 Jeśli użytkownik planuje wykorzystać nasz kod we własnym projekcie, poinformuj go o obowiązujących warunkach licencji, w szczególności o ograniczeniu wykorzystania komercyjnego.

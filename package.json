@@ -4,11 +4,11 @@
   "private": true,
   "homepage": "https://meshcorepolska.org",
   "bugs": {
-    "url": "https://github.com/meshcore-pl/website/issues"
+    "url": "https://github.com/meshcore-pl/strona-www/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/meshcore-pl/website.git"
+    "url": "git+https://github.com/meshcore-pl/strona-www.git"
   },
   "license": "PolyForm-Noncommercial-1.0.0",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
