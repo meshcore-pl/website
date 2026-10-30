@@ -2,6 +2,7 @@ const router = require('express').Router();
 const RenderError = require('../utils/renderError.js');
 const { getScript, ENDPOINTS, OFFLINE_HEADER } = require('../services/serviceWorker/index.js');
 const pages = require('../content/pages.js');
+const regionGeneratorBlocked = false;
 
 router.get(ENDPOINTS.serviceWorker, async (req, res, next) => {
 	try {
@@ -18,7 +19,7 @@ router.get(ENDPOINTS.serviceWorker, async (req, res, next) => {
 });
 
 for (const { path, view } of pages) {
-	if (view) router.get(path, (req, res) => res.render(view));
+	if (view) router.get(path, (req, res) => res.render(view, path === '/generator-regionow' ? { regionGeneratorBlocked } : {}));
 }
 
 router.get(ENDPOINTS.offline, (req, res) => {

@@ -37,135 +37,137 @@
 					<div class="docs-alert docs-alert--warning">
 						<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-warning"></use></svg>
 						<div class="docs-alert__body">
-							<p class="docs-alert__title">Wymagany JavaScript</p>
-							<p>Generator działa w przeglądarce - włącz JavaScript, żeby z niego skorzystać.</p>
+							<p class="docs-alert__title">Włącz JavaScript</p>
+							<p>Do korzystania z generatora potrzebny jest JavaScript. Włącz go w ustawieniach przeglądarki.</p>
 						</div>
 					</div>
 				</noscript>
 
 				<h2>Generator komend</h2>
-				<div class="docs-alert docs-alert--warning" role="status">
-					<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-warning"></use></svg>
-					<div class="docs-alert__body">
-						<p class="docs-alert__title">Generator tymczasowo niedostępny</p>
-						<p>Aktualizujemy generator do nowego schematu regionów. Dotychczasowe komendy i przypisania kanałów są nieaktualne, dlatego ich generowanie zostało zablokowane. Poczekaj na udostępnienie nowej wersji.</p>
-					</div>
-				</div>
-				<div class="rg-unavailable-wrapper">
-				<div class="rg-unavailable" inert aria-hidden="true">
-				<form class="rg-card" id="rg-form" autocomplete="off">
-					<div class="rg-field">
-						<label for="rg-fw">Wersja firmware repeatera</label>
-						<select id="rg-fw">
-							<option value="116">1.16 lub nowsza (komenda region def)</option>
-							<option value="115">1.15 (komendy region put)</option>
-							<option value="old">starsza niż 1.15 (region put + allowf)</option>
-						</select>
-					</div>
-
-					<div class="docs-alert docs-alert--warning" id="rg-fw-warning" role="status" hidden>
+				<% if (regionGeneratorBlocked) { %>
+					<div class="docs-alert docs-alert--warning" role="status">
 						<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-warning"></use></svg>
 						<div class="docs-alert__body">
-							<p class="docs-alert__title">Zaktualizuj firmware</p>
-							<p>Korzystasz ze starszej wersji oprogramowania dla swojego repeatera. Prosimy dokonać aktualizacji do najnowszej wersji przez <a href="https://flasher.meshcore.io" target="_blank" rel="noopener">MeshCore Flasher</a>.</p>
+							<p class="docs-alert__title">Generator tymczasowo niedostępny</p>
+							<p>Aktualizujemy generator do nowego schematu regionów. Dotychczasowe komendy i przypisania kanałów są nieaktualne, dlatego ich generowanie zostało zablokowane. Poczekaj na udostępnienie nowej wersji.</p>
 						</div>
 					</div>
+				<% } %>
 
-					<div class="rg-field">
-						<label for="rg-home">Twoje województwo</label>
-						<select id="rg-home"></select>
-					</div>
-
-					<fieldset class="rg-field">
-						<legend>Sąsiednie województwa (maks. 2)</legend>
-						<p class="rg-hint">Wybierz sąsiednie województwa, z których chcesz odbierać wiadomości.</p>
-						<div class="rg-checks" id="rg-neighbors"></div>
-					</fieldset>
-
-					<div class="rg-field">
-						<label for="rg-city">Region lokalny (opcjonalnie)</label>
-						<select id="rg-city" aria-describedby="rg-local-hint"></select>
-						<p class="rg-hint" id="rg-local-hint">Wybierz region lokalny swojego województwa lub podaj własny.</p>
-					</div>
-
-					<div class="rg-field" id="rg-custom-region" hidden>
-						<label for="rg-custom-scope">Własny region (scope)</label>
-						<input type="text" id="rg-custom-scope" maxlength="29" spellcheck="false" placeholder="Nazwa regionu uzgodniona lokalnie" disabled>
-						<p class="rg-hint">Wpisz nazwę uzgodnioną z lokalną społecznością. Jeśli nie ma danych o kanałach tego regionu, tabela pokaże „Brak danych”.</p>
-					</div>
-
-					<div class="rg-option">
-						<label class="rg-check">
-							<input type="checkbox" id="rg-default">
-							<span>Ustaw domyślny zakres repeatera na <code>pl</code> (firmware 1.15+)</span>
-						</label>
-						<p class="rg-hint">
-							Repeater będzie wysyłał adverty z regionem <code>pl</code>.
-							Przekażą je dalej tylko repeatery zezwalające na przekazywanie regionu <code>pl</code>. Pozostałe je odrzucą.
-							Nie wpłynie to na wiadomości innych użytkowników przekazywane przez repeater. Zaznacz tę opcję, jeśli okoliczne repeatery obsługują już region <code>pl</code>.
-						</p>
-					</div>
-				</form>
-
-				<div id="rg-output" hidden>
-					<div class="docs-alert docs-alert--caution" id="rg-errors" hidden>
-						<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-caution"></use></svg>
-						<div class="docs-alert__body">
-							<p class="docs-alert__title">Popraw dane</p>
-							<ul id="rg-errors-list"></ul>
-						</div>
-					</div>
-
-					<div id="rg-result">
-						<div class="rg-previews">
-							<div class="rg-preview">
-								<h3>Komendy dla repeatera</h3>
-								<div class="rg-commands" id="rg-commands"></div>
+				<div<% if (regionGeneratorBlocked) { %> class="rg-unavailable-wrapper"<% } %>>
+					<div<% if (regionGeneratorBlocked) { %> class="rg-unavailable" inert aria-hidden="true"<% } %>>
+						<form class="rg-card" id="rg-form" autocomplete="off">
+							<div class="rg-field">
+								<label for="rg-fw">Wersja firmware repeatera</label>
+								<select id="rg-fw">
+									<option value="116">1.16 lub nowsza (komenda region def)</option>
+									<option value="115">1.15 (komendy region put)</option>
+									<option value="old">starsza niż 1.15 (region put + allowf)</option>
+								</select>
 							</div>
-							<div class="rg-preview">
-								<h3>Podgląd struktury regionów</h3>
-								<pre><code id="rg-tree"></code></pre>
+
+							<div class="docs-alert docs-alert--warning" id="rg-fw-warning" role="status" hidden>
+								<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-warning"></use></svg>
+								<div class="docs-alert__body">
+									<p class="docs-alert__title">Zaktualizuj firmware</p>
+									<p>Korzystasz ze starszej wersji oprogramowania dla swojego repeatera. Prosimy dokonać aktualizacji do najnowszej wersji przez <a href="https://flasher.meshcore.io" target="_blank" rel="noopener">MeshCore Flasher</a>.</p>
+								</div>
+							</div>
+
+							<div class="rg-field">
+								<label for="rg-home">Twoje województwo</label>
+								<select id="rg-home"></select>
+							</div>
+
+							<fieldset class="rg-field">
+								<legend>Sąsiednie województwa (maks. 2)</legend>
+								<p class="rg-hint">Wybierz sąsiednie województwa, z których chcesz odbierać wiadomości.</p>
+								<div class="rg-checks" id="rg-neighbors"></div>
+							</fieldset>
+
+							<div class="rg-field">
+								<label for="rg-city">Region lokalny (opcjonalnie)</label>
+								<select id="rg-city" aria-describedby="rg-local-hint"></select>
+								<p class="rg-hint" id="rg-local-hint">Wybierz region lokalny swojego województwa lub podaj własny.</p>
+							</div>
+
+							<div class="rg-field" id="rg-custom-region" hidden>
+								<label for="rg-custom-scope">Własny region (scope)</label>
+								<input type="text" id="rg-custom-scope" maxlength="29" spellcheck="false" placeholder="Nazwa regionu uzgodniona lokalnie" disabled>
+								<p class="rg-hint">Wpisz nazwę uzgodnioną z lokalną społecznością. Jeśli nie ma danych o kanałach tego regionu, tabela pokaże „Brak danych”.</p>
+							</div>
+
+							<div class="rg-option">
+								<label class="rg-check">
+									<input type="checkbox" id="rg-default">
+									<span>Ustaw domyślny zakres repeatera na <code>pl</code> (firmware 1.15+)</span>
+								</label>
+								<p class="rg-hint">
+									Repeater będzie wysyłał adverty z regionem <code>pl</code>.
+									Przekażą je dalej tylko repeatery zezwalające na przekazywanie regionu <code>pl</code>. Pozostałe je odrzucą.
+									Nie wpłynie to na wiadomości innych użytkowników przekazywane przez repeater. Zaznacz tę opcję, jeśli okoliczne repeatery obsługują już region <code>pl</code>.
+								</p>
+							</div>
+						</form>
+
+						<div id="rg-output" hidden>
+							<div class="docs-alert docs-alert--caution" id="rg-errors" hidden>
+								<svg class="docs-alert__icon" aria-hidden="true"><use href="/icons.svg#alert-caution"></use></svg>
+								<div class="docs-alert__body">
+									<p class="docs-alert__title">Popraw dane</p>
+									<ul id="rg-errors-list"></ul>
+								</div>
+							</div>
+
+							<div id="rg-result">
+								<div class="rg-previews">
+									<div class="rg-preview">
+										<h3>Komendy dla repeatera</h3>
+										<div class="rg-commands" id="rg-commands"></div>
+									</div>
+									<div class="rg-preview">
+										<h3>Podgląd struktury regionów</h3>
+										<pre><code id="rg-tree"></code></pre>
+									</div>
+								</div>
+								<p class="rg-hint"><code>F</code> oznacza zezwolenie na przekazywanie, a <code>^</code> wskazuje region home. Podgląd zakłada standardowe ustawienie <code>*^ F</code>.</p>
+
+								<h3 id="kanaly-w-aplikacji">Kanały w aplikacji</h3>
+								<p>
+									Dodaj kanały hashtagowe (<b>Dodaj kanał</b> → <b>Dołącz do kanału hashtagowego</b>), a następnie ustaw ich zakres regionu zgodnie z tabelą (<b>3 kropki</b> → <b>Ustaw zakres regionu</b>).
+									Kanał <code>Public</code> jest już dostępny - ustaw tylko jego zakres zgodnie z tabelą.
+									Dla kanałów oznaczonych w tabeli jako „Bez regionu” pozostaw zakres pusty.
+									Jeśli repeatery w okolicy zezwalają na przekazywanie regionu <code>pl</code>, możesz ustawić go też jako domyślny zakres companiona na głównym ekranie Ustawień - regionem zostaną wtedy oznaczone także wiadomości prywatne i adverty.
+								</p>
+								<div class="docs-table">
+									<table>
+										<thead>
+											<tr>
+												<th>Kanał</th>
+												<th>Zakres regionu</th>
+											</tr>
+										</thead>
+										<tbody id="rg-channels"></tbody>
+									</table>
+								</div>
+
+								<h3 id="grupy-spolecznosciowe">Grupy społecznościowe</h3>
+								<div class="docs-table">
+									<table>
+										<thead>
+											<tr>
+												<th>Region</th>
+												<th>Grupa na Discordzie</th>
+											</tr>
+										</thead>
+										<tbody id="rg-community-groups"></tbody>
+									</table>
+								</div>
+								<p class="rg-actions"><a href="/dokumentacja/meshcore/lista-analizatorow" class="btn btn--secondary btn--sm">Lista analizatorów</a></p>
 							</div>
 						</div>
-						<p class="rg-hint"><code>F</code> oznacza zezwolenie na przekazywanie, a <code>^</code> wskazuje region home. Podgląd zakłada standardowe ustawienie <code>*^ F</code>.</p>
 
-						<h3 id="kanaly-w-aplikacji">Kanały w aplikacji</h3>
-						<p>
-							Dodaj kanały hashtagowe (<b>Dodaj kanał</b> → <b>Dołącz do kanału hashtagowego</b>), a następnie ustaw ich zakres regionu zgodnie z tabelą (<b>3 kropki</b> → <b>Ustaw zakres regionu</b>).
-							Kanał <code>Public</code> jest już dostępny - ustaw tylko jego zakres zgodnie z tabelą.
-							Dla kanałów oznaczonych w tabeli jako „Bez regionu” pozostaw zakres pusty.
-							Jeśli repeatery w okolicy zezwalają na przekazywanie regionu <code>pl</code>, możesz ustawić go też jako domyślny zakres companiona na głównym ekranie Ustawień - regionem zostaną wtedy oznaczone także wiadomości prywatne i adverty.
-						</p>
-						<div class="docs-table">
-							<table>
-								<thead>
-									<tr>
-										<th>Kanał</th>
-										<th>Zakres regionu</th>
-									</tr>
-								</thead>
-								<tbody id="rg-channels"></tbody>
-							</table>
-						</div>
-
-						<h3 id="grupy-spolecznosciowe">Grupy społecznościowe</h3>
-						<div class="docs-table">
-							<table>
-								<thead>
-									<tr>
-										<th>Region</th>
-										<th>Grupa na Discordzie</th>
-									</tr>
-								</thead>
-								<tbody id="rg-community-groups"></tbody>
-							</table>
-						</div>
-						<p class="rg-actions"><a href="/dokumentacja/meshcore/lista-analizatorow" class="btn btn--secondary btn--sm">Lista analizatorów</a></p>
 					</div>
-				</div>
-
-				</div>
-
 				</div>
 
 				<h2 id="usuwanie-regionow">Usuwanie obecnych regionów</h2>
