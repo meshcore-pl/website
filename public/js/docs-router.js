@@ -48,7 +48,7 @@ const swapView = async html => {
 		try {
 			api.destroy?.();
 		} catch (err) {
-			console.error('[docs-router] destroy() failed', err);
+			console.error('destroy() failed', err);
 		}
 	});
 	activeModules = [];
@@ -112,7 +112,7 @@ const navigate = async (href, { push = true } = {}) => {
 		view.focus({ preventScroll: true });
 	} catch (err) {
 		if (err.name === 'AbortError') return;
-		console.error('[docs-router] navigation failed, falling back to a full reload', err);
+		console.error('Navigation failed, falling back to a full reload', err);
 		fallback();
 	} finally {
 		if (controller === ac) controller = null;
