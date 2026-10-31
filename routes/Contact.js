@@ -5,6 +5,7 @@ const tcpClient = require('../global/services/tcpClient.js');
 const sendMail = require('../services/mailer.js');
 const verifyTurnstile = require('../services/turnstile.js');
 const limiter = require('../middlewares/ratelimit.js');
+const { getRandomTip } = require('../content/tips.js');
 
 const renderForm = (req, res, status, overrides = {}) => {
 	const payload = {
@@ -15,7 +16,7 @@ const renderForm = (req, res, status, overrides = {}) => {
 	};
 
 	if (req.get('accept') === 'application/json') return res.status(status).json(payload);
-	res.status(status).render('contact.ejs', payload);
+	res.status(status).render('contact.ejs', { ...payload, tip: getRandomTip() });
 };
 
 router.get('/kontakt', (req, res) => renderForm(req, res, 200));
@@ -37,8 +38,8 @@ router.post('/api/v1/kontakt', limiter.contactForm, async (req, res) => {
 	if (username.length < 2 || username.length > 64) errors.push('Nazwa użytkownika musi mieć od 2 do 64 znaków.');
 	if (!emailValidator(email)) errors.push('Podaj poprawny adres e-mail.');
 	if (message.length < 10 || message.length > 4000) errors.push('Wiadomość musi mieć od 10 do 4000 znaków.');
-	if (!(await verifyTurnstile(turnstileToken, req.ip)).valid) errors.push('Weryfikacja captcha Cloudflare Turnstile nie powiodła się. Odśwież stronę i spróbuj ponownie.');
 
+	if (!errors.length && !(await verifyTurnstile(turnstileToken, req.ip))) errors.push('Weryfikacja captcha Cloudflare Turnstile nie powiodła się. Odśwież stronę i spróbuj ponownie.');
 	if (!errors.length && !(await verifyMx(email))) errors.push('Domena podanego adresu e-mail nie przyjmuje poczty.');
 	if (!errors.length && (await tcpClient.checkTempEmail(email))?.blacklisted) errors.push('Tymczasowe adresy e-mail są niedozwolone.');
 	if (errors.length) return renderForm(req, res, 400, { errors, values });
@@ -62,7 +63,7 @@ router.post('/api/v1/kontakt', limiter.contactForm, async (req, res) => {
 			subject,
 			inReplyTo: adminMail.messageId,
 			references: [adminMail.messageId],
-			text: `Witaj ${username}!\n\nPomyślnie otrzymaliśmy Twoją wiadomość. Jeśli masz coś jeszcze do dodania, odpowiedz na tego maila.\n\nPozdrawiamy,\nMeshCore Polska (https://meshcorepolska.org).`,
+			text: `Witaj ${username}!\n\nPomyślnie otrzymaliśmy Twoją wiadomość. Jeśli masz coś jeszcze do dodania, odpowiedz na tego maila.\n\nPozdrawiamy,\nMeshCore Polska (https://meshcorepolska.org)`,
 		});
 
 		renderForm(req, res, 200, { sent: true });

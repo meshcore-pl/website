@@ -21,37 +21,6 @@
 	backdrop-filter: blur(4px);
 }
 
-.contact-alert {
-	padding: 14px 18px;
-	border: 1px solid var(--border);
-	border-radius: var(--radius);
-}
-
-.contact-alert + #contact-form {
-	margin-top: 24px;
-}
-
-.contact-alert p {
-	margin: 0;
-	color: var(--text);
-}
-
-.contact-alert--success {
-	border-color: var(--signal);
-	background: rgba(61, 220, 132, .08);
-}
-
-.contact-alert--error {
-	border-color: var(--red-bright);
-	background: rgba(224, 18, 48, .08);
-}
-
-.contact-alert--error ul {
-	margin: 0;
-	padding-left: 20px;
-	color: var(--text);
-}
-
 .contact-form__field {
 	margin-bottom: 20px;
 }
@@ -98,10 +67,10 @@
 	height: 1px;
 }
 
-.cf-turnstile {
+#contact-turnstile:not([hidden]) {
 	display: flex;
 	justify-content: center;
-	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 #contact-form .btn {
