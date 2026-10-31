@@ -3,6 +3,7 @@ title: Zmiany w firmware MeshCore 1.14.1 - kontrola duty cycle
 description: Firmware MeshCore 1.14.1 wprowadza kontrolę duty cycle metodą token bucket. Wśród zmian są obsługa urządzeń GAT562 i poprawki nadawania pakietów.
 createdAt: 20.03.2026
 updatedAt: 22.08.2026
+themeColor: '#21263d'
 sourceUrl: https://blog.meshcore.io/2026/03/20/release-1-14-1
 tags: [Lista zmian, Oprogramowanie]
 ---

@@ -3,6 +3,7 @@ title: Zmiany w firmware MeshCore 1.16.0 - ograniczanie ruchu flood
 description: Poznaj zmiany w firmware MeshCore 1.16.0 - ograniczanie ruchu flood przez CLI, dłuższą preambułę, rozszerzone ACK i obsługę kolejnych urządzeń.
 createdAt: 6.06.2026
 updatedAt: 22.08.2026
+themeColor: '#21263d'
 sourceUrl: https://blog.meshcore.io/2026/06/06/release-1-16-0
 tags: [Lista zmian, Oprogramowanie]
 ---

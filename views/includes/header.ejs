@@ -1,4 +1,9 @@
-<!DOCTYPE html> <% const _basePath = locals.canonical || '/'; %>
+<!DOCTYPE html> <%
+const _basePath = locals.canonical || '/';
+const _ogImage = locals.image ? (/^https?:\/\//i.test(image.src) ? image.src : domain + image.src) : `${domain}/images/brand/banner-og.jpg`;
+const _themeColor = locals.themeColor || '#95010b';
+const _ogImageAlt = locals.image ? (image.alt || locals.articleTitle || title) : 'MeshCore Polska: ogólnopolska społeczność sieci mesh';
+%>
 <html lang="pl">
 <head>
 	<meta charset="UTF-8">
@@ -10,7 +15,7 @@
 	if (locals.keywords) { %><meta name="keywords" content="<%= keywords %>"><% }
 	if (locals.noindex) { %><meta name="robots" content="noindex, nofollow"><% }
 	if (locals.canonical) { %><link rel="canonical" href="<%= domain %><%= _basePath %>"><% } %>
-	<meta name="theme-color" content="#95010b">
+	<meta name="theme-color" content="<%= _themeColor %>">
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="<%= locals.datePublished ? 'article' : 'website' %>">
@@ -19,10 +24,10 @@
 	<meta property="og:title" content="<%= title %>">
 	<% if (locals.description) { %><meta property="og:description" content="<%= description %>"><% } %>
 	<meta property="og:url" content="<%= domain %><%= _basePath %>">
-	<meta property="og:image" content="<%= domain %>/images/brand/banner-og.jpg">
-	<meta property="og:image:width" content="1200">
+	<meta property="og:image" content="<%= _ogImage %>">
+	<% if (!locals.image) { %><meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="675">
-	<meta property="og:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
+	<% } %><meta property="og:image:alt" content="<%= _ogImageAlt %>">
 	<% if (locals.datePublished) { %><meta property="article:published_time" content="<%= datePublished %>">
 	<meta property="article:modified_time" content="<%= locals.dateModified || datePublished %>"><% } %>
 
@@ -30,8 +35,8 @@
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="<%= title %>">
 	<% if (locals.description) { %><meta name="twitter:description" content="<%= description %>"><% } %>
-	<meta name="twitter:image" content="<%= domain %>/images/brand/banner-og.jpg">
-	<meta name="twitter:image:alt" content="MeshCore Polska: ogólnopolska społeczność sieci mesh">
+	<meta name="twitter:image" content="<%= _ogImage %>">
+	<meta name="twitter:image:alt" content="<%= _ogImageAlt %>">
 
 	<!-- JavaScript -->
 	<script src="<%= cdn %>/js/progressbar.js" crossorigin defer></script>
@@ -70,6 +75,7 @@
 			datePublished,
 			dateModified: locals.dateModified || datePublished,
 			url: _basePath,
+			image: locals.image ? _ogImage : undefined,
 			type: locals.articleType,
 			sourceUrl: locals.articleSourceUrl,
 		} : null,

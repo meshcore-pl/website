@@ -3,6 +3,7 @@ title: Ripple MeshCore - tryb dla dzieci i zdalna administracja
 description: Firmware Ripple 7.11 wprowadza zdalną administrację urządzeniami oraz tryb dla dzieci (Kid Mode), ograniczający ekran główny do wybranych kontaktów.
 createdAt: 2.10.2025
 updatedAt: 22.08.2026
+themeColor: '#000000'
 sourceUrl: https://blog.meshcore.io/2025/10/02/kid-mode
 tags: [Oprogramowanie, Poradnik]
 ---

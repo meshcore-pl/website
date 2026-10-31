@@ -1,75 +1,45 @@
 const router = require('express').Router();
-const emailValidator = require('@sefinek/email-validator');
-const verifyMx = require('@sefinek/email-validator/mx');
-const tcpClient = require('../global/services/tcpClient.js');
-const sendMail = require('../services/mailer.js');
-const verifyTurnstile = require('../services/turnstile.js');
+const { validateFields, verifySender, deliver } = require('../services/contact.js');
 const limiter = require('../middlewares/ratelimit.js');
 const { getRandomTip } = require('../content/tips.js');
 
-const renderForm = (req, res, status, overrides = {}) => {
-	const payload = {
-		errors: [],
-		sent: false,
-		values: { username: '', email: '', message: '' },
-		...overrides,
-	};
+const EMPTY_VALUES = { username: '', email: '', message: '' };
+const DEV_VALUES = { username: 'Jan Kowalski', email: 'contact@sefinek.net', message: 'Testowa wiadomość z formularza kontaktowego.\n\nSzybki brązowy lis przeskoczył nad leniwym psem.\nPchnąć w tę łódź jeża lub ośm skrzyń fig.\nZażółć gęślą jaźń.\n\nZnaki specjalne: <b>test</b> & "cudzysłów" \'apostrof\' 🚀😺' };
 
-	if (req.get('accept') === 'application/json') return res.status(status).json(payload);
-	res.status(status).render('contact.ejs', { ...payload, tip: getRandomTip() });
-};
+const SENT_MESSAGE = 'Dziękujemy! Twoja wiadomość została wysłana. Odpowiemy najszybciej, jak to możliwe.';
 
-router.get('/kontakt', (req, res) => renderForm(req, res, 200));
+router.get('/kontakt', (req, res) => {
+	res.render('contact.ejs', { values: process.env.NODE_ENV === 'production' ? EMPTY_VALUES : DEV_VALUES, tip: getRandomTip() });
+});
 
 router.post('/api/v1/kontakt', limiter.contactForm, async (req, res) => {
-	const username = (req.body.username || '').trim();
-	const email = (req.body.email || '').trim();
-	const message = (req.body.message || '').trim();
-	const turnstileToken = req.body['cf-turnstile-response'];
-	const values = { username, email, message };
+	const body = req.body ?? {};
+	const fields = {
+		username: (body.username || '').trim(),
+		email: (body.email || '').trim(),
+		message: (body.message || '').trim(),
+	};
 
-	// Honeypot
-	if (req.body.website) {
+	if (body.website) {
 		console.log('Honeypot triggered by', req.ip);
-		return renderForm(req, res, 200, { sent: true });
+		return res.json({ success: true, status: 200, message: SENT_MESSAGE });
 	}
 
-	const errors = [];
-	if (username.length < 2 || username.length > 64) errors.push('Nazwa użytkownika musi mieć od 2 do 64 znaków.');
-	if (!emailValidator(email)) errors.push('Podaj poprawny adres e-mail.');
-	if (message.length < 10 || message.length > 4000) errors.push('Wiadomość musi mieć od 10 do 4000 znaków.');
+	const errors = validateFields(fields);
+	if (!errors.length) {
+		const senderError = await verifySender({ email: fields.email, token: body['cf-turnstile-response'], ip: req.ip });
+		if (senderError) errors.push(senderError);
+	}
+	if (errors.length) return res.status(400).json({ success: false, status: 400, message: 'Formularz zawiera błędy.', data: { errors } });
 
-	if (!errors.length && !(await verifyTurnstile(turnstileToken, req.ip))) errors.push('Weryfikacja captcha Cloudflare Turnstile nie powiodła się. Odśwież stronę i spróbuj ponownie.');
-	if (!errors.length && !(await verifyMx(email))) errors.push('Domena podanego adresu e-mail nie przyjmuje poczty.');
-	if (!errors.length && (await tcpClient.checkTempEmail(email))?.blacklisted) errors.push('Tymczasowe adresy e-mail są niedozwolone.');
-	if (errors.length) return renderForm(req, res, 400, { errors, values });
-
-	console.log(`New contact message received from ${email}`);
+	console.log(`New contact message received from ${fields.email}`);
 
 	try {
-		const subject = 'Kontakt przez formularz MeshCore Polska';
-		const adminMail = await sendMail({
-			from: `MeshCore Polska <${process.env.MAILER_AUTH_USER}>`,
-			replyTo: { name: username, address: email },
-			to: `Sefinek <${process.env.MAILER_AUTH_USER}>`,
-			subject,
-			text: `// Wiadomość od ${username} (${email})\n\n${message}`,
-		});
-
-		await sendMail({
-			from: `Sefinek <${process.env.MAILER_AUTH_USER}>`,
-			replyTo: `Sefinek <${process.env.MAILER_AUTH_USER}>`,
-			to: { name: username, address: email },
-			subject,
-			inReplyTo: adminMail.messageId,
-			references: [adminMail.messageId],
-			text: `Witaj ${username}!\n\nPomyślnie otrzymaliśmy Twoją wiadomość. Jeśli masz coś jeszcze do dodania, odpowiedz na tego maila.\n\nPozdrawiamy,\nMeshCore Polska (https://meshcorepolska.org)`,
-		});
-
-		renderForm(req, res, 200, { sent: true });
+		await deliver(fields, req.app.locals.domain);
+		res.json({ success: true, status: 200, message: SENT_MESSAGE });
 	} catch (err) {
 		console.error(err);
-		renderForm(req, res, 502, { errors: ['Nie udało się wysłać wiadomości. Spróbuj ponownie później.'], values });
+		res.status(502).json({ success: false, status: 502, message: 'Nie udało się wysłać wiadomości. Spróbuj ponownie później.' });
 	}
 });
 

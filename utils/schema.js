@@ -48,10 +48,10 @@ module.exports = ({ domain, breadcrumbs, article, faq }) => {
 
 	if (article) {
 		graph.push({
-			'@type': article.type || 'TechArticle',
+			'@type': article.type || ['Article', 'TechArticle'],
 			headline: article.title,
 			description: article.description,
-			image: `${domain}/images/brand/banner-og.jpg`,
+			image: article.image || `${domain}/images/brand/banner-og.jpg`,
 			datePublished: article.datePublished,
 			dateModified: article.dateModified,
 			inLanguage: 'pl-PL',
@@ -59,7 +59,8 @@ module.exports = ({ domain, breadcrumbs, article, faq }) => {
 			author: article.author || (article.sourceUrl ? undefined : { '@id': organizationId }),
 			publisher: { '@id': organizationId },
 			translator: article.sourceUrl ? { '@id': organizationId } : undefined,
-			translationOfWork: article.sourceUrl ? { '@type': 'BlogPosting', '@id': article.sourceUrl, url: article.sourceUrl } : undefined,
+			translationOfWork: article.sourceUrl ? { '@type': 'BlogPosting', '@id': article.sourceUrl, url: article.sourceUrl, inLanguage: 'en' } : undefined,
+			isPartOf: { '@id': websiteId },
 			mainEntityOfPage: { '@type': 'WebPage', '@id': `${domain}${article.url}` },
 		});
 	}

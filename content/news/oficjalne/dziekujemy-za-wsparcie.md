@@ -3,6 +3,7 @@ title: Zbiórka na wsparcie MeshCore - podziękowania zespołu
 description: Zbiórka prawna została zamknięta, a wsparcie społeczności przerosło nasze oczekiwania - status sporu o znak towarowy oraz co dalej z projektem MeshCore.
 createdAt: 28.07.2026
 updatedAt: 22.08.2026
+themeColor: '#ec7115'
 sourceUrl: https://blog.meshcore.io/2026/07/29/thankyou
 tags: [Społeczność]
 ---

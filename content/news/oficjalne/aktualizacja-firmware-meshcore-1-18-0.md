@@ -2,6 +2,7 @@
 title: Zmiany w firmware MeshCore 1.18.0 - BLE, Wi-Fi i CLI
 description: BLE i Wi-Fi w jednym firmware MeshCore 1.18.0 ułatwiają zmianę sposobu połączenia. Wydanie wprowadza też CLI companiona, zdalne zarządzanie i telemetrię push.
 createdAt: 15.10.2026
+themeColor: '#21263d'
 sourceUrl: https://blog.meshcore.io/2026/10/15/release-1-18-0
 tags: [Lista zmian, Oprogramowanie]
 ---

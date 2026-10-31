@@ -3,6 +3,7 @@ title: Mapa sieci MeshCore
 description: Recrof, twórca mapy MeshCore, opisuje jej historię oraz funkcje - filtrowanie węzłów, wskaźnik świeżości, kod QR kontaktu i osadzanie mapy przez iframe.
 createdAt: 4.04.2026
 updatedAt: 22.08.2026
+themeColor: '#abd1db'
 sourceUrl: https://blog.meshcore.io/2026/04/04/meshcore-map
 tags: [Mapa, Poradnik]
 ---

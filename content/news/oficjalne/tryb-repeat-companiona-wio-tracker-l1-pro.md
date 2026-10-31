@@ -2,6 +2,7 @@
 title: Tryb repeat companiona na Wio Tracker L1 Pro
 description: Jak włączyć tryb repeat companiona na Wio Tracker L1 Pro? Poradnik Seeed Studio z testem terenowym i wskazówkami dla tymczasowej instalacji.
 createdAt: 23.10.2026
+themeColor: '#cadac9'
 sourceUrl: https://blog.meshcore.io/2026/10/23/repeat-mode-tracker-l1-pro
 tags: [Poradnik, Sprzęt]
 ---

@@ -4,6 +4,7 @@ description: Schemat modułu ładowarki solarnej CN3791 (MPPT) - podłączenie p
 canonical: /dokumentacja/schematy/cn3791-mppt
 createdAt: 21.08.2026
 updatedAt: 22.08.2026
+themeColor: '#e0e7ed'
 ---
 
 # CN3791 (MPPT) - popularna ładowarka solarna {toc: CN3791 MPPT}

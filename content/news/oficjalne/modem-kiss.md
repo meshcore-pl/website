@@ -2,6 +2,7 @@
 title: Modem KISS w MeshCore - zastosowania i instalacja
 description: Czym jest modem KISS w MeshCore i komu się przyda? Poznaj protokół KISS, zastosowania w bramkach i własnych narzędziach oraz sposób wgrywania firmware.
 createdAt: 27.08.2026
+themeColor: '#f1f0e6'
 sourceUrl: https://blog.meshcore.io/2026/08/27/kiss-modem-intro
 tags: [Oprogramowanie, Narzędzia]
 ---

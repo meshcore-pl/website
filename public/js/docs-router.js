@@ -13,7 +13,7 @@ const collectActiveModules = () => [...view.querySelectorAll('script[type="modul
 	.filter(hasPage)
 	.map(url => ({ url, api: getPage(url) }));
 
-const syncMeta = ({ title, description, canonicalUrl }) => {
+const syncMeta = ({ title, description, canonicalUrl, image, imageAlt, themeColor }) => {
 	document.title = title;
 
 	const setAttr = (selector, attr, value) => {
@@ -28,6 +28,11 @@ const syncMeta = ({ title, description, canonicalUrl }) => {
 	setAttr('meta[property="og:url"]', 'content', canonicalUrl);
 	setAttr('meta[name="twitter:title"]', 'content', title);
 	setAttr('meta[name="twitter:description"]', 'content', description);
+	setAttr('meta[name="theme-color"]', 'content', themeColor);
+	setAttr('meta[property="og:image"]', 'content', image);
+	setAttr('meta[property="og:image:alt"]', 'content', imageAlt);
+	setAttr('meta[name="twitter:image"]', 'content', image);
+	setAttr('meta[name="twitter:image:alt"]', 'content', imageAlt);
 };
 
 const syncSchema = schema => {

@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const parseFrontmatter = require('frontmatter-md');
 const groups = require('../content/docs.js');
-const { marked, renderer, assignHeadingIds, getHeadingId, getTocLabel, getPlainText, parseDMYDate } = require('./markdown.js');
+const { marked, renderer, extractFirstImage, assignHeadingIds, getHeadingId, getTocLabel, getPlainText, parseDMYDate } = require('./markdown.js');
 
 const DOCS_DIR = path.join(__dirname, '../content/docs');
 
@@ -63,6 +63,8 @@ const build = () => {
 				publishedAt: parseDMYDate(data.createdAt),
 				date,
 				html: marked.parser(tokens, { renderer }),
+				image: extractFirstImage(tokens),
+				themeColor: data.themeColor || null,
 				toc,
 				faq: extractFaq(tokens),
 				group,

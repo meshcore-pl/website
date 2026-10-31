@@ -4,6 +4,7 @@ description: Loga, banery i faviconki serwera Discord MeshCore Polska do pobrani
 canonical: /dokumentacja/spolecznosc/nasze-logo
 createdAt: 12.07.2026
 updatedAt: 26.08.2026
+themeColor: '#90020e'
 ---
 
 # Nasze logo i banery - materiały graficzne MeshCore Polska {toc: Nasze logo}

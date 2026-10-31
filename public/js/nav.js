@@ -1,7 +1,16 @@
 const nav = document.getElementById('nav');
-const updateNav = () => nav.classList.toggle('nav--scrolled', window.scrollY > 10);
+const SCROLL_RANGE = 250;
+let navFrame = 0;
+const updateNav = () => {
+	navFrame = 0;
+	const t = Math.min(Math.max(window.scrollY / SCROLL_RANGE, 0), 1);
+	const progress = t * t * (3 - 2 * t);
+	nav.style.setProperty('--nav-p', progress.toFixed(3));
+};
 updateNav();
-window.addEventListener('scroll', updateNav, { passive: true });
+window.addEventListener('scroll', () => {
+	if (!navFrame) navFrame = requestAnimationFrame(updateNav);
+}, { passive: true });
 
 const syncNavHeight = () => document.documentElement.style.setProperty('--nav-h-live', `${nav.offsetHeight}px`);
 syncNavHeight();

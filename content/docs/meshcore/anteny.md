@@ -4,6 +4,7 @@ description: Dobór anten LoRa 868 MHz i Bluetooth do urządzeń MeshCore - ante
 canonical: /dokumentacja/meshcore/anteny
 createdAt: 13.07.2026
 updatedAt: 4.08.2026
+themeColor: '#dfddd6'
 ---
 
 # Wszystko o antenach, złączach i przewodach do MeshCore {toc: Wszystko o antenach}

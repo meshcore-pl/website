@@ -4,6 +4,7 @@ description: Czym jest Noise Floor w MeshCore, jak poprawnie go zmierzyć, znale
 canonical: /dokumentacja/meshcore/noise-floor
 createdAt: 13.07.2026
 updatedAt: 22.08.2026
+themeColor: '#1a1c20'
 ---
 
 # Co oznacza Noise Floor i jak go zmierzyć? {toc: Noise Floor}

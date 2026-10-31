@@ -3,6 +3,7 @@ title: Zmiany w firmware MeshCore 1.15.0 - zakresy regionów i OTA
 description: Domyślny zakres regionu i pakiety GROUP_DATA to nowości firmware MeshCore 1.15.0. Wydanie rozszerza obsługę płytek i dodaje aktualizacje OTA companionów nRF.
 createdAt: 19.04.2026
 updatedAt: 22.08.2026
+themeColor: '#21263d'
 sourceUrl: https://blog.meshcore.io/2026/04/19/release-1-15-0
 tags: [Lista zmian, Oprogramowanie]
 ---

@@ -3,6 +3,7 @@ title: Zmiany w firmware MeshCore 1.17.0 - obsługa radia LR2021
 description: Obsługa radia LR2021 i zapis konfiguracji w JSON wyróżniają firmware MeshCore 1.17.0. Sprawdź nowe urządzenia, komendy CLI i poprawki odbioru.
 createdAt: 9.08.2026
 updatedAt: 22.08.2026
+themeColor: '#21263d'
 sourceUrl: https://blog.meshcore.io/2026/08/09/release-1-17-0
 tags: [Lista zmian, Oprogramowanie]
 ---

@@ -51,8 +51,10 @@ router.get('/dokumentacja/:group/:slug', (req, res) => {
 	res.render('docs/_page-content.ejs', locals, (err, html) => {
 		if (err) return res.status(500).end();
 
+		const domain = req.app.locals.domain;
+		const ogImage = page.image ? ((/^https?:\/\//i).test(page.image.src) ? page.image.src : domain + page.image.src) : `${domain}/images/brand/banner-og.jpg`;
 		const schema = buildSchema({
-			domain: req.app.locals.domain,
+			domain,
 			breadcrumbs: locals.breadcrumbs,
 			article: {
 				title: page.title,
@@ -60,6 +62,7 @@ router.get('/dokumentacja/:group/:slug', (req, res) => {
 				datePublished: page.publishedAt.toISOString().slice(0, 10),
 				dateModified: page.date.toISOString().slice(0, 10),
 				url: page.canonical,
+				image: ogImage,
 			},
 			faq: page.faq,
 		});
@@ -67,7 +70,10 @@ router.get('/dokumentacja/:group/:slug', (req, res) => {
 		res.json({
 			title: locals.title,
 			description: locals.description,
-			canonicalUrl: `${req.app.locals.domain}${page.canonical}`,
+			canonicalUrl: `${domain}${page.canonical}`,
+			image: ogImage,
+			themeColor: page.themeColor || '#95010b',
+			imageAlt: page.image ? page.image.alt || page.title : 'MeshCore Polska: ogólnopolska społeczność sieci mesh',
 			schema: JSON.stringify(schema),
 			html,
 		});

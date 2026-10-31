@@ -3,6 +3,7 @@ title: Aktualizacja repeaterów MeshCore przez OTA z drona
 description: Recrof pokazuje, jak zaktualizować firmware trudno dostępnych repeaterów opartych o nRF52 za pomocą drona i niewielkiego modułu Xiao nRF52840.
 createdAt: 22.06.2026
 updatedAt: 22.08.2026
+themeColor: '#8f7c6c'
 sourceUrl: https://blog.meshcore.io/2026/06/22/drone-ota
 tags: [Poradnik, Oprogramowanie]
 ---

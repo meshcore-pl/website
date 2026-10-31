@@ -4,6 +4,7 @@ description: Karta techniczna Heltec WiFi LoRa 32 V4 - mapa pinów (Header J2/J3
 canonical: /dokumentacja/schematy/heltec-wifi-lora-32-v4
 createdAt: 21.08.2026
 updatedAt: 22.08.2026
+themeColor: '#dce6f0'
 ---
 
 # Heltec WiFi LoRa 32 V4 - wyświetlacz OLED i wzmacniacz LNA {toc: Heltec WiFi LoRa 32 V4}

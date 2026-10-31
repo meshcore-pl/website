@@ -134,4 +134,33 @@ const parseDMYDate = str => {
 	return new Date(Date.UTC(year, month - 1, day));
 };
 
-module.exports = { marked, renderer, slugify, assignHeadingIds, getHeadingId, getTocLabel, getPlainText, getExternalRel, parseDMYDate };
+const IMG_SRC_RE = /<img\b[^>]*?\ssrc=["']([^"']+)["'][^>]*>/i;
+const IMG_ALT_RE = /\salt=["']([^"']*)["']/i;
+const OG_IMAGE_EXT_RE = /\.(jpe?g|png|webp|gif)$/i;
+const isOgImage = href => ((/^https?:\/\//i).test(href) || (href[0] === '/' && href[1] !== '/')) && OG_IMAGE_EXT_RE.test(href.split(/[?#]/)[0]);
+
+const extractFirstImage = tokens => {
+	let found = null;
+	marked.walkTokens(tokens, t => {
+		if (found) return;
+
+		let src;
+		let alt;
+		if (t.type === 'image') {
+			src = t.href;
+			alt = t.text;
+		} else if (t.type === 'html') {
+			const match = IMG_SRC_RE.exec(t.raw);
+			if (!match) return;
+			src = match[1];
+			alt = IMG_ALT_RE.exec(match[0])?.[1];
+		} else {
+			return;
+		}
+
+		if (src && isOgImage(src)) found = { src, alt: alt || '' };
+	});
+	return found;
+};
+
+module.exports = { marked, renderer, slugify, extractFirstImage, assignHeadingIds, getHeadingId, getTocLabel, getPlainText, getExternalRel, parseDMYDate };

@@ -3,6 +3,7 @@ title: Zmiany w firmware MeshCore 1.17.1 - poprawka Heltec T096
 description: MeshCore 1.17.1 naprawia nadawanie na Heltec T096 i dodaje komendy CLI dla wzmocnienia FEM. Zobacz poprawki logowania i wykrywania preambuły w firmware.
 createdAt: 14.08.2026
 updatedAt: 22.08.2026
+themeColor: '#21263d'
 sourceUrl: https://blog.meshcore.io/2026/08/14/release-1-17-1
 tags: [Lista zmian, Oprogramowanie]
 ---

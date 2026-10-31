@@ -3,6 +3,7 @@ title: Aktualizacja MeshCore na ESP32 przez OTA - poradnik
 description: Poradnik krok po kroku - jak zaktualizować firmware repeatera lub room serwera na ESP32 przez OTA, bez kabla i przeflashowania od zera.
 createdAt: 1.04.2026
 updatedAt: 22.08.2026
+themeColor: '#d4cadb'
 sourceUrl: https://blog.meshcore.io/2026/04/01/esp-ota-update
 tags: [Poradnik, Oprogramowanie]
 ---

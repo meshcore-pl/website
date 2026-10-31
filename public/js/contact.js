@@ -3,7 +3,6 @@ const toastModule = import(`${document.body.dataset.cdn}/js/meshcore/toast.js`).
 	return null;
 });
 
-const successMessage = 'Dziękujemy! Twoja wiadomość została wysłana. Odpowiemy najszybciej, jak to możliwe.';
 const notify = async (message, type) => {
 	const toast = await toastModule;
 	if (toast) toast.showToast(message, type, { duration: 8000 });
@@ -42,12 +41,6 @@ const loadTurnstile = () => {
 
 	return turnstileLoader;
 };
-
-const notifications = document.getElementById('contact-notifications');
-if (notifications) {
-	if (notifications.dataset.sent === '1') notify(successMessage, 'success');
-	else showErrors([...notifications.content.querySelectorAll('p')].map(el => el.textContent));
-}
 
 const form = document.getElementById('contact-form');
 if (form) {
@@ -104,7 +97,7 @@ if (form) {
 		if (submitBtn.disabled) return;
 
 		submitBtn.disabled = true;
-		submitBtn.textContent = 'Weryfikacja...';
+		submitBtn.textContent = 'Sprawdzanie, czy nie jesteś botem...';
 
 		try {
 			const token = await verifyCaptcha();
@@ -125,14 +118,14 @@ if (form) {
 
 			const data = await res.json();
 
-			if (res.ok && data.sent) {
+			if (data.success) {
 				form.reset();
-				notify(successMessage, 'success');
+				notify(data.message, 'success');
 				return;
 			}
 
 			console.error('Message rejected by server:', res.status);
-			showErrors(data.errors?.length ? data.errors : ['Nie udało się wysłać wiadomości. Spróbuj ponownie później.']);
+			showErrors(data.data?.errors ?? [data.message]);
 		} catch (err) {
 			console.error('Submission failed:', err);
 			showErrors([err instanceof CaptchaError ? err.message : 'Nie udało się wysłać wiadomości. Spróbuj ponownie później.']);
