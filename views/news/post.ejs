@@ -6,6 +6,8 @@ css: [`${cdn}/css/code-viewer.css`, 'content', 'docs', 'news'],
 page: 'news',
 breadcrumbs,
 articleType: 'BlogPosting',
+articleTitle: post.title,
+articleSourceUrl: post.sourceUrl,
 datePublished: post.publishedAt.toISOString().slice(0, 10),
 dateModified: post.date.toISOString().slice(0, 10)
 }) %>
@@ -28,6 +30,9 @@ dateModified: post.date.toISOString().slice(0, 10)
 		<div class="section__inner">
 			<article class="news-content prose">
 				<%- post.html %>
+				<% if (post.sourceUrl) { %>
+				<p>Tłumaczenie na język polski: MeshCore Polska.</p>
+				<% } %>
 			</article>
 
 			<div id="news-post__footer">
@@ -41,7 +46,7 @@ dateModified: post.date.toISOString().slice(0, 10)
 						</div>
 
 						<% if (post.sourceUrl) { %>
-						<a href="<%= post.sourceUrl %>" class="news-source news-source--<%= post.source.slug %>" title="Zobacz oryginalny wpis na <%= post.source.label %>" target="_blank" rel="<%= post.sourceRel %>"><%= post.source.label %></a>
+						<a href="<%= post.sourceUrl %>" class="news-source news-source--<%= post.source.slug %>" title="Zobacz oryginalny wpis na <%= post.source.label %>" target="_blank" rel="<%= post.sourceRel %>">Źródło / oryginał: <%= post.source.label %></a>
 						<% } else { %>
 						<span class="news-source news-source--<%= post.source.slug %>" title="<%= post.source.description %>"><%= post.source.label %></span>
 						<% } %>

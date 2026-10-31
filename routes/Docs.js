@@ -55,7 +55,7 @@ router.get('/dokumentacja/:group/:slug', (req, res) => {
 			domain: req.app.locals.domain,
 			breadcrumbs: locals.breadcrumbs,
 			article: {
-				title: locals.title,
+				title: page.title,
 				description: locals.description,
 				datePublished: page.publishedAt.toISOString().slice(0, 10),
 				dateModified: page.date.toISOString().slice(0, 10),

@@ -1,5 +1,5 @@
 ---
-title: Wprowadzenie do pyMC
+title: pyMC - protokół MeshCore w Pythonie na Linuksie
 description: Poznaj pyMC - implementację protokołu MeshCore w Pythonie, uruchamianą na Linuksie, wraz z konsolą pymc_console i rekomendowanym, kompatybilnym sprzętem.
 createdAt: 12.05.2026
 updatedAt: 22.08.2026

@@ -1,5 +1,5 @@
 ---
-title: Filtrowanie regionów
+title: Filtrowanie regionów w MeshCore - zasięg wiadomości
 description: Filtrowanie regionów trafia do MeshCore - firmware repeatera, Ripple i aplikacja Liama pozwalają ograniczać zasięg wiadomości kanałowych do regionu.
 createdAt: 20.01.2026
 updatedAt: 22.08.2026

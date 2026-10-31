@@ -1,5 +1,5 @@
 ---
-title: Domyślny zakres regionu (Default Scope)
+title: Default Scope w MeshCore - domyślny zakres regionu
 description: Domyślny zakres (default scope) obejmuje teraz też wiadomości prywatne, logowania i zapytania - nawet w sieciach blokujących ruch bez zakresu.
 createdAt: 17.04.2026
 updatedAt: 22.08.2026

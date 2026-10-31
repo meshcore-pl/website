@@ -1,5 +1,5 @@
 ---
-title: docs.meshcorepolska.org - spolszczona dokumentacja
+title: Dokumentacja techniczna MeshCore po polsku - nowa strona
 description: Ruszyła nowa strona z polskim tłumaczeniem oficjalnej dokumentacji technicznej MeshCore - formatu pakietów, protokołów i poleceń CLI.
 createdAt: 6.09.2026
 tags: [Społeczność, Dokumentacja]

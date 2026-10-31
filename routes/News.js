@@ -21,7 +21,7 @@ router.get('/aktualnosci/:tag/:title', (req, res) => {
 	res.set('Cache-Control', 'no-cache');
 
 	res.render('news/post.ejs', {
-		title: `${post.title} - Blog MeshCore Polska`,
+		title: `${post.title} | MeshCore Polska`,
 		description: post.description || post.title,
 		canonical: post.canonical,
 		post,

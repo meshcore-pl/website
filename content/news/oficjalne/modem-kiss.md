@@ -1,12 +1,12 @@
 ---
-title: Modem KISS
-description: Wprowadzenie do roli firmware KISS Modem w MeshCore - czym jest protokół KISS, dla kogo przeznaczona jest ta rola radiowa oraz jak ją flashować przy budowie bramek i własnych narzędzi.
+title: Modem KISS w MeshCore - zastosowania i instalacja
+description: Czym jest modem KISS w MeshCore i komu się przyda? Poznaj protokół KISS, zastosowania w bramkach i własnych narzędziach oraz sposób wgrywania firmware.
 createdAt: 27.08.2026
 sourceUrl: https://blog.meshcore.io/2026/08/27/kiss-modem-intro
 tags: [Oprogramowanie, Narzędzia]
 ---
 
-# Modem KISS
+# Czym jest modem KISS w MeshCore i do czego służy?
 ![Modem KISS](https://blog.meshcore.io/assets/images/2026/08/27/kiss-modem-hero.png)
 
 Czym jest rola firmware KISS Modem, czym nie jest i dla kogo została pomyślana.

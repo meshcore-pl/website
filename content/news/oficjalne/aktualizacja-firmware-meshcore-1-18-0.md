@@ -1,12 +1,12 @@
 ---
-title: Aktualizacja firmware MeshCore 1.18.0
-description: 15 października 2026 - firmware v1.18.0 MeshCore, BLE i Wi-Fi w jednym firmware, konfiguracja Wi-Fi w aplikacji, CLI companiona, zdalne zarządzanie i telemetria push.
+title: Zmiany w firmware MeshCore 1.18.0 - BLE, Wi-Fi i CLI
+description: BLE i Wi-Fi w jednym firmware MeshCore 1.18.0 ułatwiają zmianę sposobu połączenia. Wydanie wprowadza też CLI companiona, zdalne zarządzanie i telemetrię push.
 createdAt: 15.10.2026
 sourceUrl: https://blog.meshcore.io/2026/10/15/release-1-18-0
 tags: [Lista zmian, Oprogramowanie]
 ---
 
-# Firmware MeshCore v1.18.0 - BLE + Wi-Fi i CLI companiona
+# BLE i Wi-Fi w jednym firmware oraz CLI companiona w MeshCore 1.18.0
 ![MeshCore Firmware](https://blog.meshcore.io/assets/images/firmware_release.jpg)
 
 15 października 2026 ukazało się wydanie oprogramowania **v1.18.0** dla MeshCore.
@@ -114,7 +114,7 @@ W innych aplikacjach dane sieci można skonfigurować za pomocą nowych komend C
 
 Programiści liczą, że te zmiany ułatwią korzystanie z MeshCore, i chcieliby udostępnić je także na kolejnych płytkach.
 
-## CLI companiona
+## Lokalne i zdalne zarządzanie companionem przez CLI
 W firmware companiona MeshCore v1.18.0 wprowadzono nowy wiersz poleceń, podobny do CLI zdalnego zarządzania, znanego z repeaterów.
 
 Przed wersją v1.18.0 każdej własnej komendzie dodawanej do firmware companiona trzeba było przydzielić nowy identyfikator w protokole komunikacji z aplikacją. Należało też zadbać, żeby nie kolidował z identyfikatorami używanymi w innych niestandardowych wersjach firmware. Stawało się to coraz bardziej uciążliwe, ponieważ nowe urządzenia producentów potrzebowały własnych komend do włączania i wyłączania konkretnych funkcji sprzętowych. Aplikacje obsługujące companiony również wymagały aktualizacji, aby udostępnić te funkcje.

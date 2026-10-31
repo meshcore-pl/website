@@ -1,13 +1,13 @@
 ---
-title: Aktualizacja firmware MeshCore 1.14.1
-description: 20 marca 2026 - firmware v1.14.1 MeshCore, egzekwowanie duty cycle metodą token bucket, obsługa GAT562 oraz poprawki transmisji pakietów.
+title: Zmiany w firmware MeshCore 1.14.1 - kontrola duty cycle
+description: Firmware MeshCore 1.14.1 wprowadza kontrolę duty cycle metodą token bucket. Wśród zmian są obsługa urządzeń GAT562 i poprawki nadawania pakietów.
 createdAt: 20.03.2026
 updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/03/20/release-1-14-1
 tags: [Lista zmian, Oprogramowanie]
 ---
 
-# Firmware MeshCore v1.14.1 - duty cycle token bucket
+# Kontrola duty cycle metodą token bucket w MeshCore 1.14.1
 ![MeshCore Firmware](https://blog.meshcore.io/assets/images/firmware_release.jpg)
 
 20 marca 2026 ukazało się wydanie oprogramowania **v1.14.1** dla MeshCore.
@@ -27,7 +27,7 @@ Najnowszy firmware pobierzesz z [flasher.meshcore.io](https://flasher.meshcore.i
 - Naprawiono błąd, przez który niektóre zakolejkowane pakiety nie były nadawane ([#1877](https://github.com/meshcore-dev/MeshCore/pull/1877))
 - Naprawiono błąd, przez który automatyczne adverty nie korzystały ze skonfigurowanego ustawienia wielobajtowej trasy ([fcfdc5f](https://github.com/meshcore-dev/MeshCore/commit/fcfdc5fc5b1e0cf81b4ca2dfbc51d714f3eb1ead))
 
-## Dokumentacja
+## Komendy CLI do sterowania wzmocnieniem LNA
 Komendy CLI LNA (rx gain):
 ```
 get radio.rxgain

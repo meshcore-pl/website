@@ -1,13 +1,13 @@
 ---
-title: Aktualizacja firmware MeshCore 1.15.0
-description: 19 kwietnia 2026 - firmware v1.15.0 MeshCore, domyślny zakres (Default Scope), pakiety GROUP_DATA, obsługa Heltec V4.3 i T096 oraz aktualizacje OTA dla nRF.
+title: Zmiany w firmware MeshCore 1.15.0 - zakresy regionów i OTA
+description: Domyślny zakres regionu i pakiety GROUP_DATA to nowości firmware MeshCore 1.15.0. Wydanie rozszerza obsługę płytek i dodaje aktualizacje OTA companionów nRF.
 createdAt: 19.04.2026
 updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/04/19/release-1-15-0
 tags: [Lista zmian, Oprogramowanie]
 ---
 
-# Firmware MeshCore v1.15.0 - domyślny zakres regionu
+# Domyślny zakres regionu i aktualizacje OTA w MeshCore 1.15.0
 ![MeshCore Firmware](https://blog.meshcore.io/assets/images/firmware_release.jpg)
 
 19 kwietnia 2026 ukazało się wydanie oprogramowania **v1.15.0** dla MeshCore.
@@ -34,7 +34,7 @@ Najnowszy firmware pobierzesz z [flasher.meshcore.io](https://flasher.meshcore.i
 - Różne drobne poprawki ([#2134](https://github.com/meshcore-dev/MeshCore/pull/2134), [#2190](https://github.com/meshcore-dev/MeshCore/pull/2190), [#1425](https://github.com/meshcore-dev/MeshCore/pull/1425), [#2075](https://github.com/meshcore-dev/MeshCore/pull/2075), [#2302](https://github.com/meshcore-dev/MeshCore/pull/2302), [#2306](https://github.com/meshcore-dev/MeshCore/pull/2306))
 - Poprawka bootloopa na Xiao C3 ([#2328](https://github.com/meshcore-dev/MeshCore/pull/2328))
 
-## Dokumentacja
+## Dokumentacja domyślnego zakresu i pakietów GROUP_DATA
 Więcej o nowej funkcji domyślnego zakresu (Default Scope) znajdziesz w [tym artykule](https://blog.meshcore.io/2026/04/20/default-scope) (w języku angielskim).
 
 Niskopoziomowy format pakietów GROUP_DATA opisany jest w [dokumentacji](https://docs.meshcore.io/payloads/?h=group+datagram#group-datagram) (w języku angielskim).

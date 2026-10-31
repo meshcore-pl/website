@@ -1,12 +1,12 @@
 ---
-title: Aktualizacja aplikacji MeshCore 1.48.0
-description: 15 sierpnia 2026 - wersja 1.48.0 aplikacji MeshCore, powiadomienia push w wersji web, przeglądanie regionów repeaterów i nowe wymagania systemowe.
+title: Zmiany w aplikacji MeshCore 1.48.0 - push w wersji web
+description: Co zmienia aplikacja MeshCore 1.48.0? Powiadomienia push w wersji web, przeglądanie regionów repeaterów i nowe wymagania dla Androida, iOS oraz macOS.
 createdAt: 15.08.2026
 updatedAt: 22.08.2026
 tags: [Lista zmian, Aplikacja]
 ---
 
-# Aplikacja MeshCore v1.48.0 - powiadomienia push na web
+# Powiadomienia push w aplikacji webowej MeshCore 1.48.0
 15 sierpnia 2026 ukazała się wersja **1.48.0** oficjalnej aplikacji MeshCore. Plik jest możliwy do pobrania pod linkiem [files.liamcottle.net/MeshCore/v1.48.0](https://files.liamcottle.net/MeshCore/v1.48.0).
 
 ## Lista zmian

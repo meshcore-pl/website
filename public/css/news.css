@@ -6,25 +6,6 @@
 	padding-top: 0;
 }
 
-.news-hero h1 {
-	margin-bottom: 17px;
-	font-size: 42px;
-}
-
-@media (max-width: 1100px) {
-	.news-hero h1 {
-		margin-bottom: 14px;
-		font-size: 36px;
-	}
-}
-
-@media (max-width: 800px) {
-	.news-hero h1 {
-		margin-bottom: 12px;
-		font-size: 29px;
-	}
-}
-
 .news-hero--post {
 	padding-top: calc(24px + var(--nav-h));
 	padding-bottom: 0;

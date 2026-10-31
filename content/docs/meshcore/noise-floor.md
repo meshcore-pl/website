@@ -1,5 +1,5 @@
 ---
-title: Noise Floor - czym jest?
+title: Noise Floor w MeshCore - pomiar szumu i zakłóceń
 description: Czym jest Noise Floor w MeshCore, jak poprawnie go zmierzyć, znaleźć źródło zakłóceń i kiedy warto zastosować filtr BPF.
 canonical: /dokumentacja/meshcore/noise-floor
 createdAt: 13.07.2026

@@ -65,12 +65,13 @@
 		domain,
 		breadcrumbs: locals.breadcrumbs,
 		article: locals.datePublished ? {
-			title,
+			title: locals.articleTitle || title,
 			description: locals.description || '',
 			datePublished,
 			dateModified: locals.dateModified || datePublished,
 			url: _basePath,
 			type: locals.articleType,
+			sourceUrl: locals.articleSourceUrl,
 		} : null,
 		faq: locals.faq,
 	})).replace(/</g, '\\u003c') %>

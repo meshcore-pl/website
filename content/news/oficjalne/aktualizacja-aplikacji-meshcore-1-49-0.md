@@ -1,11 +1,11 @@
 ---
-title: Aktualizacja aplikacji MeshCore 1.49.0
-description: 22 sierpnia 2026 - wersja 1.49.0 aplikacji MeshCore, śledzenie trasy do i od repeatera oraz nowy ekran konfiguracji sieciowej zdalnego zarządzania.
+title: Zmiany w aplikacji MeshCore 1.49.0 - trasy do repeatera
+description: Śledź trasę do i od repeatera w aplikacji MeshCore 1.49.0. Poznaj nowy ekran zdalnych ustawień sieciowych oraz zmiany w obsłudze regionów i powiadomień.
 createdAt: 22.08.2026
 tags: [Lista zmian, Aplikacja]
 ---
 
-# Aplikacja MeshCore v1.49.0 - śledzenie trasy do repeatera
+# Śledzenie trasy do i od repeatera w aplikacji MeshCore 1.49.0
 22 sierpnia 2026 ukazała się wersja **1.49.0** oficjalnej aplikacji MeshCore. Plik jest możliwy do pobrania pod linkiem [files.liamcottle.net/MeshCore/v1.49.0](https://files.liamcottle.net/MeshCore/v1.49.0).
 
 ## Lista zmian

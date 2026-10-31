@@ -56,8 +56,10 @@ module.exports = ({ domain, breadcrumbs, article, faq }) => {
 			dateModified: article.dateModified,
 			inLanguage: 'pl-PL',
 			url: `${domain}${article.url}`,
-			author: { '@id': organizationId },
+			author: article.author || (article.sourceUrl ? undefined : { '@id': organizationId }),
 			publisher: { '@id': organizationId },
+			translator: article.sourceUrl ? { '@id': organizationId } : undefined,
+			translationOfWork: article.sourceUrl ? { '@type': 'BlogPosting', '@id': article.sourceUrl, url: article.sourceUrl } : undefined,
 			mainEntityOfPage: { '@type': 'WebPage', '@id': `${domain}${article.url}` },
 		});
 	}

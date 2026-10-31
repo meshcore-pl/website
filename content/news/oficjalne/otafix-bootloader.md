@@ -1,13 +1,13 @@
 ---
-title: Instalacja bootloadera OTAFix
-description: Poradnik krok po kroku, jak zainstalować bootloader OTAFix na urządzeniach nRF - szybsze i pewniejsze aktualizacje firmware przez OTA/BLE.
+title: Instalacja bootloadera OTAFIX na nRF52 - poradnik MeshCore
+description: Jak zainstalować bootloader OTAFIX na nRF52 do aktualizacji MeshCore przez Bluetooth? Poradnik krok po kroku - tryb DFU, dobór pliku UF2 i instalacja.
 createdAt: 6.04.2026
 updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/04/06/otafix-bootloader
 tags: [Poradnik, Oprogramowanie]
 ---
 
-# OTAFix - szybsze i pewniejsze aktualizacje OTA/BLE
+# Jak zainstalować bootloader OTAFIX na urządzeniu nRF52?
 ![Bootloader OTAFix](https://blog.meshcore.io/assets/images/2026/04/06/otafix-banner.jpg)
 
 ## Geneza

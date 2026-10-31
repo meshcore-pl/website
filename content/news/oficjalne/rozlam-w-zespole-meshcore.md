@@ -1,5 +1,5 @@
 ---
-title: Meshcore.io - dlaczego rozłam?
+title: Rozłam w zespole MeshCore - dlaczego powstało meshcore.io?
 description: Zespół MeshCore tłumaczy powody przeniesienia się na nową stronę meshcore.io oraz spór o znak towarowy z byłym członkiem zespołu, Andym Kirby.
 createdAt: 23.04.2026
 updatedAt: 22.08.2026

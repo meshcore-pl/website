@@ -1,12 +1,12 @@
 ---
-title: Jak poprawić zasięg SenseCAP Solar P1
-description: Poradnik Seeed Studio - jak poprawić zasięg SenseCAP Solar Node P1-Pro, wymienić antenę, zaktualizować firmware i sprawdzić, czy repeater poprawnie odbiera, nadaje i przekazuje pakiety.
+title: SenseCAP Solar Node P1-Pro - jak poprawić zasięg MeshCore?
+description: Jak poprawić zasięg SenseCAP Solar Node P1-Pro? Poradnik Seeed Studio o lokalizacji, wymianie anteny, aktualizacji firmware i testach repeatera.
 createdAt: 20.10.2026
 sourceUrl: https://blog.meshcore.io/2026/10/20/boost-sensecap-solar
 tags: [Poradnik, Sprzęt]
 ---
 
-# Jak poprawić zasięg SenseCAP Solar P1
+# Jak poprawić zasięg i sprawdzić repeater SenseCAP Solar Node P1-Pro?
 ![SenseCAP Solar Node P1-Pro](https://blog.meshcore.io/assets/images/2026/10/20/image.png)
 
 [Solar Node P1-Pro](https://www.seeedstudio.com/SenseCAP-Solar-Node-P1-Pro-for-MeshCore-p-6741.html?sensecap_affiliate=lLZqP0c&referring_service=blog.meshcore.io) to wydajny, off-gridowy repeater, który zwykle spełnia wszystkie potrzeby związane z niezawodnym zasięgiem sieci mesh LoRa. Możesz też zamontować antenę o odpowiednio większym zysku, aby jeszcze bardziej poprawić jego osiągi.
@@ -394,7 +394,7 @@ Jeśli używasz dodatkowej obudowy, unikaj metalowych obudów wokół anteny LoR
 
 Jeśli używana jest antena zewnętrzna, umieść ją poza obudową.
 
-### Linki do zakupu
+## Linki do zakupu
 - [Solar Node P1-Pro](https://www.seeedstudio.com/SenseCAP-Solar-Node-P1-Pro-for-MeshCore-p-6741.html?sensecap_affiliate=lLZqP0c&referring_service=blog.meshcore.io)
 - [Adapter RP-SMA na N-type](https://www.seeedstudio.com/RF-Cable-RP-SMA-Male-to-N-Type-SMA-Female-300mm.html?sensecap_affiliate=lLZqP0c&referring_service=blog.meshcore.io)
 - [Antena z włókna szklanego 868-915 MHz](https://s.click.aliexpress.com/e/_c3GtNzkN)

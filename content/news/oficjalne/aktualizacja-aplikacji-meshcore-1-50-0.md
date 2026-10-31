@@ -1,11 +1,11 @@
 ---
-title: Aktualizacja aplikacji MeshCore 1.50.0
-description: 25 września 2026 - wersja 1.50.0 aplikacji MeshCore, zdalne zarządzanie companionami przez CLI, lokalny wiersz poleceń i nowy ekran ustawień Wi-Fi.
+title: Zmiany w aplikacji MeshCore 1.50.0 - CLI i ustawienia Wi-Fi
+description: W aplikacji MeshCore 1.50.0 pojawia się lokalne i zdalne CLI companiona oraz ekran ustawień Wi-Fi. Przeczytaj listę zmian i wymagania dotyczące firmware.
 createdAt: 25.09.2026
 tags: [Lista zmian, Aplikacja]
 ---
 
-# Aplikacja MeshCore v1.50.0 - zdalne CLI dla companionów
+# CLI companiona i konfiguracja Wi-Fi w aplikacji MeshCore 1.50.0
 25 września 2026 ukazała się wersja **1.50.0** oficjalnej aplikacji MeshCore. Plik jest możliwy do pobrania pod linkiem [files.liamcottle.net/MeshCore/v1.50.0](https://files.liamcottle.net/MeshCore/v1.50.0).
 
 ## Lista zmian

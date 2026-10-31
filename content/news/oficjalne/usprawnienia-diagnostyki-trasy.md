@@ -1,5 +1,5 @@
 ---
-title: Usprawnienia diagnostyki trasy
+title: Diagnostyka tras w MeshCore - skróty trasy i wykrywanie pętli
 description: Firmware v1.14.0 wprowadza wielobajtowe skróty trasy i wykrywanie pętli (loop detection), zwiększając precyzję diagnostyki tras w MeshCore.
 createdAt: 6.03.2026
 updatedAt: 22.08.2026

@@ -1,13 +1,13 @@
 ---
-title: Aktualizacja firmware MeshCore 1.17.0
-description: 9 sierpnia 2026 - firmware v1.17.0 MeshCore, obsługa radia LR2021, konfiguracja w JSON, usprawnione wykrywanie preambuły i nowe urządzenia.
+title: Zmiany w firmware MeshCore 1.17.0 - obsługa radia LR2021
+description: Obsługa radia LR2021 i zapis konfiguracji w JSON wyróżniają firmware MeshCore 1.17.0. Sprawdź nowe urządzenia, komendy CLI i poprawki odbioru.
 createdAt: 9.08.2026
 updatedAt: 22.08.2026
 sourceUrl: https://blog.meshcore.io/2026/08/09/release-1-17-0
 tags: [Lista zmian, Oprogramowanie]
 ---
 
-# Firmware MeshCore v1.17.0 - obsługa radia LR2021
+# Radio LR2021 i konfiguracja w formacie JSON w MeshCore 1.17.0
 ![MeshCore Firmware](https://blog.meshcore.io/assets/images/firmware_release.jpg)
 
 9 sierpnia 2026 ukazało się wydanie oprogramowania **v1.17.0** dla MeshCore.
@@ -75,10 +75,10 @@ właściwe wykrywanie preambuły. To może być najbardziej znacząca poprawa wy
 Odkrył też, że nowy schemat działa na równi ze sprzętowym CAD, ale bez 4-sekundowych zacięć, na które CAD wciąż cierpi.
 Dlatego sprzętowe CAD nadal pozostaje domyślnie wyłączone.
 
-## Interfejs companiona
+## Nowy wygląd interfejsu companiona
 Różne wyświetlacze kolorowe zyskają teraz nowy wygląd i będą znacznie bardziej responsywne.
 
-## Konfiguracja JSON
+## Migracja konfiguracji węzła do formatu JSON
 Konfiguracja węzła powinna zostać automatycznie zmigrowana do nowego formatu JSON podczas aktualizacji do v1.17.0.
 Stara konfiguracja w formacie binarnym pozostaje jednak nienaruszona, na wypadek gdyby ktoś musiał wrócić do starszego firmware.
 

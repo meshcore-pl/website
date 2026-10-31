@@ -1,5 +1,5 @@
 ---
-title: Aktualizacje OTA na urządzeniach nRF
+title: Aktualizacja MeshCore na nRF52 przez OTA i Bluetooth
 description: Poradnik krok po kroku - jak zaktualizować firmware repeatera lub room serwera na urządzeniach nRF przez OTA za pomocą nRF Device Firmware Update.
 createdAt: 2.04.2026
 updatedAt: 22.08.2026
@@ -7,7 +7,7 @@ sourceUrl: https://blog.meshcore.io/2026/04/02/nrf-ota-update
 tags: [Poradnik, Oprogramowanie]
 ---
 
-# OTA na nRF - aktualizacja firmware bez kabla
+# Jak zaktualizować firmware MeshCore na nRF52 przez Bluetooth
 Aktualizacja firmware Twoich repeaterów lub room serwerów jest bardzo prosta dla węzłów opartych o nRF.
 
 ![Aktualizacja OTA na urządzeniu nRF](https://blog.meshcore.io/assets/images/2026/04/02/nRF-DFU.webp)

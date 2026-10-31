@@ -1,12 +1,12 @@
 ---
-title: Wprowadzenie do węzłów czujnikowych
-description: Scott Powell, główny programista firmware MeshCore, pokazuje krok po kroku, jak zbudować własny firmware węzła czujnikowego (sensor node) na bazie szablonu simple_sensor - konfigurację PlatformIO, alarmy, telemetrię, dane szeregów czasowych i niestandardowe komendy CLI.
+title: Węzeł czujnikowy MeshCore - budowa firmware simple_sensor
+description: Jak zbudować firmware węzła czujnikowego MeshCore na bazie simple_sensor? Poradnik Scotta Powella - PlatformIO, alarmy, telemetria i własne komendy CLI.
 createdAt: 14.09.2026
 sourceUrl: https://blog.meshcore.io/2026/09/14/sensor-intro
 tags: [Poradnik, Oprogramowanie]
 ---
 
-# Wprowadzenie do węzłów czujnikowych
+# Jak zbudować firmware węzła czujnikowego MeshCore?
 ![Węzeł czujnikowy MeshCore](https://blog.meshcore.io/assets/images/2026/09/14/sensor_mesh.jpg)
 
 _Scott Powell, główny programista firmware MeshCore_
